@@ -1,0 +1,63 @@
+{
+  "schema": "fdec-stock-baseline-profile/v1",
+  "model_id": "Qwen/Qwen3-0.6B",
+  "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+  "license": "Apache-2.0",
+  "observation_sha256": "bdda2d0a547e978f8883e1101b323d544202c0242cd92531bf693158fa4b9053",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 11343,
+      "algorithm": "git-blob-sha1",
+      "digest": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab"
+    },
+    {
+      "path": "config.json",
+      "size": 726,
+      "algorithm": "git-blob-sha1",
+      "digest": "f5c3703b78ae2a478ae15b247e9f855e0ce2107b"
+    },
+    {
+      "path": "generation_config.json",
+      "size": 239,
+      "algorithm": "git-blob-sha1",
+      "digest": "20a8a9156fc8c3f25295ca067f61fdf120d517c5"
+    },
+    {
+      "path": "merges.txt",
+      "size": 1671853,
+      "algorithm": "git-blob-sha1",
+      "digest": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+    },
+    {
+      "path": "model.safetensors",
+      "size": 1503300328,
+      "algorithm": "sha256",
+      "digest": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b"
+    },
+    {
+      "path": "tokenizer.json",
+      "size": 11422654,
+      "algorithm": "sha256",
+      "digest": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size": 9732,
+      "algorithm": "git-blob-sha1",
+      "digest": "417d038a63fa3de29cfde265caedae14d1a58d92"
+    },
+    {
+      "path": "vocab.json",
+      "size": 2776833,
+      "algorithm": "git-blob-sha1",
+      "digest": "4783fe10ac3adce15ac8f358ef5462739852c569"
+    }
+  ],
+  "runtime": {
+    "transformers": "5.23.0",
+    "torch": "2.15.0"
+  },
+  "runtime_verified": false,
+  "redistribution_approved": false
+}
