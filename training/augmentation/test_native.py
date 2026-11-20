@@ -61,8 +61,7 @@ class NativeTests(unittest.TestCase):
                 self.assertTrue(all(row["labels"]["action"] == "review" for row in selected if row["labels"]["security"] == "phishing"))
                 self.assertTrue(all(row["labels"]["action"] == "archive" for row in selected if row["labels"]["security"] == "spam"))
 
-    def test_real_native_commercial_admission_is_not_fabricated(self):
-        # Negative safety evidence. This is explicitly NOT a positive AC-04 PASS.
+    def test_both_codex_packs_remain_fixture_only_under_owner_policy(self):
         for pack in ("fdec-native-templates-v1", "codex-fixture-v1"):
             for purpose in ("commercial_training", "evaluation"):
                 with self.subTest(pack=pack, purpose=purpose), self.assertRaisesRegex(a.AugmentationError, "template_training_rights_not_approved"):

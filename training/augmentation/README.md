@@ -1,6 +1,7 @@
 # Multilingual synthetic augmentation infrastructure
 
-Status: software implementation candidate; **FDEC-011 is not complete**.
+Status: generator and independent-source boundary software; technical examples
+remain fixture-only under the [owner's clarified data policy](DATA-USAGE-v2.md).
 Both checked-in source packs are software candidates, not approved training or
 evaluation data. See the [original fixture assessment](RIGHTS.md) and the distinct
 [native grammar and rights assessment](NATIVE-v1.md). Neither may feed model
@@ -12,6 +13,11 @@ It makes no remote generation or translation calls, reads no mailbox, and has no
 interface for importing a real message for translation. There are no third-party
 model weights or generation-time dependencies. Shared path/privacy helpers come
 from the completed ingestion implementation; production Rust APIs are unchanged.
+
+For the current verified training-source interface, use
+`training_boundary.assert_training_source` and `admit_training_run`. They require
+separate independently audited ingestion and do not admit these fixture examples.
+Current consent and leakage-safe manifests remain mandatory for later training.
 
 ## Source admission
 
@@ -31,6 +37,9 @@ disallowed. Adding a genuinely approved pack is a separate audited repository
 change, with evidence applicable to the source and intended model distribution.
 It is not enough to edit its purpose string. The software does not authenticate
 a repository writer or establish legal facts independently of that audit.
+Known Codex pack IDs and Codex/OpenAI-origin entries are independently prohibited
+from actual training/evaluation under the current owner policy, including an
+accidental promotion of their per-pack purpose lists.
 
 ## Quota planning and rendering
 

@@ -134,6 +134,11 @@ def load_pack(pack_id, purpose):
     bound(audit["license_file"])
     bound(audit["notice_file"])
     bound(audit["evidence"])
+    from training_boundary import prohibit_codex_training, TrainingBoundaryError
+    try:
+        prohibit_codex_training(pack_id, audit["authoring_origin"], purpose)
+    except TrainingBoundaryError:
+        raise AugmentationError("template_training_rights_not_approved") from None
     # Ownership of generated source code does not silently grant training rights.
     if purpose not in audit["allowed_purposes"]:
         raise AugmentationError("template_training_rights_not_approved")
@@ -141,7 +146,7 @@ def load_pack(pack_id, purpose):
     check_catalog(catalog)
     if catalog["license"] != audit["declared_source_license"] or catalog["authorship"] != audit["authoring_origin"]:
         raise AugmentationError("catalog_rights_mismatch")
-    implementation_files = ["augment.py", "generate.py", "translate_synthetic.py"]
+    implementation_files = ["augment.py", "generate.py", "translate_synthetic.py", "training_boundary.py"]
     if catalog["schema"] == "fdec-native-parallel-grammar/v1":
         implementation_files.append("native_templates.py")
     implementation = sha(b"".join((ROOT / "training/augmentation" / name).read_bytes().replace(b"\r\n", b"\n") for name in implementation_files))
@@ -236,7 +241,8 @@ def _publish(records, pack, output_dir, request):
         import native_templates
         native_quality = native_templates.quality_report(records, pack, sys.modules[__name__]) if records else {"schema": "fdec-native-quality/v1", "rows": 0, "unique_messages": 0, "structural_variants": 0, "template_families": 0, "label_counts": {}, "training_rights_established": pack["context"]["purpose"] == "commercial_training", "human_language_review": "not_asserted"}
     # Records originate exclusively in the bounded renderer above.
-    streams = {"samples.jsonl": records, "capsules.jsonl": [row["provenance"]["capsule"] for row in records], "annotations.jsonl": [{"content_id": row["content_id"], "annotations": [{"source_row": index, "labels": row["labels"]}]} for index, row in enumerate(records)]}
+    usage = {"purpose": pack["context"]["purpose"], "authoring_origin": pack["audit"]["authoring_origin"], "training_allowed": pack["context"]["purpose"] == "commercial_training", "context_sha256": pack["context_sha256"]}
+    streams = {"samples.jsonl": records, "capsules.jsonl": [row["provenance"]["capsule"] for row in records], "annotations.jsonl": [{"schema": "fdec-augmentation-annotation/v1", "content_id": row["content_id"], "annotations": [{"source_row": index, "labels": row["labels"]}], "data_usage": usage} for index, row in enumerate(records)]}
     output = private_output(output_dir, ROOT)
     pending, created = [], []
     parent = output.parent

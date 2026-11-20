@@ -1,10 +1,11 @@
 # Original native template grammar v1
 
-The `fdec-native-templates-v1` software candidate is a distinct original grammar
+The `fdec-native-templates-v1` software fixture is a distinct original grammar
 with six language resources: en/de/ru/es/zh/ar. See
 [its separate rights assessment](NATIVE-RIGHTS-v1.md). Its original code is
-Apache-2.0; it is currently admitted for software fixtures only and does not
-resolve FDEC-011's commercial-training requirement.
+Apache-2.0 and it is admitted for software fixtures only. The owner's
+[clarified data policy](DATA-USAGE-v2.md) keeps those texts/labels out of training
+and allows separate software acceptance without a native commercial grant.
 
 The existing v1 fixture renderer remains supported without changing its catalog,
 audit, license evidence or purpose restrictions. A separate native catalog schema
@@ -71,5 +72,7 @@ powershell -NoProfile -File training/augmentation/test-native.ps1
 
 It runs existing fixture regressions and native-only checks. Software tests render
 no real personal data and do not train a model. Temporary artifacts are removed.
-The positive commercial_training prerequisite is checked separately and remains
-unmet until documented applicable rights exist; a denial is not task completion.
+The suites also verify that both Codex packs remain denied for actual training.
+The separate independent-source boundary is checked against current rights and
+raw/normalized bytes; its source admission does not replace consent or safe splits.
+Historical native-rights and blocker evidence is retained without rewriting it.

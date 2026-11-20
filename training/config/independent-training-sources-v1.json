@@ -1,0 +1,39 @@
+﻿{
+    "scope":  "specialized-email-classifier",
+    "codex_data_usage":  "software_fixture_only",
+    "sources":  [
+                    {
+                        "evidence":  [
+                                         {
+                                             "sha256":  "755a5fffc87d9396f7805e7d4beedd3133865c26fe95c4e1dd2158f5beaee5d9",
+                                             "path":  "docs/legal/datasets/audit-2026-11-20.json"
+                                         },
+                                         {
+                                             "sha256":  "7f12bd82d9803554176c98cab0e8f05b50e4d0b63d59e3d8d5c055731bd0b382",
+                                             "path":  "docs/legal/datasets/sources-2026-11-20.json"
+                                         },
+                                         {
+                                             "sha256":  "51884c1fde3b037def8a2443cafd679a17725897313494ed790f3db75b6029bf",
+                                             "path":  "docs/legal/datasets/audit-2026-11-20.md"
+                                         }
+                                     ],
+                        "openai_derived":  false,
+                        "authoring_provider":  "anthropic-via-openrouter-uploader-declared",
+                        "allowed_purposes":  [
+                                                 "commercial_training",
+                                                 "evaluation"
+                                             ],
+                        "identity":  {
+                                         "revision":  "8c98baa8b10a1dddd676c860d9e1b86c89141c38",
+                                         "sha256":  "9ea7c656d016012f7e800a9612d399114ca081bfcbdce4101d1999cb6c293854",
+                                         "dataset_id":  "weijianzhg/email-triage-action-seed",
+                                         "artifact":  "data/train.parquet"
+                                     }
+                    }
+                ],
+    "schema":  "fdec-independent-training-sources/v1",
+    "policy_evidence":  {
+                            "sha256":  "5073bceb4bd9a4a8bab7efa374d507617f2a3055e89aa359996fcf0382512dcd",
+                            "path":  "training/augmentation/DATA-USAGE-v2.md"
+                        }
+}
