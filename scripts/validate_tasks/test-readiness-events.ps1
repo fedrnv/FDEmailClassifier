@@ -2,6 +2,7 @@ $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/source-state.ps1"
 . "$PSScriptRoot/readiness-events.ps1"
+. "$PSScriptRoot/fixture-matrix.ps1"
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-ready-'+[guid]::NewGuid())
 function Bound($path){@{path=$path;sha256=(Get-IdentityHash (Join-Path $temp $path))}}
 function Actions($file,[string]$Expected=''){
@@ -28,6 +29,7 @@ try{
     $ready.source_sha=git -C $temp rev-parse HEAD
     $ready.task_sha256=(Bound "$task/TASK.md").sha256
     $ready.allowed_paths=@('Tasks')
+    $ready.matrix=New-FixtureMatrix $temp $task 'test-readiness-events.ps1 decision scenarios'
     $ready.dependency_revisions=@((Bound "$task/TASK.md"))
     [IO.File]::WriteAllText("$temp/$task/evidence/proof.md",'Synthetic verification')
     $ready.verification=@((Bound "$task/evidence/proof.md"))

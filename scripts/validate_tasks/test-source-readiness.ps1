@@ -2,6 +2,7 @@ $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/source-state.ps1"
 . "$PSScriptRoot/readiness-events.ps1"
+. "$PSScriptRoot/fixture-matrix.ps1"
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-source-'+[guid]::NewGuid())
 function Bound($path){@{path=$path;sha256=(Get-IdentityHash (Join-Path $temp $path))}}
 function Reject([scriptblock]$Run){$failed=$false;try{& $Run}catch{if($_.Exception.Message -match 'Stale actual source readiness'){$failed=$true}else{throw}};if(!$failed){throw 'Changed source admitted'}}
@@ -28,6 +29,7 @@ try{
     $ready.source_sha=git -C $temp rev-parse HEAD
     $ready.task_sha256=(Bound "$task/TASK.md").sha256
     $ready.allowed_paths=@('Tasks','docs/architecture')
+    $ready.matrix=New-FixtureMatrix $temp $task 'test-source-readiness.ps1 source mutation scenarios'
     $ready.dependency_revisions=@((Bound "$task/TASK.md"))
     $ready|Add-Member source_state_algorithm 'fdec-source-state/v1' -Force
     [IO.File]::WriteAllText("$temp/$task/evidence/source-proof.md",'Synthetic focused proof')

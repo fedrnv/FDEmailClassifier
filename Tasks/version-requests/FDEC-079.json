@@ -1,0 +1,11 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "ad3950fd-9b2e-436b-86f6-186501e29852",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-079",
+    "summary":  "Require exact complete effective acceptance matrix on all admission actions",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/evidence/verification.md"
+                     ]
+}

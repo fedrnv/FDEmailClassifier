@@ -1,5 +1,16 @@
 # First closure and reopening
 
+FDEC-079 requires every effective AC exactly once, with `criterion_sha256` from
+`Get-EffectiveCriteria` in acceptance-matrix.ps1 and nonempty string `scenario`,
+`level`, `command`, `environment`, `expected`. IDs/hashes bind the accepted wording;
+populated fields do not replace semantic executor review. Never use the synthetic
+fixture-matrix helper as real acceptance evidence. Hash-bound scope-amended events
+may reference `acceptance_file` under own evidence plus `acceptance_sha256`.
+Supported fdec-acceptance-amendment/v1 contains task_id and additions/updates of
+id+criterion. IDs cannot be removed; unsupported or ambiguous changes fail closed.
+Readiness must bind event and amendment paths/hashes in `criteria_revisions`.
+Prose-only mentions of changed ACs cannot silently redefine criterion coverage.
+
 FDEC-078 requires the latest task-local `readiness-accepted` event to bind
 `readiness_file: evidence/<unique>.json` and canonical `readiness_sha256`.
 Use `Write-ReadinessAcceptance <root> <task-relative-directory> <readiness-file>`

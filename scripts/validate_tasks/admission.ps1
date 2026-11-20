@@ -8,6 +8,7 @@ $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/identity.ps1"
 . "$PSScriptRoot/source-state.ps1"
 . "$PSScriptRoot/readiness-events.ps1"
+. "$PSScriptRoot/acceptance-matrix.ps1"
 $pin = Get-Content "$Root/Tasks/policy/adoption-5.6.json" -Raw | ConvertFrom-Json
 foreach ($entry in $pin.inventory) {
     $path = Join-Path $Root $entry.path
@@ -32,7 +33,7 @@ if ($TaskId) {
     if ($ready.atomicity.outcomes.Count -ne 1 -or $ready.atomicity.packets.Count -lt 1 -or $ready.atomicity.packets.Count -gt 3 -or $ready.atomicity.independent_acceptance -ne $false -or !$ready.atomicity.boundary_reason) { throw 'Invalid atomicity' }
     if ($ready.atomicity.packets.Count -gt 1 -and !$ready.atomicity.inseparability_reason) { throw 'Missing inseparability reason' }
     if (!$ready.matrix -or !$ready.rule_sources -or !$ready.dependency_revisions -or !$ready.epic_state_evidence) { throw 'Incomplete readiness closure' }
-    foreach ($row in $ready.matrix) { if (!$row.id -or !$row.command -or !$row.expected) { throw 'Incomplete AC row' } }
+    Assert-AcceptanceMatrix $Root $spec.DirectoryName $ready
     if (!$ready.allowed_paths) { throw 'Missing bounded path scope' }
     $requiredRules = @('AGENTS.md','DEVELOPMENT.md','Tasks/AGENTS.md')
     if (Test-Path "$Root/Tasks/policy/checkout-identities-076.json") { $requiredRules+='Tasks/policy/checkout-identities-076.json' }

@@ -2,6 +2,7 @@ $ErrorActionPreference = 'Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/source-state.ps1"
 . "$PSScriptRoot/readiness-events.ps1"
+. "$PSScriptRoot/fixture-matrix.ps1"
 & "$PSScriptRoot/repository.ps1" -Root $root
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-validation-'+[guid]::NewGuid())
 function Reject([scriptblock]$Run,[string]$Expected) {
@@ -28,6 +29,7 @@ try {
     $ready=Get-Content "$root/Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/evidence/readiness.json" -Raw | ConvertFrom-Json
     New-Item -ItemType Directory "$temp/$task/evidence" -Force | Out-Null
     $ready.task_sha256=(Bound "$task/TASK.md").sha256
+    $ready.matrix=New-FixtureMatrix $temp $task 'test-validation.ps1 admission scenarios'
     $ready.source_sha=git -C $temp rev-parse HEAD
     $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File | ForEach-Object { Bound $_.FullName.Substring($temp.Length+1).Replace('\','/') })
     $ready.allowed_paths=@('Tasks')
@@ -71,6 +73,7 @@ try {
     Remove-Item -LiteralPath "$temp/Tasks/items/AGENTS.md"
     $gate='Tasks/items/quality/FDEC-006-targeted-integration-gate'
     $ready.task_sha256=(Bound "$gate/TASK.md").sha256
+    $ready.matrix=New-FixtureMatrix $temp $gate 'test-validation.ps1 unready gate scenario'
     $records=& "$PSScriptRoot/repository.ps1" -Root $temp -AsObject
     $ready.dependency_revisions=@($records.Values | ForEach-Object { $_.state_paths } | ForEach-Object { Bound $_.Substring($temp.Length+1).Replace('\','/') })
     $ready.source_state_sha256=Get-SourceState $temp 'FDEC-006'

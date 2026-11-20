@@ -2,6 +2,7 @@ $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/source-state.ps1"
 . "$PSScriptRoot/readiness-events.ps1"
+. "$PSScriptRoot/fixture-matrix.ps1"
 $records=& "$PSScriptRoot/repository.ps1" -Root $root -AsObject
 if ($records['FDEC-073'].parent -ne 'FDEC-EPIC-S001' -or $records['FDEC-073'].status -ne 'Done' -or $records['FDEC-075'].parent -ne 'FDEC-EPIC-D009' -or $records['FDEC-075'].status -ne 'Planned' -or $records['FDEC-063'].dependencies -notcontains 'FDEC-075' -or $records['FDEC-063'].dependencies -contains 'FDEC-073') { throw 'Identity projection differs from accepted migration' }
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-identity-'+[guid]::NewGuid())
@@ -45,6 +46,7 @@ Planned -> Blocked.
     $ready.source_sha=git -C $temp rev-parse HEAD
     $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File | ForEach-Object {Bound $_.FullName.Substring($temp.Length+1).Replace('\','/')})
     $ready.allowed_paths=@('Tasks')
+    $ready.matrix=New-FixtureMatrix $temp $target 'test-identity.ps1 identity scenarios'
     $ready.rule_sources+= (Bound 'Tasks/policy/checkout-identities-076.json')
     $migration=Get-Content "$temp/Tasks/migrations/FDEC-074.json" -Raw | ConvertFrom-Json
     $ready | Add-Member migration_revisions @(@('Tasks/migrations/FDEC-074.json',$migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path) | ForEach-Object {Bound $_}) -Force
