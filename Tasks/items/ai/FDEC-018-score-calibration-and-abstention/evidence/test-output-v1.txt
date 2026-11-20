@@ -1,0 +1,32 @@
+Source: 9181762bcc73b1a884a70a3144641f65a4bce9e9
+Monitor: bc7f501e-64ce-407e-a2a3-57a933c78d3e
+Command: powershell -NoProfile -File training/calibration/test-calibration.ps1
+Exit: 0
+test_actual_source_replay_signed_scores_and_revocation (test_calibration.CurrentAuthorityTests.test_actual_source_replay_signed_scores_and_revocation) ... ok
+test_frozen_cli_report_and_existing_output_preservation (test_calibration.NumericalTests.test_frozen_cli_report_and_existing_output_preservation) ... ok
+test_histogram_threshold_matches_independent_brute_force_fraction_oracle (test_calibration.NumericalTests.test_histogram_threshold_matches_independent_brute_force_fraction_oracle) ... ok
+test_invalid_role_duplicate_nan_and_group_leakage_reject (test_calibration.NumericalTests.test_invalid_role_duplicate_nan_and_group_leakage_reject) ... ok
+test_missing_and_conflicting_scores_are_explicitly_unsupported (test_calibration.NumericalTests.test_missing_and_conflicting_scores_are_explicitly_unsupported) ... ok
+test_shared_rust_boundary_vectors_missing_and_invalid_bands (test_calibration.NumericalTests.test_shared_rust_boundary_vectors_missing_and_invalid_bands) ... ok
+test_test_labels_scores_and_languages_cannot_fit_policies (test_calibration.NumericalTests.test_test_labels_scores_and_languages_cannot_fit_policies) ... ok
+test_validation_thresholds_and_independent_label_scales (test_calibration.NumericalTests.test_validation_thresholds_and_independent_label_scales) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 24.193s
+
+OK
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src\lib.rs (target\debug\deps\fdemailclassifier_core-aab09bf3431afdda.exe)
+
+running 7 tests
+test schema::calibration::tests::calibration_boundaries_and_missing_measurements_abstain ... ok
+test schema::calibration::tests::calibration_shared_python_fixture_vectors_match ... ok
+test schema::calibration::tests::calibration_invalid_bands_and_wire_probability_are_rejected ... ok
+test schema::tests::schema_abstention_and_serialization_fail_closed ... ok
+test schema::tests::schema_all_twelve_topics_match_json_schema ... ok
+test schema::tests::schema_round_trip_all_states ... ok
+test schema::tests::schema_invalid_payloads_fail_without_mutation ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+CALIBRATION_ACCEPTANCE=PASS; ACTUAL_MODEL_CALIBRATION=NOT_MEASURED; PROBABILITIES=NOT_ESTIMATED

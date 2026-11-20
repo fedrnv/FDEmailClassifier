@@ -1,0 +1,5 @@
+Source: 9181762bcc73b1a884a70a3144641f65a4bce9e9
+Monitor: d3904cb9-b7d7-42bc-b0c0-8acd7283ea19
+Command: C:\GitHub\FDEmailClassifier\.venv\ingestion\Scripts\python.exe training/calibration/calibration_cli.py software-check --output-dir training/outputs/fdec018-9181762-v1
+Exit: 0
+{"scope": "software-numerical-fixture-only", "actual_model_executed": false, "probabilities_estimated": false}

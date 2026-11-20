@@ -1,0 +1,16 @@
+{
+    "request_id":  "20b075c0-56c0-4265-b6d1-31e4bff0a94e",
+    "schema":  "fdtasks-version-request/v1",
+    "type":  "task_closed",
+    "epic_id":  "FDEC-EPIC-D003",
+    "work_item_id":  "FDEC-018",
+    "summary":  "Verify validation-only per-label margin thresholds and explicit abstention on independent held-out numerical fixtures without invented probabilities",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-018-score-calibration-and-abstention/evidence/verification-v1.md",
+                         "Tasks/items/ai/FDEC-018-score-calibration-and-abstention/evidence/result-v1.json",
+                         "Tasks/items/ai/FDEC-018-score-calibration-and-abstention/evidence/test-output-v1.txt",
+                         "Tasks/items/ai/FDEC-018-score-calibration-and-abstention/evidence/fixture-report-v1.json",
+                         "Tasks/items/ai/FDEC-018-score-calibration-and-abstention/evidence/fixture-receipt-v1.json",
+                         "Tasks/items/ai/FDEC-018-score-calibration-and-abstention/evidence/fixture-run-v1.txt"
+                     ]
+}
