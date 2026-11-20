@@ -7,8 +7,8 @@ original code, refining the initial expected wording to obey the task's factual
 accuracy boundary. README marks the website as planned and distinguishes the
 implemented foundation from future inference/SDKs.
 
-The original preview is ready at `assets/github/social-preview.png` (1280x640,
-48,927 bytes); its editable source is adjacent. It was visually inspected locally.
+The red branded preview is ready at `assets/github/social-preview.png` (1280x640);
+its editable source is adjacent. It was visually inspected locally.
 It has **not** been uploaded to GitHub and AC-03 is not complete.
 
 To finish with an authorized GitHub browser session:
