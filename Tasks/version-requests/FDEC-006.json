@@ -1,0 +1,12 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "f48d684f-74e3-4f34-9304-d915efe10d16",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-006",
+    "summary":  "Pass local D001 changed-area integration on frozen candidate",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/verification.md",
+                         "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/gate-result.json"
+                     ]
+}

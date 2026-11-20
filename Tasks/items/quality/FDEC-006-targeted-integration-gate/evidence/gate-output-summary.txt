@@ -1,0 +1,31 @@
+﻿STAGE: crates/check-bootstrap.ps1
+licenses ok
+PASS: workspace, individual crates, isolated binding, sample, negative inputs and licenses
+STAGE: strict core contract
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+STAGE: schemas/check-schema.ps1
+STAGE: docs/legal/test-governance.ps1
+licenses ok
+PASS: source governance and inventory integrity (distribution requires -ForDistribution)
+PASS: missing/corrupt license, unresolved distribution and unknown approval rejected; input preserved
+licenses ok
+STAGE: scripts/validate_tasks/test-validation.ps1
+PASS: 87 records, immutable history, graph, requests and hosted publication boundary
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: 87 records, immutable history, graph, requests and hosted publication boundary
+PASS: all action entrypoints, stale source, immutable history, dependency readiness, scoped rules, active Epics, requests and hosted boundary
+STAGE: scripts/validate_tasks/test-identity.ps1
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: retained/replacement identities, gate relinking, all admission actions and incomplete/stale/unrelated migration rejection
+STAGE: scripts/validate_tasks/check-adoption.ps1
+PASS: immutable baseline and dispatch admission inputs
+PASS: all five actions reject missing readiness and tampered baseline
+PASS: D001 changed-area integration on 5e44d2148f510c64a53dc77f8ad1fc8827278ba1
