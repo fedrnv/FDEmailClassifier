@@ -1,0 +1,29 @@
+﻿{
+    "independence":  "Fresh model session, fork_turns none; no implementation-author history",
+    "candidate_tree":  "76bf5092d02e1d5d45e7fed3f81e7dc6c3ea38d3",
+    "task_id":  "FDEC-007",
+    "reconciliation":  "Independent result inspected; boundary proof rerun PASS; six reviewer suites PASS exit 0; all R001 blockers resolved; no new findings",
+    "reviewer_session":  "/root/review_d001_r002",
+    "candidate_sha":  "b56bc3dcc73bb384fda8a304718c53a6e619db21",
+    "artifacts":  [
+                      {
+                          "sha256":  "c798a38c8262f534ce848031f0ce6b8d2fd3e9033c169ca5c9dc9a7c2e431b8e",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R002/REQUEST.md"
+                      },
+                      {
+                          "sha256":  "2fa5ca42c91728915c90fd72de2adba73bedcc04844d41417b6d0cb3ef440da3",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R002/RESULT.md"
+                      },
+                      {
+                          "sha256":  "9440daab7a1d9e112b36ba6aa61d19883a894af1b88f5446b3021cc76cf69c3d",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R002/focused-output.txt"
+                      },
+                      {
+                          "sha256":  "35f7b10b882665d60c4e2a631165f436512194796c12baa245b288df776ee782",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R002/verify-boundary.ps1"
+                      }
+                  ],
+    "schema":  "fdec-review-reconciliation/v1",
+    "cleanup":  "Reviewer monitor terminal; owned fixtures cleaned; unchanged detached checkout retained",
+    "result":  "Accepted"
+}

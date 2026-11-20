@@ -1,0 +1,12 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "b95285e8-a1d1-4e11-91b5-6702a8c394bc",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-007",
+    "summary":  "Independent R002 accepts corrected D001 foundation candidate",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-007-independent-acceptance-review/evidence/R002-verification.md",
+                         "Tasks/items/quality/FDEC-007-independent-acceptance-review/evidence/R002-reconciliation.json"
+                     ]
+}
