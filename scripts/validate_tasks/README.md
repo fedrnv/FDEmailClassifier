@@ -1,5 +1,12 @@
 # First closure and reopening
 
+FDEC-081 adds offline verified development-Epic closure request admission;
+see [the Epic closure contract](../../docs/verification/epic-closure.md).
+The first request stays immutable across reopening, while each subsequent Epic
+Done event needs current bound proof. The existing reopened-request entrypoint
+also runs the focused Epic fixtures. This validates requests without allocating
+versions or publishing; release/major transitions remain unadmitted here.
+
 FDEC-079 requires every effective AC exactly once, with `criterion_sha256` from
 `Get-EffectiveCriteria` in acceptance-matrix.ps1 and nonempty string `scenario`,
 `level`, `command`, `environment`, `expected`. IDs/hashes bind the accepted wording;

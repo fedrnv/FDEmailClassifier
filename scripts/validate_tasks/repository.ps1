@@ -2,6 +2,7 @@
 param([string]$Root = (Resolve-Path "$PSScriptRoot/../..").Path, [switch]$AsObject)
 $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/identity.ps1"
+. "$PSScriptRoot/epic-closure.ps1"
 function Field($text, $key) {
     $match = [regex]::Match($text, "(?m)^$([regex]::Escape($key)): ([^\r\n]+)")
     if (!$match.Success) { throw "Missing field: $key" }
@@ -149,7 +150,15 @@ foreach ($file in $requestFiles) {
     $r=Get-Content $file.FullName -Raw | ConvertFrom-Json
     if ($r.schema -ne 'fdtasks-version-request/v1' -or !$r.request_id -or $requests.ContainsKey($r.request_id) -or !$r.summary -or !$r.verification) { throw 'Invalid or duplicate version request' }
     $requests[$r.request_id]=$true
-    if ($r.type -notin 'task_closed','bug_closed','correction_closed') { throw 'Release/Epic requests require a dedicated verified publisher (not implemented at foundation)' }
+    if ($r.type -eq 'epic_closed') {
+        $relative=$file.FullName.Substring($rootPath.Length+1).Replace('\','/')
+        $accepted=@(git -C $Root ls-tree --name-only $gitHead -- $relative)
+        if ($LASTEXITCODE -ne 0) { throw 'Cannot resolve accepted Epic closure baseline' }
+        Assert-EpicClosure $rootPath $records $r $gitHead ([bool]$accepted.Count) $requestBodies
+        $closed[$r.work_item_id]=$true
+        continue
+    }
+    if ($r.type -notin 'task_closed','bug_closed','correction_closed') { throw 'Release/major requests require a dedicated verified publisher (not implemented at foundation)' }
     if (!$r.work_item_id -or $closed.ContainsKey($r.work_item_id) -or !$records.ContainsKey($r.work_item_id) -or $records[$r.work_item_id].parent -ne $r.epic_id -or !$records[$r.work_item_id].closure_history.Count) { throw 'Invalid closed item request' }
     $target=$records[$r.work_item_id]
     $expectedType=switch (Field $target.front 'type') { 'Task' {'task_closed'} 'Bug' {'bug_closed'} 'Correction' {'correction_closed'} default {throw 'Unsupported closure item type'} }
@@ -180,6 +189,9 @@ foreach ($file in $requestFiles) {
             if ($entries.Count -ne 1 -or !(Test-IdentityBinding $Root $path $entries[0].sha256)) { throw 'Unverified closure evidence' }
         }
     } elseif (!$accepted.Count) { throw 'New closure request requires verified first-closure proof' }
+}
+foreach ($epic in $records.Values | Where-Object {$_.epic -and $_.id -match 'EPIC-D' -and $_.closure_history.Count}) {
+    if (!$closed.ContainsKey($epic.id)) { throw 'Missing verified Epic closure request' }
 }
 # No hosted entrypoints are admitted until their command graph validator arrives
 # with FDEC-050. This rejects opaque wrappers as well as direct test steps.

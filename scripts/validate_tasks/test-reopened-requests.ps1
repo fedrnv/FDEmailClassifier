@@ -107,3 +107,6 @@ Planned -> Done.
     if(!$resolved.StartsWith($parent,[StringComparison]::OrdinalIgnoreCase) -or !(Split-Path $resolved -Leaf).StartsWith('fdec-reopen-')){throw 'Unsafe cleanup target'}
     if(Test-Path $resolved){Remove-Item -LiteralPath $resolved -Recurse -Force}
 }
+# Epic first-closure requests share this lifecycle boundary and run in the D001
+# gate through this existing entrypoint. The suite owns a separate tiny fixture.
+& "$PSScriptRoot/test-epic-closure.ps1"
