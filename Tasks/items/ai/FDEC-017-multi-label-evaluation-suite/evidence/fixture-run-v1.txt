@@ -1,0 +1,5 @@
+Source: 9fb05d59ef5e347c75be4d47d7b419c7697edc7f
+Monitor: 6f38b639-42c0-408f-a541-358fe017a9d0
+Command: C:\GitHub\FDEmailClassifier\.venv\ingestion\Scripts\python.exe training/eval/metric_oracle.py --output-dir training/outputs/fdec017-9fb05d5-v1
+Exit: 0
+{"scope": "software-metric-oracle-only", "actual_model_executed": false, "rows": 4}

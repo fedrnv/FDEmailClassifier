@@ -1,0 +1,64 @@
+{
+    "schema":  "fdec-evaluation-acceptance-result/v1",
+    "task_id":  "FDEC-017",
+    "source_sha":  "9fb05d59ef5e347c75be4d47d7b419c7697edc7f",
+    "source_tree":  "b48676f4df8bdcb0254ad1f804a1a9392ffd89b7",
+    "source_state_algorithm":  "fdec-source-state/v1",
+    "source_state_sha256":  "572803dd9c9edaf352071b66bb9c30bcce9b5b7aea3d6de52d47036b6bd0c8d8",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "result":  "PASS",
+    "criteria":  {
+                     "AC-02":  {
+                                   "status":  "PASS",
+                                   "scope":  "Invalid inputs, privacy, preserved output, current-consent revocation before the next prediction"
+                               },
+                     "AC-01":  {
+                                   "scope":  "Original frozen-labeled-fixture evaluation suite and generated structured report",
+                                   "status":  "PASS",
+                                   "actual_model_quality_claim":  false
+                               }
+                 },
+    "verification":  {
+                         "exit_code":  0,
+                         "monitor_id":  "010eec9f-ce96-47df-bd03-d2833ea8bbf8",
+                         "pyarrow":  "26.0.1",
+                         "output_sha256":  "c199027bcff752eee0eb0932d5dfcc7e85bc55585b0e3e7fd949fa97895822da",
+                         "tests":  10,
+                         "command":  "powershell -NoProfile -File training/eval/test-evaluation.ps1",
+                         "duration_seconds":  18.565,
+                         "python":  "3.14.5"
+                     },
+    "fixture":  {
+                    "declared_language_buckets":  [
+                                                      "de",
+                                                      "en"
+                                                  ],
+                    "input_sha256":  "263edd2a7eebca51781a929536133f4fe226eb3e5fba6be16744bbd1e6131c97",
+                    "receipt_sha256":  "5348ca15d4ef67c25f2c74d71d9ab4f0f1f859628d0b1c96b3808f49adb2fb0d",
+                    "report_sha256":  "df3944cb52afff38dc4443ac6e9c7693f4d3ad915c0be915bd654e0521455f91",
+                    "topics":  12,
+                    "micro_f1":  0.7619047619047619,
+                    "scope":  "software-metric-oracle-only",
+                    "rows":  4,
+                    "run_sha256":  "83a157fba0ac965c4d1ada202b28cb6d2afdf9dc9c6cbcbc0e0d9c454d30c408",
+                    "macro_f1":  0.638888888888889
+                },
+    "actual_model_executed":  false,
+    "actual_model_quality_measured":  false,
+    "fixture_emails_consumed_by_model":  false,
+    "training_performed":  false,
+    "existing_license_origin_consent_split_boundaries_changed":  [
+
+                                                                 ],
+    "public_artifact_release_approved":  false,
+    "external_spend_eur":  0,
+    "other_tasks_completed":  [
+
+                              ],
+    "unchanged_blocked_tasks":  [
+                                    "FDEC-015",
+                                    "FDEC-016"
+                                ],
+    "epic_gate_or_review_completed":  false,
+    "next_task":  "FDEC-018"
+}

@@ -1,0 +1,20 @@
+Source: 9fb05d59ef5e347c75be4d47d7b419c7697edc7f
+Monitor: 010eec9f-ce96-47df-bd03-d2833ea8bbf8
+Command: powershell -NoProfile -File training/eval/test-evaluation.ps1
+Exit: 0
+test_current_revocation_stops_between_predictions_and_preserves_output (test_evaluation.AdmissionIntegrationTests.test_current_revocation_stops_between_predictions_and_preserves_output) ... ok
+test_all_unresolved_outputs_cannot_produce_perfect_correctness_or_fpr (test_evaluation.MetricTests.test_all_unresolved_outputs_cannot_produce_perfect_correctness_or_fpr) ... ok
+test_binary_false_positive_denominators_and_unresolved_bounds (test_evaluation.MetricTests.test_binary_false_positive_denominators_and_unresolved_bounds) ... ok
+test_frozen_fixture_cli_writes_structured_report_and_preserves_prior_state (test_evaluation.MetricTests.test_frozen_fixture_cli_writes_structured_report_and_preserves_prior_state) ... ok
+test_frozen_four_row_oracle_all_topics_and_languages (test_evaluation.MetricTests.test_frozen_four_row_oracle_all_topics_and_languages) ... ok
+test_invalid_alignment_schema_duplicates_and_uncertain_gold_reject (test_evaluation.MetricTests.test_invalid_alignment_schema_duplicates_and_uncertain_gold_reject) ... ok
+test_language_buckets_extend_without_claiming_language_accuracy (test_evaluation.MetricTests.test_language_buckets_extend_without_claiming_language_accuracy) ... ok
+test_masks_and_no_support_never_become_false_negatives_or_zero_rates (test_evaluation.MetricTests.test_masks_and_no_support_never_become_false_negatives_or_zero_rates) ... ok
+test_real_cli_requires_admission_before_model_and_sanitizes_errors (test_evaluation.MetricTests.test_real_cli_requires_admission_before_model_and_sanitizes_errors) ... ok
+test_unsupported_topics_macro_definition_and_order_invariance (test_evaluation.MetricTests.test_unsupported_topics_macro_definition_and_order_invariance) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 18.565s
+
+OK
+EVALUATION_SUITE_ACCEPTANCE=PASS; ACTUAL_MODEL_QUALITY=NOT_MEASURED

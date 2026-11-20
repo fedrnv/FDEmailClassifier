@@ -1,0 +1,16 @@
+{
+    "request_id":  "ad0acc7b-b978-4265-af83-440b04a92eb9",
+    "schema":  "fdtasks-version-request/v1",
+    "type":  "task_closed",
+    "epic_id":  "FDEC-EPIC-D003",
+    "work_item_id":  "FDEC-017",
+    "summary":  "Verify multilingual multi-label metrics and structured reporting against frozen metadata fixtures with hand-computed expectations and current-admission failure checks",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/evidence/verification-v1.md",
+                         "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/evidence/result-v1.json",
+                         "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/evidence/test-output-v1.txt",
+                         "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/evidence/fixture-report-v1.json",
+                         "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/evidence/fixture-receipt-v1.json",
+                         "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/evidence/fixture-run-v1.txt"
+                     ]
+}

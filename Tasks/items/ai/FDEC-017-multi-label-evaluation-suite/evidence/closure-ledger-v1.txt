@@ -1,0 +1,6 @@
+Source: 9fb05d59ef5e347c75be4d47d7b419c7697edc7f
+State: includes first Done transition, exact closure proof and first task_closed request before staging
+Command: powershell -NoProfile -File scripts/validate_tasks/repository.ps1 -Root C:\GitHub\FDEmailClassifier
+Monitor: fb3dea28-3241-4705-bfcd-ebd89302c773
+Exit: 0
+PASS: 114 records, immutable history, graph, requests and hosted publication boundary
