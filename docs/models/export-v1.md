@@ -17,6 +17,11 @@ the ingestion/training environments are unchanged. gguf 0.19.0 and safetensors
 0.8.0 null PyPI license fields were resolved using their wheel MIT/Apache-2.0
 license files for local use. This does not approve wheel/runtime redistribution.
 No Torch/Transformers/PEFT runtime or model tensors were installed/downloaded.
+On a fresh Windows CPython 3.14 amd64 checkout, run
+`python training/export/bootstrap.py --opt-in` to materialize the exact previously
+audited wheels and official schema hashes, then install the isolated offline
+environment. Existing files/environments are preserved; package mismatches reject
+when the runtime is used. Other platforms require their own wheel audit/lock.
 
 ```powershell
 powershell -NoProfile -File training/export/test-export.ps1
@@ -37,6 +42,9 @@ generated CycloneDX 1.6 SBOM against the official schema snapshot from
 CycloneDX/specification commit `5fee6af48d43c751dc6a5b31138f06af2b10bac5`.
 Schema hashes are checked first. The website returned HTTP 403; the versioned
 official-repository fallback and failed original acquisition script are retained.
+Cached AJV performs structural schema validation with optional unknown format
+annotations ignored; the generated documents contain no timestamp/URL/email
+fields using those ignored annotations. This is not a format-annotation audit.
 SBOM hashes explicitly identify installed distribution METADATA, not full wheel
 identities or complete binary-package license clearance. Build libraries are
 listed, not bundled. Model/file identities are in the separate candidate manifest.
