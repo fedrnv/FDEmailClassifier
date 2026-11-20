@@ -1,0 +1,185 @@
+﻿{
+    "schema":  "fdec-gate-result/v1",
+    "task_id":  "FDEC-013",
+    "epic_id":  "FDEC-EPIC-D002",
+    "candidate_sha":  "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+    "candidate_tree":  "6b7af50ea1fdbb1a6ad12cdad5dd445cf491560c",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "source_state_sha256":  "fa17533ba87ebc22f9b6a7c83eb54436238f64e821340d58af84aad3bd3a64f2",
+    "result":  "PASS",
+    "exit_code":  0,
+    "stages":  [
+                   {
+                       "command":  "powershell -NoProfile -File docs/verification/verify-d002-outcome-v2.ps1 -TestNegatives",
+                       "name":  "effective outcome and audited source continuity",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File scripts/verification/test-d002-source.ps1",
+                       "name":  "source freeze negatives",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/datasets/test-ingestion.ps1",
+                       "name":  "rights and verified ingestion",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/labels/test-mapping.ps1",
+                       "name":  "annotation and classification schemas",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1",
+                       "name":  "fixture generation and independent-input boundary",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "name":  "Sinabis reviewed-source preparation contract",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/splits/test-splits.ps1",
+                       "name":  "current consent and split protection",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  ".venv/ingestion/Scripts/python.exe -m unittest discover -s tests/d002 -p test_pipeline.py -v",
+                       "name":  "cross-component data pipeline",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "cargo test --locked --offline -p fdemailclassifier-core schema",
+                       "name":  "unchanged Rust classification contract",
+                       "result":  "PASS"
+                   }
+               ],
+    "scope":  "D002 current software integration plus explicit outcome/source continuity; no actual corpus or model admission",
+    "actual_training_performed":  false,
+    "actual_dataset_train_test_admission":  "not_verified_by_this_gate",
+    "model_release_approved":  false,
+    "outcome_verification":  {
+                                 "schema":  "fdec-outcome-verification/v2",
+                                 "task_id":  "FDEC-099",
+                                 "result":  "PASS",
+                                 "current_protected_files":  102,
+                                 "accepted_process_changes":  12,
+                                 "continuity_negative_checks":  23,
+                                 "historical_replay_source":  "16e293aadc15f8dd50fac44720a7949e788c9eff",
+                                 "historical_replay":  {
+                                                           "schema":  "fdec-outcome-verification/v1",
+                                                           "result":  "PASS",
+                                                           "task_id":  "FDEC-099",
+                                                           "preserved_files":  100,
+                                                           "negative_checks":  14,
+                                                           "actual_training_data_admitted":  false,
+                                                           "semantic_independent_review_required":  true,
+                                                           "mutations":  false
+                                                       },
+                                 "historical_worktree_removed":  true,
+                                 "original_request_unchanged":  true,
+                                 "actual_data_admitted":  false,
+                                 "independent_review_required":  true
+                             },
+    "component_gate_result":  {
+                                  "schema":  "fdec-gate-result/v1",
+                                  "task_id":  "FDEC-013",
+                                  "epic_id":  "FDEC-EPIC-D002",
+                                  "candidate_sha":  "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+                                  "candidate_tree":  "6b7af50ea1fdbb1a6ad12cdad5dd445cf491560c",
+                                  "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+                                  "result":  "PASS",
+                                  "exit_code":  0,
+                                  "source_state_sha256":  "fa17533ba87ebc22f9b6a7c83eb54436238f64e821340d58af84aad3bd3a64f2",
+                                  "stages":  [
+                                                 {
+                                                     "command":  "powershell -NoProfile -File scripts/verification/test-d002-source.ps1",
+                                                     "name":  "source freeze negatives",
+                                                     "result":  "PASS"
+                                                 },
+                                                 {
+                                                     "command":  "powershell -NoProfile -File training/datasets/test-ingestion.ps1",
+                                                     "name":  "rights and verified ingestion",
+                                                     "result":  "PASS"
+                                                 },
+                                                 {
+                                                     "command":  "powershell -NoProfile -File training/labels/test-mapping.ps1",
+                                                     "name":  "annotation and classification schemas",
+                                                     "result":  "PASS"
+                                                 },
+                                                 {
+                                                     "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1",
+                                                     "name":  "fixture generation and independent-input boundary",
+                                                     "result":  "PASS"
+                                                 },
+                                                 {
+                                                     "command":  "powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                                                     "name":  "Sinabis reviewed-source preparation contract",
+                                                     "result":  "PASS"
+                                                 },
+                                                 {
+                                                     "command":  "powershell -NoProfile -File training/splits/test-splits.ps1",
+                                                     "name":  "current consent and split protection",
+                                                     "result":  "PASS"
+                                                 },
+                                                 {
+                                                     "command":  ".venv/ingestion/Scripts/python.exe -m unittest discover -s tests/d002 -p test_pipeline.py -v",
+                                                     "name":  "cross-component data pipeline",
+                                                     "result":  "PASS"
+                                                 },
+                                                 {
+                                                     "command":  "cargo test --locked --offline -p fdemailclassifier-core schema",
+                                                     "name":  "unchanged Rust classification contract",
+                                                     "result":  "PASS"
+                                                 }
+                                             ],
+                                  "scope":  "D002 software integration with isolated technical fixtures and pinned public rights metadata",
+                                  "actual_training_performed":  false,
+                                  "actual_dataset_train_test_admission":  "not_verified_by_this_gate",
+                                  "model_release_approved":  false
+                              },
+    "runner_bindings":  [
+                            {
+                                "sha256":  "829536f2e3a64aa213c150adec578ee9eb73df740e740afef16f1056dfcfa542",
+                                "path":  "docs/verification/run-d002-current.ps1"
+                            },
+                            {
+                                "sha256":  "ec147d1c5b86c1a7eb08ca45b531c10d49a2604f85aac550e226b55002e46566",
+                                "path":  "docs/verification/d002-current-result.ps1"
+                            },
+                            {
+                                "sha256":  "30b7d39f510468c87c82a8ba01074497a535146323e8684feb5eb481111bd02b",
+                                "path":  "scripts/verification/D002.ps1"
+                            },
+                            {
+                                "sha256":  "6308f85d48e42628bd3980a2acff077b9862baefe0117b64b6b9186c280fbe6a",
+                                "path":  "docs/verification/verify-d002-outcome-v2.ps1"
+                            }
+                        ],
+    "monitor_task_id":  "f870132b-9e8a-4fce-9010-01279a2c3945",
+    "raw_monitor_log_sha256":  "d19acb49bb38dc7452d28da327e58390d013b68c2e81c4f2b56fceb5826ce480",
+    "transcript_normalization":  "Complete monitor log retained; trailing whitespace and final blank lines removed",
+    "python_test_groups":  [
+                               20,
+                               21,
+                               20,
+                               15,
+                               13,
+                               23,
+                               21,
+                               6
+                           ],
+    "python_test_count":  139,
+    "rust_test_count":  4,
+    "preflight_evidence":  [
+                               {
+                                   "sha256":  "e85270505726da92eec342d7f5e8f117284f3a749dd4abff47c34a29b3641aca",
+                                   "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/preflight-v2.json"
+                               },
+                               {
+                                   "sha256":  "289f6f397505ee6191018cb6269ce33719547a35d6bf1600e78daa4394eefca8",
+                                   "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/preflight-output-v2.txt"
+                               }
+                           ]
+}

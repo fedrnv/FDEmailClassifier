@@ -1,0 +1,24 @@
+﻿{
+    "exit_code":  0,
+    "full_gate_acceptance_claimed":  false,
+    "source_request_and_worktrees_preserved":  true,
+    "monitor_task_id":  "158de2b2-39d2-4823-93c8-f0a7f960aea6",
+    "command":  "powershell -NoProfile -File Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/test-current-wrapper-v1.ps1 -ExpectedSource 94f9669920b1ff105f6d29f1e5e98064f10ca583",
+    "artifacts":  [
+                      {
+                          "sha256":  "289f6f397505ee6191018cb6269ce33719547a35d6bf1600e78daa4394eefca8",
+                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/preflight-output-v2.txt"
+                      },
+                      {
+                          "sha256":  "cecae8454af27fc4d2885e588ec03b49b64303e1e9bf894b427de05624cdcae0",
+                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/test-current-wrapper-v1.ps1"
+                      }
+                  ],
+    "schema":  "fdec-local-verification/v1",
+    "source_state_sha256":  "fa17533ba87ebc22f9b6a7c83eb54436238f64e821340d58af84aad3bd3a64f2",
+    "counterfactual_metadata_only":  true,
+    "source_sha":  "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+    "composition_negatives":  26,
+    "actual_wrong_candidate_rejected":  true,
+    "result":  "PASS"
+}

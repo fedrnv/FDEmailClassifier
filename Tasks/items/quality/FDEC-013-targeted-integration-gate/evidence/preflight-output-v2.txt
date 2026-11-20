@@ -1,0 +1,29 @@
+PASS: reject failed outcome
+PASS: reject unknown outcome schema
+PASS: reject actual source admission
+PASS: reject incomplete historical cleanup
+PASS: reject request rewrite
+PASS: reject missing independent review boundary
+PASS: reject omitted outcome negatives
+PASS: reject wrong historical source
+PASS: reject omitted historical negatives
+PASS: reject unknown component schema
+PASS: reject wrong candidate
+PASS: reject wrong candidate tree
+PASS: reject wrong policy
+PASS: reject wrong frozen source state
+PASS: reject failed component decision
+PASS: reject nonzero component exit
+PASS: reject missing component stage
+PASS: reject duplicate component stage
+PASS: reject substituted stage command
+PASS: reject actual training claim
+PASS: reject model release claim
+PASS: reject actual corpus claim
+PASS: reject invalid runner hash
+PASS: reject duplicate runner identity
+PASS: reject unsupported runner path
+PASS: reject invalid expected source
+PASS: immutable nine-stage metadata composition and 26 rejection scenarios; no actual source/model grant
+PASS: wrong actual candidate rejects before outcome/component execution; source, original request and worktrees unchanged
+SOURCE: 94f9669920b1ff105f6d29f1e5e98064f10ca583; STATE: fa17533ba87ebc22f9b6a7c83eb54436238f64e821340d58af84aad3bd3a64f2

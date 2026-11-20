@@ -1,0 +1,22 @@
+﻿{
+    "exit_code":  0,
+    "allocated":  false,
+    "new_first_request":  false,
+    "monitor_task_id":  "ca610890-8b57-4329-a404-a36550c89720",
+    "command":  "powershell -NoProfile -File scripts/validate_tasks/repository.ps1",
+    "gate_result":  {
+                        "sha256":  "b296cd4acf6267a82f829d1e37c09992640435485ccdd993e12112ee3bb0988b",
+                        "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/result-v2.json"
+                    },
+    "records":  114,
+    "schema":  "fdec-local-verification/v1",
+    "published":  false,
+    "source_sha":  "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+    "timing":  "Current Done event and closure proof verified before reclosure commit",
+    "original_request":  {
+                             "path":  "Tasks/version-requests/FDEC-013.json",
+                             "sha256":  "8b22a619b5948090a235c250f582aca9fb866b54b1b643023608f7328b89c46a",
+                             "raw_sha256":  "9f4a92e3ada65cc56c43dbe099738f47c5e92467f4a68caa23101a6107e847ef"
+                         },
+    "result":  "PASS"
+}
