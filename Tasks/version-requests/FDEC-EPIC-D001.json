@@ -1,0 +1,11 @@
+﻿{
+    "type":  "epic_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "d8821f23-fdba-478f-b51c-71b3e639d847",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-EPIC-D001",
+    "summary":  "Complete D001 foundation and open-source governance with passing gate and independent R005 acceptance",
+    "verification":  [
+                         "Tasks/epics/FDEC-EPIC-D001/evidence/closure-R005.md"
+                     ]
+}
