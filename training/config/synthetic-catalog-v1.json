@@ -1,0 +1,517 @@
+{
+  "schema": "fdec-original-parallel-templates/v1",
+  "authorship": "codex-assisted-original-phrases",
+  "license": "Apache-2.0",
+  "languages": {
+    "en": {
+      "script": "Latn",
+      "case_prefix": "Case",
+      "subjects": {
+        "work": "Project coordination",
+        "personal": "Household plans",
+        "finance": "Financial administration",
+        "shopping": "Order update",
+        "travel": "Travel arrangements",
+        "social": "Community invitation",
+        "newsletters": "Subscribed bulletin",
+        "marketing": "Product offer",
+        "education": "Course administration",
+        "health": "Clinic scheduling",
+        "legal": "Agreement notice",
+        "other": "Sensor notification"
+      },
+      "scenarios": {
+        "work": [
+          "Please review the project plan before the team meeting.",
+          "The team needs feedback on the draft milestone."
+        ],
+        "personal": [
+          "Could we arrange the household chores for the weekend?",
+          "A family gathering is being planned for next month."
+        ],
+        "finance": [
+          "An invoice is ready for the scheduled payment review.",
+          "The monthly bank statement is ready for reconciliation."
+        ],
+        "shopping": [
+          "The parcel delivery window has changed.",
+          "The shop has approved an exchange for the ordered item."
+        ],
+        "travel": [
+          "The train itinerary is ready for confirmation.",
+          "The hotel booking dates have been updated."
+        ],
+        "social": [
+          "The community group invites you to a local gathering.",
+          "Friends are arranging a birthday celebration."
+        ],
+        "newsletters": [
+          "Here is the weekly edition of the bulletin you subscribed to.",
+          "The monthly digest of your subscription is ready."
+        ],
+        "marketing": [
+          "A seasonal discount is available for the advertised product.",
+          "A product demonstration is being offered to potential customers."
+        ],
+        "education": [
+          "Course registration opens during the next enrollment period.",
+          "The academic office has published the exam timetable."
+        ],
+        "health": [
+          "The clinic has proposed a time for a routine appointment.",
+          "The health center has updated its appointment hours."
+        ],
+        "legal": [
+          "A draft agreement is ready for a compliance review.",
+          "A legal notice describes changes to the contract terms."
+        ],
+        "other": [
+          "An automated telescope reports a transient light signal.",
+          "A public sensor reports a change in the river water level."
+        ]
+      },
+      "priority": {
+        "low": "No deadline applies; this can wait.",
+        "normal": "Please handle this during the usual schedule.",
+        "high": "Please handle this by the end of the day.",
+        "urgent": "Immediate attention is needed within the next hour."
+      },
+      "action": {
+        "none": "No response or filing is requested.",
+        "review": "Please inspect the information before deciding.",
+        "reply": "Please send a response.",
+        "archive": "Keep this completed record in the archive."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Unsolicited offer: exclusive bonus deals without a requested subscription.",
+        "phishing": "Your account will be suspended; verify access at portal.invalid."
+      }
+    },
+    "de": {
+      "script": "Latn",
+      "case_prefix": "Vorgang",
+      "subjects": {
+        "work": "Projektabstimmung",
+        "personal": "Haushaltsplanung",
+        "finance": "Finanzverwaltung",
+        "shopping": "Bestellstatus",
+        "travel": "Reiseplanung",
+        "social": "Einladung der Gemeinschaft",
+        "newsletters": "Abonnierter Rundbrief",
+        "marketing": "Produktangebot",
+        "education": "Kursverwaltung",
+        "health": "Terminplanung der Praxis",
+        "legal": "Vertragshinweis",
+        "other": "Sensormeldung"
+      },
+      "scenarios": {
+        "work": [
+          "Bitte prüfen Sie den Projektplan vor der Teambesprechung.",
+          "Das Team benötigt Rückmeldungen zum Entwurf des Meilensteins."
+        ],
+        "personal": [
+          "Können wir die Hausarbeit für das Wochenende aufteilen?",
+          "Für den nächsten Monat wird ein Familientreffen geplant."
+        ],
+        "finance": [
+          "Eine Rechnung steht zur geplanten Zahlungsprüfung bereit.",
+          "Der monatliche Kontoauszug steht zum Abgleich bereit."
+        ],
+        "shopping": [
+          "Das Zustellfenster für das Paket hat sich geändert.",
+          "Das Geschäft hat den Umtausch des bestellten Artikels genehmigt."
+        ],
+        "travel": [
+          "Der Reiseplan für die Bahnfahrt steht zur Bestätigung bereit.",
+          "Die Daten der Hotelbuchung wurden geändert."
+        ],
+        "social": [
+          "Die Nachbarschaftsgruppe lädt zu einem örtlichen Treffen ein.",
+          "Freunde organisieren eine Geburtstagsfeier."
+        ],
+        "newsletters": [
+          "Hier ist die wöchentliche Ausgabe des abonnierten Rundbriefs.",
+          "Die monatliche Zusammenfassung Ihres Abonnements liegt vor."
+        ],
+        "marketing": [
+          "Für das beworbene Produkt gibt es einen saisonalen Rabatt.",
+          "Interessierten Kunden wird eine Produktvorführung angeboten."
+        ],
+        "education": [
+          "Die Kursanmeldung beginnt im nächsten Einschreibezeitraum.",
+          "Das Studienbüro hat den Prüfungsplan veröffentlicht."
+        ],
+        "health": [
+          "Die Praxis hat einen Termin für eine Routineuntersuchung vorgeschlagen.",
+          "Das Gesundheitszentrum hat seine Terminzeiten geändert."
+        ],
+        "legal": [
+          "Ein Vertragsentwurf steht zur Prüfung der Regelkonformität bereit.",
+          "Ein rechtlicher Hinweis erläutert Änderungen der Vertragsbedingungen."
+        ],
+        "other": [
+          "Ein automatisches Teleskop meldet ein vorübergehendes Lichtsignal.",
+          "Ein öffentlicher Sensor meldet eine Änderung des Flusswasserstands."
+        ]
+      },
+      "priority": {
+        "low": "Es gibt keine Frist; dies kann warten.",
+        "normal": "Bitte bearbeiten Sie dies im üblichen Zeitrahmen.",
+        "high": "Bitte bearbeiten Sie dies bis zum Tagesende.",
+        "urgent": "Innerhalb der nächsten Stunde ist sofortige Aufmerksamkeit erforderlich."
+      },
+      "action": {
+        "none": "Eine Antwort oder Ablage ist nicht erforderlich.",
+        "review": "Bitte prüfen Sie die Angaben vor einer Entscheidung.",
+        "reply": "Bitte senden Sie eine Antwort.",
+        "archive": "Bewahren Sie diesen abgeschlossenen Vorgang im Archiv auf."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Unverlangtes Angebot: exklusive Bonusaktionen ohne angefordertes Abonnement.",
+        "phishing": "Ihr Konto wird gesperrt; bestätigen Sie den Zugang bei portal.invalid."
+      }
+    },
+    "ru": {
+      "script": "Cyrl",
+      "case_prefix": "Случай",
+      "subjects": {
+        "work": "Согласование проекта",
+        "personal": "Домашние планы",
+        "finance": "Финансовые документы",
+        "shopping": "Статус заказа",
+        "travel": "Подготовка поездки",
+        "social": "Приглашение сообщества",
+        "newsletters": "Рассылка по подписке",
+        "marketing": "Предложение продукта",
+        "education": "Учебные вопросы",
+        "health": "Запись в клинику",
+        "legal": "Уведомление о договоре",
+        "other": "Сообщение датчика"
+      },
+      "scenarios": {
+        "work": [
+          "Проверьте план проекта перед встречей команды.",
+          "Команде нужны замечания к проекту промежуточного этапа."
+        ],
+        "personal": [
+          "Можем ли мы распределить домашние дела на выходные?",
+          "На следующий месяц планируется семейная встреча."
+        ],
+        "finance": [
+          "Счёт готов к плановой проверке перед оплатой.",
+          "Ежемесячная банковская выписка готова к сверке."
+        ],
+        "shopping": [
+          "Время доставки посылки изменилось.",
+          "Магазин одобрил обмен заказанного товара."
+        ],
+        "travel": [
+          "Маршрут поездки на поезде готов к подтверждению.",
+          "Даты бронирования гостиницы обновлены."
+        ],
+        "social": [
+          "Местное сообщество приглашает на встречу.",
+          "Друзья организуют празднование дня рождения."
+        ],
+        "newsletters": [
+          "Предлагаем еженедельный выпуск рассылки, на которую вы подписались.",
+          "Готов ежемесячный обзор по вашей подписке."
+        ],
+        "marketing": [
+          "На рекламируемый продукт действует сезонная скидка.",
+          "Потенциальным клиентам предлагают демонстрацию продукта."
+        ],
+        "education": [
+          "Регистрация на курс откроется в следующий период зачисления.",
+          "Учебный отдел опубликовал расписание экзаменов."
+        ],
+        "health": [
+          "Клиника предложила время для планового приёма.",
+          "Медицинский центр обновил часы записи на приём."
+        ],
+        "legal": [
+          "Проект соглашения готов к проверке соответствия требованиям.",
+          "Юридическое уведомление описывает изменения условий договора."
+        ],
+        "other": [
+          "Автоматический телескоп сообщает о кратковременном световом сигнале.",
+          "Общедоступный датчик сообщает об изменении уровня воды в реке."
+        ]
+      },
+      "priority": {
+        "low": "Срок не установлен; это может подождать.",
+        "normal": "Обработайте это в обычном рабочем порядке.",
+        "high": "Обработайте это до конца дня.",
+        "urgent": "Требуется немедленное внимание в течение ближайшего часа."
+      },
+      "action": {
+        "none": "Ответ или сохранение в архиве не требуются.",
+        "review": "Проверьте сведения перед принятием решения.",
+        "reply": "Отправьте ответ.",
+        "archive": "Сохраните эту завершённую запись в архиве."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Незапрошенное предложение: эксклюзивные бонусные акции без оформленной подписки.",
+        "phishing": "Ваш аккаунт будет заблокирован; подтвердите доступ на portal.invalid."
+      }
+    },
+    "es": {
+      "script": "Latn",
+      "case_prefix": "Caso",
+      "subjects": {
+        "work": "Coordinación del proyecto",
+        "personal": "Planes del hogar",
+        "finance": "Gestión financiera",
+        "shopping": "Estado del pedido",
+        "travel": "Preparativos de viaje",
+        "social": "Invitación comunitaria",
+        "newsletters": "Boletín de suscripción",
+        "marketing": "Oferta de producto",
+        "education": "Gestión del curso",
+        "health": "Citas de la clínica",
+        "legal": "Aviso contractual",
+        "other": "Aviso del sensor"
+      },
+      "scenarios": {
+        "work": [
+          "Revise el plan del proyecto antes de la reunión del equipo.",
+          "El equipo necesita comentarios sobre el borrador del hito."
+        ],
+        "personal": [
+          "¿Podemos repartir las tareas del hogar para el fin de semana?",
+          "Se está preparando una reunión familiar para el próximo mes."
+        ],
+        "finance": [
+          "Una factura está lista para la revisión de pago programada.",
+          "El extracto bancario mensual está listo para la conciliación."
+        ],
+        "shopping": [
+          "Ha cambiado el horario de entrega del paquete.",
+          "La tienda ha aprobado el cambio del artículo pedido."
+        ],
+        "travel": [
+          "El itinerario del tren está listo para su confirmación.",
+          "Se han actualizado las fechas de la reserva del hotel."
+        ],
+        "social": [
+          "El grupo comunitario le invita a un encuentro local.",
+          "Unos amigos están organizando una celebración de cumpleaños."
+        ],
+        "newsletters": [
+          "Aquí está la edición semanal del boletín al que se suscribió.",
+          "Ya está disponible el resumen mensual de su suscripción."
+        ],
+        "marketing": [
+          "Hay un descuento de temporada para el producto anunciado.",
+          "Se ofrece una demostración del producto a posibles clientes."
+        ],
+        "education": [
+          "La inscripción al curso se abrirá en el próximo período de matrícula.",
+          "La oficina académica ha publicado el calendario de exámenes."
+        ],
+        "health": [
+          "La clínica ha propuesto una hora para una consulta rutinaria.",
+          "El centro de salud ha actualizado sus horarios de citas."
+        ],
+        "legal": [
+          "Un borrador de acuerdo está listo para una revisión de cumplimiento.",
+          "Un aviso legal describe los cambios en las condiciones del contrato."
+        ],
+        "other": [
+          "Un telescopio automático informa de una señal luminosa transitoria.",
+          "Un sensor público informa de un cambio en el nivel de agua del río."
+        ]
+      },
+      "priority": {
+        "low": "No hay plazo; esto puede esperar.",
+        "normal": "Gestione esto dentro del horario habitual.",
+        "high": "Gestione esto antes de que termine el día.",
+        "urgent": "Se requiere atención inmediata durante la próxima hora."
+      },
+      "action": {
+        "none": "No se solicita respuesta ni archivo.",
+        "review": "Revise la información antes de decidir.",
+        "reply": "Envíe una respuesta.",
+        "archive": "Conserve este registro terminado en el archivo."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Oferta no solicitada: promociones exclusivas sin una suscripción solicitada.",
+        "phishing": "Su cuenta será suspendida; verifique el acceso en portal.invalid."
+      }
+    },
+    "zh": {
+      "script": "Hans",
+      "case_prefix": "案例",
+      "subjects": {
+        "work": "项目协调",
+        "personal": "家庭计划",
+        "finance": "财务管理",
+        "shopping": "订单更新",
+        "travel": "旅行安排",
+        "social": "社区邀请",
+        "newsletters": "订阅简报",
+        "marketing": "产品优惠",
+        "education": "课程事务",
+        "health": "诊所预约",
+        "legal": "合同通知",
+        "other": "传感器通知"
+      },
+      "scenarios": {
+        "work": [
+          "请在团队会议前审核项目计划。",
+          "团队需要对阶段目标草案提出反馈。"
+        ],
+        "personal": [
+          "我们可以安排一下周末的家务吗？",
+          "下个月将举行一次家庭聚会。"
+        ],
+        "finance": [
+          "一张发票已准备好进行计划内的付款审核。",
+          "本月银行对账单已准备好进行核对。"
+        ],
+        "shopping": [
+          "包裹的送达时间范围已更改。",
+          "商店已批准更换所订购的商品。"
+        ],
+        "travel": [
+          "火车行程已准备好等待确认。",
+          "酒店预订日期已更新。"
+        ],
+        "social": [
+          "社区小组邀请您参加本地聚会。",
+          "朋友们正在安排生日庆祝活动。"
+        ],
+        "newsletters": [
+          "这是您订阅的简报的每周一期。",
+          "您订阅的每月摘要已准备好。"
+        ],
+        "marketing": [
+          "广告中的产品现有季节性折扣。",
+          "现向潜在客户提供产品演示。"
+        ],
+        "education": [
+          "课程报名将在下一个注册期开放。",
+          "教务部门已公布考试时间表。"
+        ],
+        "health": [
+          "诊所为例行就诊建议了一个时间。",
+          "医疗中心已更新预约时段。"
+        ],
+        "legal": [
+          "一份协议草案已准备好进行合规审核。",
+          "一则法律通知说明了合同条款的变更。"
+        ],
+        "other": [
+          "自动望远镜报告了一个短暂的光信号。",
+          "公共传感器报告了河流水位的变化。"
+        ]
+      },
+      "priority": {
+        "low": "没有截止日期，可以稍后处理。",
+        "normal": "请按照通常的安排处理。",
+        "high": "请在今天结束前处理。",
+        "urgent": "需要在接下来一小时内立即关注。"
+      },
+      "action": {
+        "none": "无需回复或归档。",
+        "review": "请在决定前检查信息。",
+        "reply": "请发送回复。",
+        "archive": "请将这份已完成的记录归档。"
+      },
+      "security": {
+        "normal": "",
+        "spam": "未经请求的优惠：未申请订阅也收到专属奖励促销。",
+        "phishing": "您的账户将被停用，请在 portal.invalid 验证访问权限。"
+      }
+    },
+    "ar": {
+      "script": "Arab",
+      "case_prefix": "حالة",
+      "subjects": {
+        "work": "تنسيق المشروع",
+        "personal": "خطط المنزل",
+        "finance": "الإدارة المالية",
+        "shopping": "تحديث الطلب",
+        "travel": "ترتيبات السفر",
+        "social": "دعوة مجتمعية",
+        "newsletters": "نشرة الاشتراك",
+        "marketing": "عرض منتج",
+        "education": "إدارة الدورة",
+        "health": "مواعيد العيادة",
+        "legal": "إشعار تعاقدي",
+        "other": "إشعار المستشعر"
+      },
+      "scenarios": {
+        "work": [
+          "يرجى مراجعة خطة المشروع قبل اجتماع الفريق.",
+          "يحتاج الفريق إلى ملاحظات حول مسودة المرحلة."
+        ],
+        "personal": [
+          "هل يمكننا توزيع أعمال المنزل لعطلة نهاية الأسبوع؟",
+          "يجري التخطيط للقاء عائلي في الشهر المقبل."
+        ],
+        "finance": [
+          "الفاتورة جاهزة لمراجعة الدفع المجدولة.",
+          "كشف الحساب المصرفي الشهري جاهز للمطابقة."
+        ],
+        "shopping": [
+          "تغيرت الفترة الزمنية لتسليم الطرد.",
+          "وافق المتجر على استبدال السلعة المطلوبة."
+        ],
+        "travel": [
+          "مسار رحلة القطار جاهز للتأكيد.",
+          "تم تحديث تواريخ حجز الفندق."
+        ],
+        "social": [
+          "تدعوكم المجموعة المجتمعية إلى لقاء محلي.",
+          "ينظم الأصدقاء احتفالاً بعيد ميلاد."
+        ],
+        "newsletters": [
+          "هذه هي النسخة الأسبوعية من النشرة التي اشتركتم فيها.",
+          "الملخص الشهري لاشتراككم جاهز."
+        ],
+        "marketing": [
+          "يتوفر خصم موسمي على المنتج المعلن عنه.",
+          "يُعرض تقديم توضيحي للمنتج على العملاء المحتملين."
+        ],
+        "education": [
+          "سيفتح التسجيل في الدورة خلال فترة القبول المقبلة.",
+          "نشر المكتب الأكاديمي جدول الامتحانات."
+        ],
+        "health": [
+          "اقترحت العيادة موعداً لزيارة روتينية.",
+          "حدّث المركز الصحي ساعات حجز المواعيد."
+        ],
+        "legal": [
+          "مسودة الاتفاقية جاهزة لمراجعة الامتثال.",
+          "يصف إشعار قانوني التغييرات في شروط العقد."
+        ],
+        "other": [
+          "يبلغ تلسكوب آلي عن إشارة ضوئية عابرة.",
+          "يبلغ مستشعر عام عن تغير مستوى مياه النهر."
+        ]
+      },
+      "priority": {
+        "low": "لا يوجد موعد نهائي؛ يمكن تأجيل هذا.",
+        "normal": "يرجى معالجة هذا ضمن الجدول المعتاد.",
+        "high": "يرجى معالجة هذا قبل نهاية اليوم.",
+        "urgent": "يلزم الاهتمام الفوري خلال الساعة المقبلة."
+      },
+      "action": {
+        "none": "لا يُطلب رد أو حفظ في الأرشيف.",
+        "review": "يرجى فحص المعلومات قبل اتخاذ القرار.",
+        "reply": "يرجى إرسال رد.",
+        "archive": "احتفظ بهذا السجل المكتمل في الأرشيف."
+      },
+      "security": {
+        "normal": "",
+        "spam": "عرض غير مطلوب: عروض مكافآت حصرية دون طلب اشتراك.",
+        "phishing": "سيتم تعليق حسابك؛ تحقق من الوصول عبر portal.invalid."
+      }
+    }
+  }
+}

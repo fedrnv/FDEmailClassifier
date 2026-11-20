@@ -1,0 +1,438 @@
+{
+  "schema": "fdec-augmentation-plan/v1",
+  "seed": 20261120,
+  "quotas": [
+    {
+      "language": "en",
+      "topic": "work",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "personal",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "finance",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "shopping",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "travel",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "social",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "newsletters",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "marketing",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "en",
+      "topic": "education",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "en",
+      "topic": "health",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "en",
+      "topic": "legal",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "en",
+      "topic": "other",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "de",
+      "topic": "work",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "personal",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "finance",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "shopping",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "travel",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "social",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "newsletters",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "marketing",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "de",
+      "topic": "education",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "de",
+      "topic": "health",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "de",
+      "topic": "legal",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "de",
+      "topic": "other",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ru",
+      "topic": "work",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "personal",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "finance",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "shopping",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "travel",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "social",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "newsletters",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "marketing",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ru",
+      "topic": "education",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ru",
+      "topic": "health",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ru",
+      "topic": "legal",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ru",
+      "topic": "other",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "es",
+      "topic": "work",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "personal",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "finance",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "shopping",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "travel",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "social",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "newsletters",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "marketing",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "es",
+      "topic": "education",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "es",
+      "topic": "health",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "es",
+      "topic": "legal",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "es",
+      "topic": "other",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "zh",
+      "topic": "work",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "personal",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "finance",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "shopping",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "travel",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "social",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "newsletters",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "marketing",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "zh",
+      "topic": "education",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "zh",
+      "topic": "health",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "zh",
+      "topic": "legal",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "zh",
+      "topic": "other",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ar",
+      "topic": "work",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "personal",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "finance",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "shopping",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "travel",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "social",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "newsletters",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "marketing",
+      "observed": 0,
+      "target": 2
+    },
+    {
+      "language": "ar",
+      "topic": "education",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ar",
+      "topic": "health",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ar",
+      "topic": "legal",
+      "observed": 0,
+      "target": 8
+    },
+    {
+      "language": "ar",
+      "topic": "other",
+      "observed": 0,
+      "target": 8
+    }
+  ]
+}

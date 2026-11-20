@@ -1,0 +1,19 @@
+﻿{
+    "schema":  "fdec-augmentation-sources/v1",
+    "packs":  [
+                  {
+                      "catalog":  {
+                                      "sha256":  "8c388ca1be9114133edaa591aaf2ab5a3b676a939d93a494a29e60d274ca78de",
+                                      "path":  "training/config/synthetic-catalog-v1.json"
+                                  },
+                      "audit":  {
+                                    "sha256":  "b8ecad734d298bce6c586eec96815766059f1bf19da827488fe17dc258094a75",
+                                    "path":  "training/config/augmentation-rights-v1.json"
+                                },
+                      "id":  "codex-fixture-v1",
+                      "allowed_purposes":  [
+                                               "software_fixture"
+                                           ]
+                  }
+              ]
+}

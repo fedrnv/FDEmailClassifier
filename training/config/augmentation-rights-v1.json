@@ -1,0 +1,26 @@
+﻿{
+    "notice_file":  {
+                        "sha256":  "f252cfc36865886b4a700cfc08077351c283dce890a735fee68ecdc58630245c",
+                        "path":  "NOTICE"
+                    },
+    "real_mail_inputs":  false,
+    "catalog_sha256":  "8c388ca1be9114133edaa591aaf2ab5a3b676a939d93a494a29e60d274ca78de",
+    "redistribution":  "separate-review",
+    "schema":  "fdec-augmentation-rights/v1",
+    "license_file":  {
+                         "sha256":  "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                         "path":  "LICENSE"
+                     },
+    "review":  "Fixture generation only; commercial training, evaluation reuse and model distribution not approved without applicable source/provider rights",
+    "training_scope":  "specialized-email-classifier",
+    "allowed_purposes":  [
+                             "software_fixture"
+                         ],
+    "evidence":  {
+                     "sha256":  "6eebf499de5da4d8fafdc04e7298acc7b3f3fc559ac76a418882aeb434cd5ac1",
+                     "path":  "training/augmentation/RIGHTS.md"
+                 },
+    "pack_id":  "codex-fixture-v1",
+    "authoring_origin":  "codex-assisted-original-phrases",
+    "declared_source_license":  "Apache-2.0"
+}
