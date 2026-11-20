@@ -1,7 +1,7 @@
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 $records=& "$PSScriptRoot/repository.ps1" -Root $root -AsObject
-if ($records['FDEC-006'].status -ne 'Planned' -or !$records['FDEC-006'].closure_history.Count) { throw 'Expected reopened gate history' }
+if ($records['FDEC-006'].status -notin 'Planned','InProgress','Done' -or !$records['FDEC-006'].closure_history.Count) { throw 'Expected gate closure history' }
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-reopen-'+[guid]::NewGuid())
 function Reject([scriptblock]$Run,[string]$Pattern) {
     $failed=$false
@@ -29,6 +29,24 @@ try {
     New-Item -ItemType Directory $temp | Out-Null
     Copy-Item "$root/Tasks" "$temp/Tasks" -Recurse
     Copy-Item "$root/AGENTS.md","$root/DEVELOPMENT.md" $temp
+    # This synthetic task stays Planned regardless of later real correction work.
+    $target='Tasks/items/governance/FDEC-999-reopen-fixture'
+    New-Item -ItemType Directory "$temp/$target/events","$temp/$target/evidence" -Force|Out-Null
+    $spec=[IO.File]::ReadAllText("$root/Tasks/items/foundation/FDEC-005-architecture-and-backend-adr/TASK.md").Replace('FDEC-005','FDEC-999').Replace('epic_id: FDEC-EPIC-D001','epic_id: FDEC-EPIC-S001')
+    [IO.File]::WriteAllText("$temp/$target/TASK.md",$spec)
+    @'
+---
+schema: fdtasks-event/v3
+event_id: fixture-member-999
+task_id: FDEC-EPIC-S001
+event_type: membership-added
+created_at: 2026-11-21T00:00:00Z
+actor: fixture
+base_revision: fixture
+server_revision: null
+---
+Add FDEC-999 as a synthetic fixture member only.
+'@|Set-Content "$temp/Tasks/epics/FDEC-EPIC-S001/events/fixture-member.md" -Encoding UTF8
     git -C $temp init --quiet
     git -C $temp add .
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture
@@ -36,6 +54,7 @@ try {
     $request="$temp/Tasks/version-requests/FDEC-006.json"
     $before=(Get-FileHash $request).Hash
     $script:second=0
+    if($records['FDEC-006'].status -ne 'Planned'){Write-Transition reset "$($records['FDEC-006'].status) -> Planned"}
     Write-Transition start 'Planned -> InProgress'
     Write-Transition reclose 'InProgress -> Done'
     $state=& "$PSScriptRoot/repository.ps1" -Root $temp -AsObject
@@ -48,9 +67,7 @@ try {
     $duplicate|ConvertTo-Json -Depth 5|Set-Content "$temp/Tasks/version-requests/duplicate.json" -Encoding UTF8
     Reject {& "$PSScriptRoot/repository.ps1" -Root $temp} 'Invalid closed item request'
     Remove-Item -LiteralPath "$temp/Tasks/version-requests/duplicate.json"
-    $target='Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities'
-    New-Item -ItemType Directory "$temp/$target/events","$temp/$target/evidence" -Force|Out-Null
-    $fake=@{schema='fdtasks-version-request/v1';request_id='fixture-new-request';type='correction_closed';epic_id='FDEC-EPIC-D001';work_item_id='FDEC-076';summary='fixture';verification=@("$target/evidence/proof.md")}
+    $fake=@{schema='fdtasks-version-request/v1';request_id='fixture-new-request';type='task_closed';epic_id='FDEC-EPIC-S001';work_item_id='FDEC-999';summary='fixture';verification=@("$target/evidence/proof.md")}
     [IO.File]::WriteAllText("$temp/$target/evidence/proof.md",'Synthetic proof')
     $fake|ConvertTo-Json -Depth 5|Set-Content "$temp/Tasks/version-requests/new.json" -Encoding UTF8
     Reject {& "$PSScriptRoot/repository.ps1" -Root $temp} 'Invalid closed item request'
@@ -58,7 +75,7 @@ try {
 ---
 schema: fdtasks-event/v3
 event_id: fixture-fabricated-done
-task_id: FDEC-076
+task_id: FDEC-999
 event_type: status-changed
 created_at: 2026-11-22T00:01:00Z
 actor: fixture
@@ -78,10 +95,10 @@ Planned -> Done.
     [IO.File]::WriteAllText("$temp/$target/evidence/proof.md",'Changed synthetic evidence')
     Reject {& "$PSScriptRoot/repository.ps1" -Root $temp} 'Unverified closure evidence'
     [IO.File]::WriteAllText("$temp/$target/evidence/proof.md",'Synthetic proof')
-    $fake.epic_id='FDEC-EPIC-S001'
+    $fake.epic_id='FDEC-EPIC-D001'
     $fake|ConvertTo-Json -Depth 5|Set-Content "$temp/Tasks/version-requests/new.json" -Encoding UTF8
     Reject {& "$PSScriptRoot/repository.ps1" -Root $temp} 'Invalid closed item request'
-    $fake.epic_id='FDEC-EPIC-D001'; $fake.verification=@('README.md')
+    $fake.epic_id='FDEC-EPIC-S001'; $fake.verification=@('README.md')
     $fake|ConvertTo-Json -Depth 5|Set-Content "$temp/Tasks/version-requests/new.json" -Encoding UTF8
     Reject {& "$PSScriptRoot/repository.ps1" -Root $temp} 'verification reference'
     Write-Output 'PASS: reopen/reclose preserves first request; duplicate, never-closed, fabricated proof, wrong parent and foreign evidence reject'

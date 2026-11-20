@@ -1,12 +1,17 @@
 param([Parameter(Mandatory=$true)][ValidatePattern('^[a-f0-9]{40}$')][string]$ExpectedSource)
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
+. "$PSScriptRoot/../validate_tasks/source-state.ps1"
+$script:frozenState=$null
 Push-Location $root
 function Frozen {
     $head=git rev-parse HEAD
     if ($LASTEXITCODE -ne 0 -or $head -ne $ExpectedSource) { throw 'Gate source identity mismatch' }
     git diff --quiet HEAD
     if ($LASTEXITCODE -ne 0) { throw 'Gate tracked source changed' }
+    $state=Get-SourceState $root 'FDEC-006'
+    if ($null -eq $script:frozenState) { $script:frozenState=$state }
+    elseif ($state -ne $script:frozenState) { throw 'Gate actual source state changed' }
 }
 function Run-Local([string]$Path) {
     Write-Output "STAGE: $Path"
@@ -27,6 +32,12 @@ try {
     Run-Local 'scripts/validate_tasks/test-validation.ps1'
     Run-Local 'scripts/validate_tasks/test-identity.ps1'
     Run-Local 'scripts/validate_tasks/check-adoption.ps1'
+    Run-Local 'scripts/validate_tasks/test-checkout-identities.ps1'
+    Run-Local 'scripts/validate_tasks/test-reopened-requests.ps1'
+    Run-Local 'scripts/validate_tasks/test-source-readiness.ps1'
+    Run-Local 'scripts/validate_tasks/test-readiness-events.ps1'
+    Run-Local 'scripts/validate_tasks/test-acceptance-matrix.ps1'
+    Run-Local 'scripts/validate_tasks/test-criterion-refinement.ps1'
     $readme=[IO.File]::ReadAllText((Join-Path $root 'README.md'))
     foreach ($match in [regex]::Matches($readme,'\]\(([^)]+)\)')) {
         $link=$match.Groups[1].Value
