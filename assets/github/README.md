@@ -4,7 +4,9 @@ social-preview.svg is an original geometric/text composition created for FDEC-07
 No external artwork, logo, model output or third-party font files are embedded.
 System Arial/sans-serif is used at render time. Original source is Apache-2.0.
 The red revision embeds the exact E geometry from ../branding/logo-red-dark.svg
-before the product name and uses its #F04E5F brand red throughout the accents.
+before the product name. Brand red #F04E5F is limited to the logo, envelope and
+tagline. Backgrounds are neutral charcoal, other text white/gray, and the check
+mark green (#62CE9B), per the user's revised palette.
 social-preview.png is the 1280x640 rendered upload asset. The card marks early
 development and planned SDKs; no accuracy or released-model claim is made.
 
