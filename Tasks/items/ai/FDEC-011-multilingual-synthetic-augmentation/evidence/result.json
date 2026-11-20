@@ -1,0 +1,31 @@
+﻿{
+    "source_tree":  "031a44dca98ca2067caf57aec9cdaf5556fb294e",
+    "demonstration_fixture_rows":  288,
+    "monitor_task_id":  "7b0edcd6-5bb2-48d4-a56c-e61b1240c2b7",
+    "criteria":  {
+                     "AC-02":  "PASS_IMPLEMENTED_BOUNDARIES",
+                     "AC-01":  "PARTIAL_BLOCKED_SOURCE_RIGHTS"
+                 },
+    "software_tests":  20,
+    "publication_performed":  false,
+    "exit_code":  0,
+    "languages":  [
+                      "en",
+                      "de",
+                      "ru",
+                      "es",
+                      "zh",
+                      "ar"
+                  ],
+    "live_background_processes":  [
+
+                                  ],
+    "actual_training_data_approved":  false,
+    "command":  "powershell -NoProfile -File training/augmentation/test-augmentation.ps1",
+    "model_training_performed":  false,
+    "fixture_runs_remaining":  0,
+    "outcome":  "IMPLEMENTATION_PASS_TASK_INCOMPLETE",
+    "task_id":  "FDEC-011",
+    "schema":  "fdec-task-verification/v1",
+    "source_sha":  "41512c6938448ff09eb4d567812042b1ea940354"
+}

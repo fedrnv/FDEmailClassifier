@@ -1,0 +1,40 @@
+﻿{
+    "available_purposes":  [
+                               "software_fixture"
+                           ],
+    "user_question_submitted":  true,
+    "evidence":  [
+                     {
+                         "sections":  [
+                                          "3.3(e)",
+                                          "4.1",
+                                          "Permitted Exception"
+                                      ],
+                         "url":  "https://openai.com/policies/services-agreement/",
+                         "effective":  "2026-01-01",
+                         "finding":  "Classifier exception has nondistribution/commercial third-party availability conditions; applicable account-specific permissions not established"
+                     },
+                     {
+                         "sections":  [
+                                          "Training and developing models"
+                                      ],
+                         "url":  "https://openai.com/policies/usage-policies/",
+                         "effective":  "2026-11-20",
+                         "finding":  "Training-material restrictions and express agreement exceptions must be evaluated separately from source-code ownership"
+                     }
+                 ],
+    "task_id":  "FDEC-011",
+    "required_input":  "A documented human-authored synthetic parallel source pack with applicable permissions, or provider-specific permission applicable to the intended use; no real personal mail or secrets",
+    "available_pack":  "codex-fixture-v1",
+    "condition":  "Missing source/provider rights applicable to synthetic training material and intended public/commercial model distribution",
+    "automatic_fallback_executed":  false,
+    "not_resolved_by":  [
+                            "Changing the license string",
+                            "Relabeling provider outputs as human-authored",
+                            "Reusing software fixture/evaluation outputs as training data",
+                            "Assuming a public model fits an internal classifier exception"
+                        ],
+    "schema":  "fdec-external-blocker/v1",
+    "status":  "unresolved",
+    "restart_predicate":  "Establish applicable source/author/provider permissions; bind approved parallel pack and audit in repository registry; review language semantics; refresh readiness and verify intended-purpose admission plus quota/translation boundaries before full acceptance"
+}

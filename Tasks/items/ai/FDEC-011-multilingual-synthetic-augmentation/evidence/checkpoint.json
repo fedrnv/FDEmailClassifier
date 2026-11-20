@@ -1,0 +1,57 @@
+﻿{
+    "goal_status":  "active; full objective not achieved; first recorded occurrence of this required-input blocker",
+    "evidence":  [
+                     {
+                         "sha256":  "08e9fb7ec6f17e313508c0b962d04a4302f2577c162bfe5f9b824872962a243b",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/fixture-candidate-readiness.json"
+                     },
+                     {
+                         "sha256":  "22595981b404a3efcc2bf4ce5ae967377048494b3d9cbc3541efff17144d8d59",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/result.json"
+                     },
+                     {
+                         "sha256":  "5848897a1af7ba27ad10916be6a73995f85e485c02ef0c455e37a03b270d44ae",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/test-output.txt"
+                     },
+                     {
+                         "sha256":  "7f8c7e54c7e16dc679ee20c6a37c1995052a37ef7bcd281fa7f2a1210467e3a8",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/verification.md"
+                     },
+                     {
+                         "sha256":  "cd06f5b87439bf92bf1a78e529183b8dbb28382b60f2ee48266fef0c0dd38827",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/blocker.json"
+                     },
+                     {
+                         "sha256":  "9cc961b461ef3a50e7f85a70418509a7fe1dc1bbeedacee185d6a2f8f1823ebf",
+                         "path":  "training/config/augmentation-sources-v1.json"
+                     },
+                     {
+                         "sha256":  "b8ecad734d298bce6c586eec96815766059f1bf19da827488fe17dc258094a75",
+                         "path":  "training/config/augmentation-rights-v1.json"
+                     },
+                     {
+                         "sha256":  "8c388ca1be9114133edaa591aaf2ab5a3b676a939d93a494a29e60d274ca78de",
+                         "path":  "training/config/synthetic-catalog-v1.json"
+                     },
+                     {
+                         "sha256":  "6eebf499de5da4d8fafdc04e7298acc7b3f3fc559ac76a418882aeb434cd5ac1",
+                         "path":  "training/augmentation/RIGHTS.md"
+                     }
+                 ],
+    "candidate_tree":  "031a44dca98ca2067caf57aec9cdaf5556fb294e",
+    "accepted_state":  "Blocked",
+    "task_id":  "FDEC-011",
+    "authority_status":  "Standing software-development authority continues; training/source rights remain unresolved; no push, release, model/data publication or task closure",
+    "resource_status":  {
+                            "background_commands":  [
+
+                                                    ],
+                            "toolchain":  "CPython 3.14.5; standard library",
+                            "real_mail_accessed":  false,
+                            "external_api_credentials_used":  false,
+                            "fixture_runs_removed":  true
+                        },
+    "candidate_sha":  "41512c6938448ff09eb4d567812042b1ea940354",
+    "schema":  "fdec-execution-checkpoint/v1",
+    "exact_next_action":  "Inspect the required source-rights response and current source registry. Resume only after actual applicable permissions or a suitable audited parallel synthetic source are established; refresh task readiness, verify intended-purpose admission and rerun impacted generation/translation checks. Do not close from fixture-only PASS evidence or promote the current pack by assumption."
+}
