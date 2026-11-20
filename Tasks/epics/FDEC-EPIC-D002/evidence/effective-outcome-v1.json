@@ -1,0 +1,503 @@
+﻿{
+    "schema":  "fdec-epic-outcome-amendment/v1",
+    "epic_id":  "FDEC-EPIC-D002",
+    "correction_id":  "FDEC-099",
+    "finding_id":  "R001-B1",
+    "original_epic":  {
+                          "sha256":  "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                      },
+    "original_outcome":  "Produce provenance-tracked, lawful, reproducible training/evaluation data without publishing copyrighted/private corpora.",
+    "effective_outcome":  "Deliver provenance-tracked, rights-gated reproducible preprocessing, annotation mapping, fixture generation and grouped split/consent software, plus conditional independently sourced preparation, without claiming an admitted training/evaluation corpus.",
+    "authority":  {
+                      "sha256":  "084d286ae4084953624503fac2f4711dca9fe58d0cf94a5b2ee9a701cbee607a",
+                      "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/outcome-authority-v1.md"
+                  },
+    "authority_kind":  "recorded_application_of_existing_owner_instructions",
+    "reason":  "Make the Epic completion boundary explicitly match owner-authorized FDEC-011 software acceptance and the independently observed deliverable; do not silently substitute technical fixtures for actual training data.",
+    "full_project_objective_preserved":  true,
+    "actual_training_data_admitted":  false,
+    "actual_training_performed":  false,
+    "model_release_approved":  false,
+    "codex_packs_fixture_only":  true,
+    "sinabis_10k":  "conditional_source_preparation_only",
+    "sinabis_10m":  "not_admitted",
+    "optional_enhancement_epics":  [
+                                       "FDEC-EPIC-D011",
+                                       "FDEC-EPIC-D012"
+                                   ],
+    "remaining_requirements":  [
+                                   "independent_permitted_annotation",
+                                   "quality_evaluation",
+                                   "current_source_consent_and_split_integration",
+                                   "training_task_admission",
+                                   "whole_thread_duplicate_family_separation",
+                                   "model_specific_training_and_distribution_rights",
+                                   "actual_held_out_evaluation",
+                                   "operator_release_authorization"
+                               ],
+    "downstream_task_specs":  [
+                                  {
+                                      "sha256":  "5aeb1999cf94cad6d2c7c105adede5a64b46453a6804a4bf2a9be7e5aeff4970",
+                                      "path":  "Tasks/items/ai/FDEC-015-zero-shot-baseline/TASK.md"
+                                  },
+                                  {
+                                      "sha256":  "f0f6f5d4d04d2b4ce3998f81d1c821bdb5995e7cfd660745f9a34666258cc40e",
+                                      "path":  "Tasks/items/ai/FDEC-016-lora-qlora-trainer/TASK.md"
+                                  },
+                                  {
+                                      "sha256":  "6b7958b551ea68b183746413db0af80befade999e4def4fbbb94db0ca75c7e06",
+                                      "path":  "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/TASK.md"
+                                  },
+                                  {
+                                      "sha256":  "538caa756196c191fbaca7ea921e832b3da2256295b99771e2913a7297d009d0",
+                                      "path":  "Tasks/items/ai/FDEC-019-model-export-and-provenance/TASK.md"
+                                  },
+                                  {
+                                      "sha256":  "f538139180a611bd23acb18a0015c3f7a04d354affd48aafe1541304de95e9ce",
+                                      "path":  "Tasks/items/quality/FDEC-020-targeted-integration-gate/TASK.md"
+                                  },
+                                  {
+                                      "sha256":  "ef5a8045cde6b16fb179b748b2138bbdb6c13649e5dc059ba406ffe01ffe1b06",
+                                      "path":  "Tasks/items/ai/FDEC-087-apple-silicon-mlx-training-handoff/TASK.md"
+                                  }
+                              ],
+    "evidence":  [
+                     {
+                         "sha256":  "497a6c8884aab19f28b7a9eb5af8c79c912a5bf92a3ef34c377cfb51d300fff5",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/independent-data-acceptance-v2.json"
+                     },
+                     {
+                         "sha256":  "93e9a017bef69f5e998b362ef2acb9e68d84461b2a1f2e9701c05ab2f1511d39",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/sinabis-acceptance-v3.json"
+                     },
+                     {
+                         "sha256":  "949df2cd67ad385d11853af9a131101221ee3cf4ffbc006bb19c8d395ac473d0",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/sinabis-final-preparation-report-v12.json"
+                     },
+                     {
+                         "sha256":  "0702e6c97126247f79ab5184b1c4b1e74d453877346fac3b776800ea882b9f10",
+                         "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/result-v1.json"
+                     },
+                     {
+                         "sha256":  "7025ef165eb4f588237dabebd20f00ae288fe5e46465bf0e5d7b94c961a65934",
+                         "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R001/RESULT.md"
+                     },
+                     {
+                         "sha256":  "f0917410d94f066779c9a84fa754ece09dc57a92adaec2bca4382a4a1869b526",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164242114Z-codex-scope-amended-5deba0cb.md"
+                     },
+                     {
+                         "sha256":  "e6b0d5f07dd0b06d2ee5098755869434ccdfeb51335241614909c87a886f5cb5",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170053613Z-codex-scope-amended-efcbfb68.md"
+                     },
+                     {
+                         "sha256":  "9cae9c2f17f2b0287ce404c5648b1abf7aaa525397b72130c73ae2d94c92f457",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172103865Z-codex-scope-amended-ce96411a.md"
+                     }
+                 ],
+    "preserved_source_sha":  "0bcd4c4f377af86ee8b83d1d0bf770f0eb448ad8",
+    "preserved_files":  [
+                            {
+                                "sha256":  "dfd2db1d30b7fe74980d1b38ab2018409683cb240a29dbbcf399e56648d11358",
+                                "path":  ".gitattributes"
+                            },
+                            {
+                                "sha256":  "397ad21b0a7fc3e1e8c71856ee7ca19f222f457395ff2ec75b40067d4e1563cf",
+                                "path":  ".gitignore"
+                            },
+                            {
+                                "sha256":  "881c327e3d476d77807bb720bb388f2b9fe26e25843a65a7ab62dee4c72b5e3e",
+                                "path":  "schemas/annotation-mapping-v1.schema.json"
+                            },
+                            {
+                                "sha256":  "30aae6fa13a757780f334d8e014930075a1e4d70f67087aa2114ec5a31281269",
+                                "path":  "schemas/check-schema.ps1"
+                            },
+                            {
+                                "sha256":  "049add9a257a8fc5f9da370c3d61108434354c294205f025f4e06aab9577cf46",
+                                "path":  "schemas/classification-v1.schema.json"
+                            },
+                            {
+                                "sha256":  "150f301977ce3730cad2d04e30716e1f0f9ca2d586452e7b5ab9c3935ec15776",
+                                "path":  "schemas/examples/abstained.json"
+                            },
+                            {
+                                "sha256":  "d6544fb00a0ac80948280bf0ed4a46530f2fbec97cb1c76c6e518d234812b24f",
+                                "path":  "schemas/examples/classified.json"
+                            },
+                            {
+                                "sha256":  "d086d63fdb130e6746c3f6d5562e4a55b40c55af422a185552379f24713e922e",
+                                "path":  "schemas/examples/unknown.json"
+                            },
+                            {
+                                "sha256":  "6ea55ad595fd1709ba6f3f029144eb6cda8886b8550200b3708624f5154e36c6",
+                                "path":  "schemas/invalid/abstained.json"
+                            },
+                            {
+                                "sha256":  "4e3b2d30c0ae4a6547ef7b5ddd9ebe7fc8e3eb64a21437c4e6d4453fe298220a",
+                                "path":  "schemas/invalid/action.json"
+                            },
+                            {
+                                "sha256":  "99d5176e906b3065aab8384c03410cb51008360da8e060c85738ce587fddd5fc",
+                                "path":  "schemas/invalid/duplicate.json"
+                            },
+                            {
+                                "sha256":  "e81de4055db802d8a19d21d00788614f9d6954f38125591ea32965a9e5fbbdfe",
+                                "path":  "schemas/invalid/empty.json"
+                            },
+                            {
+                                "sha256":  "5468fb9cfaee50c77c1fb881162ad6edbba62c9671c08e4a217555a86e73f490",
+                                "path":  "schemas/invalid/extra.json"
+                            },
+                            {
+                                "sha256":  "d838d116280a9ad70268535dc139ac42759d0844b816437240d9543ed3dffaa0",
+                                "path":  "schemas/invalid/security.json"
+                            },
+                            {
+                                "sha256":  "bad01c1cbcf62fb6ad5d5625b4894c22a6e14028702b6d2b71b26b67cfca4604",
+                                "path":  "schemas/invalid/topic.json"
+                            },
+                            {
+                                "sha256":  "62c6827a2afee99c13a15e7bf74397643adb304b480393b24a209651adc9a7e6",
+                                "path":  "schemas/invalid/unknown.json"
+                            },
+                            {
+                                "sha256":  "d4c95fdb88c38f4e8f85870ac5ee0a0adadcfdb45b28ddd71a5ae1f01a6b80e6",
+                                "path":  "schemas/invalid/version.json"
+                            },
+                            {
+                                "sha256":  "27c715c3ddaaabf8c62f3d743a3b0db4305e84eb7629ed72d0698a0fda40aa19",
+                                "path":  "scripts/validate_tasks/README.md"
+                            },
+                            {
+                                "sha256":  "913c388f2dc1f323709e382da78e87d552128dc5ce431be655d32524c3047804",
+                                "path":  "scripts/validate_tasks/acceptance-matrix.ps1"
+                            },
+                            {
+                                "sha256":  "7a8e23054544759616fbc1522196f9cbe6c823e8efba4a23cb2147d3147ea649",
+                                "path":  "scripts/validate_tasks/admission.ps1"
+                            },
+                            {
+                                "sha256":  "841734826db6b71f77cd7d447856e74dede5215eca2dbacab1c93d0a230d3c00",
+                                "path":  "scripts/validate_tasks/check-adoption.ps1"
+                            },
+                            {
+                                "sha256":  "0baa3d9d837a1f4a4c3d00a77970af248132b9905a578e31a1bdc030cff32de5",
+                                "path":  "scripts/validate_tasks/epic-closure.ps1"
+                            },
+                            {
+                                "sha256":  "05edd4f7eb894505f267a9325ca2eb4bfab4042e61aa4b13fad07efd35f381fb",
+                                "path":  "scripts/validate_tasks/fixture-matrix.ps1"
+                            },
+                            {
+                                "sha256":  "09f848d2b53d3b203677d39598643e62826262f9fcc44b2982b1049a4da1ab83",
+                                "path":  "scripts/validate_tasks/identity-migrations.ps1"
+                            },
+                            {
+                                "sha256":  "853424e839519852302be8e9f8b625b1b716118026f1b813f78ffbd3a5f6769f",
+                                "path":  "scripts/validate_tasks/identity.ps1"
+                            },
+                            {
+                                "sha256":  "a03d59b21888736918c201012ef933a64834e673abce1607e61c6533b827a25a",
+                                "path":  "scripts/validate_tasks/readiness-events.ps1"
+                            },
+                            {
+                                "sha256":  "f24bc86ba7517842fb911916987ae2c96e765f1fcc9143007bef26037c0d0c96",
+                                "path":  "scripts/validate_tasks/repository.ps1"
+                            },
+                            {
+                                "sha256":  "5af9d9643a125cbfc5f7c9b26e46136b7554dd292bd905407cf2bcbf698d9734",
+                                "path":  "scripts/validate_tasks/source-state.ps1"
+                            },
+                            {
+                                "sha256":  "32951574b25c23228e307440d2e7a969fb35cff623b7ae74dff2b2b30f72538d",
+                                "path":  "scripts/validate_tasks/test-acceptance-matrix.ps1"
+                            },
+                            {
+                                "sha256":  "459dd51b4af6a430928bddb1e100acdf530a3deebe5388317d0e3ed8aefc7b3c",
+                                "path":  "scripts/validate_tasks/test-checkout-identities.ps1"
+                            },
+                            {
+                                "sha256":  "75ddb9253baefb33d7ef6b02794b8a759d3acd87a9b6f4ad1720ab67507cac2a",
+                                "path":  "scripts/validate_tasks/test-criterion-refinement.ps1"
+                            },
+                            {
+                                "sha256":  "1c90478ccb34bbeb80e89739cf5918b2001ab28a01e8d8c1df01c9a5df949e99",
+                                "path":  "scripts/validate_tasks/test-epic-closure.ps1"
+                            },
+                            {
+                                "sha256":  "310487c5c1776f7daab7dd0a3d8a7ed7225c2cf56b8fe5847c6a9ad6a9aa7491",
+                                "path":  "scripts/validate_tasks/test-identity.ps1"
+                            },
+                            {
+                                "sha256":  "ef08fb92306a5358d777a66be3192e53ee7d84e1953c726fe47d06336f6dc038",
+                                "path":  "scripts/validate_tasks/test-plan-sync.ps1"
+                            },
+                            {
+                                "sha256":  "e0cdde1fbebcfdb4c14d734852f5d550ee444ab2bf63fac7ee8d0789ca666aa1",
+                                "path":  "scripts/validate_tasks/test-readiness-events.ps1"
+                            },
+                            {
+                                "sha256":  "10638bf16399aabb61248d17b6560fdedf3feba77d8633e3e98ac17c06d2d794",
+                                "path":  "scripts/validate_tasks/test-reopened-requests.ps1"
+                            },
+                            {
+                                "sha256":  "68bd07db528ecc09aed6a121a40deb48708071e67f0715ef8637888c65530300",
+                                "path":  "scripts/validate_tasks/test-source-readiness.ps1"
+                            },
+                            {
+                                "sha256":  "f12a641649dab3030bb47d088131886758456b3e5a7fc4461b263b27d58b2f5c",
+                                "path":  "scripts/validate_tasks/test-validation.ps1"
+                            },
+                            {
+                                "sha256":  "b8af8c5c87c4792d141260a21413d093bd2c3c950fc9f7325de85dad9a91c65c",
+                                "path":  "scripts/verification/D001.ps1"
+                            },
+                            {
+                                "sha256":  "30b7d39f510468c87c82a8ba01074497a535146323e8684feb5eb481111bd02b",
+                                "path":  "scripts/verification/D002.ps1"
+                            },
+                            {
+                                "sha256":  "54dd27638ff4009386de9c0d87c1e336fd2e7f92715d861ac4d54dcffadaaf81",
+                                "path":  "scripts/verification/d002-source.ps1"
+                            },
+                            {
+                                "sha256":  "8cba5cbf9d7e77659ee356691d7c14c4737d2b49f80fb5daa6da4d85e17c729d",
+                                "path":  "scripts/verification/test-d002-source.ps1"
+                            },
+                            {
+                                "sha256":  "b1359879c44dc2630476ea94d450faebd98744146b4984be00c6e930665f9c25",
+                                "path":  "training/augmentation/COMPUTE-ASSESSMENT-v1.md"
+                            },
+                            {
+                                "sha256":  "d954ad24273c56527b004ee52dc5b63baa5f907c88814cab8e978497d2a87743",
+                                "path":  "training/augmentation/COMPUTE-ASSESSMENT-v2.md"
+                            },
+                            {
+                                "sha256":  "5073bceb4bd9a4a8bab7efa374d507617f2a3055e89aa359996fcf0382512dcd",
+                                "path":  "training/augmentation/DATA-USAGE-v2.md"
+                            },
+                            {
+                                "sha256":  "9f559afb84f267284cba92a84be35c900b46aebeb580644a0ce016f8eb2bd2c0",
+                                "path":  "training/augmentation/NATIVE-RIGHTS-v1.md"
+                            },
+                            {
+                                "sha256":  "1b05101b2b8d2e4a6acc9f0837f50f90eff9e80e544e20f76d06435bfdd6cec4",
+                                "path":  "training/augmentation/NATIVE-v1.md"
+                            },
+                            {
+                                "sha256":  "5100ae79f1023a52f7c5fd6fe960bd9ae118a9fa5f0ea428903575b4f99c538b",
+                                "path":  "training/augmentation/README.md"
+                            },
+                            {
+                                "sha256":  "6eebf499de5da4d8fafdc04e7298acc7b3f3fc559ac76a418882aeb434cd5ac1",
+                                "path":  "training/augmentation/RIGHTS.md"
+                            },
+                            {
+                                "sha256":  "ea7e3f72204af2367cc86d3deff7199bdf924cf55719641972dbf2308ae767d0",
+                                "path":  "training/augmentation/SINABIS-AUDIT-v1.md"
+                            },
+                            {
+                                "sha256":  "52d740013c978573e54f5267e75f93e922cf7ae2ae435fe4a092c8012b84f7ed",
+                                "path":  "training/augmentation/SINABIS-AUDIT-v2.md"
+                            },
+                            {
+                                "sha256":  "e2bb2fee41b501bf0c8d21475b4101f166c3dbaea68f0e38b401632b72199ba2",
+                                "path":  "training/augmentation/augment.py"
+                            },
+                            {
+                                "sha256":  "b625845649dea5a43d3f6a3cda3ab3f498f02127185c523c5aedf9c2e360cb43",
+                                "path":  "training/augmentation/generate.py"
+                            },
+                            {
+                                "sha256":  "4182d50c8eee727996ebce2b9ade17d36fb4878d12ca0f27a47782a22a8a7e05",
+                                "path":  "training/augmentation/inspect_sinabis_metadata.py"
+                            },
+                            {
+                                "sha256":  "c260e273c050b0066ab4087d38310ed08b79d070f3a293a069b51e04eecb2fcc",
+                                "path":  "training/augmentation/native_templates.py"
+                            },
+                            {
+                                "sha256":  "60ed5b35c5270d0beee9313355a68a800ebc7b674305f604ea44dc1fa5148b7e",
+                                "path":  "training/augmentation/observe_sinabis_sources.py"
+                            },
+                            {
+                                "sha256":  "562e3b804a2862778c37110b72dc8ed0f9a696005402ae4d565e6c8d3d74b88e",
+                                "path":  "training/augmentation/sinabis-source-observations-v1.json"
+                            },
+                            {
+                                "sha256":  "0ffd79ddb008c8d97e7c979b7b84a55d62f21cde2cfb025818bfe42c89002afb",
+                                "path":  "training/augmentation/sinabis_source.py"
+                            },
+                            {
+                                "sha256":  "cf649d70ada4a7441d876dfc6279aa94896d611695be8f2fb376fe062027d9f0",
+                                "path":  "training/augmentation/test-augmentation.ps1"
+                            },
+                            {
+                                "sha256":  "7af401be54e4d46ed81788ead7e3f946f995e123b129965a460087c3b509a66a",
+                                "path":  "training/augmentation/test-native.ps1"
+                            },
+                            {
+                                "sha256":  "7cb574c7b612e0f7259a892549a99dfdb78efe82750bfe2f66cc48cc6f907fdb",
+                                "path":  "training/augmentation/test-sinabis.ps1"
+                            },
+                            {
+                                "sha256":  "06bf8e5987078b1c5016e5de91397f0ca912512c364d56f64aeca1526018fb14",
+                                "path":  "training/augmentation/test_augmentation.py"
+                            },
+                            {
+                                "sha256":  "0bcaa9306d95e1fdab4061b4ed4f8ae80cdd5370ac83a870e0c82467a0f60609",
+                                "path":  "training/augmentation/test_native.py"
+                            },
+                            {
+                                "sha256":  "6ce97d200f22ab7fb34c8ed0d5303d8d0fbeb341ea09e18f1dbe1b61fde4ee23",
+                                "path":  "training/augmentation/test_sinabis.py"
+                            },
+                            {
+                                "sha256":  "b1c76dd1cc745360fadd7010915a40e7f6d120f6f0c5e6c219da4709c9aa35fa",
+                                "path":  "training/augmentation/test_training_boundary.py"
+                            },
+                            {
+                                "sha256":  "df69eed69fb17d0abde12b7e174b1321d5e367e0dac34b4556820915bdb7c36e",
+                                "path":  "training/augmentation/training_boundary.py"
+                            },
+                            {
+                                "sha256":  "c0b3769001cac90d6f3474135906bc1ddc84c7e6075a8f1ff22c25aae32de5c4",
+                                "path":  "training/augmentation/translate_synthetic.py"
+                            },
+                            {
+                                "sha256":  "46d642c621bf9460c749973062be253863eb8029f45fc4b65a1e57cefb3b9445",
+                                "path":  "training/config/augmentation-default-v1.json"
+                            },
+                            {
+                                "sha256":  "b8ecad734d298bce6c586eec96815766059f1bf19da827488fe17dc258094a75",
+                                "path":  "training/config/augmentation-rights-v1.json"
+                            },
+                            {
+                                "sha256":  "aaceb5655ea5c7a58f5eb89049b658ae54afee222e4b72bdebd0058f44d2d86a",
+                                "path":  "training/config/augmentation-sources-v1.json"
+                            },
+                            {
+                                "sha256":  "553d7f5a43cb73e4ce9a0eff00decf9e90f3c7db07afb40e59101fe3bb646f11",
+                                "path":  "training/config/fdec-native-plan-v1.json"
+                            },
+                            {
+                                "sha256":  "2036d091054bde6bb2481fb88ad7ab03d33b51ebabeea3c5f9e8e5d690bea3dc",
+                                "path":  "training/config/fdec-native-rights-v1.json"
+                            },
+                            {
+                                "sha256":  "3d1d4446e55dbbf6dd496505e5f8cfaa1aa904056662d967fcca52ff8452c794",
+                                "path":  "training/config/fdec-native-templates-v1.json"
+                            },
+                            {
+                                "sha256":  "7905529eb50c1c18b47eaa501f7b50775b017ef866284b07dac3e45f0a2bf61f",
+                                "path":  "training/config/independent-training-sources-v1.json"
+                            },
+                            {
+                                "sha256":  "76004f3df00f92b82ef933750bce315a4c4807190e1d829576513c81f4fd502d",
+                                "path":  "training/config/sinabis-mapping-v1.json"
+                            },
+                            {
+                                "sha256":  "f2176ca643367dfbfe284dcd4b8103fcca638a9cb63d468c40afaa0b5f9aeab5",
+                                "path":  "training/config/sinabis-reviewed-source-v1.json"
+                            },
+                            {
+                                "sha256":  "8c388ca1be9114133edaa591aaf2ab5a3b676a939d93a494a29e60d274ca78de",
+                                "path":  "training/config/synthetic-catalog-v1.json"
+                            },
+                            {
+                                "sha256":  "03dbfd3993ba7ebb99cb87369f75c2f358d975067180f7356f2b924138d2f67e",
+                                "path":  "training/datasets/DEPENDENCIES-ingestion.md"
+                            },
+                            {
+                                "sha256":  "90347b40c8d59edaaff8da729b985086a6091742db411d292fd0c15a4cbb8288",
+                                "path":  "training/datasets/INGESTION.md"
+                            },
+                            {
+                                "sha256":  "99bf1d62cdb29c41e0a388650e396e68d29823b394ae54c21d947c01a74976d7",
+                                "path":  "training/datasets/README.md"
+                            },
+                            {
+                                "sha256":  "764a178989a7dd2bd9a8c4e75e6137e784bd6fbb5ae6d6ad636a20311e0ab64e",
+                                "path":  "training/datasets/allowlist.json"
+                            },
+                            {
+                                "sha256":  "180d7830325bfc0999c571af19f066eadc57c0a9a9f8e6432b50404f12256d0a",
+                                "path":  "training/datasets/assert-allowlist.ps1"
+                            },
+                            {
+                                "sha256":  "39f718c9ca4ea7d8a65ab26821e9d1f8aab3c7f755690b726fc9fccaac5cb7e5",
+                                "path":  "training/datasets/get-inclusion.ps1"
+                            },
+                            {
+                                "sha256":  "7e9e0100541353e072069d9f89399066127ec9f1bc82503dbbd5be60adea5bdd",
+                                "path":  "training/datasets/requirements-ingestion.txt"
+                            },
+                            {
+                                "sha256":  "8c862dea787e156381ea447d72e1acc5861fe0ad0bca5f63180c0df88fb11c57",
+                                "path":  "training/datasets/test-allowlist.ps1"
+                            },
+                            {
+                                "sha256":  "ccad36ba3337849444fd8bed521457c5da9db45dc9f5e56bdadbf95f757cd38a",
+                                "path":  "training/datasets/test-ingestion.ps1"
+                            },
+                            {
+                                "sha256":  "4b61594a1ac85b33239051f429ff9e0c6f3ab268134066c2573ec0bea01e15f7",
+                                "path":  "training/labels/README.md"
+                            },
+                            {
+                                "sha256":  "0cf67d6351d3bfb8427c471775573717bfd10f4373a2790f47f40e518d50cf7b",
+                                "path":  "training/labels/map_annotations.py"
+                            },
+                            {
+                                "sha256":  "0025edfcdb842b0af7226d5036f82cd47e4df77e7fdea0125ec3cec9a26c6df7",
+                                "path":  "training/labels/test-mapping.ps1"
+                            },
+                            {
+                                "sha256":  "c181e3221df86d0be9fcaebde834fdd1eb21ae659d923e49d5765a1d1a41e2cb",
+                                "path":  "training/labels/test_mapping.py"
+                            },
+                            {
+                                "sha256":  "03c6a71c355a450c9e60a37eddcf9fdd6e39b581ce1199b49d2fcfdf4f6275d8",
+                                "path":  "training/manifests/README.md"
+                            },
+                            {
+                                "sha256":  "c4d162041cf5cd9ad1a61632639c5a239a3411b49f7e9f330274fb9c3e60ae0a",
+                                "path":  "training/manifests/sign_consent.py"
+                            },
+                            {
+                                "sha256":  "aebe517aa97190f738b55ede92aa07fe2b25e8f8c0c29ce76a538e92009d5070",
+                                "path":  "training/scripts/ingest_dataset.py"
+                            },
+                            {
+                                "sha256":  "f92656ad13caacea4a2a0dad64092306f467a341c106a270712ed84e32800359",
+                                "path":  "training/scripts/normalize_email.py"
+                            },
+                            {
+                                "sha256":  "ebf2a6ed8a6f5eac62bcdf43e45e216d523eaf1128718994ae2b1c3cf4e7826b",
+                                "path":  "training/scripts/test_ingestion.py"
+                            },
+                            {
+                                "sha256":  "dd80d3548831affe72da25bafca5afce47d72727c5bf516207e27ae9ac396282",
+                                "path":  "training/splits/README.md"
+                            },
+                            {
+                                "sha256":  "2bdd6ef261de25eb3caff3f51c2af0c060261f91d8f1727db457b2caae53c27a",
+                                "path":  "training/splits/split_cli.py"
+                            },
+                            {
+                                "sha256":  "7b04ee24b4832938e27c1a4c34dcd2e1a490e2c41fe394d3621af8b5147518c4",
+                                "path":  "training/splits/split_data.py"
+                            },
+                            {
+                                "sha256":  "cee6721812b0d543d93c2988a8cbe6946128aeb575ed390861d3011991614f88",
+                                "path":  "training/splits/test-splits.ps1"
+                            },
+                            {
+                                "sha256":  "06cfbaa8621a0522537e20a835f36f6c660aa1880940234ad388976431a71a00",
+                                "path":  "training/splits/test_splits.py"
+                            }
+                        ],
+    "lifecycle":  "Correction closure only after focused checks; repeat FDEC-013 on a fresh candidate and obtain a new independently Accepted FDEC-014 result before separate D002 closure."
+}

@@ -1,0 +1,6 @@
+﻿{
+    "monitor_task_id":  "355209e6-11b0-485b-88b1-0254e1168eea",
+    "result":  "FAIL",
+    "reason":  "PowerShell case-insensitive function Git shadowed git executable and recursed. Renamed helper before source acceptance; this run is not counted as acceptance.",
+    "exit_code":  1
+}
