@@ -1,6 +1,7 @@
 """Explicit, rights-gated local training ingestion. No Hub code execution."""
 
 import argparse
+from contextlib import closing
 import hashlib
 import json
 import os
@@ -222,7 +223,10 @@ def ingest(*, dataset_id, revision, artifact, purpose, target, output_dir, opt_i
         local_source = output / ("source" + suffix)
         transfer(descriptor, local_source, input_path)
         source_identity = {key: descriptor[key] for key in ("dataset_id", "revision", "artifact", "sha256")}
-        records, count = deduplicate(rows(local_source), source_identity)
+        # Consumer validation may fail while the iterator is suspended in an
+        # open file. Close it before rollback, including on Windows file locks.
+        with closing(rows(local_source)) as source_rows:
+            records, count = deduplicate(source_rows, source_identity)
         content = "".join(canonical_json(record) + "\n" for record in records).encode("utf-8")
         with (output / "records.jsonl").open("xb") as destination:
             destination.write(content)
