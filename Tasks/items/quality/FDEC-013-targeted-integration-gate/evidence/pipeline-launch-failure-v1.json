@@ -1,0 +1,10 @@
+{
+  "task_id": "d70d115f-4aca-4c2b-a5ae-96daf8aa4a23",
+  "cursor": 95,
+  "status": "failed",
+  "exit_code": 1,
+  "output": "'.venv' is not recognized as an internal or external command,\noperable program or batch file.\n",
+  "output_truncated": false,
+  "changed": true,
+  "wait_timed_out": false
+}

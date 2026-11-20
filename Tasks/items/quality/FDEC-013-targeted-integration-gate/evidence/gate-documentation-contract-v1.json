@@ -1,0 +1,5 @@
+{
+  "schema": "fdec-acceptance-amendment/v1",
+  "task_id": "FDEC-013",
+  "updates": [{"id":"AC-01","criterion":"Verify Epic FDEC-EPIC-D002 changed interfaces and direct interactions with local tests on the exact frozen candidate; document the local command in docs/verification/d002-gate.md as a supplement to unchanged, adoption-bound DEVELOPMENT.md."}]
+}
