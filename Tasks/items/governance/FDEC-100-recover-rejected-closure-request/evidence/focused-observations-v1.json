@@ -1,0 +1,65 @@
+[
+  {
+    "stage": "test-source-readiness.ps1",
+    "task_id": "c8f36d59-49c4-48ee-8875-f5e6b838ead4",
+    "status": "completed",
+    "exit_code": 0,
+    "log_file": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\2\\codex-monitor-3.log",
+    "log_truncated": false,
+    "output": null
+  },
+  {
+    "stage": "test-readiness-events.ps1",
+    "task_id": "9f7d5b6f-56d3-430f-8881-9b472f5e7393",
+    "status": "completed",
+    "exit_code": 0,
+    "log_file": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\2\\codex-monitor-7.log",
+    "log_truncated": false,
+    "output": null
+  },
+  {
+    "stage": "test-acceptance-matrix.ps1",
+    "task_id": "f60d9d78-1248-4685-bd01-409cc46fc855",
+    "status": "completed",
+    "exit_code": 0,
+    "log_file": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\2\\codex-monitor-10.log",
+    "log_truncated": false,
+    "output": null
+  },
+  {
+    "stage": "test-identity.ps1",
+    "task_id": "91d70feb-f866-4816-b64f-8217c2c19f78",
+    "status": "completed",
+    "exit_code": 0,
+    "log_file": null,
+    "log_truncated": false,
+    "output": "STAGE: test-identity.ps1; SOURCE: 406e0121fae75e6c0623bf331d11e8e4d8aeccd1\nwarning: in the working copy of 'AGENTS.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'DEVELOPMENT.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-001.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-002.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-003.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-004.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-005.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-006.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-007.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-008.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-009.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-010.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-011.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-012.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-013.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-073.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-074.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-076.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-077.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-078.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-079.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-080.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-081.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-082.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-083.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-088.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-099.json', CRLF will be replaced by LF the next time Git touches it\nPASS: immutable baseline and claim admission inputs\nPASS: immutable baseline and dispatch admission inputs\nPASS: immutable baseline and resume admission inputs\nPASS: immutable baseline and execute admission inputs\nPASS: immutable baseline and close admission inputs\nPASS: retained/replacement identities, gate relinking, all admission actions and incomplete/stale/unrelated migration rejection\n{\n    \"schema\":  \"fdec-focused-process-verification/v1\",\n    \"task_id\":  \"FDEC-100\",\n    \"result\":  \"PASS\",\n    \"source_sha\":  \"406e0121fae75e6c0623bf331d11e8e4d8aeccd1\",\n    \"source_state_sha256\":  \"5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331\",\n    \"stage\":  \"test-identity.ps1\",\n    \"prior_component_evidence_source\":  \"6cab0e941f63b00457715f55a1109415a113fbc5\",\n    \"original_request_raw_sha256\":  \"46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f\",\n    \"allocated\":  false,\n    \"published\":  false\n}\n"
+  },
+  {
+    "stage": "test-plan-sync.ps1",
+    "task_id": "1b54def0-0005-42cd-83ca-14cf7374283d",
+    "status": "completed",
+    "exit_code": 0,
+    "log_file": null,
+    "log_truncated": false,
+    "output": "STAGE: test-plan-sync.ps1; SOURCE: 406e0121fae75e6c0623bf331d11e8e4d8aeccd1\nPASS: retained and replayed tasks, source namespace, Mac gate/current/historical projection and optional-Epic scheduling\nwarning: in the working copy of 'AGENTS.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'DEVELOPMENT.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-001.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-002.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-003.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-004.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-005.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-006.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-007.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-008.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-009.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-010.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-011.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-012.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-013.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-072.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-073.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-074.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-076.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-077.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-078.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-079.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-080.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-081.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-082.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-083.json', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'Tasks/version-requests/FDEC-099.json', CRLF will be replaced by LF the next time Git touches it\nPASS: reject missing original planning history\nPASS: reject stale planning-source binding\nPASS: reject rebound replay with altered criteria\nPASS: reject rebound replacement specification\nPASS: reject executed source disguised as planned migration\nPASS: reject partial namespace that could resolve to local completed tasks\nPASS: reject unbound foreign task substitution\nPASS: reject repeated original planning event\nPASS: reject retirement before owner planning history\nPASS: reject membership relink without identity authority\nPASS: immutable baseline and claim admission inputs\nPASS: reject claim with an unbound planning-history input\nPASS: immutable baseline and dispatch admission inputs\nPASS: reject dispatch with an unbound planning-history input\nPASS: immutable baseline and resume admission inputs\nPASS: reject resume with an unbound planning-history input\nPASS: immutable baseline and execute admission inputs\nPASS: reject execute with an unbound planning-history input\nPASS: immutable baseline and close admission inputs\nPASS: reject close with an unbound planning-history input\nPASS: planning migrations and complete admission input bindings; no raw training data used\n{\n    \"schema\":  \"fdec-focused-process-verification/v1\",\n    \"task_id\":  \"FDEC-100\",\n    \"result\":  \"PASS\",\n    \"source_sha\":  \"406e0121fae75e6c0623bf331d11e8e4d8aeccd1\",\n    \"source_state_sha256\":  \"5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331\",\n    \"stage\":  \"test-plan-sync.ps1\",\n    \"prior_component_evidence_source\":  \"6cab0e941f63b00457715f55a1109415a113fbc5\",\n    \"original_request_raw_sha256\":  \"46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f\",\n    \"allocated\":  false,\n    \"published\":  false\n}\n"
+  },
+  {
+    "stage": "test-reopened-requests.ps1",
+    "task_id": "b0234115-84c4-4c13-98f6-5923492de2b6",
+    "status": "completed",
+    "exit_code": 0,
+    "log_file": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\2\\codex-monitor-4.log",
+    "log_truncated": false,
+    "output": null
+  },
+  {
+    "stage": "repository.ps1",
+    "task_id": "b64d1a23-3ce9-4dc0-99cf-0fdce9abe1f9",
+    "status": "completed",
+    "exit_code": 0,
+    "log_file": null,
+    "log_truncated": false,
+    "output": "STAGE: repository.ps1; SOURCE: 406e0121fae75e6c0623bf331d11e8e4d8aeccd1\nPASS: 114 records, immutable history, graph, requests and hosted publication boundary\n{\n    \"schema\":  \"fdec-focused-process-verification/v1\",\n    \"task_id\":  \"FDEC-100\",\n    \"result\":  \"PASS\",\n    \"source_sha\":  \"406e0121fae75e6c0623bf331d11e8e4d8aeccd1\",\n    \"source_state_sha256\":  \"5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331\",\n    \"stage\":  \"repository.ps1\",\n    \"prior_component_evidence_source\":  \"6cab0e941f63b00457715f55a1109415a113fbc5\",\n    \"original_request_raw_sha256\":  \"46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f\",\n    \"allocated\":  false,\n    \"published\":  false\n}\n"
+  }
+]

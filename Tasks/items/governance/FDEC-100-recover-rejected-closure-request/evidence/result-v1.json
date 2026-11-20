@@ -1,0 +1,171 @@
+﻿{
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "repository_records":  114,
+    "epic_id":  "FDEC-EPIC-S001",
+    "focused_runs":  [
+                         {
+                             "monitor_task_id":  "c8f36d59-49c4-48ee-8875-f5e6b838ead4",
+                             "result":  {
+                                            "schema":  "fdec-focused-process-verification/v1",
+                                            "task_id":  "FDEC-100",
+                                            "result":  "PASS",
+                                            "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+                                            "source_state_sha256":  "5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331",
+                                            "stage":  "test-source-readiness.ps1",
+                                            "prior_component_evidence_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+                                            "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+                                            "allocated":  false,
+                                            "published":  false
+                                        },
+                             "raw_monitor_log_sha256":  "8b445ecd3d3bacd15990f6988ad3ce84d84ca52e99f5da91cb6f8df5caf5f13e",
+                             "stage":  "test-source-readiness.ps1"
+                         },
+                         {
+                             "monitor_task_id":  "9f7d5b6f-56d3-430f-8881-9b472f5e7393",
+                             "result":  {
+                                            "schema":  "fdec-focused-process-verification/v1",
+                                            "task_id":  "FDEC-100",
+                                            "result":  "PASS",
+                                            "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+                                            "source_state_sha256":  "5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331",
+                                            "stage":  "test-readiness-events.ps1",
+                                            "prior_component_evidence_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+                                            "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+                                            "allocated":  false,
+                                            "published":  false
+                                        },
+                             "raw_monitor_log_sha256":  "304196b837d1ad1f21e74b5c1421af5e87a99334ab38a679670b81dbd935ecdd",
+                             "stage":  "test-readiness-events.ps1"
+                         },
+                         {
+                             "monitor_task_id":  "f60d9d78-1248-4685-bd01-409cc46fc855",
+                             "result":  {
+                                            "schema":  "fdec-focused-process-verification/v1",
+                                            "task_id":  "FDEC-100",
+                                            "result":  "PASS",
+                                            "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+                                            "source_state_sha256":  "5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331",
+                                            "stage":  "test-acceptance-matrix.ps1",
+                                            "prior_component_evidence_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+                                            "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+                                            "allocated":  false,
+                                            "published":  false
+                                        },
+                             "raw_monitor_log_sha256":  "c17643328329b6763604e0b00c2dca2f9b47f64344c2485c292c914d30e1abe7",
+                             "stage":  "test-acceptance-matrix.ps1"
+                         },
+                         {
+                             "monitor_task_id":  "91d70feb-f866-4816-b64f-8217c2c19f78",
+                             "result":  {
+                                            "schema":  "fdec-focused-process-verification/v1",
+                                            "task_id":  "FDEC-100",
+                                            "result":  "PASS",
+                                            "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+                                            "source_state_sha256":  "5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331",
+                                            "stage":  "test-identity.ps1",
+                                            "prior_component_evidence_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+                                            "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+                                            "allocated":  false,
+                                            "published":  false
+                                        },
+                             "raw_monitor_log_sha256":  null,
+                             "stage":  "test-identity.ps1"
+                         },
+                         {
+                             "monitor_task_id":  "1b54def0-0005-42cd-83ca-14cf7374283d",
+                             "result":  {
+                                            "schema":  "fdec-focused-process-verification/v1",
+                                            "task_id":  "FDEC-100",
+                                            "result":  "PASS",
+                                            "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+                                            "source_state_sha256":  "5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331",
+                                            "stage":  "test-plan-sync.ps1",
+                                            "prior_component_evidence_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+                                            "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+                                            "allocated":  false,
+                                            "published":  false
+                                        },
+                             "raw_monitor_log_sha256":  null,
+                             "stage":  "test-plan-sync.ps1"
+                         },
+                         {
+                             "monitor_task_id":  "b0234115-84c4-4c13-98f6-5923492de2b6",
+                             "result":  {
+                                            "schema":  "fdec-focused-process-verification/v1",
+                                            "task_id":  "FDEC-100",
+                                            "result":  "PASS",
+                                            "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+                                            "source_state_sha256":  "5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331",
+                                            "stage":  "test-reopened-requests.ps1",
+                                            "prior_component_evidence_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+                                            "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+                                            "allocated":  false,
+                                            "published":  false
+                                        },
+                             "raw_monitor_log_sha256":  "92cccd6c98776e9ce92da4232cbb77b572db2ea159ba167bf1bdf6cb5949b337",
+                             "stage":  "test-reopened-requests.ps1"
+                         },
+                         {
+                             "monitor_task_id":  "b64d1a23-3ce9-4dc0-99cf-0fdce9abe1f9",
+                             "result":  {
+                                            "schema":  "fdec-focused-process-verification/v1",
+                                            "task_id":  "FDEC-100",
+                                            "result":  "PASS",
+                                            "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+                                            "source_state_sha256":  "5f71dd60f3eeca24b1dfa0c802518ab81af29748fe1978262858e8914bd55331",
+                                            "stage":  "repository.ps1",
+                                            "prior_component_evidence_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+                                            "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+                                            "allocated":  false,
+                                            "published":  false
+                                        },
+                             "raw_monitor_log_sha256":  null,
+                             "stage":  "repository.ps1"
+                         }
+                     ],
+    "negative_recovery_cases":  32,
+    "prior_component_source":  "6cab0e941f63b00457715f55a1109415a113fbc5",
+    "task_id":  "FDEC-100",
+    "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+    "published":  false,
+    "artifacts":  [
+                      {
+                          "sha256":  "23d2c4d177af935395b17961b9f879ba0af1aa631207245fb29f3793eb29bb30",
+                          "path":  "Tasks/request-recoveries/FDEC-099-R001.json"
+                      },
+                      {
+                          "sha256":  "94807329818f2cc02f6f31af8aa543640620f73235850a734c53da26d825ee4d",
+                          "path":  "Tasks/policy/rejected-request-recovery-1.0.md"
+                      },
+                      {
+                          "sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c",
+                          "path":  "Tasks/version-requests/FDEC-099.json"
+                      },
+                      {
+                          "sha256":  "0070363c6e5958b6ccfb892eb05ce033f33febae03e70d7756bf7847441c0d2e",
+                          "path":  "scripts/validate_tasks/request-recovery.ps1"
+                      },
+                      {
+                          "sha256":  "59132f283b5f4c0d227dc37889d184dd637d43e9ee25c0d22db08a0da217916e",
+                          "path":  "scripts/validate_tasks/repository.ps1"
+                      },
+                      {
+                          "sha256":  "40c1662ea41cb20d2567bbb2f49c630b1ca13021890fa1065b153dd1c9ae66c1",
+                          "path":  "docs/verification/rejected-request-recovery.md"
+                      }
+                  ],
+    "schema":  "fdec-correction-result/v1",
+    "actual_training_performed":  false,
+    "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+    "coverage":  "Ten selected stages, three unchanged implementation stages attributed to their earlier passing component executions and seven focused stages on current source; not a fictional all-green original run",
+    "prior_full_run_result":  "FAIL: inherited source-readiness fixture, corrected in the current source",
+    "prior_component_stages":  [
+                                   "test-request-recovery.ps1",
+                                   "check-adoption.ps1",
+                                   "test-validation.ps1"
+                               ],
+    "allocated":  false,
+    "prior_component_monitor":  "462f6519-8ede-4c68-a331-e1c42668ee0b",
+    "result":  "PASS",
+    "original_request_canonical_sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c"
+}

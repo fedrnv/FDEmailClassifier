@@ -1,0 +1,18 @@
+﻿{
+    "published":  false,
+    "allocated":  false,
+    "records":  114,
+    "monitor_task_id":  "18346f39-0ba5-43dd-b38a-053ec2c817a8",
+    "command":  "powershell -NoProfile -File scripts/validate_tasks/repository.ps1",
+    "original_FDEC099_unchanged":  true,
+    "timing":  "Verified actual pending request and Done event before first closure commit",
+    "request":  {
+                    "path":  "Tasks/version-requests/FDEC-100.json",
+                    "sha256":  "01dde5e21a46a5351222986dec04b92378458617ffe7e4f4e794e5fcecdbf568",
+                    "type":  "correction_closed"
+                },
+    "schema":  "fdec-local-verification/v1",
+    "exit_code":  0,
+    "result":  "PASS",
+    "source_sha":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1"
+}

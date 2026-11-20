@@ -1,0 +1,13 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "cf21a3a4-c381-4ef2-be9f-2f4e15357d5a",
+    "epic_id":  "FDEC-EPIC-S001",
+    "work_item_id":  "FDEC-100",
+    "summary":  "Recover only a rejected closure type mismatch with an explicit immutable audit and preserved first-request identity",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/evidence/verification-v1.md",
+                         "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/evidence/result-v1.json",
+                         "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/evidence/test-output-v1.txt"
+                     ]
+}
