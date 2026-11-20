@@ -1,0 +1,11 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "e4cfd896-85b1-484c-9dc5-d4c520d34be3",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-001",
+    "summary":  "Establish Apache-2.0 original source governance and third-party redistribution boundary",
+    "verification":  [
+                         "Tasks/items/foundation/FDEC-001-open-source-governance/evidence/verification.md"
+                     ]
+}
