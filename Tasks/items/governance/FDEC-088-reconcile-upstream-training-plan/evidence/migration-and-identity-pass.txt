@@ -1,0 +1,29 @@
+PASS: 27 exact upstream task/Epic/event records preserved; 10 local collision specs unchanged; task ledger changes append-only
+PASS: retained and replayed tasks, source namespace, Mac gate/current/historical projection and optional-Epic scheduling
+PASS: reject missing original planning history
+PASS: reject stale planning-source binding
+PASS: reject rebound replay with altered criteria
+PASS: reject rebound replacement specification
+PASS: reject executed source disguised as planned migration
+PASS: reject partial namespace that could resolve to local completed tasks
+PASS: reject unbound foreign task substitution
+PASS: reject repeated original planning event
+PASS: reject retirement before owner planning history
+PASS: reject membership relink without identity authority
+PASS: immutable baseline and claim admission inputs
+PASS: reject claim with an unbound planning-history input
+PASS: immutable baseline and dispatch admission inputs
+PASS: reject dispatch with an unbound planning-history input
+PASS: immutable baseline and resume admission inputs
+PASS: reject resume with an unbound planning-history input
+PASS: immutable baseline and execute admission inputs
+PASS: reject execute with an unbound planning-history input
+PASS: immutable baseline and close admission inputs
+PASS: reject close with an unbound planning-history input
+PASS: planning migrations and complete admission input bindings; no raw training data used
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: retained/replacement identities, gate relinking, all admission actions and incomplete/stale/unrelated migration rejection

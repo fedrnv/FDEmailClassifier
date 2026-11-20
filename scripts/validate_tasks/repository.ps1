@@ -3,6 +3,7 @@ param([string]$Root = (Resolve-Path "$PSScriptRoot/../..").Path, [switch]$AsObje
 $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/identity.ps1"
 . "$PSScriptRoot/epic-closure.ps1"
+. "$PSScriptRoot/identity-migrations.ps1"
 function Field($text, $key) {
     $match = [regex]::Match($text, "(?m)^$([regex]::Escape($key)): ([^\r\n]+)")
     if (!$match.Success) { throw "Missing field: $key" }
@@ -31,7 +32,7 @@ $retiredPaths=@{}; $resolutions=@()
 if (Test-Path "$Root/Tasks/migrations") {
     foreach ($file in Get-ChildItem "$Root/Tasks/migrations" -Filter '*.json') {
         $resolution=Get-Content $file.FullName -Raw | ConvertFrom-Json
-        if ($resolution.schema -ne 'fdec-identity-resolution/v1') { throw 'Unsupported identity migration' }
+        if ($resolution.schema -notin 'fdec-identity-resolution/v1','fdec-identity-resolution/v2') { throw 'Unsupported identity migration' }
         foreach ($binding in @($resolution.retired,$resolution.retained,$resolution.replacement,$resolution.retirement_event)) {
             if (!$binding.path -or !$binding.sha256) { throw 'Incomplete identity binding' }
             $absolute=[IO.Path]::GetFullPath((Join-Path $Root $binding.path))
@@ -45,12 +46,22 @@ if (Test-Path "$Root/Tasks/migrations") {
         $oldParent=Field $old.front 'epic_id'
         if ($oldId -ne (Field $kept.front 'id') -or $oldId -eq $newId -or $newId -notmatch '^FDEC-[0-9]{3}$' -or $oldParent -ne (Field $new.front 'epic_id') -or $oldParent -eq (Field $kept.front 'epic_id') -or (Field $old.front 'initial_status') -ne 'Planned') { throw 'Invalid collision identity mapping' }
         if ((Field $retirement.front 'event_type') -ne 'superseded' -or (Field $retirement.front 'task_id') -ne $oldId -or (Field $retirement.front 'replacement_id') -ne $newId -or (Field $retirement.front 'correction_id') -ne $resolution.correction_id -or (Split-Path (Split-Path $retirement.path)) -ne (Split-Path $old.path)) { throw 'Invalid retirement event' }
-        if (@(Get-ChildItem (Join-Path (Split-Path $old.path) 'events') -Filter '*.md').Count -ne 1) { throw 'Retired collision has unsupported execution history' }
+        if ($resolution.schema -eq 'fdec-identity-resolution/v2') {
+            Assert-PlanningMigration $Root $resolution $old $new $retirement
+        } elseif (@(Get-ChildItem (Join-Path (Split-Path $old.path) 'events') -Filter '*.md').Count -ne 1) { throw 'Retired collision has unsupported execution history' }
         if ($retiredPaths.ContainsKey($old.path)) { throw 'Duplicate retirement mapping' }
         $resolution | Add-Member old_id $oldId
         $resolution | Add-Member new_id $newId
         $resolution | Add-Member old_parent $oldParent
         $retiredPaths[$old.path]=$true; $resolutions+= $resolution
+    }
+}
+foreach ($resolution in $resolutions | Where-Object schema -EQ 'fdec-identity-resolution/v2') {
+    $namespace=@($resolutions | Where-Object {$_.schema -eq 'fdec-identity-resolution/v2' -and $_.correction_id -eq $resolution.correction_id -and $_.source_revision -eq $resolution.source_revision})
+    if ($resolution.id_map.Count -ne $namespace.Count) { throw 'Incomplete planning identity namespace' }
+    foreach ($pair in $resolution.id_map) {
+        $matches=@($resolutions | Where-Object {$_.schema -eq 'fdec-identity-resolution/v2' -and $_.correction_id -eq $resolution.correction_id -and $_.source_revision -eq $resolution.source_revision -and $_.old_id -eq $pair.old_id -and $_.new_id -eq $pair.new_id})
+        if ($matches.Count -ne 1) { throw 'Unbound planning identity substitution' }
     }
 }
 $records = @{}
@@ -110,7 +121,7 @@ foreach ($record in $records.Values) {
             if ($record.status -eq 'Done') { $record.closure_history+= $event }
         }
         if ($kind -in 'dependency-added','membership-added') {
-            $m=[regex]::Match($event.text,'(?m)^Add \*{0,2}(FDEC-[0-9]{3})\b')
+            $m=[regex]::Match($event.text,'(?m)^Add (?:\*{1,2}|`)?(FDEC-[0-9]{3})\b')
             if (!$m.Success) { throw 'Unsupported relationship amendment' }
             if ($kind -eq 'dependency-added') { $record.dependencies+= $m.Groups[1].Value } else { $record.members+= $m.Groups[1].Value }
         }

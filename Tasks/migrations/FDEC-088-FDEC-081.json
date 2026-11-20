@@ -1,0 +1,64 @@
+{
+  "schema": "fdec-identity-resolution/v2",
+  "correction_id": "FDEC-088",
+  "retired": {
+    "path": "Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/TASK.md",
+    "sha256": "bc4f6a7c76128960699aaeba9c65234d5c3ab006de905516036ebebdced7584a"
+  },
+  "retained": {
+    "path": "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/TASK.md",
+    "sha256": "42579da787536f7803fedd089cdd48ff4116fbe9ab96301fc3ee90a3c2e2eac9"
+  },
+  "replacement": {
+    "path": "Tasks/items/quality/FDEC-096-open-benchmark-fixture-pack/TASK.md",
+    "sha256": "bc2d22bbd4e92822d42ea235c02f9f6039775cccd9205b079843965615bbe53c"
+  },
+  "retirement_event": {
+    "path": "Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/events/20261120T173424258305Z-codex-superseded-1015c1d6.md",
+    "sha256": "b1a19697e8683ff940bc0818ccf044410156aeb83f00cc2cee989c31c09ff5d4"
+  },
+  "source_revision": "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+  "id_map": [
+    {
+      "old_id": "FDEC-074",
+      "new_id": "FDEC-089"
+    },
+    {
+      "old_id": "FDEC-075",
+      "new_id": "FDEC-090"
+    },
+    {
+      "old_id": "FDEC-076",
+      "new_id": "FDEC-091"
+    },
+    {
+      "old_id": "FDEC-077",
+      "new_id": "FDEC-092"
+    },
+    {
+      "old_id": "FDEC-078",
+      "new_id": "FDEC-093"
+    },
+    {
+      "old_id": "FDEC-079",
+      "new_id": "FDEC-094"
+    },
+    {
+      "old_id": "FDEC-080",
+      "new_id": "FDEC-095"
+    },
+    {
+      "old_id": "FDEC-081",
+      "new_id": "FDEC-096"
+    },
+    {
+      "old_id": "FDEC-082",
+      "new_id": "FDEC-097"
+    },
+    {
+      "old_id": "FDEC-083",
+      "new_id": "FDEC-098"
+    }
+  ],
+  "planning_history": []
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "fdec-identity-resolution/v2",
+  "correction_id": "FDEC-088",
+  "retired": {
+    "path": "Tasks/items/ai/FDEC-076-graceful-training-source-fallback/TASK.md",
+    "sha256": "1543603140441c06920505c0f7b33b707dbff12baf8aa1942273bfe3b1653a0b"
+  },
+  "retained": {
+    "path": "Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/TASK.md",
+    "sha256": "298bc21ebc8a573e773eaa3a596e5e65d358ec6b199c9d93a13bf6161023e833"
+  },
+  "replacement": {
+    "path": "Tasks/items/ai/FDEC-091-graceful-training-source-fallback/TASK.md",
+    "sha256": "78603c6c0d06ed9d3878fc8a7aa589180c87a078bf1902595adf1d192b3998c2"
+  },
+  "retirement_event": {
+    "path": "Tasks/items/ai/FDEC-076-graceful-training-source-fallback/events/20261120T173423593979Z-codex-superseded-1938c2c7.md",
+    "sha256": "54d40d07ded9dd8a288280438ebc7427192d60e7a2a76b7fde1060751ac97f95"
+  },
+  "source_revision": "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+  "id_map": [
+    {
+      "old_id": "FDEC-074",
+      "new_id": "FDEC-089"
+    },
+    {
+      "old_id": "FDEC-075",
+      "new_id": "FDEC-090"
+    },
+    {
+      "old_id": "FDEC-076",
+      "new_id": "FDEC-091"
+    },
+    {
+      "old_id": "FDEC-077",
+      "new_id": "FDEC-092"
+    },
+    {
+      "old_id": "FDEC-078",
+      "new_id": "FDEC-093"
+    },
+    {
+      "old_id": "FDEC-079",
+      "new_id": "FDEC-094"
+    },
+    {
+      "old_id": "FDEC-080",
+      "new_id": "FDEC-095"
+    },
+    {
+      "old_id": "FDEC-081",
+      "new_id": "FDEC-096"
+    },
+    {
+      "old_id": "FDEC-082",
+      "new_id": "FDEC-097"
+    },
+    {
+      "old_id": "FDEC-083",
+      "new_id": "FDEC-098"
+    }
+  ],
+  "planning_history": []
+}

@@ -43,7 +43,7 @@ function Epic-Snapshot($Record,[DateTimeOffset]$Cutoff,[string]$Exclude='') {
             if($snapshot.status -eq 'Done'){$snapshot.done=$event}
         }
         if($kind -in 'membership-added','dependency-added'){
-            $id=[regex]::Match($event.text,'(?m)^Add \*{0,2}(FDEC-[0-9]{3})\b').Groups[1].Value
+            $id=[regex]::Match($event.text,'(?m)^Add (?:\*{1,2}|`)?(FDEC-[0-9]{3})\b').Groups[1].Value
             $key=if($kind -eq 'membership-added'){'members'}else{'dependencies'};$snapshot[$key]+=$id
         }
         if($kind -in 'membership-replaced','dependency-replaced'){

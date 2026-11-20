@@ -1,0 +1,3 @@
+# Public benchmark roadmap
+
+Planned follow-up work: FDEC-EPIC-D011 and FDEC-EPIC-D012. Quality reports are explicitly cohort-based and versioned. Primary published open benchmark will use independently authored, redistribution-cleared fixtures and an auditable evaluation runner; access to private/real messages is optional and cannot be assumed. When consented real-world evaluations exist, publish only aggregate results and data-use conditions, not personal email bodies. Never call a synthetic-only benchmark representative of production accuracy. Existing product development D004–D010 remains independent; no new external provider-rights gate is added to it.

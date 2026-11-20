@@ -1,0 +1,75 @@
+{
+  "schema": "fdec-identity-resolution/v2",
+  "correction_id": "FDEC-088",
+  "retired": {
+    "path": "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/TASK.md",
+    "sha256": "f0adc267133a016f39660f9b497c5dfbdefbc7f96ae929d98ac7627c5ae4c223"
+  },
+  "retained": {
+    "path": "Tasks/items/web/FDEC-075-red-e-branding-and-fdfiles-website-style/TASK.md",
+    "sha256": "5bbe059cf583567bbd18affafb137c9a9a9fbce0730b07824e1cbdd9785ec48e"
+  },
+  "replacement": {
+    "path": "Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/TASK.md",
+    "sha256": "49a9f6bce9b52235ddfbb31329940c78841e9012c3bafb38a41ecb78fc25a735"
+  },
+  "retirement_event": {
+    "path": "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173423490215Z-codex-superseded-c3663f52.md",
+    "sha256": "5422603215390d808adb16236cd0bc123d172b21d5be71d5eeeec779df720bed"
+  },
+  "source_revision": "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+  "id_map": [
+    {
+      "old_id": "FDEC-074",
+      "new_id": "FDEC-089"
+    },
+    {
+      "old_id": "FDEC-075",
+      "new_id": "FDEC-090"
+    },
+    {
+      "old_id": "FDEC-076",
+      "new_id": "FDEC-091"
+    },
+    {
+      "old_id": "FDEC-077",
+      "new_id": "FDEC-092"
+    },
+    {
+      "old_id": "FDEC-078",
+      "new_id": "FDEC-093"
+    },
+    {
+      "old_id": "FDEC-079",
+      "new_id": "FDEC-094"
+    },
+    {
+      "old_id": "FDEC-080",
+      "new_id": "FDEC-095"
+    },
+    {
+      "old_id": "FDEC-081",
+      "new_id": "FDEC-096"
+    },
+    {
+      "old_id": "FDEC-082",
+      "new_id": "FDEC-097"
+    },
+    {
+      "old_id": "FDEC-083",
+      "new_id": "FDEC-098"
+    }
+  ],
+  "planning_history": [
+    {
+      "original": {
+        "path": "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md",
+        "sha256": "ed3d7c8d165545f2146afb1f06c6d096938d590e47aef4fe073e1dffae72a4c7"
+      },
+      "replay": {
+        "path": "Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md",
+        "sha256": "efb75704bfc66ce320cac2bedf490cbd215c957fc46ad64bd1249743f80ef589"
+      }
+    }
+  ]
+}

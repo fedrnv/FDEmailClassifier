@@ -1,0 +1,64 @@
+{
+  "schema": "fdec-identity-resolution/v2",
+  "correction_id": "FDEC-088",
+  "retired": {
+    "path": "Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/TASK.md",
+    "sha256": "5c171d92f025e5b0a1dd9f58fe9839ec39a5d447ac7a56d75099a1bc046affb0"
+  },
+  "retained": {
+    "path": "Tasks/items/quality/FDEC-083-preserve-committed-source-paths/TASK.md",
+    "sha256": "4c342d5102c7e7a289df90083e58f4272c771ccc553bbb7dbc1721f18e1cd466"
+  },
+  "replacement": {
+    "path": "Tasks/items/quality/FDEC-098-reproducible-evaluation-runner/TASK.md",
+    "sha256": "3cfc0720756a594cba20e42fc71f670ec0a06fc4be89caec2e2f7e2a4d607701"
+  },
+  "retirement_event": {
+    "path": "Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/events/20261120T173424464017Z-codex-superseded-7ab20d2e.md",
+    "sha256": "bdf889c99058d097f96e78da61dd711b13ef9750bed58f45604ce2cc8166dd98"
+  },
+  "source_revision": "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+  "id_map": [
+    {
+      "old_id": "FDEC-074",
+      "new_id": "FDEC-089"
+    },
+    {
+      "old_id": "FDEC-075",
+      "new_id": "FDEC-090"
+    },
+    {
+      "old_id": "FDEC-076",
+      "new_id": "FDEC-091"
+    },
+    {
+      "old_id": "FDEC-077",
+      "new_id": "FDEC-092"
+    },
+    {
+      "old_id": "FDEC-078",
+      "new_id": "FDEC-093"
+    },
+    {
+      "old_id": "FDEC-079",
+      "new_id": "FDEC-094"
+    },
+    {
+      "old_id": "FDEC-080",
+      "new_id": "FDEC-095"
+    },
+    {
+      "old_id": "FDEC-081",
+      "new_id": "FDEC-096"
+    },
+    {
+      "old_id": "FDEC-082",
+      "new_id": "FDEC-097"
+    },
+    {
+      "old_id": "FDEC-083",
+      "new_id": "FDEC-098"
+    }
+  ],
+  "planning_history": []
+}

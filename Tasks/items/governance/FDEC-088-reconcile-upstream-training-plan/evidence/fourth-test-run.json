@@ -1,0 +1,10 @@
+{
+  "task_id": "404caae7-adac-4020-90e7-15f66a27b137",
+  "cursor": 1800,
+  "status": "failed",
+  "exit_code": 1,
+  "output": "PASS: 27 exact upstream task/Epic/event records preserved; 10 local collision specs unchanged; task ledger changes append-only\nPASS: retained and replayed tasks, source namespace, Mac gate/current/historical projection and optional-Epic scheduling\nPASS: reject missing original planning history\nPASS: reject stale planning-source binding\nPASS: reject rebound replay with altered criteria\nPASS: reject rebound replacement specification\nPASS: reject executed source disguised as planned migration\nPASS: reject partial namespace that could resolve to local completed tasks\nPASS: reject unbound foreign task substitution\nPASS: reject repeated original planning event\nPASS: reject retirement before owner planning history\nPASS: reject membership relink without identity authority\nUnbound identity migration: Tasks/migrations/FDEC-074.json\nAt C:\\GitHub\\FDEmailClassifier\\scripts\\validate_tasks\\admission.ps1:61 char:99\n+ ... h -notcontains $path) { throw \"Unbound identity migration: $path\" } }\n+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Unbound identit...s/FDEC-074.json:String) [], RuntimeException\n    + FullyQualifiedErrorId : Unbound identity migration: Tasks/migrations/FDEC-074.json\n \nLocal process verification failed: test-plan-sync.ps1\nAt C:\\GitHub\\FDEmailClassifier\\Tasks\\items\\governance\\FDEC-088-reconcile-upstream-training-plan\\evidence\\run-checks.ps1\n:13 char:33\n+ ... ASTEXITCODE -ne 0){throw \"Local process verification failed: $check\"}\n+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Local process v...t-plan-sync.ps1:String) [], RuntimeException\n    + FullyQualifiedErrorId : Local process verification failed: test-plan-sync.ps1\n \n",
+  "output_truncated": false,
+  "changed": true,
+  "wait_timed_out": false
+}

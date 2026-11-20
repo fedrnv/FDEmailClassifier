@@ -1,6 +1,6 @@
 # FDEmailClassifier
 
-**Local-first email classification, built around a shared Rust engine.**
+**Free, open-source email classification with local inference, designed for commercial integrations including paid FDFiles.**
 
 FDEmailClassifier is an independent open-source project for multilingual,
 multi-label email classification. Its goal is inference on your own machine with
@@ -66,6 +66,35 @@ and [DEVELOPMENT](DEVELOPMENT.md). Work follows immutable
 Acceptance and integration checks run locally; hosted workflows must be manually
 dispatched. Follow [SECURITY.md](SECURITY.md) for vulnerabilities. Never commit
 credentials, raw emails, personal information or private training data.
+
+## Free software, commercial integration and training
+
+The standalone project is intended to be available at no charge. Original code
+uses Apache-2.0, which permits commercial and proprietary integration, including
+paid FDFiles, subject to its terms. FDEmailClassifier stays independent of FDFiles
+internals and does not require a paid external inference API. The project's free
+distribution policy adds no noncommercial or no-resale restriction.
+
+Weights and LoRA adapters need separate base-model and dataset rights audits,
+including commercial inference and public redistribution. Until approved, they
+remain private or are omitted from releases. Missing optional data rights do not
+stop independent software and benchmark development. See the
+[commercial-use policy](docs/legal/COMMERCIAL_USE_POLICY.md) and
+[product descriptions](docs/PRODUCT_DESCRIPTION.md).
+
+Training is planned for Qwen3-0.6B with LoRA/QLoRA. The owner's MacBook Air M4
+with 32 GB memory is the preferred temporary MLX host when a dependency-ready
+training step requires it. The [Mac handoff](docs/training/MACBOOK_M4_HANDOFF.md)
+requires operator confirmation and verified private artifact transfer before
+returning to the original development workstation. No training run is claimed.
+Independent benchmark tooling and measured public reports are planned; source
+licenses, cohort independence and per-language evidence remain mandatory.
+
+## Branding
+
+The selected logo is a red rounded-square E; see [branding assets](assets/branding/).
+The planned website follows the visual language of files.fedrv.de with neutral
+backgrounds and red accents.
 
 ## License and artifact rights
 

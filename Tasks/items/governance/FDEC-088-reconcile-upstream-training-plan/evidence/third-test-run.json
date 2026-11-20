@@ -1,0 +1,10 @@
+{
+  "task_id": "27744cb9-ff15-48e5-ac0e-d74b6e39983d",
+  "cursor": 1227,
+  "status": "failed",
+  "exit_code": 1,
+  "output": "PASS: 27 exact upstream task/Epic/event records preserved; 10 local collision specs unchanged; task ledger changes append-only\nPASS: retained and replayed tasks, source namespace, Mac gate/current/historical projection and optional-Epic scheduling\nMultiple active development Epics\nAt C:\\GitHub\\FDEmailClassifier\\scripts\\validate_tasks\\repository.ps1:153 char:28\n+ ... f ($active.Count -gt 1) { throw 'Multiple active development Epics' }\n+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Multiple active development Epics:String) [], RuntimeException\n    + FullyQualifiedErrorId : Multiple active development Epics\n \nLocal process verification failed: test-plan-sync.ps1\nAt C:\\GitHub\\FDEmailClassifier\\Tasks\\items\\governance\\FDEC-088-reconcile-upstream-training-plan\\evidence\\run-checks.ps1\n:13 char:33\n+ ... ASTEXITCODE -ne 0){throw \"Local process verification failed: $check\"}\n+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Local process v...t-plan-sync.ps1:String) [], RuntimeException\n    + FullyQualifiedErrorId : Local process verification failed: test-plan-sync.ps1\n \n",
+  "output_truncated": false,
+  "changed": true,
+  "wait_timed_out": false
+}

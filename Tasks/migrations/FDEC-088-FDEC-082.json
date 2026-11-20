@@ -1,0 +1,64 @@
+{
+  "schema": "fdec-identity-resolution/v2",
+  "correction_id": "FDEC-088",
+  "retired": {
+    "path": "Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/TASK.md",
+    "sha256": "c15474bbb90e715e3bc1ce2648bcacd13905161fac6cdcaae9b15a9fc9d7091a"
+  },
+  "retained": {
+    "path": "Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/TASK.md",
+    "sha256": "528a10a733c9fe261cc59ce6ca2d28e9a9e987da8e426aabf3d8c5c2a027331d"
+  },
+  "replacement": {
+    "path": "Tasks/items/quality/FDEC-097-private-real-email-benchmark-adapter/TASK.md",
+    "sha256": "5ce824ce6926b5359afb2a46593851d6a1a929e4005ae94fd38aca335041c1eb"
+  },
+  "retirement_event": {
+    "path": "Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/events/20261120T173424362672Z-codex-superseded-0596f4fa.md",
+    "sha256": "5dd4aa521f0ab52b53f17f3c15fcdd49d7676b2a3750b186a2fd2505f9ae9f8b"
+  },
+  "source_revision": "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+  "id_map": [
+    {
+      "old_id": "FDEC-074",
+      "new_id": "FDEC-089"
+    },
+    {
+      "old_id": "FDEC-075",
+      "new_id": "FDEC-090"
+    },
+    {
+      "old_id": "FDEC-076",
+      "new_id": "FDEC-091"
+    },
+    {
+      "old_id": "FDEC-077",
+      "new_id": "FDEC-092"
+    },
+    {
+      "old_id": "FDEC-078",
+      "new_id": "FDEC-093"
+    },
+    {
+      "old_id": "FDEC-079",
+      "new_id": "FDEC-094"
+    },
+    {
+      "old_id": "FDEC-080",
+      "new_id": "FDEC-095"
+    },
+    {
+      "old_id": "FDEC-081",
+      "new_id": "FDEC-096"
+    },
+    {
+      "old_id": "FDEC-082",
+      "new_id": "FDEC-097"
+    },
+    {
+      "old_id": "FDEC-083",
+      "new_id": "FDEC-098"
+    }
+  ],
+  "planning_history": []
+}

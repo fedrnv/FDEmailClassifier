@@ -1,0 +1,75 @@
+{
+  "schema": "fdec-identity-resolution/v2",
+  "correction_id": "FDEC-088",
+  "retired": {
+    "path": "Tasks/items/ai/FDEC-074-audited-training-source-registry/TASK.md",
+    "sha256": "d2c2f8466d749e0842c55fc3ef0ed256f2abb7c04b0d217f85105362bf825cf6"
+  },
+  "retained": {
+    "path": "Tasks/items/governance/FDEC-074-resolve-task-identity-collision/TASK.md",
+    "sha256": "40697a05354685fa0056f1559164ecfbe24d6a6383cbf0a4bda1285ad0c65d51"
+  },
+  "replacement": {
+    "path": "Tasks/items/ai/FDEC-089-audited-training-source-registry/TASK.md",
+    "sha256": "360372de6b4e34603afad9cace173f571a2e14a86d02b23086c2f0552c29c6ea"
+  },
+  "retirement_event": {
+    "path": "Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T173423345933Z-codex-superseded-fbd93e40.md",
+    "sha256": "79ef97aed1194bb13f488046ed3fc608548771d0e8fcb0f89d7c4d5c469a45d0"
+  },
+  "source_revision": "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+  "id_map": [
+    {
+      "old_id": "FDEC-074",
+      "new_id": "FDEC-089"
+    },
+    {
+      "old_id": "FDEC-075",
+      "new_id": "FDEC-090"
+    },
+    {
+      "old_id": "FDEC-076",
+      "new_id": "FDEC-091"
+    },
+    {
+      "old_id": "FDEC-077",
+      "new_id": "FDEC-092"
+    },
+    {
+      "old_id": "FDEC-078",
+      "new_id": "FDEC-093"
+    },
+    {
+      "old_id": "FDEC-079",
+      "new_id": "FDEC-094"
+    },
+    {
+      "old_id": "FDEC-080",
+      "new_id": "FDEC-095"
+    },
+    {
+      "old_id": "FDEC-081",
+      "new_id": "FDEC-096"
+    },
+    {
+      "old_id": "FDEC-082",
+      "new_id": "FDEC-097"
+    },
+    {
+      "old_id": "FDEC-083",
+      "new_id": "FDEC-098"
+    }
+  ],
+  "planning_history": [
+    {
+      "original": {
+        "path": "Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md",
+        "sha256": "4d5bbdfe2555d47d83f81c0652ba69b005cc189266e09480cd6cf92fdb45716d"
+      },
+      "replay": {
+        "path": "Tasks/items/ai/FDEC-089-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md",
+        "sha256": "73cee53060e5d5ea91112e1e3ffbe65262eb9584619d674cecdfad67d5ba6e9a"
+      }
+    }
+  ]
+}

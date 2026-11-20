@@ -9,6 +9,7 @@ $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/source-state.ps1"
 . "$PSScriptRoot/readiness-events.ps1"
 . "$PSScriptRoot/acceptance-matrix.ps1"
+. "$PSScriptRoot/identity-migrations.ps1"
 $pin = Get-Content "$Root/Tasks/policy/adoption-5.6.json" -Raw | ConvertFrom-Json
 foreach ($entry in $pin.inventory) {
     $path = Join-Path $Root $entry.path
@@ -56,8 +57,7 @@ if ($TaskId) {
     foreach ($rule in $requiredRules | Select-Object -Unique) { if ($ready.rule_sources.path -notcontains $rule) { throw "Missing governing rule: $rule" } }
     if (Test-Path "$Root/Tasks/migrations") {
         foreach ($file in Get-ChildItem "$Root/Tasks/migrations" -Filter '*.json') {
-            $migration=Get-Content $file.FullName -Raw | ConvertFrom-Json
-            $paths=@($file.FullName.Substring($rootAbsolute.Length+1).Replace('\','/')) + @($migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path)
+            $paths=Get-MigrationPaths $Root $file.FullName
             foreach ($path in $paths) { if ($ready.migration_revisions.path -notcontains $path) { throw "Unbound identity migration: $path" } }
         }
     }

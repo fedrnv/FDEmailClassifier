@@ -16,6 +16,7 @@ try {
     New-Item -ItemType Directory $temp | Out-Null
     Copy-Item "$root/Tasks" "$temp/Tasks" -Recurse
     Copy-Item "$root/AGENTS.md","$root/DEVELOPMENT.md" $temp
+    Reset-FixtureFoundationEpic $temp
     $target='Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation'
     # Keep this disposable target nonterminal even after real FDEC-072 closure.
     $ownedEvents=[IO.Path]::GetFullPath("$temp/$target/events")
@@ -47,9 +48,9 @@ Planned -> Blocked.
     $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File | ForEach-Object {Bound $_.FullName.Substring($temp.Length+1).Replace('\','/')})
     $ready.allowed_paths=@('Tasks')
     $ready.matrix=New-FixtureMatrix $temp $target 'test-identity.ps1 identity scenarios'
+    $ready.dependency_revisions=New-FixtureDependencyBindings $temp 'FDEC-072'
     $ready.rule_sources+= (Bound 'Tasks/policy/checkout-identities-076.json')
-    $migration=Get-Content "$temp/Tasks/migrations/FDEC-074.json" -Raw | ConvertFrom-Json
-    $ready | Add-Member migration_revisions @(@('Tasks/migrations/FDEC-074.json',$migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path) | ForEach-Object {Bound $_}) -Force
+    $ready | Add-Member migration_revisions (New-FixtureMigrationBindings $temp) -Force
     $ready | Add-Member verification @((Bound "$target/evidence/github-preview-verified.md")) -Force
     $ready | Add-Member source_state_algorithm 'fdec-source-state/v1' -Force
     $ready | Add-Member source_state_sha256 (Get-SourceState $temp 'FDEC-072') -Force

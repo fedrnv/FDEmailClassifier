@@ -1,3 +1,15 @@
 # FDEmailClassifier delivery plan
 
 10 development Epics (D001–D010), sequential by default under one-active-Epic FDTasks v5.6 policy. Each has up to six functional items, a targeted local integration gate and independent review. D001 foundation; D002 lawful datasets; D003 training/evaluation; D004 inference; D005 language SDKs; D006 optional server; D007 privacy/quality; D008 public FDUpdate/GitHub release; D009 website; D010 community and beta. S001/S002 remain permanently open. No code, dataset or weights are represented as completed merely by these plans. Core output is 12 multi-label categories with separate priority/security/action and language confidence reporting. No full quality guarantee across all 119 languages without benchmark evidence. 
+
+## Product and license positioning (approved 2026-11-20)
+
+FDEmailClassifier is free-of-charge and open source; original project code will use Apache-2.0 and is explicitly designed for commercial integrations, including the paid FDFiles product. The intention not to sell the standalone classifier must not be implemented as a non-commercial restriction: Apache-2.0 permits commercial reuse by other parties. Trained weights are distributed for free only when exact rights on model/data and redistributability are cleared, otherwise remain private; this does not stop independent SDK, inference or benchmark work. Public benchmark methodology, legally redistributable fixtures and aggregate results are planned. Canonical detail: [commercial-use policy](legal/COMMERCIAL_USE_POLICY.md) and [public product descriptions](PRODUCT_DESCRIPTION.md).
+
+## Owner training and benchmark additions
+
+The owner plan at `0ea1e407e32eb2671226ab9f8430e54e4207d6b7` adds two enhancement Epics beyond the ten baseline Epics: D011 covers audited-source training and safe source fallback; D012 covers independent benchmarking and public aggregate reports. They remain Planned after their prerequisites and do not block D002 or the baseline D004–D010 release. One development Epic may be active at a time. Optional corpus denial does not block independent software implementation.
+
+D003 also includes FDEC-087: an operator-confirmed round trip to the owner's MacBook Air M4 / 32 GB using MLX, with private artifact verification and a durable return checkpoint. FDEC-020 includes that workflow in its targeted local gate. Work continues on the original development stand until a dependency-ready device step requires the Mac; no automatic switch or unperformed training is implied. See the [handoff runbook](training/MACBOOK_M4_HANDOFF.md).
+
+Incoming IDs FDEC-074…083 conflicted with accepted local tasks. Their exact continuations are FDEC-089…098, recorded in the [identity map](../Tasks/migrations/README-088.md); original specifications and events remain immutable. D011's current items are FDEC-089…094. D012's current items are FDEC-095…098 and FDEC-084…086. The original local FDEC-074…083 keep their existing meanings and history.

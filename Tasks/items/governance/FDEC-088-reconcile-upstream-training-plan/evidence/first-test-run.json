@@ -1,0 +1,10 @@
+{
+  "task_id": "4b7c5be5-4dd1-4664-9c5b-a073099523fc",
+  "cursor": 1206,
+  "status": "failed",
+  "exit_code": 1,
+  "output": "PASS: 27 exact upstream task/Epic/event records preserved; 10 local collision specs unchanged; task ledger changes append-only\nPASS: retained and replayed tasks, source namespace, Mac gate/current/historical projection and optional-Epic scheduling\nStale Epic closure source\nAt C:\\GitHub\\FDEmailClassifier\\scripts\\validate_tasks\\epic-closure.ps1:109 char:56\n+ ... nd $proof.source_sha -ne $GitHead){throw 'Stale Epic closure source'}\n+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Stale Epic closure source:String) [], RuntimeException\n    + FullyQualifiedErrorId : Stale Epic closure source\n \nLocal process verification failed: test-plan-sync.ps1\nAt C:\\GitHub\\FDEmailClassifier\\Tasks\\items\\governance\\FDEC-088-reconcile-upstream-training-plan\\evidence\\run-checks.ps1\n:13 char:33\n+ ... ASTEXITCODE -ne 0){throw \"Local process verification failed: $check\"}\n+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Local process v...t-plan-sync.ps1:String) [], RuntimeException\n    + FullyQualifiedErrorId : Local process verification failed: test-plan-sync.ps1\n \n",
+  "output_truncated": false,
+  "changed": true,
+  "wait_timed_out": false
+}

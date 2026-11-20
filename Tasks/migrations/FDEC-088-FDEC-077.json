@@ -1,0 +1,75 @@
+{
+  "schema": "fdec-identity-resolution/v2",
+  "correction_id": "FDEC-088",
+  "retired": {
+    "path": "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/TASK.md",
+    "sha256": "06007f723834e9220e5b96c3cecc6d5f8bc2b2be3d7c32291beec8283795789e"
+  },
+  "retained": {
+    "path": "Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/TASK.md",
+    "sha256": "3d4451d36cf95415297a9a9111f956babbf436c4065ce24dc0360cffed339d5d"
+  },
+  "replacement": {
+    "path": "Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/TASK.md",
+    "sha256": "88fa1c3be35558adb44d7ab33e6e64f012c5e5d3939bee9a07f89a71a89a0be4"
+  },
+  "retirement_event": {
+    "path": "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T173423731886Z-codex-superseded-b966964e.md",
+    "sha256": "a49b50716e2caf4865f4c4e3edb3c5c44ca28c17115bd361c7bb642153b54a87"
+  },
+  "source_revision": "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+  "id_map": [
+    {
+      "old_id": "FDEC-074",
+      "new_id": "FDEC-089"
+    },
+    {
+      "old_id": "FDEC-075",
+      "new_id": "FDEC-090"
+    },
+    {
+      "old_id": "FDEC-076",
+      "new_id": "FDEC-091"
+    },
+    {
+      "old_id": "FDEC-077",
+      "new_id": "FDEC-092"
+    },
+    {
+      "old_id": "FDEC-078",
+      "new_id": "FDEC-093"
+    },
+    {
+      "old_id": "FDEC-079",
+      "new_id": "FDEC-094"
+    },
+    {
+      "old_id": "FDEC-080",
+      "new_id": "FDEC-095"
+    },
+    {
+      "old_id": "FDEC-081",
+      "new_id": "FDEC-096"
+    },
+    {
+      "old_id": "FDEC-082",
+      "new_id": "FDEC-097"
+    },
+    {
+      "old_id": "FDEC-083",
+      "new_id": "FDEC-098"
+    }
+  ],
+  "planning_history": [
+    {
+      "original": {
+        "path": "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md",
+        "sha256": "21e744a7520986f8513bee214ec3c3fd5a6488fd0855a36f3194e2d0fd9cd105"
+      },
+      "replay": {
+        "path": "Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md",
+        "sha256": "d339446ecc0e7e1568b071fa76e3ef4be18bd70fa9da12698f8d1bb916c26007"
+      }
+    }
+  ]
+}

@@ -15,6 +15,7 @@ try {
     New-Item -ItemType Directory $temp | Out-Null
     Copy-Item "$root/Tasks" "$temp/Tasks" -Recurse
     Copy-Item "$root/AGENTS.md","$root/DEVELOPMENT.md" $temp
+    Reset-FixtureFoundationEpic $temp
     # Freeze the test fixture's target at its initial Planned state, regardless
     # of later project progress. These are disposable copies, not accepted history.
     $task='Tasks/items/foundation/FDEC-005-architecture-and-backend-adr'
@@ -22,7 +23,18 @@ try {
     if (!$ownedEvents.StartsWith([IO.Path]::GetFullPath($temp)+[IO.Path]::DirectorySeparatorChar)) { throw 'Unsafe fixture reset' }
     if (Test-Path $ownedEvents) { Remove-Item -LiteralPath $ownedEvents -Recurse -Force }
     Remove-Item -LiteralPath "$temp/Tasks/version-requests/FDEC-005.json" -ErrorAction SilentlyContinue
+    # The dependency-negative fixture also needs its gate to be nonterminal,
+    # independently of the real D001 gate's later completed history.
+    $ownedGate=[IO.Path]::GetFullPath("$temp/Tasks/items/quality/FDEC-006-targeted-integration-gate/events")
+    if(!$ownedGate.StartsWith([IO.Path]::GetFullPath($temp)+[IO.Path]::DirectorySeparatorChar)){throw 'Unsafe fixture gate reset'}
+    if(Test-Path -LiteralPath $ownedGate){
+        foreach($file in Get-ChildItem -LiteralPath $ownedGate -Filter '*.md'){
+            if([IO.File]::ReadAllText($file.FullName) -match '(?m)^event_type: (?:status-changed|work-started)\r?$'){Remove-Item -LiteralPath $file.FullName}
+        }
+    }
+    Remove-Item -LiteralPath "$temp/Tasks/version-requests/FDEC-006.json" -ErrorAction SilentlyContinue
     git -C $temp init --quiet
+    git -C $temp config core.autocrlf false
     git -C $temp add .
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture
     if ($LASTEXITCODE -ne 0) { throw 'Fixture baseline failed' }
@@ -30,12 +42,12 @@ try {
     New-Item -ItemType Directory "$temp/$task/evidence" -Force | Out-Null
     $ready.task_sha256=(Bound "$task/TASK.md").sha256
     $ready.matrix=New-FixtureMatrix $temp $task 'test-validation.ps1 admission scenarios'
+    $ready.dependency_revisions=New-FixtureDependencyBindings $temp 'FDEC-005'
     $ready.source_sha=git -C $temp rev-parse HEAD
     $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File | ForEach-Object { Bound $_.FullName.Substring($temp.Length+1).Replace('\','/') })
     $ready.allowed_paths=@('Tasks')
     $ready.rule_sources+= (Bound 'Tasks/policy/checkout-identities-076.json')
-    $migration=Get-Content "$temp/Tasks/migrations/FDEC-074.json" -Raw | ConvertFrom-Json
-    $ready | Add-Member migration_revisions @(@('Tasks/migrations/FDEC-074.json',$migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path) | ForEach-Object {Bound $_}) -Force
+    $ready | Add-Member migration_revisions (New-FixtureMigrationBindings $temp) -Force
     [IO.File]::WriteAllText("$temp/$task/evidence/fixture-proof.md",'Synthetic PASS evidence')
     $ready | Add-Member verification @((Bound "$task/evidence/fixture-proof.md")) -Force
     $ready | Add-Member source_state_algorithm 'fdec-source-state/v1' -Force

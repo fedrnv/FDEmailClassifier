@@ -1,0 +1,409 @@
+PASS: 27 exact upstream task/Epic/event records preserved; 10 local collision specs unchanged; task ledger changes append-only
+PASS: retained and replayed tasks, source namespace, Mac gate/current/historical projection and optional-Epic scheduling
+PASS: reject missing original planning history
+PASS: reject stale planning-source binding
+PASS: reject rebound replay with altered criteria
+PASS: reject rebound replacement specification
+PASS: reject executed source disguised as planned migration
+PASS: reject partial namespace that could resolve to local completed tasks
+PASS: reject unbound foreign task substitution
+PASS: reject repeated original planning event
+PASS: reject retirement before owner planning history
+PASS: reject membership relink without identity authority
+PASS: immutable baseline and claim admission inputs
+PASS: reject claim with an unbound planning-history input
+PASS: immutable baseline and dispatch admission inputs
+PASS: reject dispatch with an unbound planning-history input
+PASS: immutable baseline and resume admission inputs
+PASS: reject resume with an unbound planning-history input
+PASS: immutable baseline and execute admission inputs
+PASS: reject execute with an unbound planning-history input
+PASS: immutable baseline and close admission inputs
+PASS: reject close with an unbound planning-history input
+PASS: planning migrations and complete admission input bindings; no raw training data used
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: retained/replacement identities, gate relinking, all admission actions and incomplete/stale/unrelated migration rejection
+PASS: 112 records, immutable history, graph, requests and hosted publication boundary
+warning: in the working copy of 'Tasks/decisions/ADR-0001-local-inference-and-sdk-boundaries.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/events/fixture-active.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/evidence/closure-R005.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R001/REQUEST.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R001/RESULT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R001/reproduce-admission.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R002/REQUEST.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R002/RESULT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R002/verify-boundary.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R003/REQUEST.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R003/RESULT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R003/reproduce-staged-closure.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R003/verify-boundary.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R004/REQUEST.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R004/RESULT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R004/reproduce-committed-rename.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R004/reproduction-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R004/verify-boundary.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R005/REQUEST.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R005/RESULT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D001/reviews/R005/verify-boundary.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D003/events/20261120T173200Z-owner-membership-added-087.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D009/events/20261120T114908034Z-codex-membership-replaced-81c55913.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D011/EPIC.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D011/events/20261120T173423398663Z-codex-membership-replaced-98316da7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D011/events/20261120T173423538254Z-codex-membership-replaced-9a3a8877.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D011/events/20261120T173423641171Z-codex-membership-replaced-87fc5f82.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D011/events/20261120T173423779563Z-codex-membership-replaced-aef1c708.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D011/events/20261120T173423893225Z-codex-membership-replaced-81241c72.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D011/events/20261120T173423999967Z-codex-membership-replaced-d3f3aeb6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D012/EPIC.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D012/events/20261120T173424200972Z-codex-membership-replaced-9e1d5cf9.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D012/events/20261120T173424310424Z-codex-membership-replaced-12aa58fa.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D012/events/20261120T173424405809Z-codex-membership-replaced-c128f9e8.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-D012/events/20261120T173424513368Z-codex-membership-replaced-80a11fb3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-S001/events/20261120T105835Z-codex-membership-added-d3a33ce1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-S001/events/20261120T114907650Z-codex-membership-added-f57a3567.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-S001/events/20261120T120758097Z-codex-membership-added-97e3d59b.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-S001/events/20261120T131945683Z-codex-membership-added-237ab6bf.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/epics/FDEC-EPIC-S001/events/20261120T172730217Z-codex-membership-added-cefec483.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145415010Z-codex-readiness-accepted-71d2467a.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145431474Z-codex-work-started-44ca9467.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145947870Z-codex-readiness-accepted-b274b416.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T150200794Z-codex-readiness-accepted-09b51873.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T150205107Z-codex-status-changed-0e16c3a9.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-008-dataset-license-audit/evidence/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-008-dataset-license-audit/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150801906Z-codex-dependency-added-851d84a6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150806435Z-codex-readiness-accepted-b8821caa.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150812748Z-codex-work-started-1cebfe74.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152159557Z-codex-readiness-accepted-1a55ffb4.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152531114Z-codex-readiness-accepted-e51aaca9.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152616122Z-codex-readiness-accepted-b9465ab1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152705515Z-codex-readiness-accepted-6a405780.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152805390Z-codex-readiness-accepted-962f600b.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152825767Z-codex-status-changed-037feeb1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/alias-fix-test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/initial-test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/reader-fix-test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/result.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153012901Z-codex-dependency-added-9991e2a6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153018732Z-codex-readiness-accepted-4f3eb7ff.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153024373Z-codex-work-started-d9452800.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153524847Z-codex-readiness-accepted-dfd8b373.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153559433Z-codex-readiness-accepted-0a261645.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153750744Z-codex-readiness-accepted-e820cd4d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153821588Z-codex-status-changed-9fb06d32.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/evidence/initial-test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/evidence/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-010-canonical-annotation-mapping/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T154049933Z-codex-dependency-added-831c0c26.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T154111005Z-codex-readiness-accepted-31b613cd.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T154122106Z-codex-work-started-004cbbab.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T155350674Z-codex-readiness-accepted-f6f3a158.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T155647508Z-codex-status-changed-4c94f0e1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164242114Z-codex-scope-amended-5deba0cb.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164242170Z-codex-dependency-added-e4b265e1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164247212Z-codex-readiness-accepted-816e80cd.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164251706Z-codex-work-started-e0a79df2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T165206935Z-codex-readiness-accepted-d23e32fb.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T165527152Z-codex-status-changed-1e22491e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170053613Z-codex-scope-amended-efcbfb68.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170058039Z-codex-readiness-accepted-bb77dcdc.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170102480Z-codex-work-started-82d6e429.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170857867Z-codex-readiness-accepted-c951eed1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172103865Z-codex-scope-amended-ce96411a.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172106330Z-codex-readiness-accepted-48182406.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172856955Z-codex-dependency-added-a4a485f7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/independent-data-test-run-v2.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-test-output-v1.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-verification-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/sinabis-acceptance-v3.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/write-sinabis-readiness-v3.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160053298Z-codex-dependency-added-cc080058.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160058378Z-codex-readiness-accepted-fa1e2ea1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160102429Z-codex-work-started-87be8679.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161357887Z-codex-readiness-accepted-b4460d83.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161642597Z-codex-readiness-accepted-007e087f.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161706667Z-codex-status-changed-16653b22.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/evidence/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-074-audited-training-source-registry/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T173423345933Z-codex-superseded-fbd93e40.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173423490215Z-codex-superseded-c3663f52.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-076-graceful-training-source-fallback/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-076-graceful-training-source-fallback/events/20261120T173423593979Z-codex-superseded-1938c2c7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T173423731886Z-codex-superseded-b966964e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-087-apple-silicon-mlx-training-handoff/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-089-audited-training-source-registry/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-089-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-091-graceful-training-source-fallback/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-001-open-source-governance/events/20261120T110153795Z-codex-readiness-accepted-4e148fa4.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-001-open-source-governance/events/20261120T110153797Z-codex-work-started-4b79881d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-001-open-source-governance/events/20261120T110155985Z-codex-readiness-accepted-3d0e2aed.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-001-open-source-governance/events/20261120T110155987Z-codex-status-changed-8b70f074.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-001-open-source-governance/events/20261120T171501Z-owner-policy-alignment-fdec-001.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-001-open-source-governance/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/events/20261120T110528872Z-codex-readiness-accepted-44455958.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/events/20261120T110528940Z-codex-scope-amended-cd8df81c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/events/20261120T110528943Z-codex-work-started-1a531b6a.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/events/20261120T110530600Z-codex-readiness-accepted-4f0be059.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/events/20261120T110530602Z-codex-status-changed-e8037591.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/events/20261120T111025596Z-codex-readiness-accepted-c35c1c48.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/events/20261120T111025655Z-codex-scope-amended-67509970.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/events/20261120T111025657Z-codex-work-started-382967bf.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/events/20261120T111026442Z-codex-readiness-accepted-fd572d88.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/events/20261120T111026444Z-codex-status-changed-0d2fe95c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/events/20261120T111712010Z-codex-readiness-accepted-316cf2c8.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/events/20261120T111712062Z-codex-work-started-b91dfeab.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/events/20261120T111713412Z-codex-readiness-accepted-afc89ac1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/events/20261120T111713415Z-codex-status-changed-fe6dcbf8.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-005-architecture-and-backend-adr/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-068-first-public-beta-release-acceptance/events/20261120T171508Z-owner-policy-alignment-fdec-068.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T112453309Z-codex-readiness-accepted-734a4d68.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T112453384Z-codex-work-started-2c380d3f.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T112453388Z-codex-status-changed-32634332.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T115541141Z-codex-readiness-accepted-96e83972.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T115541228Z-codex-status-changed-a4e2160e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T115542910Z-codex-readiness-accepted-e01afe26.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T115542913Z-codex-status-changed-27bffe6e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/events/20261120T171502Z-owner-policy-alignment-fdec-072.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/blocker-audit-03.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/final-verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/github-preview-verified.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/neutral-preview-revision.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/progress-and-blocker.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/red-preview-revision.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/events/20261120T105835Z-codex-readiness-accepted-a00d4a7b.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/events/20261120T105835Z-codex-status-changed-900c616b.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/events/20261120T105835Z-codex-work-started-279823ca.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-074-resolve-task-identity-collision/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-074-resolve-task-identity-collision/events/20261120T115346121Z-codex-readiness-accepted-97cd1d1e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-074-resolve-task-identity-collision/events/20261120T115346212Z-codex-work-started-d9d66f00.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-074-resolve-task-identity-collision/events/20261120T115348139Z-codex-readiness-accepted-9bdd58b7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-074-resolve-task-identity-collision/events/20261120T115348142Z-codex-status-changed-d2d3dedc.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-074-resolve-task-identity-collision/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121354815Z-codex-readiness-accepted-6b1d0270.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121354868Z-codex-work-started-5ac81f8d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121356606Z-codex-readiness-accepted-1cfe79a1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121356623Z-codex-status-changed-305429e2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T132009690Z-codex-readiness-accepted-902c1e98.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T132025158Z-codex-readiness-accepted-40863001.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T132028124Z-codex-work-started-79d9db5f.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T133149812Z-codex-readiness-accepted-970d412c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T133152959Z-codex-status-changed-7c5686d5.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/evidence/test-output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T173133875Z-codex-readiness-accepted-d277241a.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T173137418Z-codex-work-started-09e3a701.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T173817398Z-codex-readiness-accepted-51894709.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174024783Z-codex-readiness-accepted-7e319127.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174110433Z-codex-readiness-accepted-22f67637.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174215797Z-codex-readiness-accepted-bc44e47c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174331074Z-codex-readiness-accepted-4521c152.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174606713Z-codex-readiness-accepted-6312d2c0.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/fifth-test-run.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/first-test-run.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/fourth-test-run.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/import-inventory-v1.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/import-owner-plan.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/run-checks.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/second-test-run.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/third-test-run.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/verify-owner-plan.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/write-readiness.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/operations/FDEC-052-fdupdate-publisher-integration/events/20261120T171504Z-owner-policy-alignment-fdec-052.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/operations/FDEC-053-github-release-and-registry-distribution/events/20261120T171505Z-owner-policy-alignment-fdec-053.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115931524Z-codex-readiness-accepted-a59f0aa7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115931578Z-codex-work-started-d5d8c9e0.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115932768Z-codex-readiness-accepted-1bf9be45.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115932771Z-codex-status-changed-f1a220b4.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T120720404Z-codex-dependency-added-3856f353.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T120720410Z-codex-dependency-added-1498aed7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T120720415Z-codex-dependency-added-987c8bf5.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T120720421Z-codex-dependency-added-d8c2a3af.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T120720423Z-codex-status-changed-51a6535d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T125133539Z-codex-readiness-accepted-cf6e01ea.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T125137109Z-codex-status-changed-c1d38b44.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T125233498Z-codex-readiness-accepted-dcd30557.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T130633171Z-codex-readiness-accepted-89aa9f14.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T130654699Z-codex-status-changed-d2b5ac94.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T131945760Z-codex-status-changed-244fbf03.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T131945792Z-codex-dependency-added-ad32437c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T133245758Z-codex-readiness-accepted-8a05cdd8.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T133249093Z-codex-status-changed-86a16d2f.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T133656574Z-codex-readiness-accepted-8383f3e6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T134953511Z-codex-readiness-accepted-7cf8cf5d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T134956659Z-codex-status-changed-4b053571.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T135521715Z-codex-status-changed-768ca0a1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T135521814Z-codex-dependency-added-33868ef0.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T140457991Z-codex-readiness-accepted-6d0567fb.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T140503055Z-codex-status-changed-5edae930.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T141430120Z-codex-readiness-accepted-c7b97d03.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T141433032Z-codex-status-changed-e52073b1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T142108368Z-codex-status-changed-b0fe8465.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T142108395Z-codex-dependency-added-dd4cba80.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T142639663Z-codex-readiness-accepted-b2e22b4d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T142642819Z-codex-status-changed-d17171e7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T143727152Z-codex-readiness-accepted-6f5b9372.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T143730275Z-codex-status-changed-d1ae2aaf.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/R002-verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/R003-verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/R004-verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/R005-verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T120056741Z-codex-readiness-accepted-91565d20.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T120056788Z-codex-work-started-cf6b099c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T120720425Z-codex-status-changed-3a119583.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T130805526Z-codex-readiness-accepted-06f6bcc2.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T130808151Z-codex-status-changed-67be36c8.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T131810323Z-codex-readiness-accepted-32e9a290.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T131813027Z-codex-status-changed-90751fe6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T131945822Z-codex-status-changed-d718e54e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T135102687Z-codex-readiness-accepted-40049156.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T135105704Z-codex-status-changed-03b94c38.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T135521845Z-codex-status-changed-09c1672d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T141548190Z-codex-readiness-accepted-1eecfef5.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T141551161Z-codex-status-changed-622735bc.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T142108424Z-codex-status-changed-ec8af5b6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T143834238Z-codex-readiness-accepted-5fdd6a35.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T143837938Z-codex-status-changed-8e15375e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T144419316Z-codex-readiness-accepted-12f3444c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/events/20261120T144422382Z-codex-status-changed-685c708c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/evidence/R001-handoff.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/evidence/R002-verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-007-independent-acceptance-review/evidence/R005-verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-020-targeted-integration-gate/events/20261120T173201Z-owner-dependency-added-087.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-063-targeted-integration-gate/events/20261120T114908397Z-codex-dependency-replaced-152cc2d0.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/events/20261120T122029750Z-codex-readiness-accepted-a12053db.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/events/20261120T122029818Z-codex-work-started-4bdd623e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/events/20261120T122032776Z-codex-readiness-accepted-dfdac5bd.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/events/20261120T122032784Z-codex-status-changed-03274afe.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/events/20261120T122843247Z-codex-readiness-accepted-1b233ff5.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/events/20261120T122843331Z-codex-work-started-81ff6d1d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/events/20261120T122901829Z-codex-readiness-accepted-3eb20f95.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/events/20261120T122901833Z-codex-status-changed-8bd8a791.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/events/20261120T123315070Z-codex-readiness-accepted-3d6911d3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/events/20261120T123540176Z-codex-work-started-4423572f.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/events/20261120T123826388Z-codex-readiness-accepted-09614bed.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/events/20261120T123828820Z-codex-status-changed-24a5c4e6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-targeted-integration-gate/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-078-targeted-integration-gate/events/20261120T173423839220Z-codex-superseded-c0110132.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-independent-acceptance-review/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-independent-acceptance-review/events/20261120T173423952392Z-codex-superseded-e93e66db.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/events/20261120T124027931Z-codex-readiness-accepted-f483f982.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/events/20261120T124351451Z-codex-readiness-accepted-41d82c38.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/events/20261120T124925145Z-codex-work-started-ea5bfd0d.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/events/20261120T124927698Z-codex-readiness-accepted-34828f62.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/events/20261120T124930297Z-codex-status-changed-255fe96b.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-080-independent-benchmark-data-specification/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-080-independent-benchmark-data-specification/events/20261120T173424053725Z-codex-superseded-ee2a5904.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/events/20261120T173424258305Z-codex-superseded-1015c1d6.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/events/20261120T135721128Z-codex-readiness-accepted-938dcec0.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/events/20261120T135724301Z-codex-work-started-1734d440.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/events/20261120T140008740Z-codex-readiness-accepted-d92339f7.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/events/20261120T140346311Z-codex-readiness-accepted-bdc079a1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/events/20261120T140351392Z-codex-status-changed-55fab299.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/evidence/baseline-reproduction.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/events/20261120T173424362672Z-codex-superseded-0596f4fa.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/events/20261120T142223260Z-codex-readiness-accepted-50b8d2ab.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/events/20261120T142226366Z-codex-work-started-5896e294.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/events/20261120T142344984Z-codex-readiness-accepted-501d2ae8.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/events/20261120T142553174Z-codex-readiness-accepted-fd12fdea.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/events/20261120T142556446Z-codex-status-changed-f7063eaf.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/evidence/baseline-reproduction.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-preserve-committed-source-paths/evidence/verification.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/events/20261120T173424464017Z-codex-superseded-7ab20d2e.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-084-public-benchmark-publication/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-085-targeted-integration-gate/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-085-targeted-integration-gate/events/20261120T173424547937Z-codex-dependency-replaced-973f8b6b.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-085-targeted-integration-gate/events/20261120T173424612047Z-codex-dependency-replaced-898fd45c.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-085-targeted-integration-gate/events/20261120T173424640461Z-codex-dependency-replaced-e5016e23.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-085-targeted-integration-gate/events/20261120T173424671383Z-codex-dependency-replaced-478139c1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-086-independent-acceptance-review/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-093-targeted-integration-gate/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-094-independent-acceptance-review/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-095-independent-benchmark-data-specification/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-096-open-benchmark-fixture-pack/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-097-private-real-email-benchmark-adapter/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-098-reproducible-evaluation-runner/TASK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/web/FDEC-058-site-design-and-content/events/20261120T171503Z-owner-policy-alignment-fdec-058.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/events/20261120T114908434Z-codex-superseded-a396e5df.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-074.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-075.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-076.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-077.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-078.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-079.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-080.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-081.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-082.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/FDEC-088-FDEC-083.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/README-074.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/migrations/README-088.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/policy/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/policy/implementation-004.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Tasks/policy/upstream-5.6.md', LF will be replaced by CRLF the next time Git touches it
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+Task is terminal or missing
+At C:\GitHub\FDEmailClassifier\scripts\validate_tasks\admission.ps1:71 char:63
++ ... tatus -in 'Done','Cancelled') { throw 'Task is terminal or missing' }
++                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Task is terminal or missing:String) [], RuntimeException
+    + FullyQualifiedErrorId : Task is terminal or missing
+ 
+Local process verification failed: test-validation.ps1
+At C:\GitHub\FDEmailClassifier\Tasks\items\governance\FDEC-088-reconcile-upstream-training-plan\evidence\run-checks.ps1
+:13 char:33
++ ... ASTEXITCODE -ne 0){throw "Local process verification failed: $check"}
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Local process v...-validation.ps1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Local process verification failed: test-validation.ps1
+ 
