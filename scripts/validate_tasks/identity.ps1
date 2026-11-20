@@ -2,7 +2,7 @@
 # Binary files and text containing NUL remain exact byte identities.
 function Get-IdentityHash([string]$Path) {
     $bytes=[IO.File]::ReadAllBytes($Path)
-    $textFile=([IO.Path]::GetExtension($Path) -in '.md','.json','.ps1','.toml','.svg') -or ((Split-Path $Path -Leaf) -in 'LICENSE','NOTICE','.gitattributes')
+    $textFile=([IO.Path]::GetExtension($Path) -in '.md','.json','.ps1','.toml','.svg','.rs','.txt','.yml','.yaml','.c','.h','.hpp','.cpp','.js','.ts','.css','.html','.lock','.sh','.cmd','.bat') -or ((Split-Path $Path -Leaf) -in 'LICENSE','NOTICE','.gitattributes','.gitignore')
     if ($textFile) {
         $utf8=[Text.UTF8Encoding]::new($false,$true)
         $text=$utf8.GetString($bytes)

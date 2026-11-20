@@ -1,0 +1,11 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "20e6ce53-35be-4a26-8350-20631ba95d14",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-077",
+    "summary":  "Bind actual index and working source state to all admission actions",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/evidence/verification.md"
+                     ]
+}

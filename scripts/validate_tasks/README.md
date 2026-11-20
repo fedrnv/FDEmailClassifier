@@ -1,5 +1,19 @@
 # First closure and reopening
 
+FDEC-077 readiness includes `source_state_algorithm: fdec-source-state/v1` and
+`source_state_sha256` from `Get-SourceState <root> <task-id>` in source-state.ps1.
+It binds the actual index plus tracked and nonignored new file paths/content,
+including deletion. HEAD alone is insufficient. Every admission action recomputes
+the digest. Material source changes require fresh task readiness before another
+claim/dispatch/resume/execute/close, including authorized in-progress edits; no
+human approval per edit is added. Only this task's append-only events/evidence and
+single version request are excluded (immutable history still validates them).
+Only recognized untracked .idea XML/IML/config state is excluded as unrelated IDE
+data; arbitrary source under .idea and all tracked IDE files remain bound. Ignored
+build/cache files follow Git's ignore rules, while ignored-but-tracked
+source is always included. Reparse points, unmerged/index-unsupported entries and
+ambiguous path encodings fail closed. There is no arbitrary caller exclusion list.
+
 FDEC-076 adds `identity.ps1`: new bindings should use `Get-IdentityHash`. Explicit
 UTF-8 text types normalize CRLF to LF only, preserving BOM and every other byte;
 binary/NUL-containing input stays exact. Accepted legacy raw hashes remain intact.

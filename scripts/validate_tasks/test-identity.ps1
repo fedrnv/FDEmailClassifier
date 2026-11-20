@@ -1,5 +1,6 @@
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
+. "$PSScriptRoot/source-state.ps1"
 $records=& "$PSScriptRoot/repository.ps1" -Root $root -AsObject
 if ($records['FDEC-073'].parent -ne 'FDEC-EPIC-S001' -or $records['FDEC-073'].status -ne 'Done' -or $records['FDEC-075'].parent -ne 'FDEC-EPIC-D009' -or $records['FDEC-075'].status -ne 'Planned' -or $records['FDEC-063'].dependencies -notcontains 'FDEC-075' -or $records['FDEC-063'].dependencies -contains 'FDEC-073') { throw 'Identity projection differs from accepted migration' }
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-identity-'+[guid]::NewGuid())
@@ -47,6 +48,8 @@ Planned -> Blocked.
     $migration=Get-Content "$temp/Tasks/migrations/FDEC-074.json" -Raw | ConvertFrom-Json
     $ready | Add-Member migration_revisions @(@('Tasks/migrations/FDEC-074.json',$migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path) | ForEach-Object {Bound $_}) -Force
     $ready | Add-Member verification @((Bound "$target/evidence/github-preview-verified.md")) -Force
+    $ready | Add-Member source_state_algorithm 'fdec-source-state/v1' -Force
+    $ready | Add-Member source_state_sha256 (Get-SourceState $temp 'FDEC-072') -Force
     $ready | ConvertTo-Json -Depth 12 | Set-Content "$temp/$target/evidence/fixture-ready.json" -Encoding UTF8
     $unbound=$ready | ConvertTo-Json -Depth 12 | ConvertFrom-Json
     $unbound.migration_revisions=@()

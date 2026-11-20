@@ -1,5 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
+. "$PSScriptRoot/source-state.ps1"
 & "$PSScriptRoot/repository.ps1" -Root $root
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-validation-'+[guid]::NewGuid())
 function Reject([scriptblock]$Run,[string]$Expected) {
@@ -34,6 +35,8 @@ try {
     $ready | Add-Member migration_revisions @(@('Tasks/migrations/FDEC-074.json',$migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path) | ForEach-Object {Bound $_}) -Force
     [IO.File]::WriteAllText("$temp/$task/evidence/fixture-proof.md",'Synthetic PASS evidence')
     $ready | Add-Member verification @((Bound "$task/evidence/fixture-proof.md")) -Force
+    $ready | Add-Member source_state_algorithm 'fdec-source-state/v1' -Force
+    $ready | Add-Member source_state_sha256 (Get-SourceState $temp 'FDEC-005') -Force
     $ready | ConvertTo-Json -Depth 10 | Set-Content "$temp/$task/evidence/fixture-ready.json" -Encoding UTF8
     foreach ($action in 'claim','dispatch','resume','execute','close') {
         & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -Action $action -ReadinessFile evidence/fixture-ready.json
@@ -58,14 +61,18 @@ try {
     Remove-Item -LiteralPath "$temp/Tasks/version-requests/duplicate.json"
     # A new scoped rule is not authorized by an older root-only ready decision.
     [IO.File]::WriteAllText("$temp/Tasks/items/AGENTS.md",'# Synthetic scoped rule')
-    Reject { & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -ReadinessFile evidence/fixture-ready.json } 'Missing governing rule'
+    $scoped=$ready|ConvertTo-Json -Depth 12|ConvertFrom-Json
+    $scoped.source_state_sha256=Get-SourceState $temp 'FDEC-005'
+    $scoped|ConvertTo-Json -Depth 12|Set-Content "$temp/$task/evidence/fixture-unscoped.json" -Encoding UTF8
+    Reject { & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -ReadinessFile evidence/fixture-unscoped.json } 'Missing governing rule'
     Remove-Item -LiteralPath "$temp/Tasks/items/AGENTS.md"
     $gate='Tasks/items/quality/FDEC-006-targeted-integration-gate'
     $ready.task_sha256=(Bound "$gate/TASK.md").sha256
     $records=& "$PSScriptRoot/repository.ps1" -Root $temp -AsObject
     $ready.dependency_revisions=@($records.Values | ForEach-Object { $_.state_paths } | ForEach-Object { Bound $_.Substring($temp.Length+1).Replace('\','/') })
-    $ready | ConvertTo-Json -Depth 10 | Set-Content "$temp/$gate/evidence-fixture.json" -Encoding UTF8
-    Reject { & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-006 -ReadinessFile evidence-fixture.json } 'Dependency not Done'
+    $ready.source_state_sha256=Get-SourceState $temp 'FDEC-006'
+    $ready | ConvertTo-Json -Depth 12 | Set-Content "$temp/$gate/evidence/fixture-gate.json" -Encoding UTF8
+    Reject { & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-006 -ReadinessFile evidence/fixture-gate.json } 'Dependency not Done'
     # No immutable input changes are necessary to demonstrate competing Epic state.
     $event=@'
 ---

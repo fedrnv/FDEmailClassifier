@@ -6,6 +6,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/identity.ps1"
+. "$PSScriptRoot/source-state.ps1"
 $pin = Get-Content "$Root/Tasks/policy/adoption-5.6.json" -Raw | ConvertFrom-Json
 foreach ($entry in $pin.inventory) {
     $path = Join-Path $Root $entry.path
@@ -25,6 +26,7 @@ if ($TaskId) {
     if (!(Test-IdentityBinding $Root $spec.FullName.Substring(([IO.Path]::GetFullPath($Root).TrimEnd('\','/')).Length+1) $ready.task_sha256) -or $ready.policy_sha256 -ne $pin.policy_sha256) { throw 'Stale task or policy readiness' }
     $head = git -C $Root rev-parse HEAD
     if ($LASTEXITCODE -ne 0 -or $ready.source_sha -ne $head) { throw 'Stale source readiness' }
+    if ($ready.source_state_algorithm -ne 'fdec-source-state/v1' -or $ready.source_state_sha256 -ne (Get-SourceState $Root $TaskId)) { throw 'Stale actual source readiness' }
     if ($ready.atomicity.outcomes.Count -ne 1 -or $ready.atomicity.packets.Count -lt 1 -or $ready.atomicity.packets.Count -gt 3 -or $ready.atomicity.independent_acceptance -ne $false -or !$ready.atomicity.boundary_reason) { throw 'Invalid atomicity' }
     if ($ready.atomicity.packets.Count -gt 1 -and !$ready.atomicity.inseparability_reason) { throw 'Missing inseparability reason' }
     if (!$ready.matrix -or !$ready.rule_sources -or !$ready.dependency_revisions -or !$ready.epic_state_evidence) { throw 'Incomplete readiness closure' }
