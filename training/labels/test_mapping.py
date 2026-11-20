@@ -162,7 +162,7 @@ class MappingTests(unittest.TestCase):
         self.assertEqual((source, annotations), before)
 
     def test_invalid_input_static_errors_and_original_state_preserved(self):
-        invalid = [None, [], {}, {"source_row": True, "labels": {}}, annotation(-1), annotation(100000), annotation(category=42), annotation(labels="work"), annotation(labels=["work"] * 33), annotation(category="private\\nbody"), annotation(category="\ud800"), annotation(status="invalid"), dict(annotation(), extra="private"), annotation(secret="private")]
+        invalid = [None, [], {}, {"source_row": True, "labels": {}}, annotation(-1), annotation(100000), annotation(category=42), annotation(labels="work"), annotation(labels=["work"] * 33), annotation(category="private\nbody"), annotation(category="\ud800"), annotation(status="invalid"), dict(annotation(), extra="private"), annotation(secret="private")]
         for value in invalid:
             with self.subTest(value_type=type(value).__name__):
                 before = deepcopy(value)
