@@ -1,0 +1,21 @@
+﻿{
+    "datasets":  [
+                     {
+                         "id":  "imnim/multiclass-email-classification",
+                         "revision":  "e95090f0bb6dae0b05c9cd6db314dcae1d40db3f"
+                     },
+                     {
+                         "id":  "weijianzhg/email-triage-action-seed",
+                         "revision":  "8c98baa8b10a1dddd676c860d9e1b86c89141c38"
+                     },
+                     {
+                         "id":  "talby/spamassassin",
+                         "revision":  "a1b3371d2df15575f766c081cb329543955d27f6"
+                     }
+                 ],
+    "schema":  "fdec-dataset-allowlist/v1",
+    "audit":  {
+                  "sha256":  "755a5fffc87d9396f7805e7d4beedd3133865c26fe95c4e1dd2158f5beaee5d9",
+                  "path":  "docs/legal/datasets/audit-2026-11-20.json"
+              }
+}

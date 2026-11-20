@@ -1,0 +1,68 @@
+﻿{
+    "observations":  {
+                         "sha256":  "7f12bd82d9803554176c98cab0e8f05b50e4d0b63d59e3d8d5c055731bd0b382",
+                         "path":  "docs/legal/datasets/sources-2026-11-20.json"
+                     },
+    "reviewed_at":  "2026-11-20T14:57:15.6457296+00:00",
+    "schema":  "fdec-dataset-audit/v1",
+    "reviewer":  "codex under FDEC-008 executor authority",
+    "report":  {
+                   "sha256":  "51884c1fde3b037def8a2443cafd679a17725897313494ed790f3db75b6029bf",
+                   "path":  "docs/legal/datasets/audit-2026-11-20.md"
+               },
+    "decisions":  [
+                      {
+                          "id":  "imnim/multiclass-email-classification",
+                          "reason":  "MIT declaration does not establish all-row origin or generation-time output rights; obtain documented provenance and applicable permissions.",
+                          "revision":  "e95090f0bb6dae0b05c9cd6db314dcae1d40db3f",
+                          "artifacts":  [
+                                            {
+                                                "path":  "email_dataset.json",
+                                                "sha256":  null,
+                                                "size":  1140713,
+                                                "git_blob_sha1":  "f18d22de51d259ff74452c90cfa9248198106fee"
+                                            }
+                                        ],
+                          "status":  "blocked",
+                          "allowed_purposes":  [
+
+                                               ],
+                          "declared_license":  "MIT",
+                          "scope":  ""
+                      },
+                      {
+                          "id":  "weijianzhg/email-triage-action-seed",
+                          "reason":  "Apache-2.0 grant and explicit synthetic provenance support the provider-permitted specialist classifier purpose; no general model or publication approval.",
+                          "revision":  "8c98baa8b10a1dddd676c860d9e1b86c89141c38",
+                          "artifacts":  [
+                                            {
+                                                "path":  "data/train.parquet",
+                                                "sha256":  "9ea7c656d016012f7e800a9612d399114ca081bfcbdce4101d1999cb6c293854",
+                                                "size":  1103958,
+                                                "git_blob_sha1":  "3fdb544a7453ec7dc237344c4f591806a0845044"
+                                            }
+                                        ],
+                          "status":  "allowed",
+                          "allowed_purposes":  [
+                                                   "commercial_training",
+                                                   "evaluation"
+                                               ],
+                          "declared_license":  "Apache-2.0",
+                          "scope":  "specialized-email-classifier"
+                      },
+                      {
+                          "id":  "talby/spamassassin",
+                          "reason":  "Unknown license and retained sender copyright leave commercial training and redistribution unresolved.",
+                          "revision":  "a1b3371d2df15575f766c081cb329543955d27f6",
+                          "artifacts":  [
+
+                                        ],
+                          "status":  "blocked",
+                          "allowed_purposes":  [
+
+                                               ],
+                          "declared_license":  "UNKNOWN",
+                          "scope":  ""
+                      }
+                  ]
+}

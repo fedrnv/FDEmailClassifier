@@ -1,0 +1,224 @@
+﻿{
+    "reference_sources":  [
+                              {
+                                  "document_date":  "January 2004",
+                                  "sections":  [
+                                                   "2",
+                                                   "3",
+                                                   "4"
+                                               ],
+                                  "url":  "https://www.apache.org/licenses/LICENSE-2.0",
+                                  "id":  "apache-license"
+                              },
+                              {
+                                  "document_date":  "not versioned",
+                                  "sections":  [
+                                                   "permission",
+                                                   "notice condition"
+                                               ],
+                                  "url":  "https://opensource.org/license/mit",
+                                  "id":  "mit-license"
+                              },
+                              {
+                                  "document_date":  "January 31 2006",
+                                  "sections":  [
+                                                   "copyright",
+                                                   "headers",
+                                                   "live testing"
+                                               ],
+                                  "url":  "https://spamassassin.apache.org/old/publiccorpus/readme.html",
+                                  "id":  "spamassassin-corpus"
+                              },
+                              {
+                                  "document_date":  "June 17 2025",
+                                  "sections":  [
+                                                   "B",
+                                                   "D.4"
+                                               ],
+                                  "url":  "https://www.anthropic.com/legal/commercial-terms",
+                                  "id":  "anthropic-commercial"
+                              },
+                              {
+                                  "document_date":  "March 16 2026",
+                                  "sections":  [
+                                                   "What you can do with Outputs",
+                                                   "What is prohibited"
+                                               ],
+                                  "url":  "https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model",
+                                  "id":  "anthropic-classifiers"
+                              },
+                              {
+                                  "document_date":  "August 31 2026",
+                                  "sections":  [
+                                                   "5.1",
+                                                   "5.8",
+                                                   "6.1"
+                                               ],
+                                  "url":  "https://openrouter.ai/terms",
+                                  "id":  "openrouter"
+                              },
+                              {
+                                  "document_date":  "January 1 2026",
+                                  "sections":  [
+                                                   "3.3",
+                                                   "4.1",
+                                                   "Permitted Exception"
+                                               ],
+                                  "url":  "https://openai.com/policies/services-agreement/",
+                                  "id":  "openai"
+                              }
+                          ],
+    "datasets":  [
+                     {
+                         "additional_evidence":  [
+                                                     {
+                                                         "observation":  "Generation script names gpt-3.5-turbo; this is not proof that every released row used it or of applicable account terms.",
+                                                         "url":  "https://huggingface.co/datasets/imnim/multiclass-email-classification/raw/e95090f0bb6dae0b05c9cd6db314dcae1d40db3f/dataset_creation.py",
+                                                         "sha256":  "3850b452fcd3047830c1de6c2065fc57b9bc17d52868d7da472c1cf6bf21180c"
+                                                     }
+                                                 ],
+                         "id":  "imnim/multiclass-email-classification",
+                         "metadata":  {
+                                          "sha256":  "f0187074e2127255c79d436b8a7af6eaa690aab324b1de04516f75675a00c59b",
+                                          "url":  "https://huggingface.co/api/datasets/imnim/multiclass-email-classification/revision/e95090f0bb6dae0b05c9cd6db314dcae1d40db3f?blobs=true"
+                                      },
+                         "file_inventory":  [
+                                                {
+                                                    "path":  ".gitattributes",
+                                                    "size":  2461,
+                                                    "git_blob_sha1":  "1ef325f1b111266a6b26e0196871bd78baa8c2f3"
+                                                },
+                                                {
+                                                    "path":  "README.md",
+                                                    "size":  738,
+                                                    "git_blob_sha1":  "616d2e598fc17726f5fb9c2134f0b60cb272458a"
+                                                },
+                                                {
+                                                    "path":  "dataset_creation.py",
+                                                    "size":  7878,
+                                                    "git_blob_sha1":  "56cc87231e0214e69d30866705de06cc25fb59f5"
+                                                },
+                                                {
+                                                    "path":  "email_dataset.json",
+                                                    "size":  1140713,
+                                                    "git_blob_sha1":  "f18d22de51d259ff74452c90cfa9248198106fee"
+                                                },
+                                                {
+                                                    "path":  "requirement.txt",
+                                                    "size":  40,
+                                                    "git_blob_sha1":  "cb7aeb8b566847208d53d4d029b3832385fc861d"
+                                                }
+                                            ],
+                         "artifacts":  [
+                                           {
+                                               "path":  "email_dataset.json",
+                                               "sha256":  null,
+                                               "size":  1140713,
+                                               "git_blob_sha1":  "f18d22de51d259ff74452c90cfa9248198106fee"
+                                           }
+                                       ],
+                         "card":  {
+                                      "url":  "https://huggingface.co/datasets/imnim/multiclass-email-classification/raw/e95090f0bb6dae0b05c9cd6db314dcae1d40db3f/README.md",
+                                      "sha256":  "de69b0adb28d0117105547af1f761bd2220aecab635f4dad429e53e69865c329",
+                                      "git_blob_sha1":  "616d2e598fc17726f5fb9c2134f0b60cb272458a"
+                                  },
+                         "revision":  "e95090f0bb6dae0b05c9cd6db314dcae1d40db3f",
+                         "provenance":  "unresolved",
+                         "declared_license":  "MIT"
+                     },
+                     {
+                         "additional_evidence":  [
+
+                                                 ],
+                         "id":  "weijianzhg/email-triage-action-seed",
+                         "metadata":  {
+                                          "sha256":  "e01faa161888c03e45fe3520342949c4625f1a189b38abb55204a701f01bbfed",
+                                          "url":  "https://huggingface.co/api/datasets/weijianzhg/email-triage-action-seed/revision/8c98baa8b10a1dddd676c860d9e1b86c89141c38?blobs=true"
+                                      },
+                         "file_inventory":  [
+                                                {
+                                                    "path":  ".gitattributes",
+                                                    "size":  2504,
+                                                    "git_blob_sha1":  "bed0738c7eeb449bca98b5d2f33c89a1ee56349a"
+                                                },
+                                                {
+                                                    "path":  "README.md",
+                                                    "size":  6090,
+                                                    "git_blob_sha1":  "3a7ffbd723c2bc5d8c9cdf055a7069dbf1a982ed"
+                                                },
+                                                {
+                                                    "path":  "data/train.parquet",
+                                                    "size":  1103958,
+                                                    "git_blob_sha1":  "3fdb544a7453ec7dc237344c4f591806a0845044"
+                                                },
+                                                {
+                                                    "path":  "messages.jsonl",
+                                                    "size":  4503524,
+                                                    "git_blob_sha1":  "e085f93ce7c2e9cce4bfd6615eee324a48e754bb"
+                                                }
+                                            ],
+                         "artifacts":  [
+                                           {
+                                               "path":  "data/train.parquet",
+                                               "sha256":  "9ea7c656d016012f7e800a9612d399114ca081bfcbdce4101d1999cb6c293854",
+                                               "size":  1103958,
+                                               "git_blob_sha1":  "3fdb544a7453ec7dc237344c4f591806a0845044"
+                                           }
+                                       ],
+                         "card":  {
+                                      "url":  "https://huggingface.co/datasets/weijianzhg/email-triage-action-seed/raw/8c98baa8b10a1dddd676c860d9e1b86c89141c38/README.md",
+                                      "sha256":  "2bb851c855d60a96ef3f648bb078afd0d09f280486bdbac0e0a090ec4fa64aaa",
+                                      "git_blob_sha1":  "3a7ffbd723c2bc5d8c9cdf055a7069dbf1a982ed"
+                                  },
+                         "revision":  "8c98baa8b10a1dddd676c860d9e1b86c89141c38",
+                         "provenance":  "uploader-declared-synthetic",
+                         "declared_license":  "Apache-2.0"
+                     },
+                     {
+                         "additional_evidence":  [
+
+                                                 ],
+                         "id":  "talby/spamassassin",
+                         "metadata":  {
+                                          "sha256":  "8bf571715baa8ade389262142795b28e68ebbcb0171287fc24330875965989c7",
+                                          "url":  "https://huggingface.co/api/datasets/talby/spamassassin/revision/a1b3371d2df15575f766c081cb329543955d27f6?blobs=true"
+                                      },
+                         "file_inventory":  [
+                                                {
+                                                    "path":  ".gitattributes",
+                                                    "size":  2307,
+                                                    "git_blob_sha1":  "28df5f900b358436f0267334b3e3e9af33f917ba"
+                                                },
+                                                {
+                                                    "path":  "README.md",
+                                                    "size":  2258,
+                                                    "git_blob_sha1":  "0681e03b1d8a8cd2471363342a804d6c0c4dbb8a"
+                                                },
+                                                {
+                                                    "path":  "dep.py",
+                                                    "size":  553160,
+                                                    "git_blob_sha1":  "3abdf6f6bbd4d455b63ea135eed82880e384cf76"
+                                                },
+                                                {
+                                                    "path":  "spamassassin.py",
+                                                    "size":  6580,
+                                                    "git_blob_sha1":  "c03c441e5a0b4576291929c76a142092758ff39c"
+                                                }
+                                            ],
+                         "artifacts":  [
+
+                                       ],
+                         "card":  {
+                                      "url":  "https://huggingface.co/datasets/talby/spamassassin/raw/a1b3371d2df15575f766c081cb329543955d27f6/README.md",
+                                      "sha256":  "b96c66b37ef939d6a48db4d52da45def96b2a982afd268c0c91da6eba3f12c1a",
+                                      "git_blob_sha1":  "0681e03b1d8a8cd2471363342a804d6c0c4dbb8a"
+                                  },
+                         "revision":  "a1b3371d2df15575f766c081cb329543955d27f6",
+                         "provenance":  "real-email-sender-rights-unresolved",
+                         "declared_license":  "UNKNOWN"
+                     }
+                 ],
+    "observed_at":  "2026-11-20T14:52:49.6974226+00:00",
+    "schema":  "fdec-dataset-observations/v1",
+    "method":  "Pinned Hub metadata and card bytes only; no dataset payload downloaded; provider references inspected live via browser. Current terms are not proof of generation-time account terms."
+}
