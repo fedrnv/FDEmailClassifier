@@ -1,0 +1,21 @@
+﻿{
+    "candidate_sha":  "5e44d2148f510c64a53dc77f8ad1fc8827278ba1",
+    "independence":  "fresh session, fork_turns none, no implementation author history",
+    "reviewer_checkout":  "C:/GitHub/FDEmailClassifier-review-D001-R001",
+    "ledger_sha":  "868a36872ac32c41f87c023e0711064e478c41dc",
+    "reviewer_session":  "/root/review_d001_r001",
+    "ledger_only_paths":  [
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115931524Z-codex-readiness-accepted-a59f0aa7.md",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115931578Z-codex-work-started-d5d8c9e0.md",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115932768Z-codex-readiness-accepted-1bf9be45.md",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T115932771Z-codex-status-changed-f1a220b4.md",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/closure-readiness.json",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/frozen-readiness.json",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/gate-output-summary.txt",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/gate-result.json",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/readiness.json",
+                              "Tasks/items/quality/FDEC-006-targeted-integration-gate/evidence/verification.md",
+                              "Tasks/version-requests/FDEC-006.json"
+                          ],
+    "result":  "pending"
+}
