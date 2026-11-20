@@ -1,0 +1,1 @@
+{"actual_training": false, "availability_is_admission": false, "current_training_review_present": false, "requires": ["reviewed-non-openai-training-data-labels-prompt", "current-rights-and-consent", "verified-train-partition", "verified-stock-snapshot", "compatible-single-bfloat16-CUDA-device"], "schema": "fdec-trainer-availability/v1"}

@@ -1,0 +1,22 @@
+{
+    "schema":  "fdec-trainer-environment/v1",
+    "source_sha":  "483326f26f95bd8dff93cb89ff916a54addec01f",
+    "observed_at":  "2026-11-20T22:11:01.5176282Z",
+    "runtime":  {
+                    "python":  "3.14.5",
+                    "packages":  {
+                                     "torch":  null,
+                                     "transformers":  null,
+                                     "peft":  null,
+                                     "safetensors":  null,
+                                     "bitsandbytes":  null,
+                                     "numpy":  null
+                                 }
+                },
+    "display_controllers":  [
+                                "Microsoft Basic Display Adapter"
+                            ],
+    "nvidia_smi_present":  false,
+    "compatible_gpu_confirmed":  false,
+    "actual_tensor_training_performed":  false
+}

@@ -1,0 +1,6 @@
+Source: 483326f26f95bd8dff93cb89ff916a54addec01f
+State: includes appended InProgress -> Blocked event and partial verification evidence before staging
+Command: powershell -NoProfile -File scripts/validate_tasks/repository.ps1 -Root C:\GitHub\FDEmailClassifier
+Monitor: 432211eb-8c56-4fa2-a80a-718ac13a48ca
+Exit: 0
+PASS: 114 records, immutable history, graph, requests and hosted publication boundary

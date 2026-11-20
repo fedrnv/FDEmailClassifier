@@ -1,0 +1,25 @@
+Source: 483326f26f95bd8dff93cb89ff916a54addec01f
+Monitor: 0ec62302-855d-4a5f-90b0-2905ab6effe0
+Command: powershell -NoProfile -File training/finetune/test-finetune.ps1
+Status: completed
+Exit: 0
+test_authority_change_and_write_failure_rollback_preserve_existing_checkpoint (test_finetune.CheckpointTests.test_authority_change_and_write_failure_rollback_preserve_existing_checkpoint) ... ok
+test_hash_rebinding_signature_context_and_extras_reject_before_decoder (test_finetune.CheckpointTests.test_hash_rebinding_signature_context_and_extras_reject_before_decoder) ... ok
+test_numerical_state_resume_matches_uninterrupted_software_oracle (test_finetune.CheckpointTests.test_numerical_state_resume_matches_uninterrupted_software_oracle) ... ok
+test_bounded_config_and_no_implicit_backend_fallback (test_finetune.ConfigTests.test_bounded_config_and_no_implicit_backend_fallback) ... ok
+test_cli_diagnostics_and_preflight_do_not_echo_input_or_train (test_finetune.ConfigTests.test_cli_diagnostics_and_preflight_do_not_echo_input_or_train) ... ok
+test_reconstructed_cursor_has_complete_epochs (test_finetune.ConfigTests.test_reconstructed_cursor_has_complete_epochs) ... ok
+test_runtime_profile_binds_observed_candidates_without_claiming_execution (test_finetune.ConfigTests.test_runtime_profile_binds_observed_candidates_without_claiming_execution) ... ok
+test_teacher_forcing_masks_the_independent_prompt_and_user_input (test_finetune.ConfigTests.test_teacher_forcing_masks_the_independent_prompt_and_user_input) ... ok
+test_private_run_resume_and_committed_checkpoint_recovery (test_finetune.OrchestrationTests.test_private_run_resume_and_committed_checkpoint_recovery) ... ok
+test_full_train_only_roundtrip (test_finetune.TrainingAdmissionTests.test_full_train_only_roundtrip) ... ok
+test_partial_heuristic_and_held_out_labels_reject (test_finetune.TrainingAdmissionTests.test_partial_heuristic_and_held_out_labels_reject) ... ok
+test_review_bindings_and_independent_prompt_required (test_finetune.TrainingAdmissionTests.test_review_bindings_and_independent_prompt_required) ... ok
+test_z_revocation_is_checked_on_reuse (test_finetune.TrainingAdmissionTests.test_z_revocation_is_checked_on_reuse) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 52.862s
+
+OK
+{"actual_training": false, "availability_is_admission": false, "current_training_review_present": false, "requires": ["reviewed-non-openai-training-data-labels-prompt", "current-rights-and-consent", "verified-train-partition", "verified-stock-snapshot", "compatible-single-bfloat16-CUDA-device"], "schema": "fdec-trainer-availability/v1"}
+SOFTWARE_CHECKS=PASS; SUPPORTED_GPU_ACCEPTANCE=NOT_RUN

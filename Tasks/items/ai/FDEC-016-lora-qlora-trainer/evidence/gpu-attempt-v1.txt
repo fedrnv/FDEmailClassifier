@@ -1,0 +1,6 @@
+Source: d2a8faceb7bd3b63a460346264fab2f036020a9e
+Monitor: d16f73a0-0f23-49b9-81e4-871b71f27b35
+Command: C:\GitHub\FDEmailClassifier\.venv\ingestion\Scripts\python.exe training/finetune/train.py gpu-check --opt-in
+Status: failed
+Exit: 2
+trainer_execution_rejected
