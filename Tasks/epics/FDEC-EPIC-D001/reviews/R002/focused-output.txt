@@ -1,0 +1,7 @@
+﻿PASS: clean core.autocrlf=true checkout, legacy proof replay and text/binary rejection on b56bc3dcc73bb384fda8a304718c53a6e619db21
+PASS: clean core.autocrlf=false checkout, legacy proof replay and text/binary rejection on b56bc3dcc73bb384fda8a304718c53a6e619db21
+PASS: tracked/staged/deleted/new source invalidates all five actions; renewed current state and task-owned progress admitted
+PASS: all five actions require exact latest accepted evidence; missing, alternate, changed, superseded, ambiguous and legacy-only decisions reject
+PASS: exact complete base/amended criteria admitted; omitted, duplicate, unknown, stale, incomplete and unbound matrices rejected on all five actions
+PASS: same-ID refinement changes criterion hash; tampered and unknown refinements reject
+PASS: reopen/reclose preserves first request; duplicate, never-closed, fabricated proof, wrong parent and foreign evidence reject
