@@ -1,0 +1,468 @@
+﻿{
+    "schema":  "fdec-epic-closure/v1",
+    "epic_id":  "FDEC-EPIC-D002",
+    "source_sha":  "5c3db84296eb72f2b0bfa875944afc5057a59bc0",
+    "candidate_sha":  "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+    "candidate_tree":  "6b7af50ea1fdbb1a6ad12cdad5dd445cf491560c",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "epic_state":  [
+                       {
+                           "sha256":  "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+                           "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                       },
+                       {
+                           "sha256":  "184ddb4dcccf4c3076b0d7c63347c1b4531c06f26efad3fa73c8e7c2ac825483",
+                           "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T145114999Z-codex-status-changed-3a28b4ae.md"
+                       },
+                       {
+                           "sha256":  "348d73a57e50224c6bdb8423e253a2f97ea0bdc5cbeab00f8e736fe2ac735f5b",
+                           "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T193152819Z-codex-membership-added-ce72934e.md"
+                       },
+                       {
+                           "sha256":  "63e295cde7c8c860a57abd9f262a95680e988ea12e5f4d5802a652d60f1bbfc5",
+                           "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T193535109Z-codex-scope-amended-d5aed689.md"
+                       },
+                       {
+                           "sha256":  "966aeb587bbc9a66fb661ee08988a95c82fda8ae7801f51a322ff9f84eee0b12",
+                           "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T202526019Z-codex-scope-amended-5c78c5bf.md"
+                       }
+                   ],
+    "members":  [
+                    {
+                        "id":  "FDEC-008",
+                        "state":  [
+                                      {
+                                          "sha256":  "e738a0b3d0ac7ea303ced91333328026a483c024fd12441565935593bdec6e30",
+                                          "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "66c1655a359cd8f329b9c13053d808b1d0406a994a2dd4b427047bd264a73507",
+                                          "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145415010Z-codex-readiness-accepted-71d2467a.md"
+                                      },
+                                      {
+                                          "sha256":  "689a153a78bb031fbe517f3276d74af31d2a4a8ce030e876c905579afca7b2af",
+                                          "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145431474Z-codex-work-started-44ca9467.md"
+                                      },
+                                      {
+                                          "sha256":  "d913e92f271183093ad36b2faf31281cad56816c3fdc2a98ce7b7a315a577452",
+                                          "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145947870Z-codex-readiness-accepted-b274b416.md"
+                                      },
+                                      {
+                                          "sha256":  "3cc332dc22de4aeca8799d21bb1930a4a1fe94f2ea8f8b379eb63e02f947b2d4",
+                                          "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T150200794Z-codex-readiness-accepted-09b51873.md"
+                                      },
+                                      {
+                                          "sha256":  "1524ceca4a5371aef5f1035387dd5df5133dafafcc51006b91699b0f15db7b74",
+                                          "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T150205107Z-codex-status-changed-0e16c3a9.md"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "FDEC-009",
+                        "state":  [
+                                      {
+                                          "sha256":  "018b7c6ddb969a18d141e7a25840d95e48099c3519712c06fa30d471577eef00",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "f53f40e7493a65c12416dde2d40f2e4af06ddaf9c175cc965ab13ddf04fb63e9",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150801906Z-codex-dependency-added-851d84a6.md"
+                                      },
+                                      {
+                                          "sha256":  "77b54b57ac7cdbf17fe31af6a244a974995d782b1fd44ef627255fb40229b0bb",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150806435Z-codex-readiness-accepted-b8821caa.md"
+                                      },
+                                      {
+                                          "sha256":  "9892a4807b243b9b748491f34372fc1b86efcbe327aab7999b1095ff2c1e7edd",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150812748Z-codex-work-started-1cebfe74.md"
+                                      },
+                                      {
+                                          "sha256":  "b3b22c64068164e9dae7d2dff7bfe910639c62978c7c3fa0cc58a9138b5dcf6f",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152159557Z-codex-readiness-accepted-1a55ffb4.md"
+                                      },
+                                      {
+                                          "sha256":  "3a335ee9c0281f16d7a2bcf5a92172e9ffacd0e17c982407d672f3e4cdff42d7",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152531114Z-codex-readiness-accepted-e51aaca9.md"
+                                      },
+                                      {
+                                          "sha256":  "90c9bb7ad1118666893df0ecc75ca12fca5584dce5a3939f1082e902e11c79c0",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152616122Z-codex-readiness-accepted-b9465ab1.md"
+                                      },
+                                      {
+                                          "sha256":  "4b4d14b6f9ad9f7f04009e35ed575280d27710eb5152abaccad8fceb95ba974e",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152705515Z-codex-readiness-accepted-6a405780.md"
+                                      },
+                                      {
+                                          "sha256":  "e9ec3b3d5843e3a3956c6b4a4d38e2b3bee300b17690d5e29562354aee5cf522",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152805390Z-codex-readiness-accepted-962f600b.md"
+                                      },
+                                      {
+                                          "sha256":  "1e8672c0bf9af267f94c538b61adea3d26d94c7525f65a5ea8609af83c5cf18e",
+                                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152825767Z-codex-status-changed-037feeb1.md"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "FDEC-010",
+                        "state":  [
+                                      {
+                                          "sha256":  "0467fec85fc8ed9c084c3065e5d8872212234d8864c0f61926203ef45ba28c0f",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "063429e567b0617d6b555d912d4e84eb7d14c21fefab15413156481a43192be7",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153012901Z-codex-dependency-added-9991e2a6.md"
+                                      },
+                                      {
+                                          "sha256":  "94e845b23f00e8ade5cbad9bb4a0a0550b41e672e6b308e74ef8eb410d11c30f",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153018732Z-codex-readiness-accepted-4f3eb7ff.md"
+                                      },
+                                      {
+                                          "sha256":  "5eaf2c1fd2e63a17ab7bd78166217061b89b77e19f55d2949920f8708d2696db",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153024373Z-codex-work-started-d9452800.md"
+                                      },
+                                      {
+                                          "sha256":  "b399813026e3745704f9b99794cb2c04f82cb8af45f274e3248e2aecf1fe8e1c",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153524847Z-codex-readiness-accepted-dfd8b373.md"
+                                      },
+                                      {
+                                          "sha256":  "a8ed09b4ddc681882fbb1ef60743ca536b2d83e7d47aba2c47ff9426dfc852c1",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153559433Z-codex-readiness-accepted-0a261645.md"
+                                      },
+                                      {
+                                          "sha256":  "0820d68eebe18b76c8fa38a0191075dd40ad5a612b558101b3b159bf4890f968",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153750744Z-codex-readiness-accepted-e820cd4d.md"
+                                      },
+                                      {
+                                          "sha256":  "7212eee2b5e3a755621473c1d77bffa56815f01a41a2a55c0f648d99651b6ecf",
+                                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153821588Z-codex-status-changed-9fb06d32.md"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "FDEC-011",
+                        "state":  [
+                                      {
+                                          "sha256":  "181fb8ca6772798642f1c83829eaebe2601fb98b40ec7a73993f056f73c56cdc",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "36e75419e9c35a939dca54572cc15ea302ee22f816112be948b753bbfb2321d0",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T154049933Z-codex-dependency-added-831c0c26.md"
+                                      },
+                                      {
+                                          "sha256":  "69e67b983eb5f99e3b772f1aebdf78fed24a8726114ac45fd67e35c9c07dafbc",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T154111005Z-codex-readiness-accepted-31b613cd.md"
+                                      },
+                                      {
+                                          "sha256":  "5ca00228be7ad10940e07f2fbe7f37a150d6ea95865ac43dff5a1e21800d6241",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T154122106Z-codex-work-started-004cbbab.md"
+                                      },
+                                      {
+                                          "sha256":  "96a3928d7634b85b2a0cc35a8879d2a57905bf731331f486f74d09f4622deddc",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T155350674Z-codex-readiness-accepted-f6f3a158.md"
+                                      },
+                                      {
+                                          "sha256":  "0a9b9d7892d6e38cf6da291928363fec8f1e8e40f5df78e99ed6a598eedb6813",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T155647508Z-codex-status-changed-4c94f0e1.md"
+                                      },
+                                      {
+                                          "sha256":  "f0917410d94f066779c9a84fa754ece09dc57a92adaec2bca4382a4a1869b526",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164242114Z-codex-scope-amended-5deba0cb.md"
+                                      },
+                                      {
+                                          "sha256":  "129395e90b863378da4797899e344c0474415856c693b03dec3871c777bf7fb0",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164242170Z-codex-dependency-added-e4b265e1.md"
+                                      },
+                                      {
+                                          "sha256":  "d5943b882903532524b733677573d62f02b18caedeb71483d75e63807f74d166",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164247212Z-codex-readiness-accepted-816e80cd.md"
+                                      },
+                                      {
+                                          "sha256":  "133852528b047f7b9c769ed2b6fc3365b7d5defbc36cf6101ea2a7250b760586",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164251706Z-codex-work-started-e0a79df2.md"
+                                      },
+                                      {
+                                          "sha256":  "6b2fe6ca2a38827be5ead20ddbcd19152efe44f53cd06d5fd6917e82455bd59f",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T165206935Z-codex-readiness-accepted-d23e32fb.md"
+                                      },
+                                      {
+                                          "sha256":  "6e2b68e461c07db61768a4796fa15f477febad557af62494de8cfe6711d9d79d",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T165527152Z-codex-status-changed-1e22491e.md"
+                                      },
+                                      {
+                                          "sha256":  "e6b0d5f07dd0b06d2ee5098755869434ccdfeb51335241614909c87a886f5cb5",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170053613Z-codex-scope-amended-efcbfb68.md"
+                                      },
+                                      {
+                                          "sha256":  "80782cc9ae22d47ad658874e13990e8af3ff3f24c4bef1eaf1e91aac7e8b53e0",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170058039Z-codex-readiness-accepted-bb77dcdc.md"
+                                      },
+                                      {
+                                          "sha256":  "131ed5c79b72f9597ffb90273e5524814273e6adec0e830a1d407cce53c8783b",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170102480Z-codex-work-started-82d6e429.md"
+                                      },
+                                      {
+                                          "sha256":  "57254594f83ffaf2faedb5a51253b8755d0ed7c18540099d100edc2b7c9d34eb",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170857867Z-codex-readiness-accepted-c951eed1.md"
+                                      },
+                                      {
+                                          "sha256":  "9cae9c2f17f2b0287ce404c5648b1abf7aaa525397b72130c73ae2d94c92f457",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172103865Z-codex-scope-amended-ce96411a.md"
+                                      },
+                                      {
+                                          "sha256":  "bb2ed3040d39d3391e766bc04f1f865437dbb30ed6b31d60f666d4e2a9cb7ed3",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172106330Z-codex-readiness-accepted-48182406.md"
+                                      },
+                                      {
+                                          "sha256":  "1dd6d79b1b4084b886bc506ba3e0f10454280c8a48c35661d9424625931a4906",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172856955Z-codex-dependency-added-a4a485f7.md"
+                                      },
+                                      {
+                                          "sha256":  "4f19c1501e61bb6b30a1608c4e2363dc732410ffd2d2234be6f5be0e1311a25c",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T180559342Z-codex-readiness-accepted-6ba4fc5f.md"
+                                      },
+                                      {
+                                          "sha256":  "31c823f48479b01b56cfddd06f94b2da6ae08dcb0ccf621fa6494a717f9f9018",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T181343098Z-codex-readiness-accepted-8bf1609c.md"
+                                      },
+                                      {
+                                          "sha256":  "24b5fec08cfe1c4ed671d9efb36bd2c1ff0cd17c8d5a22a6fb1fa74e1336051b",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T181501599Z-codex-readiness-accepted-6d9a4b0f.md"
+                                      },
+                                      {
+                                          "sha256":  "a26e034854911f808d115a6ef35ef2c3a4936e6031f975ec6383cee652692d18",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T182143152Z-codex-readiness-accepted-7324ee3a.md"
+                                      },
+                                      {
+                                          "sha256":  "4697615e4e155ffe75f78fcce72ae6903ec43cd6aa19f271419b27318301afc4",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T182435549Z-codex-readiness-accepted-5daeeb3a.md"
+                                      },
+                                      {
+                                          "sha256":  "8327352740f1093bb61ae6a2ca1b4af20a2a094aa9ea08a301b5165650ba8787",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T182600099Z-codex-readiness-accepted-00c59d0c.md"
+                                      },
+                                      {
+                                          "sha256":  "82d4420bfcf8b1a62425b8ab0524cebeaadadd90ed6088e39a5183f1255f8b03",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T182756965Z-codex-readiness-accepted-07c45d21.md"
+                                      },
+                                      {
+                                          "sha256":  "872c8300dc0742fa9fadd54d6f2a09e802d7a438eeaa6162f85a324473e1f1d1",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T183030757Z-codex-readiness-accepted-e858938a.md"
+                                      },
+                                      {
+                                          "sha256":  "2ab89a3d9d219e69b497d0d8c94143542e9aac52236928fbfd06aac8390c6449",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T183509448Z-codex-readiness-accepted-aa7d2ee3.md"
+                                      },
+                                      {
+                                          "sha256":  "64220a09428d7fa50c9b3943105d91c4f993b2be0f3b11f168d4ad3e767a94c2",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T184124611Z-codex-readiness-accepted-36972964.md"
+                                      },
+                                      {
+                                          "sha256":  "1b8e7c160e2d7c59f5613b733095b3c912503cb52fb0d3f792a53497bf0699df",
+                                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T184309776Z-codex-status-changed-53849a31.md"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "FDEC-012",
+                        "state":  [
+                                      {
+                                          "sha256":  "c6aefa62f0e670d09e435a8fcfc51de10eb7ec90c7202943dde254ae2fb9cd4a",
+                                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "90c013aaf32c978e40f9721bb6a8c7036b7b533dfc8d4c3c29a204fb226830ac",
+                                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160053298Z-codex-dependency-added-cc080058.md"
+                                      },
+                                      {
+                                          "sha256":  "0560d21dbf4803e1a373f9e028592ef3172cd5c099347f6f4aa778a7bd74a0a5",
+                                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160058378Z-codex-readiness-accepted-fa1e2ea1.md"
+                                      },
+                                      {
+                                          "sha256":  "f458c83712754b0fe02e3fb185033857b419228ff33a296069cfcf52c769c9de",
+                                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160102429Z-codex-work-started-87be8679.md"
+                                      },
+                                      {
+                                          "sha256":  "b5b64c4462222f8764f4d513124f6ebd4635589479ff2c9165943e23e6fa7ef5",
+                                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161357887Z-codex-readiness-accepted-b4460d83.md"
+                                      },
+                                      {
+                                          "sha256":  "a1930715c864d9d62bc7e63334ac9b17cd6d3e9031a3324d403487d6ffb653dc",
+                                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161642597Z-codex-readiness-accepted-007e087f.md"
+                                      },
+                                      {
+                                          "sha256":  "9173736c5e33e7b26e87a5203f50a8267adfce469e3a01eeb68084957a7649f5",
+                                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161706667Z-codex-status-changed-16653b22.md"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "FDEC-013",
+                        "state":  [
+                                      {
+                                          "sha256":  "cf56dfec3c962be608235e62d13b195728f8fef8d6d929d995284363e128ce2e",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "53486a8320f5103f0414bb482ddfb0c377f820f098f42e3a9927096d93b34977",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T185030984Z-codex-scope-amended-bb9dc613.md"
+                                      },
+                                      {
+                                          "sha256":  "b3a32b2d5cb288423f23645db0f33a41194ace2562905ca37d9e415b508a1262",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T185037594Z-codex-readiness-accepted-8a8343e0.md"
+                                      },
+                                      {
+                                          "sha256":  "47cf800ca66442af35255882c3280257a7b6457f037976eb78000ab332744440",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T185042722Z-codex-work-started-653d88d5.md"
+                                      },
+                                      {
+                                          "sha256":  "c53587503674aa6802660abb32c77555e4387380783d98ec66b4d2ee40cc5a30",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T190513431Z-codex-readiness-accepted-c1da15c6.md"
+                                      },
+                                      {
+                                          "sha256":  "6f6118e346c47e2870b5fd7ac098091e2a5ef797e9411a33fef269d90fcd13db",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T191405518Z-codex-readiness-accepted-d517e26a.md"
+                                      },
+                                      {
+                                          "sha256":  "29b7774e48842488d934245102e294c02966050b151b5f338c868ea05aafc5a9",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T191552998Z-codex-status-changed-41d76a56.md"
+                                      },
+                                      {
+                                          "sha256":  "1feb4dde226a281415c13cf76ad902e3264c3fdc3a392af46e7321e0a4254816",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T193152829Z-codex-status-changed-2dddce76.md"
+                                      },
+                                      {
+                                          "sha256":  "661a0d5b05d99350927fa16c9294f7c4a2872025718c5000155f5ab25d7f2713",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T193152831Z-codex-dependency-added-b62d3554.md"
+                                      },
+                                      {
+                                          "sha256":  "209701dc540aca8da4127456072a2543016482e58b662c84fcb194a4979c1fcc",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T203625771Z-codex-readiness-accepted-247b537b.md"
+                                      },
+                                      {
+                                          "sha256":  "613e4eeb1735e8a97b6f2cb703e7c2b1e0fe42398ae747adcc50dd08124ea603",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T204116335Z-codex-readiness-accepted-4b61fc02.md"
+                                      },
+                                      {
+                                          "sha256":  "513b51e245cddf86d76fd0acd03c7c2bcb5426c62ab84ac07a508501ed3c1709",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T204910559Z-codex-readiness-accepted-94b51e04.md"
+                                      },
+                                      {
+                                          "sha256":  "b269d95a65efbaddcf15dcb4a1f7da2a397fec8dc0b0631b85ba5ded5dc5f10e",
+                                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/events/20261120T204941952Z-codex-status-changed-79d91231.md"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "FDEC-014",
+                        "state":  [
+                                      {
+                                          "sha256":  "477ff4cc6c83da520d3049e5366ca54c85d571633c70333e5b2e58168f95d5aa",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "4dd37de94cef807a181298649511fbfefa8204f54dd64488731d9bd5c017301d",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/events/20261120T192102181Z-codex-readiness-accepted-43864626.md"
+                                      },
+                                      {
+                                          "sha256":  "c443c415bc9d21d58748ca7ff9430ede06eff55a1a001d1ec9f1e3dcb160656b",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/events/20261120T192150846Z-codex-work-started-d20a1bac.md"
+                                      },
+                                      {
+                                          "sha256":  "ca49ed24aae8ae2daf74597def4cf1447265b116afd22ab9f5d821a9a7c82916",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/events/20261120T192157225Z-codex-readiness-accepted-8049d315.md"
+                                      },
+                                      {
+                                          "sha256":  "6dc61f8174288a0c6748fa3772fd33addb46c6fc7ef0b462de08e5da8c6d9529",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/events/20261120T205334592Z-codex-readiness-accepted-d11557c4.md"
+                                      },
+                                      {
+                                          "sha256":  "cca86f5b45cb970629153df84b27b5e6688d49d25013e36959ffa8c7e5e2ffdc",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/events/20261120T205408731Z-codex-readiness-accepted-15a43610.md"
+                                      },
+                                      {
+                                          "sha256":  "77ad14ce50801b1a59a809eca324003624732b2ca90902fdc35cdd82fc4e67cf",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/events/20261120T210708788Z-codex-readiness-accepted-a6424ff9.md"
+                                      },
+                                      {
+                                          "sha256":  "edbaef46f219550dc315c124dbc21ad32221d06d936159e041abc28be9446593",
+                                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/events/20261120T210759033Z-codex-status-changed-20a82ef3.md"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "FDEC-099",
+                        "state":  [
+                                      {
+                                          "sha256":  "4dab7fbe3695aae5a4398d32e2e3a90aefc94edd303a0d06df371c1d7b8c5592",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/TASK.md"
+                                      },
+                                      {
+                                          "sha256":  "4289fa878e72983fcbea0676a5eb6f3952ef7d956f36865740d19b78c0725adf",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T193409852Z-codex-readiness-accepted-478ab223.md"
+                                      },
+                                      {
+                                          "sha256":  "e68243c983955d6ed6fa3a0d7cc0c6405518c74c2196376c19fc3dcbf61b9470",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T193440303Z-codex-work-started-6925c975.md"
+                                      },
+                                      {
+                                          "sha256":  "78dae51604718387ae9493dca6ef055aed982128a61b407a592dfba4e3129c08",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T193903397Z-codex-readiness-accepted-52c263d7.md"
+                                      },
+                                      {
+                                          "sha256":  "4d444afba03783c03f904474607e0874bb9c74a6b7f898e2e3743fde0a0e3147",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T194106619Z-codex-readiness-accepted-bffe600d.md"
+                                      },
+                                      {
+                                          "sha256":  "d0d276dd8fd56424e95e05491e90097f4a1111ef69ae18ff04865b83e63a3023",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T194141005Z-codex-status-changed-8740251b.md"
+                                      },
+                                      {
+                                          "sha256":  "1f6bc2ba617e19b52c4afcdcd84a449f4e21dab435fe5df27d0f627105ca75b3",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T194410188Z-codex-status-changed-126a7fb3.md"
+                                      },
+                                      {
+                                          "sha256":  "9a5541f9de989b6c4b6ed0aaa1f053a31a0613a1028efbcd81c439ddb0d5293b",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T194410198Z-codex-dependency-added-4cbb41d6.md"
+                                      },
+                                      {
+                                          "sha256":  "5e173d06c033fbcd1d9eed7655c2c28e5a4afd30c1370e502ac939a49932ec4d",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T202348496Z-codex-readiness-accepted-288f94a0.md"
+                                      },
+                                      {
+                                          "sha256":  "2ccef4e62f802305d99e21e081fd8372aa535afa8be10080afedc66b2f1dde97",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T202956617Z-codex-readiness-accepted-3936e84b.md"
+                                      },
+                                      {
+                                          "sha256":  "be4cb8f4b446ea4adb14b71fdedd354271a25aa0c29052e9e0b5af1f9996bf34",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T203200796Z-codex-readiness-accepted-cc9d7b3b.md"
+                                      },
+                                      {
+                                          "sha256":  "4038fe78843194935d118482a314fafce5673accfb59919c21a8d1f8cc51da76",
+                                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T203229892Z-codex-status-changed-c61444f6.md"
+                                      }
+                                  ]
+                    }
+                ],
+    "gate_task_id":  "FDEC-013",
+    "review_task_id":  "FDEC-014",
+    "gate_result":  {
+                        "sha256":  "b296cd4acf6267a82f829d1e37c09992640435485ccdd993e12112ee3bb0988b",
+                        "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/result-v2.json"
+                    },
+    "review_result":  {
+                          "sha256":  "23df020d138e486e8da8e419f05d600567291713dd17b8fdf6fbd7f62ebb2c64",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R002/RESULT.md"
+                      },
+    "verification":  [
+                         {
+                             "sha256":  "3b3316b03a662bba1c09e0c7177ed4bf5fa26ef9985aa9cd6ab6b3e1f4ee1342",
+                             "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/closure-R002.md"
+                         },
+                         {
+                             "sha256":  "19eadfaf68a7bd7b580d742251d7725ccb7a63fbc0d6f50c92853ca7e4c3b389",
+                             "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/closure-audit-R002.json"
+                         }
+                     ]
+}

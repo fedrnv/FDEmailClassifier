@@ -1,0 +1,12 @@
+﻿{
+    "type":  "epic_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "11ce51c3-3265-472b-9af7-5111c84c8a2d",
+    "epic_id":  "FDEC-EPIC-D002",
+    "work_item_id":  "FDEC-EPIC-D002",
+    "summary":  "Complete D002 rights-gated preprocessing software and conditional preparation under the explicit effective outcome with passing current gate and independent R002 acceptance",
+    "verification":  [
+                         "Tasks/epics/FDEC-EPIC-D002/evidence/closure-R002.md",
+                         "Tasks/epics/FDEC-EPIC-D002/evidence/closure-audit-R002.json"
+                     ]
+}

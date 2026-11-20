@@ -1,0 +1,27 @@
+﻿{
+    "closure_proof":  {
+                          "sha256":  "9e4bf4e1682a152330cd2ff20a47477478f3b21c16844d23dd8ba75a184a61d0",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/closure-R002.json"
+                      },
+    "phase":  "before staging actual new Epic closure",
+    "epic_id":  "FDEC-EPIC-D002",
+    "effective_criteria":  23,
+    "published":  false,
+    "exit_code":  0,
+    "source_sha":  "5c3db84296eb72f2b0bfa875944afc5057a59bc0",
+    "actual_training_data_admitted":  false,
+    "schema":  "fdec-local-verification/v1",
+    "actual_training_performed":  false,
+    "command":  "powershell -NoProfile -File scripts/validate_tasks/repository.ps1",
+    "request":  {
+                    "path":  "Tasks/version-requests/FDEC-EPIC-D002.json",
+                    "sha256":  "b079e1888ce81fd079aef37780544e5107deb14bf87e353b6cb8a056faf89d5a",
+                    "type":  "epic_closed"
+                },
+    "records":  114,
+    "model_release_approved":  false,
+    "allocated":  false,
+    "monitor_task_id":  "fceab59f-e8d5-4783-a7fd-17e41f6b3d5a",
+    "result":  "PASS",
+    "members":  8
+}
