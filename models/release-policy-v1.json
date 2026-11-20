@@ -1,0 +1,6 @@
+{
+  "schema": "fdec-weight-release-policy/v1",
+  "scope": "specialized-email-classifier",
+  "audits": [],
+  "note": "No trained artifact is cleared for public redistribution. Training/evaluation rights and a base license are not a model-release decision."
+}

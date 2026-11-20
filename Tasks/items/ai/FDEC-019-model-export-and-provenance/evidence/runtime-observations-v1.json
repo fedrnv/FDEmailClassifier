@@ -1,0 +1,130 @@
+{
+  "schema": "fdec-export-runtime-observations/v1",
+  "observed_at": "2026-11-20T22:51:53.863847+00:00",
+  "packages": [
+    {
+      "name": "gguf",
+      "version": "0.19.0",
+      "requires_dist": [
+        "PySide6<7.0,>=6.9; (python_version >= \"3.9\" and python_version < \"3.14\") and extra == \"gui\"",
+        "numpy>=1.17",
+        "pyyaml>=5.1",
+        "requests>=2.25",
+        "tqdm>=4.27"
+      ],
+      "license": null,
+      "metadata_url": "https://pypi.org/pypi/gguf/json",
+      "metadata_sha256": "88e4dbb4d7c52ef4a225a5dfbc887d4dd717efe25ba44a18bf4297aca0397cbf"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.5",
+      "requires_dist": null,
+      "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "metadata_url": "https://pypi.org/pypi/numpy/json",
+      "metadata_sha256": "b9188fde2ff9e3d6f244de88c7dd3f1790a0f79fb80ad39c1deb11f81356beaa"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0",
+      "requires_dist": [
+        "safetensors[torch]; extra == \"all\"",
+        "safetensors[numpy]; extra == \"all\"",
+        "safetensors[jax]; extra == \"all\"",
+        "safetensors[paddlepaddle]; extra == \"all\"",
+        "safetensors[convert]; extra == \"all\"",
+        "safetensors[quality]; extra == \"all\"",
+        "safetensors[testing]; extra == \"all\"",
+        "safetensors[torch]; extra == \"convert\"",
+        "huggingface-hub>=1.4; extra == \"convert\"",
+        "safetensors[all]; extra == \"dev\"",
+        "safetensors[pinned-tf]; extra == \"dev\"",
+        "safetensors[numpy]; extra == \"jax\"",
+        "flax>=0.6.3; extra == \"jax\"",
+        "jax>=0.3.25; extra == \"jax\"",
+        "jaxlib>=0.3.25; extra == \"jax\"",
+        "mlx>=0.0.9; extra == \"mlx\"",
+        "numpy>=1.24.6; extra == \"numpy\"",
+        "safetensors[numpy]; extra == \"paddlepaddle\"",
+        "paddlepaddle>=2.4.1; extra == \"paddlepaddle\"",
+        "safetensors[numpy]; extra == \"pinned-tf\"",
+        "tensorflow==2.18.0; extra == \"pinned-tf\"",
+        "ruff; extra == \"quality\"",
+        "safetensors[numpy]; extra == \"tensorflow\"",
+        "tensorflow>=2.11.0; extra == \"tensorflow\"",
+        "safetensors[numpy]; extra == \"testing\"",
+        "h5py>=3.7.0; extra == \"testing\"",
+        "setuptools-rust>=1.12.0; extra == \"testing\"",
+        "pytest>=9.0; extra == \"testing\"",
+        "pytest-benchmark>=5.2; extra == \"testing\"",
+        "hypothesis>=6.70.2; extra == \"testing\"",
+        "fsspec>=2024.6.0; extra == \"testing\"",
+        "s3fs>=2024.6.0; extra == \"testing\"",
+        "safetensors[numpy]; extra == \"tf-nightly\"",
+        "tf-nightly; extra == \"tf-nightly\"",
+        "safetensors[numpy]; extra == \"torch\"",
+        "torch>=2.4; extra == \"torch\""
+      ],
+      "license": null,
+      "metadata_url": "https://pypi.org/pypi/safetensors/json",
+      "metadata_sha256": "0b048ecf815d2e61aae7ed6a9a3f545931b4ffd2a633525706b621ef93d089d3"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "requires_dist": null,
+      "license": "MIT",
+      "metadata_url": "https://pypi.org/pypi/PyYAML/json",
+      "metadata_sha256": "d0c463a86ed24144dd112fd1fe43b7c208e52c7d3903c2f51c84acfb5b10c749"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "requires_dist": [
+        "colorama; platform_system == \"Windows\"",
+        "requests; extra == \"discord\"",
+        "envwrap; extra == \"discord\"",
+        "slack-sdk; extra == \"slack\"",
+        "envwrap; extra == \"slack\"",
+        "requests; extra == \"telegram\"",
+        "envwrap; extra == \"telegram\"",
+        "ipywidgets>=6; extra == \"notebook\""
+      ],
+      "license": "MPL-2.0 AND MIT",
+      "metadata_url": "https://pypi.org/pypi/tqdm/json",
+      "metadata_sha256": "6f17111ebec23f69c0768870ac3132637486e48d1a70ef406ac5376d5c98a563"
+    },
+    {
+      "name": "pyarrow",
+      "version": "26.0.1",
+      "requires_dist": null,
+      "license": "Apache-2.0",
+      "metadata_url": "https://pypi.org/pypi/pyarrow/json",
+      "metadata_sha256": "16ee1b166d97ac64a8d9a5bbda967dbe01278513542f78bfd46eff4264a42d75"
+    }
+  ],
+  "llama_cpp_revision": "29b52d398b294509746ec0a3f28948a3107c0213",
+  "documents": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/29b52d398b294509746ec0a3f28948a3107c0213/LICENSE",
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "size": 1078
+    },
+    {
+      "path": "convert_lora_to_gguf.py",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/29b52d398b294509746ec0a3f28948a3107c0213/convert_lora_to_gguf.py",
+      "sha256": "9d278b02b1a7a848372f893015c078d150b5c0590859310c1a133440e772ff95",
+      "size": 23274
+    },
+    {
+      "path": "convert_hf_to_gguf.py",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/29b52d398b294509746ec0a3f28948a3107c0213/convert_hf_to_gguf.py",
+      "sha256": "297502d115010e97b996e20dc9cdcfc90ee293df9b616259e5a646b64f410630",
+      "size": 14871
+    }
+  ],
+  "model_tensors_downloaded": false,
+  "installed": false,
+  "redistribution_approved": false
+}

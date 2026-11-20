@@ -1,0 +1,42 @@
+{
+  "schema": "fdec-export-runtime/v1",
+  "platform": "Windows-CPython-3.14-amd64",
+  "packages": {
+    "certifi": "2026.10.23",
+    "charset-normalizer": "3.5.2",
+    "colorama": "0.4.6",
+    "gguf": "0.19.0",
+    "idna": "3.20",
+    "numpy": "2.5.5",
+    "pyarrow": "26.0.1",
+    "PyYAML": "6.0.3",
+    "requests": "2.34.2",
+    "safetensors": "0.8.0",
+    "tqdm": "4.70.1",
+    "urllib3": "2.8.0"
+  },
+  "wheel_observations_sha256": "85e0feaac5715c6de58bb634e6f6c5bb24c5427adb1ec6e60f6b2c0633c6d285",
+  "llama_cpp_revision": "29b52d398b294509746ec0a3f28948a3107c0213",
+  "converter_documents": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/29b52d398b294509746ec0a3f28948a3107c0213/LICENSE",
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "size": 1078
+    },
+    {
+      "path": "convert_lora_to_gguf.py",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/29b52d398b294509746ec0a3f28948a3107c0213/convert_lora_to_gguf.py",
+      "sha256": "9d278b02b1a7a848372f893015c078d150b5c0590859310c1a133440e772ff95",
+      "size": 23274
+    },
+    {
+      "path": "convert_hf_to_gguf.py",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/29b52d398b294509746ec0a3f28948a3107c0213/convert_hf_to_gguf.py",
+      "sha256": "297502d115010e97b996e20dc9cdcfc90ee293df9b616259e5a646b64f410630",
+      "size": 14871
+    }
+  ],
+  "trained_model_export_verified": false,
+  "weight_redistribution_approved": false
+}
