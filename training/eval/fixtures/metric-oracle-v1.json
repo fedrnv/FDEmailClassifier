@@ -1,0 +1,171 @@
+{
+  "schema": "fdec-metric-arithmetic-fixture/v1",
+  "scope": "software-metric-oracle-only",
+  "contains_email_content": false,
+  "allowed_for_actual_training_or_model_evaluation": false,
+  "gold": [
+    {
+      "record_id": "674ae4fee6540855a9f1e9e8b74539abf7edd69172f1f9b261d288aab4a0fcb7",
+      "language": "en",
+      "classification": {
+        "schema_version": "1",
+        "status": "classified",
+        "topics": [
+          "work",
+          "finance"
+        ],
+        "priority": "high",
+        "security": {
+          "spam": "clear",
+          "phishing": "clear",
+          "malware": "unknown"
+        },
+        "suggested_action": "reply"
+      },
+      "mask": {
+        "topics": true,
+        "priority": true,
+        "spam": true,
+        "phishing": true,
+        "malware": false,
+        "action": true
+      }
+    },
+    {
+      "record_id": "ea747a9bab096a93cebca4ea9d2a8977fb8e6111526f137073ce40b0553c3903",
+      "language": "en",
+      "classification": {
+        "schema_version": "1",
+        "status": "classified",
+        "topics": [
+          "personal",
+          "shopping",
+          "travel"
+        ],
+        "priority": "normal",
+        "security": {
+          "spam": "flagged",
+          "phishing": "clear",
+          "malware": "unknown"
+        },
+        "suggested_action": "archive"
+      },
+      "mask": {
+        "topics": true,
+        "priority": true,
+        "spam": true,
+        "phishing": true,
+        "malware": false,
+        "action": true
+      }
+    },
+    {
+      "record_id": "6e0d641d85bba1b8f30b25f6345264f2b7e305b8dfd771a1004e7915f8a38a74",
+      "language": "de",
+      "classification": {
+        "schema_version": "1",
+        "status": "classified",
+        "topics": [
+          "social",
+          "newsletters",
+          "marketing"
+        ],
+        "priority": "low",
+        "security": {
+          "spam": "clear",
+          "phishing": "flagged",
+          "malware": "unknown"
+        },
+        "suggested_action": "none"
+      },
+      "mask": {
+        "topics": true,
+        "priority": true,
+        "spam": true,
+        "phishing": true,
+        "malware": false,
+        "action": true
+      }
+    },
+    {
+      "record_id": "ad810320bde04b790521e0f8f9ea2d94e44f698d56f74c526f0caa1b3267a80e",
+      "language": "de",
+      "classification": {
+        "schema_version": "1",
+        "status": "classified",
+        "topics": [
+          "education",
+          "health",
+          "legal",
+          "other"
+        ],
+        "priority": "urgent",
+        "security": {
+          "spam": "clear",
+          "phishing": "clear",
+          "malware": "unknown"
+        },
+        "suggested_action": "review"
+      },
+      "mask": {
+        "topics": true,
+        "priority": true,
+        "spam": true,
+        "phishing": true,
+        "malware": false,
+        "action": true
+      }
+    }
+  ],
+  "predictions": [
+    {
+      "schema_version": "1",
+      "status": "classified",
+      "topics": [
+        "work",
+        "legal"
+      ],
+      "priority": "high",
+      "security": {
+        "spam": "flagged",
+        "phishing": "clear",
+        "malware": "unknown"
+      },
+      "suggested_action": "reply"
+    },
+    {
+      "schema_version": "1",
+      "status": "classified",
+      "topics": [
+        "personal",
+        "shopping",
+        "travel"
+      ],
+      "priority": "low",
+      "security": {
+        "spam": "clear",
+        "phishing": "flagged",
+        "malware": "unknown"
+      },
+      "suggested_action": "archive"
+    },
+    null,
+    {
+      "schema_version": "1",
+      "status": "classified",
+      "topics": [
+        "education",
+        "health",
+        "legal",
+        "other"
+      ],
+      "priority": "urgent",
+      "security": {
+        "spam": "clear",
+        "phishing": "flagged",
+        "malware": "unknown"
+      },
+      "suggested_action": "reply"
+    }
+  ]
+}
