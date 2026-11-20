@@ -1,0 +1,12 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "0b151944-06c3-4d84-8952-16687cba9347",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-083",
+    "summary":  "Reject committed implementation rename into completion evidence at Epic closure",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-083-preserve-committed-source-paths/evidence/verification.md",
+                         "Tasks/items/quality/FDEC-083-preserve-committed-source-paths/evidence/result.json"
+                     ]
+}

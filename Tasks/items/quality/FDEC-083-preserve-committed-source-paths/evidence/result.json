@@ -1,0 +1,31 @@
+﻿{
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "checks":  [
+                   {
+                       "source_sha":  "ed9cb62bda2856c21f0ff9c4c874a743d0d90a2e",
+                       "exit_code":  0,
+                       "command":  "powershell -NoProfile -File Tasks/epics/FDEC-EPIC-D001/reviews/R004/reproduce-committed-rename.ps1",
+                       "meaning":  "Reproduced incorrect acceptance on pinned pre-fix source; its module matches interrupted primary baseline",
+                       "monitor_task_id":  "0650cce4-c37c-4223-b046-1db957617ee5"
+                   },
+                   {
+                       "source_sha":  "ec051df6d1f966a7f5744af077370f97a26bd073",
+                       "exit_code":  0,
+                       "command":  "powershell -NoProfile -File scripts/validate_tasks/test-reopened-requests.ps1",
+                       "meaning":  "Shared item/Epic suite rejects committed rename in true/copies modes while preserving index-only rejection, historical requests and current proof behavior",
+                       "monitor_task_id":  "a7d465a2-0396-4875-a0c4-677fa8568f46"
+                   }
+               ],
+    "candidate_tree":  "4d44743d412e4094eb751ed89803673f68b3fe25",
+    "task_id":  "FDEC-083",
+    "continuation":  "Repeat FDEC-006, then fresh independent FDEC-007 R005; no allocation/publication",
+    "environment":  {
+                        "powershell":  "5.1.26100.33296",
+                        "git":  "2.45.1.windows.1",
+                        "os":  "Windows x86_64"
+                    },
+    "candidate_sha":  "ec051df6d1f966a7f5744af077370f97a26bd073",
+    "schema":  "fdec-local-verification/v1",
+    "cleanup":  "Both monitors terminal; guarded fixture repositories removed; unrelated IDE and reviewer state preserved",
+    "result":  "PASS"
+}

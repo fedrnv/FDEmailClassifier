@@ -1,0 +1,31 @@
+warning: in the working copy of 'Tasks/policy/adoption-5.6.json', CRLF will be replaced by LF the next time Git touches it
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+warning: in the working copy of 'Tasks/items/foundation/FDEC-901-functional/evidence/closure.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-902-gate/evidence/closure.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-902-gate/evidence/result.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-903-review/evidence/closure.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-903-review/evidence/reconciliation.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-901.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-902.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-903.json', CRLF will be replaced by LF the next time Git touches it
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: valid development Epic first closure and request admitted without allocation
+CANDIDATE TO CLOSURE SOURCE NAME STATUS:
+R100	implementation.txt	Tasks/epics/FDEC-EPIC-D001/evidence/moved-implementation.txt
+A	Tasks/epics/FDEC-EPIC-D001/reviews/R001/REQUEST.md
+A	Tasks/epics/FDEC-EPIC-D001/reviews/R001/RESULT.md
+A	Tasks/items/foundation/FDEC-901-functional/events/done.md
+A	Tasks/items/foundation/FDEC-901-functional/evidence/closure.json
+A	Tasks/items/foundation/FDEC-901-functional/evidence/pass.md
+A	Tasks/items/quality/FDEC-902-gate/events/done.md
+A	Tasks/items/quality/FDEC-902-gate/evidence/closure.json
+A	Tasks/items/quality/FDEC-902-gate/evidence/result.json
+A	Tasks/items/quality/FDEC-903-review/events/done.md
+A	Tasks/items/quality/FDEC-903-review/evidence/closure.json
+A	Tasks/items/quality/FDEC-903-review/evidence/reconciliation.json
+A	Tasks/version-requests/FDEC-901.json
+A	Tasks/version-requests/FDEC-902.json
+A	Tasks/version-requests/FDEC-903.json
+PRODUCTION REPOSITORY VALIDATION AFTER COMMITTED IMPLEMENTATION RENAME:
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+REPRODUCED: current closure accepted after implementation was moved into allowed ledger evidence.
