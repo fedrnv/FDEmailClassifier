@@ -1,0 +1,26 @@
+Preparing worktree (detached HEAD 16e293a)
+{
+    "schema":  "fdec-outcome-verification/v2",
+    "task_id":  "FDEC-099",
+    "result":  "PASS",
+    "current_protected_files":  102,
+    "accepted_process_changes":  12,
+    "continuity_negative_checks":  23,
+    "historical_replay_source":  "16e293aadc15f8dd50fac44720a7949e788c9eff",
+    "historical_replay":  {
+                              "schema":  "fdec-outcome-verification/v1",
+                              "result":  "PASS",
+                              "task_id":  "FDEC-099",
+                              "preserved_files":  100,
+                              "negative_checks":  14,
+                              "actual_training_data_admitted":  false,
+                              "semantic_independent_review_required":  true,
+                              "mutations":  false
+                          },
+    "historical_worktree_removed":  true,
+    "original_request_unchanged":  true,
+    "actual_data_admitted":  false,
+    "independent_review_required":  true
+}
+PASS: 114 records, immutable original request, accepted process dependency, pending gate/review and one active D002
+SOURCE: 438d385846b727bb4f8c019239e9d1925018c360; STATE: 90d2e84f77bdd6f6b2a6afb17027a531c487afc34560a5d5b2a11975a5c1728a

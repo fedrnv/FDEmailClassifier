@@ -1,0 +1,18 @@
+﻿{
+    "new_first_closure_request":  false,
+    "allocated":  false,
+    "original_request":  {
+                             "path":  "Tasks/version-requests/FDEC-099.json",
+                             "sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c",
+                             "raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f"
+                         },
+    "records":  114,
+    "monitor_task_id":  "49cacaa0-c851-41bf-b11e-28572555d7dd",
+    "command":  "powershell -NoProfile -File scripts/validate_tasks/repository.ps1",
+    "timing":  "Current appended FDEC-099 Done event validated before reclosure commit",
+    "published":  false,
+    "schema":  "fdec-local-verification/v1",
+    "exit_code":  0,
+    "result":  "PASS",
+    "source_sha":  "438d385846b727bb4f8c019239e9d1925018c360"
+}

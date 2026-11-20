@@ -1,0 +1,99 @@
+﻿{
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "new_first_closure_request":  false,
+    "epic_id":  "FDEC-EPIC-D002",
+    "independent_review_required":  true,
+    "original_request_canonical_sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c",
+    "exit_code":  0,
+    "task_id":  "FDEC-099",
+    "source_sha":  "438d385846b727bb4f8c019239e9d1925018c360",
+    "actual_training_data_admitted":  false,
+    "artifacts":  [
+                      {
+                          "sha256":  "2b6d08eefe20ad3526675f7015663b9fca6af617c31ca64ce9276ab4190f72fa",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/outcome-continuity-v1.json"
+                      },
+                      {
+                          "sha256":  "5fe8f7f87420d78fe8193cf44e8b8dc1d77f177d41023dec3f734b0e50ac5aa8",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/effective-outcome-v1.json"
+                      },
+                      {
+                          "sha256":  "084d286ae4084953624503fac2f4711dca9fe58d0cf94a5b2ee9a701cbee607a",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/outcome-authority-v1.md"
+                      },
+                      {
+                          "sha256":  "2a3aeb958d82d0ed3eb81cd6945b1640eb58d1ad679a2beacce510835d17d8a7",
+                          "path":  "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/evidence/closure-readiness-v1.json"
+                      },
+                      {
+                          "sha256":  "d08b70a816b2cf4d2f3697abca7e02fe4dc959a1aac31f6e4afc525fd383ee66",
+                          "path":  "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/evidence/result-v1.json"
+                      },
+                      {
+                          "sha256":  "23d2c4d177af935395b17961b9f879ba0af1aa631207245fb29f3793eb29bb30",
+                          "path":  "Tasks/request-recoveries/FDEC-099-R001.json"
+                      },
+                      {
+                          "sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c",
+                          "path":  "Tasks/version-requests/FDEC-099.json"
+                      },
+                      {
+                          "sha256":  "6308f85d48e42628bd3980a2acff077b9862baefe0117b64b6b9186c280fbe6a",
+                          "path":  "docs/verification/verify-d002-outcome-v2.ps1"
+                      },
+                      {
+                          "sha256":  "a78e8ce2b729aed4bfc3b205618c1a9cbaa19d8e1b40e6135c23f906efac574c",
+                          "path":  "docs/verification/d002-outcome-continuity.md"
+                      },
+                      {
+                          "sha256":  "cf64f2d5217448144e2432bfc7dd3196cec6b13fe24c8196086f6e4f3fd894bc",
+                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/run-checks-v2.ps1"
+                      },
+                      {
+                          "sha256":  "56b73ac0710da4002b469381fdd2756b635cbc11bead64ddcae92c8b96795d04",
+                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/test-output-v2.txt"
+                      },
+                      {
+                          "sha256":  "55d3f4f847d21c3fc2c95eeabd3994c0a4ce94292c92efb8c02574cef82daa0e",
+                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/verification-v2.md"
+                      },
+                      {
+                          "sha256":  "63e295cde7c8c860a57abd9f262a95680e988ea12e5f4d5802a652d60f1bbfc5",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T193535109Z-codex-scope-amended-d5aed689.md"
+                      },
+                      {
+                          "sha256":  "966aeb587bbc9a66fb661ee08988a95c82fda8ae7801f51a322ff9f84eee0b12",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T202526019Z-codex-scope-amended-5c78c5bf.md"
+                      }
+                  ],
+    "schema":  "fdec-correction-result/v1",
+    "actual_training_performed":  false,
+    "original_request_raw_sha256":  "46d15301e74ec77de2bc0dc2fb2a6aa38ecd1e7db29277f871a42651e1e5611f",
+    "source_state_sha256":  "90d2e84f77bdd6f6b2a6afb17027a531c487afc34560a5d5b2a11975a5c1728a",
+    "model_release_approved":  false,
+    "monitor_task_id":  "8d0454b2-d0eb-49bb-a410-da60350a8286",
+    "result":  "PASS",
+    "verification":  {
+                         "schema":  "fdec-outcome-verification/v2",
+                         "task_id":  "FDEC-099",
+                         "result":  "PASS",
+                         "current_protected_files":  102,
+                         "accepted_process_changes":  12,
+                         "continuity_negative_checks":  23,
+                         "historical_replay_source":  "16e293aadc15f8dd50fac44720a7949e788c9eff",
+                         "historical_replay":  {
+                                                   "schema":  "fdec-outcome-verification/v1",
+                                                   "result":  "PASS",
+                                                   "task_id":  "FDEC-099",
+                                                   "preserved_files":  100,
+                                                   "negative_checks":  14,
+                                                   "actual_training_data_admitted":  false,
+                                                   "semantic_independent_review_required":  true,
+                                                   "mutations":  false
+                                               },
+                         "historical_worktree_removed":  true,
+                         "original_request_unchanged":  true,
+                         "actual_data_admitted":  false,
+                         "independent_review_required":  true
+                     }
+}
