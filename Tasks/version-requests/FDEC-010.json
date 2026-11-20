@@ -1,0 +1,14 @@
+﻿{
+    "request_id":  "3e718c91-23f5-42ec-b7f0-e5d2febb9d34",
+    "schema":  "fdtasks-version-request/v1",
+    "type":  "task_closed",
+    "epic_id":  "FDEC-EPIC-D002",
+    "work_item_id":  "FDEC-010",
+    "summary":  "Map canonical and pinned source annotations with uncertainty, abstention and independent supervision masks",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/evidence/verification.md",
+                         "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/evidence/result.json",
+                         "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/evidence/test-output.txt",
+                         "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/evidence/source-card-observation.json"
+                     ]
+}

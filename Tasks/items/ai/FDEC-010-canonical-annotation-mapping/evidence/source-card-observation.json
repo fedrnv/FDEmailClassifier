@@ -1,0 +1,35 @@
+﻿{
+    "url":  "https://huggingface.co/datasets/weijianzhg/email-triage-action-seed/raw/8c98baa8b10a1dddd676c860d9e1b86c89141c38/README.md",
+    "actions":  [
+                    "reply",
+                    "forward",
+                    "archive",
+                    "flag",
+                    "mark_read",
+                    "ignore"
+                ],
+    "matches_completed_rights_audit":  true,
+    "purpose":  "Confirm source annotation vocabulary only; no corpus transfer or rights expansion",
+    "observed_at":  "2026-11-20T15:37:34.2148494+00:00",
+    "sha256":  "2bb851c855d60a96ef3f648bb078afd0d09f280486bdbac0e0a090ec4fa64aaa",
+    "schema":  "fdec-source-card-observation/v1",
+    "priorities":  [
+                       "urgent",
+                       "high",
+                       "medium",
+                       "low"
+                   ],
+    "categories":  [
+                       "meeting_request",
+                       "customer_support",
+                       "finance",
+                       "travel",
+                       "newsletter",
+                       "promotion",
+                       "spam",
+                       "phishing",
+                       "system_update",
+                       "personal",
+                       "unknown"
+                   ]
+}

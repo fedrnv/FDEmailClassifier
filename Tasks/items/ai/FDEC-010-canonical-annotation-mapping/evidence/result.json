@@ -1,0 +1,24 @@
+﻿{
+    "fixture_run_removed":  true,
+    "invalid_schema_records_rejected":  5,
+    "valid_classification_projections":  28,
+    "criteria":  {
+                     "AC-02":  "PASS",
+                     "AC-01":  "PASS"
+                 },
+    "node":  "24.22.1",
+    "exit_code":  0,
+    "task_id":  "FDEC-010",
+    "source_sha":  "09c7763a6dc8e21ac1f0359114b1ff6d1bc24b5f",
+    "valid_mapping_records":  28,
+    "python":  "3.14.5",
+    "schema":  "fdec-task-verification/v1",
+    "source_tree":  "7c010cec308c29967b116882089b71fbfe2ada20",
+    "command":  "powershell -NoProfile -File training/labels/test-mapping.ps1",
+    "real_corpus_downloaded":  false,
+    "ajv_cli":  "5.0.0",
+    "outcome":  "PASS",
+    "monitor_task_id":  "a4f48e36-ae32-4940-a962-2f3c0f330fd5",
+    "publication_performed":  false,
+    "semantic_tests":  21
+}

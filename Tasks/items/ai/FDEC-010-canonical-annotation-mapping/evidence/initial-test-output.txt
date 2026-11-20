@@ -1,0 +1,42 @@
+test_all_priorities_and_actions (test_mapping.MappingTests.test_all_priorities_and_actions) ... ok
+test_canonical_contract_enumerations_unchanged (test_mapping.MappingTests.test_canonical_contract_enumerations_unchanged) ... ok
+test_conflicting_duplicate_annotations_no_majority_vote_or_union (test_mapping.MappingTests.test_conflicting_duplicate_annotations_no_majority_vote_or_union) ... ok
+test_conflicting_security_is_unknown_not_clear_or_flagged (test_mapping.MappingTests.test_conflicting_security_is_unknown_not_clear_or_flagged) ... ok
+test_explicit_withholding_disables_targets_but_retains_security (test_mapping.MappingTests.test_explicit_withholding_disables_targets_but_retains_security) ... ok
+test_invalid_input_static_errors_and_original_state_preserved (test_mapping.MappingTests.test_invalid_input_static_errors_and_original_state_preserved) ...
+  test_invalid_input_static_errors_and_original_state_preserved (test_mapping.MappingTests.test_invalid_input_static_errors_and_original_state_preserved) (value_type='dict') ... FAIL
+test_missing_duplicate_not_contradiction_but_explicit_unknown_is (test_mapping.MappingTests.test_missing_duplicate_not_contradiction_but_explicit_unknown_is) ... ok
+test_missing_unknown_and_abstain_remain_distinct (test_mapping.MappingTests.test_missing_unknown_and_abstain_remain_distinct) ... ok
+test_no_input_mutation_and_output_does_not_alias_input (test_mapping.MappingTests.test_no_input_mutation_and_output_does_not_alias_input) ... ok
+test_no_missing_action_or_unknown_topic_is_supervision_fallback (test_mapping.MappingTests.test_no_missing_action_or_unknown_topic_is_supervision_fallback) ... ok
+test_normalized_bridge_does_not_copy_or_read_message_fields (test_mapping.MappingTests.test_normalized_bridge_does_not_copy_or_read_message_fields) ... ok
+test_reject_duplicate_rows_and_empty_metadata (test_mapping.MappingTests.test_reject_duplicate_rows_and_empty_metadata) ... ok
+test_round_order_and_duplicate_identical_labels_are_deterministic (test_mapping.MappingTests.test_round_order_and_duplicate_identical_labels_are_deterministic) ... ok
+test_security_normal_spam_phishing_independent_of_topics (test_mapping.MappingTests.test_security_normal_spam_phishing_independent_of_topics) ... ok
+test_seed_ambiguous_topics_are_candidates_not_multilabel_targets (test_mapping.MappingTests.test_seed_ambiguous_topics_are_candidates_not_multilabel_targets) ... ok
+test_seed_card_vocabulary (test_mapping.MappingTests.test_seed_card_vocabulary) ... ok
+test_seed_does_not_accept_invented_source_columns (test_mapping.MappingTests.test_seed_does_not_accept_invented_source_columns) ... ok
+test_twelve_topics_and_multilabel (test_mapping.MappingTests.test_twelve_topics_and_multilabel) ... ok
+test_unknown_never_becomes_other (test_mapping.MappingTests.test_unknown_never_becomes_other) ... ok
+test_unsupported_actions_are_not_silently_relabelled (test_mapping.MappingTests.test_unsupported_actions_are_not_silently_relabelled) ... ok
+test_unsupported_sources_revisions_artifacts_and_hashes (test_mapping.MappingTests.test_unsupported_sources_revisions_artifacts_and_hashes) ... ok
+
+======================================================================
+FAIL: test_invalid_input_static_errors_and_original_state_preserved (test_mapping.MappingTests.test_invalid_input_static_errors_and_original_state_preserved) (value_type='dict')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\labels\test_mapping.py", line 170, in test_invalid_input_static_errors_and_original_state_preserved
+    with redirect_stdout(output), redirect_stderr(output), self.assertRaises(mapping.MappingError) as error:
+                                                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: MappingError not raised
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.017s
+
+FAILED (failures=1)
+Synthetic annotation mapping tests failed
+At C:\GitHub\FDEmailClassifier\training\labels\test-mapping.ps1:7 char:29
++ ... ASTEXITCODE -ne 0){throw 'Synthetic annotation mapping tests failed'}
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Synthetic annot...ng tests failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Synthetic annotation mapping tests failed
