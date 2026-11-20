@@ -67,6 +67,7 @@ foreach ($file in Get-ChildItem "$Root/Tasks/items","$Root/Tasks/epics" -Recurse
     $record.dependencies=@(IdList (Field $record.front 'initial_dependencies'))
     $record.members=@()
     $record.state_paths=@($file.FullName)
+    $record.closure_history=@()
     if ($epic) {
         $record.members=@([regex]::Matches($record.text,'(?m)^- (FDEC-[0-9]{3})\r?$') | ForEach-Object {$_.Groups[1].Value})
     } else {
@@ -104,6 +105,7 @@ foreach ($record in $records.Values) {
             $m=$transitions[0]
             if ($record.status -ne $m.Groups[1].Value) { throw "Conflicting status transition: $($record.id) current=$($record.status) expected=$($m.Groups[1].Value) event=$($event.path)" }
             $record.status=$m.Groups[2].Value
+            if ($record.status -eq 'Done') { $record.closure_history+= $event }
         }
         if ($kind -in 'dependency-added','membership-added') {
             $m=[regex]::Match($event.text,'(?m)^Add \*{0,2}(FDEC-[0-9]{3})\b')
@@ -138,17 +140,45 @@ $active=@($records.Values | Where-Object {$_.epic -and $_.id -match 'EPIC-D' -an
 if ($active.Count -gt 1) { throw 'Multiple active development Epics' }
 foreach ($special in 'FDEC-EPIC-S001','FDEC-EPIC-S002') { if (!$records.ContainsKey($special) -or $records[$special].status -ne 'Active') { throw 'Special Epic must remain Active' } }
 $requests=@{}; $closed=@{}
-foreach ($file in Get-ChildItem "$Root/Tasks/version-requests" -Filter '*.json' -ErrorAction SilentlyContinue) {
+$requestFiles=@(Get-ChildItem "$Root/Tasks/version-requests" -Filter '*.json' -ErrorAction SilentlyContinue)
+$requestBodies=@($requestFiles | ForEach-Object { Get-Content $_.FullName -Raw | ConvertFrom-Json })
+if (@($requestBodies | Group-Object request_id | Where-Object Count -GT 1).Count) { throw 'Invalid or duplicate version request' }
+if (@($requestBodies | Group-Object work_item_id | Where-Object Count -GT 1).Count) { throw 'Invalid closed item request' }
+foreach ($file in $requestFiles) {
     $r=Get-Content $file.FullName -Raw | ConvertFrom-Json
     if ($r.schema -ne 'fdtasks-version-request/v1' -or !$r.request_id -or $requests.ContainsKey($r.request_id) -or !$r.summary -or !$r.verification) { throw 'Invalid or duplicate version request' }
     $requests[$r.request_id]=$true
     if ($r.type -notin 'task_closed','bug_closed','correction_closed') { throw 'Release/Epic requests require a dedicated verified publisher (not implemented at foundation)' }
-    if (!$r.work_item_id -or $closed.ContainsKey($r.work_item_id) -or !$records.ContainsKey($r.work_item_id) -or $records[$r.work_item_id].parent -ne $r.epic_id -or $records[$r.work_item_id].status -ne 'Done') { throw 'Invalid closed item request' }
+    if (!$r.work_item_id -or $closed.ContainsKey($r.work_item_id) -or !$records.ContainsKey($r.work_item_id) -or $records[$r.work_item_id].parent -ne $r.epic_id -or !$records[$r.work_item_id].closure_history.Count) { throw 'Invalid closed item request' }
+    $target=$records[$r.work_item_id]
+    $expectedType=switch (Field $target.front 'type') { 'Task' {'task_closed'} 'Bug' {'bug_closed'} 'Correction' {'correction_closed'} default {throw 'Unsupported closure item type'} }
+    if ($r.type -ne $expectedType) { throw 'Closure request type does not match item' }
     $closed[$r.work_item_id]=$true
     foreach ($path in $r.verification) {
         $absolute=[IO.Path]::GetFullPath((Join-Path $Root $path))
-        if (!$absolute.StartsWith($rootPath+[IO.Path]::DirectorySeparatorChar) -or !(Test-Path -LiteralPath $absolute -PathType Leaf)) { throw 'Missing or escaping verification reference' }
+        $evidenceRoot=(Join-Path (Split-Path $target.path) 'evidence')+[IO.Path]::DirectorySeparatorChar
+        if (!$absolute.StartsWith($evidenceRoot,[StringComparison]::OrdinalIgnoreCase) -or !(Test-Path -LiteralPath $absolute -PathType Leaf) -or !(Get-Item -LiteralPath $absolute).Length) { throw 'Missing or escaping verification reference' }
     }
+    # Existing accepted requests remain historical authority. New requests must
+    # carry a hash-bound closure brief on the FIRST validated Done transition.
+    # Reopen/reclose preserves that identity; current status is intentionally not
+    # used as a substitute for verified closure history.
+    $relative=$file.FullName.Substring($rootPath.Length+1).Replace('\','/')
+    $accepted=@(git -C $Root ls-tree --name-only $gitHead -- $relative)
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot resolve accepted closure baseline' }
+    $firstClosure=$target.closure_history[0]
+    $proofMatch=[regex]::Match($firstClosure.front,'(?m)^closure_proof: ([^\r\n]+)')
+    if ($proofMatch.Success) {
+        $proofPath=[IO.Path]::GetFullPath((Join-Path (Split-Path $target.path) $proofMatch.Groups[1].Value.Trim()))
+        if (!$proofPath.StartsWith($evidenceRoot,[StringComparison]::OrdinalIgnoreCase) -or !(Test-Path -LiteralPath $proofPath -PathType Leaf) -or (Get-FileHash $proofPath -Algorithm SHA256).Hash.ToLowerInvariant() -ne (Field $firstClosure.front 'closure_proof_sha256')) { throw 'Invalid closure proof binding' }
+        $proof=Get-Content -LiteralPath $proofPath -Raw | ConvertFrom-Json
+        if ($proof.task_sha256 -ne (Get-FileHash $target.path -Algorithm SHA256).Hash.ToLowerInvariant() -or !$proof.verification) { throw 'Unverified closure proof' }
+        if (!$accepted.Count -and $proof.source_sha -ne $gitHead) { throw 'Stale first closure source' }
+        foreach ($path in $r.verification) {
+            $entries=@($proof.verification | Where-Object path -EQ $path)
+            if ($entries.Count -ne 1 -or !$entries[0].sha256 -or (Get-FileHash (Join-Path $Root $path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entries[0].sha256) { throw 'Unverified closure evidence' }
+        }
+    } elseif (!$accepted.Count) { throw 'New closure request requires verified first-closure proof' }
 }
 # No hosted entrypoints are admitted until their command graph validator arrives
 # with FDEC-050. This rejects opaque wrappers as well as direct test steps.

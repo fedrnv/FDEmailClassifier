@@ -1,0 +1,11 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "d28c6437-e33a-4d1f-b1c0-28baf5f379d7",
+    "epic_id":  "FDEC-EPIC-S001",
+    "work_item_id":  "FDEC-080",
+    "summary":  "Preserve verified first-closure requests through reopen and reclose",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/evidence/verification.md"
+                     ]
+}

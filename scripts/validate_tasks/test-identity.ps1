@@ -36,7 +36,7 @@ Planned -> Blocked.
     # Synthetic candidate files remain untracked here to exercise semantic hash
     # rejection separately from the immutable-history tests in test-validation.
     git -C $temp init --quiet
-    git -C $temp add AGENTS.md DEVELOPMENT.md
+    git -C $temp add AGENTS.md DEVELOPMENT.md Tasks/version-requests
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture
     if ($LASTEXITCODE -ne 0) { throw 'Fixture initialization failed' }
     $ready=Get-Content "$temp/$target/evidence/readiness.json" -Raw | ConvertFrom-Json
