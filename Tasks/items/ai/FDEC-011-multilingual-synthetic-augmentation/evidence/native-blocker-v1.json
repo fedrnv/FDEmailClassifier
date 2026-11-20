@@ -1,0 +1,29 @@
+﻿{
+    "actual_admission_result":  "template_training_rights_not_approved",
+    "resume_predicate":  "Resolve the actual applicable source/provider rights, bind them in the native audit, prove real positive commercial admission without promoting codex-fixture-v1, refresh readiness and close only after all effective criteria pass",
+    "primary_sources":  [
+                            "https://openai.com/policies/services-agreement/",
+                            "https://openai.com/policies/usage-policies/",
+                            "https://openai.com/policies/service-terms/"
+                        ],
+    "schema":  "fdec-external-blocker/v1",
+    "task_id":  "FDEC-011",
+    "commercial_training_rights":  "not_established",
+    "user_question_submitted":  true,
+    "status":  "unresolved",
+    "required_input":  "Applicable account agreement or project-specific provider permission sufficient for the intended classifier training/distribution, or an independently supplied appropriately licensed human-authored source. No secrets or real correspondence.",
+    "evidence":  [
+                     {
+                         "sha256":  "9f559afb84f267284cba92a84be35c900b46aebeb580644a0ce016f8eb2bd2c0",
+                         "path":  "training/augmentation/NATIVE-RIGHTS-v1.md"
+                     },
+                     {
+                         "sha256":  "2036d091054bde6bb2481fb88ad7ab03d33b51ebabeea3c5f9e8e5d690bea3dc",
+                         "path":  "training/config/fdec-native-rights-v1.json"
+                     }
+                 ],
+    "actual_authoring_origin":  "codex-assisted-original-native-grammar",
+    "pack_id":  "fdec-native-templates-v1",
+    "condition":  "No applicable account agreement or provider permission covering the intended use has been supplied; source creation and Apache code grant do not establish that separate fact",
+    "source_code_license":  "Apache-2.0"
+}

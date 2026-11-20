@@ -1,0 +1,37 @@
+﻿{
+    "criteria":  {
+                     "AC-02":  "PASS_SOFTWARE_BOUNDARIES",
+                     "AC-05":  "PASS_SIX_RESOURCES_EXTENSION_INTERFACE",
+                     "AC-01":  "PARTIAL_SOURCE_RIGHTS",
+                     "AC-03":  "PASS_ORIGINAL_GRAMMAR_TRUTHFUL_CODE_LICENSE",
+                     "AC-06":  "PASS_DECLARED_DUPLICATE_AND_SOURCE_LINEAGE_POLICY",
+                     "AC-04":  "BLOCKED_ACTUAL_COMMERCIAL_ADMISSION"
+                 },
+    "native_tests":  15,
+    "source_tree":  "20d4346c620d8aa3755c09b8c89ec58e0149a08c",
+    "outcome":  "SOFTWARE_PASS_TASK_INCOMPLETE",
+    "schema":  "fdec-task-verification/v1",
+    "exit_code":  0,
+    "regression_tests":  20,
+    "commercial_training_admitted":  false,
+    "native_fixture_runs_remaining":  0,
+    "task_id":  "FDEC-011",
+    "source_sha":  "756d06170886cf10d9e05fa7fde9a3aefd416ee9",
+    "monitor_task_id":  "cd08c036-7e0f-4914-a612-0c18355b3690",
+    "codex_fixture_commercial_training_admitted":  false,
+    "claimed_119_complete_translations":  false,
+    "real_mail_used":  false,
+    "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1",
+    "original_fixture_runs_remaining":  0,
+    "publication_performed":  false,
+    "model_training_performed":  false,
+    "native_language_resources":  [
+                                      "en",
+                                      "de",
+                                      "ru",
+                                      "es",
+                                      "zh",
+                                      "ar"
+                                  ],
+    "software_tests":  35
+}

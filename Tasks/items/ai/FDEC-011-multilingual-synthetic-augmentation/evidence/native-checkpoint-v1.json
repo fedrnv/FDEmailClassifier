@@ -1,0 +1,61 @@
+﻿{
+    "goal_status":  "active after explicit user resume; first occurrence in the fresh resumed blocker audit; full objective remains incomplete",
+    "evidence":  [
+                     {
+                         "sha256":  "3ea81ce31adbe2be28db01805a77e1a95b13f747b8a0d85d29b1828a5bd11104",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-acceptance-v1.json"
+                     },
+                     {
+                         "sha256":  "62ee4ae27c582d9b84644530f925543b48ef3c5fb7c380e7e03829e714a3f18a",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-frozen-readiness.json"
+                     },
+                     {
+                         "sha256":  "501f08a179d87b4affa7e4676a5868387c3414ca45fe756363d40c83f9a3b56c",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-result-v1.json"
+                     },
+                     {
+                         "sha256":  "b79d47b6b3d50fdb61706efac3a73b4a846a90f6396af60a8de2e5134ba0a937",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-quality-result-v1.json"
+                     },
+                     {
+                         "sha256":  "3568487f36d028605cf8bc32114db92ce5e8886c09b5fd675ccb63639d25ed57",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-test-output-v1.txt"
+                     },
+                     {
+                         "sha256":  "ec23574c18fdd9dd7f34e8500dea5778423e1184814f533a89d592562bf9ff46",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-verification-v1.md"
+                     },
+                     {
+                         "sha256":  "d62720368e7dc198d4ceb4dd03331b25735727e3d7244d9346f6b1b1906e0e8e",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-blocker-v1.json"
+                     },
+                     {
+                         "sha256":  "3d1d4446e55dbbf6dd496505e5f8cfaa1aa904056662d967fcca52ff8452c794",
+                         "path":  "training/config/fdec-native-templates-v1.json"
+                     },
+                     {
+                         "sha256":  "2036d091054bde6bb2481fb88ad7ab03d33b51ebabeea3c5f9e8e5d690bea3dc",
+                         "path":  "training/config/fdec-native-rights-v1.json"
+                     },
+                     {
+                         "sha256":  "9f559afb84f267284cba92a84be35c900b46aebeb580644a0ce016f8eb2bd2c0",
+                         "path":  "training/augmentation/NATIVE-RIGHTS-v1.md"
+                     }
+                 ],
+    "candidate_tree":  "20d4346c620d8aa3755c09b8c89ec58e0149a08c",
+    "accepted_state":  "Blocked",
+    "task_id":  "FDEC-011",
+    "authority_status":  "Native source creation and code licensing explicitly authorized; actual applicable training rights not established; no source promotion or publication",
+    "resource_status":  {
+                            "background_commands":  [
+
+                                                    ],
+                            "toolchain":  "CPython 3.14.5 standard library",
+                            "real_mail_used":  false,
+                            "external_generation_api_used":  false,
+                            "fixture_runs_removed":  true
+                        },
+    "candidate_sha":  "756d06170886cf10d9e05fa7fde9a3aefd416ee9",
+    "schema":  "fdec-execution-checkpoint/v1",
+    "exact_next_action":  "Inspect the applicable rights response. Do not assume original wording or Apache source licensing resolves provider terms. If actual rights cover the intended use, bind the document, update the native audit under review, verify real commercial admission and retained codex-fixture denial, refresh all acceptance/readiness bindings and close only after every effective criterion passes. D002 gate/review require fresh separate turns after FDEC-011 Done."
+}

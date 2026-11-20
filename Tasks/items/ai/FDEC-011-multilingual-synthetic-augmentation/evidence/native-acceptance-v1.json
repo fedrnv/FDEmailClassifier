@@ -1,0 +1,22 @@
+﻿{
+    "task_id":  "FDEC-011",
+    "schema":  "fdec-acceptance-amendment/v1",
+    "additions":  [
+                      {
+                          "id":  "AC-03",
+                          "criterion":  "Create fdec-native-templates-v1 with original project-authored template grammar for twelve topics, priorities, security and actions, artificial identities only, and truthful authorship/provenance plus Apache-2.0 source licensing."
+                      },
+                      {
+                          "id":  "AC-04",
+                          "criterion":  "Admit fdec-native-templates-v1 for commercial_training only on documented applicable rights; preserve rejection of codex-fixture-v1 for commercial training and never infer a provider permission from a package name or source-code license."
+                      },
+                      {
+                          "id":  "AC-05",
+                          "criterion":  "Reproduce multilingual generation with explicit reviewed language resources and an extension path toward the 119 Qwen3 languages and dialects, without claiming unimplemented translations or measured quality."
+                      },
+                      {
+                          "id":  "AC-06",
+                          "criterion":  "Verify label consistency, meaningful variation, duplicate detection and template/translation lineage isolation under the existing train/test leakage policy using local synthetic software fixtures."
+                      }
+                  ]
+}

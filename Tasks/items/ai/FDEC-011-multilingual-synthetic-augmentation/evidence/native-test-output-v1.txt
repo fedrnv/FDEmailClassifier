@@ -1,0 +1,47 @@
+test_aggregate_counts_only_fill_measured_deficit_and_zero_is_explicit (test_augmentation.AugmentationTests.test_aggregate_counts_only_fill_measured_deficit_and_zero_is_explicit) ... ok
+test_capsule_tampering_and_real_text_never_reaches_output (test_augmentation.AugmentationTests.test_capsule_tampering_and_real_text_never_reaches_output) ... ok
+test_catalog_rejects_contacts_external_hosts_and_incomplete_translations (test_augmentation.AugmentationTests.test_catalog_rejects_contacts_external_hosts_and_incomplete_translations) ... ok
+test_cli_reports_only_counts_and_static_errors (test_augmentation.AugmentationTests.test_cli_reports_only_counts_and_static_errors) ... ok
+test_duplicate_translation_outputs_and_empty_source_slice_reject (test_augmentation.AugmentationTests.test_duplicate_translation_outputs_and_empty_source_slice_reject) ... ok
+test_existing_unignored_and_linked_outputs_are_preserved (test_augmentation.AugmentationTests.test_existing_unignored_and_linked_outputs_are_preserved) ... ok
+test_failed_final_receipt_removes_only_owned_new_run (test_augmentation.AugmentationTests.test_failed_final_receipt_removes_only_owned_new_run) ... ok
+test_invalid_capsule_files_and_duplicate_keys (test_augmentation.AugmentationTests.test_invalid_capsule_files_and_duplicate_keys) ... ok
+test_invalid_quota_inputs_preserve_original_state (test_augmentation.AugmentationTests.test_invalid_quota_inputs_preserve_original_state) ... ok
+test_mapping_bridge_uses_actual_annotation_artifact_hash (test_augmentation.AugmentationTests.test_mapping_bridge_uses_actual_annotation_artifact_hash) ... ok
+test_no_network_calls_during_generation_or_translation (test_augmentation.AugmentationTests.test_no_network_calls_during_generation_or_translation) ... ok
+test_no_opt_in_does_not_load_rights_or_create_output (test_augmentation.AugmentationTests.test_no_opt_in_does_not_load_rights_or_create_output) ... ok
+test_partial_stream_write_rollback_and_input_preservation (test_augmentation.AugmentationTests.test_partial_stream_write_rollback_and_input_preservation) ... ok
+test_pinned_registry_audit_and_catalog_reject_mutation (test_augmentation.AugmentationTests.test_pinned_registry_audit_and_catalog_reject_mutation) ... ok
+test_provider_output_training_and_evaluation_rights_fail_closed (test_augmentation.AugmentationTests.test_provider_output_training_and_evaluation_rights_fail_closed) ... ok
+test_quota_order_independence_of_messages (test_augmentation.AugmentationTests.test_quota_order_independence_of_messages) ... ok
+test_repeatable_bytes_and_receipts_not_dependent_on_output_path (test_augmentation.AugmentationTests.test_repeatable_bytes_and_receipts_not_dependent_on_output_path) ... ok
+test_six_language_twelve_class_default_deficits_and_private_hashes (test_augmentation.AugmentationTests.test_six_language_twelve_class_default_deficits_and_private_hashes) ... ok
+test_translation_preserves_labels_roots_and_cross_seed_families (test_augmentation.AugmentationTests.test_translation_preserves_labels_roots_and_cross_seed_families) ... ok
+test_translation_source_slice_validates_all_inputs (test_augmentation.AugmentationTests.test_translation_source_slice_validates_all_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 3.328s
+
+OK
+test_all_topics_languages_priorities_security_actions_and_true_variation (test_native.NativeTests.test_all_topics_languages_priorities_security_actions_and_true_variation) ... ok
+test_artificial_identity_slots_only_use_reserved_fictional_namespaces (test_native.NativeTests.test_artificial_identity_slots_only_use_reserved_fictional_namespaces) ... ok
+test_catalog_and_quota_interfaces_have_capacity_for_119_vetted_resources (test_native.NativeTests.test_catalog_and_quota_interfaces_have_capacity_for_119_vetted_resources) ... ok
+test_duplicate_messages_are_rejected (test_native.NativeTests.test_duplicate_messages_are_rejected) ... ok
+test_existing_split_policy_rejects_cross_source_and_family_partitions (test_native.NativeTests.test_existing_split_policy_rejects_cross_source_and_family_partitions) ... ok
+test_native_cli_retains_rights_denial_and_logs_no_message_fields (test_native.NativeTests.test_native_cli_retains_rights_denial_and_logs_no_message_fields) ... ok
+test_native_facts_are_new_resources_not_renamed_fixture_sentences (test_native.NativeTests.test_native_facts_are_new_resources_not_renamed_fixture_sentences) ... ok
+test_native_output_bytes_quality_and_canonical_annotations_repeat (test_native.NativeTests.test_native_output_bytes_quality_and_canonical_annotations_repeat) ... ok
+test_parallel_translation_preserves_labels_identity_and_lineage (test_native.NativeTests.test_parallel_translation_preserves_labels_identity_and_lineage) ... ok
+test_previous_fixture_catalog_audit_and_rights_evidence_are_unchanged (test_native.NativeTests.test_previous_fixture_catalog_audit_and_rights_evidence_are_unchanged) ... ok
+test_real_native_commercial_admission_is_not_fabricated (test_native.NativeTests.test_real_native_commercial_admission_is_not_fabricated) ... ok
+test_regeneration_checks_actual_text_annotations_identity_and_provenance (test_native.NativeTests.test_regeneration_checks_actual_text_annotations_identity_and_provenance) ... ok
+test_seed_changes_preserve_scenario_families_not_independent_test_samples (test_native.NativeTests.test_seed_changes_preserve_scenario_families_not_independent_test_samples) ... ok
+test_unsafe_format_expressions_and_incomplete_languages_reject (test_native.NativeTests.test_unsafe_format_expressions_and_incomplete_languages_reject) ... ok
+test_zero_deficit_has_explicit_empty_native_receipt (test_native.NativeTests.test_zero_deficit_has_explicit_empty_native_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.281s
+
+OK
+PASS: original native grammar software, variation, synthetic identities, multilingual capacity, duplicate/lineage checks and unchanged fixture denial
+INCOMPLETE: native commercial_training admission lacks documented applicable provider/source rights; this is not AC-04 acceptance or task closure
