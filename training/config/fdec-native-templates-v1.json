@@ -1,0 +1,607 @@
+{
+  "schema": "fdec-native-parallel-grammar/v1",
+  "authorship": "codex-assisted-original-native-grammar",
+  "license": "Apache-2.0",
+  "languages": {
+    "en": {
+      "script": "Latn",
+      "subject_forms": [
+        "{topic}: {reference}",
+        "{reference} | {topic}"
+      ],
+      "greetings": [
+        "Hello {person},",
+        "Good day {person},"
+      ],
+      "notes": [
+        "Use reference {reference} for this fictional case.",
+        "The fictional contact for this case is {email}."
+      ],
+      "closings": [
+        "Regards, {sender}",
+        "Thank you, {sender}"
+      ],
+      "priority": {
+        "low": "This case may remain in the queue; there is no immediate deadline.",
+        "normal": "Process this case in the routine queue.",
+        "high": "Please give this case attention before today's work ends.",
+        "urgent": "This case needs immediate attention within an hour."
+      },
+      "action": {
+        "none": "This is informational; no response or archival step is requested.",
+        "review": "Inspect this case before choosing any further step.",
+        "reply": "Send a response about this case.",
+        "archive": "The case is complete; retain the record in the archive."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Unrequested advertisement: claim an unsolicited bonus without any subscription.",
+        "phishing": "An unverified warning threatens account suspension and requests sign-in at portal.invalid."
+      },
+      "topic_names": {
+        "work": "Team deliverable",
+        "personal": "Household reminder",
+        "finance": "Demo invoice",
+        "shopping": "Fictional order",
+        "travel": "Journey reservation",
+        "social": "Community activity",
+        "newsletters": "Subscribed edition",
+        "marketing": "Campaign offer",
+        "education": "Learning module",
+        "health": "Appointment administration",
+        "legal": "Contract administration",
+        "other": "Instrument bulletin"
+      },
+      "facts": {
+        "work": [
+          "The project {project} has {count} deliverables awaiting team coordination.",
+          "Please organize the handover of task {item} within project {project}."
+        ],
+        "personal": [
+          "The household list contains {count} shared chores for our fictional home.",
+          "Please add item {item} to the family's shared household inventory."
+        ],
+        "finance": [
+          "Demo invoice {reference} records an amount of {amount} test credits.",
+          "The fictional account {account} has a statement awaiting a balance check."
+        ],
+        "shopping": [
+          "Order {reference} includes {count} units of item {item}.",
+          "The fictional seller has assigned item {item} to delivery case {reference}."
+        ],
+        "travel": [
+          "Reservation {reference} lists a journey on the fictional calendar date {date}.",
+          "The imaginary accommodation requests confirmation of {count} places under {reference}."
+        ],
+        "social": [
+          "The community workshop has {count} spaces for the planned gathering.",
+          "Please coordinate the group celebration using invitation {reference}."
+        ],
+        "newsletters": [
+          "Your subscribed digest contains {count} editorial sections in this edition.",
+          "Subscription {reference} now includes the latest periodic bulletin."
+        ],
+        "marketing": [
+          "The demonstration campaign advertises {item} for {amount} test credits.",
+          "A fictional promotional bundle contains {count} items under offer {reference}."
+        ],
+        "education": [
+          "Learning module {item} has {count} practice exercises.",
+          "The fictional course office has attached enrollment reference {reference}."
+        ],
+        "health": [
+          "The clinic administration has opened appointment case {reference}, without any patient details.",
+          "A fictional wellness session has {count} appointment slots to arrange."
+        ],
+        "legal": [
+          "Clause {item} in the fictional agreement needs an administrative compliance check.",
+          "Retention notice {reference} concerns the fictional contract record dated {date}."
+        ],
+        "other": [
+          "Instrument {item} has recorded {count} synthetic pulses in the test sequence.",
+          "A fictional environmental device issued bulletin {reference} without location data."
+        ]
+      }
+    },
+    "de": {
+      "script": "Latn",
+      "subject_forms": [
+        "{topic}: {reference}",
+        "{reference} | {topic}"
+      ],
+      "greetings": [
+        "Guten Tag {person},",
+        "Hallo {person},"
+      ],
+      "notes": [
+        "Verwenden Sie für diesen fiktiven Vorgang die Referenz {reference}.",
+        "Der fiktive Kontakt für diesen Vorgang lautet {email}."
+      ],
+      "closings": [
+        "Mit freundlichen Grüßen, {sender}",
+        "Vielen Dank, {sender}"
+      ],
+      "priority": {
+        "low": "Dieser Vorgang kann warten; es gibt keine unmittelbare Frist.",
+        "normal": "Bearbeiten Sie diesen Vorgang in der regulären Warteschlange.",
+        "high": "Bitte kümmern Sie sich vor dem heutigen Arbeitsende um diesen Vorgang.",
+        "urgent": "Dieser Vorgang erfordert innerhalb einer Stunde sofortige Aufmerksamkeit."
+      },
+      "action": {
+        "none": "Dies dient der Information; eine Antwort oder Archivierung wird nicht verlangt.",
+        "review": "Prüfen Sie den Vorgang, bevor Sie weitere Schritte auswählen.",
+        "reply": "Senden Sie eine Antwort zu diesem Vorgang.",
+        "archive": "Der Vorgang ist abgeschlossen; bewahren Sie den Datensatz im Archiv auf."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Unverlangte Werbung: Fordern Sie einen nicht bestellten Bonus ohne Abonnement an.",
+        "phishing": "Eine ungeprüfte Warnung droht mit einer Kontosperre und verlangt eine Anmeldung bei portal.invalid."
+      },
+      "topic_names": {
+        "work": "Teamaufgabe",
+        "personal": "Haushaltshinweis",
+        "finance": "Demorechnung",
+        "shopping": "Fiktive Bestellung",
+        "travel": "Reisereservierung",
+        "social": "Gemeinschaftsaktion",
+        "newsletters": "Abonnierte Ausgabe",
+        "marketing": "Werbeangebot",
+        "education": "Lernmodul",
+        "health": "Terminverwaltung",
+        "legal": "Vertragsverwaltung",
+        "other": "Gerätemeldung"
+      },
+      "facts": {
+        "work": [
+          "Im Projekt {project} warten {count} Arbeitsergebnisse auf die Abstimmung im Team.",
+          "Bitte organisieren Sie die Übergabe der Aufgabe {item} im Projekt {project}."
+        ],
+        "personal": [
+          "Die Haushaltsliste enthält {count} gemeinsame Aufgaben für unseren fiktiven Haushalt.",
+          "Bitte ergänzen Sie das gemeinsame Haushaltsverzeichnis der Familie um den Eintrag {item}."
+        ],
+        "finance": [
+          "Die Demorechnung {reference} weist {amount} Testguthaben aus.",
+          "Für das fiktive Konto {account} liegt ein Auszug zur Saldenprüfung vor."
+        ],
+        "shopping": [
+          "Die Bestellung {reference} umfasst {count} Einheiten des Artikels {item}.",
+          "Der fiktive Händler hat den Artikel {item} dem Liefervorgang {reference} zugeordnet."
+        ],
+        "travel": [
+          "Die Reservierung {reference} nennt eine Reise am fiktiven Kalenderdatum {date}.",
+          "Die erfundene Unterkunft bittet um Bestätigung von {count} Plätzen unter {reference}."
+        ],
+        "social": [
+          "Für den geplanten Gemeinschaftsworkshop sind {count} Plätze vorgesehen.",
+          "Bitte koordinieren Sie die Gruppenfeier anhand der Einladung {reference}."
+        ],
+        "newsletters": [
+          "Ihr abonnierter Überblick enthält in dieser Ausgabe {count} redaktionelle Abschnitte.",
+          "Das Abonnement {reference} umfasst nun den neuesten regelmäßigen Rundbrief."
+        ],
+        "marketing": [
+          "Die Demonstrationskampagne bewirbt {item} für {amount} Testguthaben.",
+          "Ein fiktives Aktionspaket enthält {count} Artikel zum Angebot {reference}."
+        ],
+        "education": [
+          "Das Lernmodul {item} enthält {count} Übungsaufgaben.",
+          "Das fiktive Kursbüro hat die Anmeldereferenz {reference} beigefügt."
+        ],
+        "health": [
+          "Die Praxisverwaltung hat den Terminvorgang {reference} ohne Patientendaten eröffnet.",
+          "Für einen fiktiven Gesundheitstermin sind {count} Zeitfenster zu organisieren."
+        ],
+        "legal": [
+          "Die Klausel {item} der fiktiven Vereinbarung benötigt eine verwaltungsmäßige Konformitätsprüfung.",
+          "Der Aufbewahrungshinweis {reference} betrifft den fiktiven Vertragsvorgang vom {date}."
+        ],
+        "other": [
+          "Das Gerät {item} hat in der Testfolge {count} künstliche Impulse erfasst.",
+          "Ein fiktives Umweltmessgerät hat die Meldung {reference} ohne Standortdaten ausgegeben."
+        ]
+      }
+    },
+    "ru": {
+      "script": "Cyrl",
+      "subject_forms": [
+        "{topic}: {reference}",
+        "{reference} | {topic}"
+      ],
+      "greetings": [
+        "Здравствуйте, {person}!",
+        "Добрый день, {person}!"
+      ],
+      "notes": [
+        "Для этого вымышленного случая используйте ссылочный номер {reference}.",
+        "Вымышленный контакт по этому случаю: {email}."
+      ],
+      "closings": [
+        "С уважением, {sender}",
+        "Благодарим, {sender}"
+      ],
+      "priority": {
+        "low": "Этот случай может подождать; немедленный срок не установлен.",
+        "normal": "Обработайте этот случай в обычной очереди.",
+        "high": "Уделите этому случаю внимание до завершения сегодняшней работы.",
+        "urgent": "Этот случай требует немедленного внимания в течение часа."
+      },
+      "action": {
+        "none": "Это справочная информация; ответ или помещение в архив не запрашиваются.",
+        "review": "Изучите этот случай перед выбором дальнейших действий.",
+        "reply": "Отправьте ответ по этому случаю.",
+        "archive": "Случай завершён; сохраните запись в архиве."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Незапрошенная реклама: получите ненужный бонус без оформления подписки.",
+        "phishing": "Непроверенное предупреждение угрожает блокировкой аккаунта и требует входа на portal.invalid."
+      },
+      "topic_names": {
+        "work": "Задача команды",
+        "personal": "Домашнее напоминание",
+        "finance": "Учебный счёт",
+        "shopping": "Вымышленный заказ",
+        "travel": "Бронирование поездки",
+        "social": "Встреча сообщества",
+        "newsletters": "Выпуск по подписке",
+        "marketing": "Рекламное предложение",
+        "education": "Учебный модуль",
+        "health": "Администрирование записи",
+        "legal": "Администрирование договора",
+        "other": "Сообщение прибора"
+      },
+      "facts": {
+        "work": [
+          "В проекте {project} согласования команды ожидают результаты работ в количестве {count}.",
+          "Организуйте передачу задачи {item} в рамках проекта {project}."
+        ],
+        "personal": [
+          "В списке для нашего вымышленного дома общих домашних дел: {count}.",
+          "Добавьте предмет {item} в общий семейный список домашнего имущества."
+        ],
+        "finance": [
+          "В учебном счёте {reference} указана сумма {amount} тестовых единиц.",
+          "По вымышленному счёту {account} подготовлена выписка для сверки баланса."
+        ],
+        "shopping": [
+          "В заказе {reference} указано {count} единиц товара {item}.",
+          "Вымышленный продавец связал товар {item} со случаем доставки {reference}."
+        ],
+        "travel": [
+          "В бронировании {reference} поездка указана на вымышленную календарную дату {date}.",
+          "Воображаемое место размещения просит подтвердить места в количестве {count} по номеру {reference}."
+        ],
+        "social": [
+          "Для запланированной встречи сообщества предусмотрены места в количестве {count}.",
+          "Согласуйте групповое празднование по приглашению {reference}."
+        ],
+        "newsletters": [
+          "В этом выпуске обзора по вашей подписке редакционных разделов: {count}.",
+          "В подписку {reference} теперь включён очередной периодический бюллетень."
+        ],
+        "marketing": [
+          "В демонстрационной рекламной кампании товар {item} предлагается за {amount} тестовых единиц.",
+          "В вымышленный рекламный комплект по предложению {reference} входит товаров: {count}."
+        ],
+        "education": [
+          "В учебном модуле {item} практических заданий: {count}.",
+          "Вымышленный учебный отдел приложил регистрационный номер {reference}."
+        ],
+        "health": [
+          "Администрация клиники открыла случай записи {reference} без каких-либо сведений о пациентах.",
+          "Для вымышленного оздоровительного занятия нужно согласовать интервалы записи в количестве {count}."
+        ],
+        "legal": [
+          "Пункт {item} вымышленного соглашения требует административной проверки соответствия.",
+          "Уведомление о хранении {reference} относится к вымышленной договорной записи с датой {date}."
+        ],
+        "other": [
+          "Прибор {item} зарегистрировал в тестовой последовательности искусственные импульсы в количестве {count}.",
+          "Вымышленный прибор наблюдения за средой выпустил сообщение {reference} без координат."
+        ]
+      }
+    },
+    "es": {
+      "script": "Latn",
+      "subject_forms": [
+        "{topic}: {reference}",
+        "{reference} | {topic}"
+      ],
+      "greetings": [
+        "Hola {person}:",
+        "Buen día {person}:"
+      ],
+      "notes": [
+        "Utilice la referencia {reference} para este caso ficticio.",
+        "El contacto ficticio de este caso es {email}."
+      ],
+      "closings": [
+        "Saludos, {sender}",
+        "Gracias, {sender}"
+      ],
+      "priority": {
+        "low": "Este caso puede esperar; no hay un plazo inmediato.",
+        "normal": "Procese este caso en la cola habitual.",
+        "high": "Preste atención a este caso antes de terminar la jornada de hoy.",
+        "urgent": "Este caso requiere atención inmediata en el plazo de una hora."
+      },
+      "action": {
+        "none": "Es información de consulta; no se solicita respuesta ni archivo.",
+        "review": "Examine este caso antes de elegir otros pasos.",
+        "reply": "Envíe una respuesta sobre este caso.",
+        "archive": "El caso está completo; conserve el registro en el archivo."
+      },
+      "security": {
+        "normal": "",
+        "spam": "Publicidad no solicitada: reclame una bonificación no pedida sin ninguna suscripción.",
+        "phishing": "Una advertencia no verificada amenaza con suspender la cuenta y pide iniciar sesión en portal.invalid."
+      },
+      "topic_names": {
+        "work": "Entrega del equipo",
+        "personal": "Recordatorio del hogar",
+        "finance": "Factura de demostración",
+        "shopping": "Pedido ficticio",
+        "travel": "Reserva de viaje",
+        "social": "Actividad comunitaria",
+        "newsletters": "Edición de suscripción",
+        "marketing": "Oferta publicitaria",
+        "education": "Módulo de aprendizaje",
+        "health": "Gestión de citas",
+        "legal": "Gestión de contratos",
+        "other": "Boletín del instrumento"
+      },
+      "facts": {
+        "work": [
+          "El proyecto {project} tiene {count} entregas pendientes de coordinación del equipo.",
+          "Organice el traspaso de la tarea {item} dentro del proyecto {project}."
+        ],
+        "personal": [
+          "La lista de nuestro hogar ficticio contiene {count} tareas compartidas.",
+          "Añada el artículo {item} al inventario doméstico compartido de la familia."
+        ],
+        "finance": [
+          "La factura de demostración {reference} registra {amount} créditos de prueba.",
+          "La cuenta ficticia {account} tiene un extracto pendiente de comprobar el saldo."
+        ],
+        "shopping": [
+          "El pedido {reference} incluye {count} unidades del artículo {item}.",
+          "El vendedor ficticio ha asignado el artículo {item} al caso de entrega {reference}."
+        ],
+        "travel": [
+          "La reserva {reference} indica un viaje en la fecha del calendario ficticio {date}.",
+          "El alojamiento imaginario solicita confirmar {count} plazas bajo la referencia {reference}."
+        ],
+        "social": [
+          "El taller comunitario dispone de {count} plazas para el encuentro previsto.",
+          "Coordine la celebración del grupo mediante la invitación {reference}."
+        ],
+        "newsletters": [
+          "Su resumen de suscripción contiene {count} secciones editoriales en esta edición.",
+          "La suscripción {reference} incluye ahora el último boletín periódico."
+        ],
+        "marketing": [
+          "La campaña de demostración anuncia {item} por {amount} créditos de prueba.",
+          "Un paquete promocional ficticio contiene {count} artículos en la oferta {reference}."
+        ],
+        "education": [
+          "El módulo de aprendizaje {item} contiene {count} ejercicios prácticos.",
+          "La oficina del curso ficticio ha adjuntado la referencia de matrícula {reference}."
+        ],
+        "health": [
+          "La administración de la clínica ha abierto el caso de cita {reference} sin datos de pacientes.",
+          "Una sesión ficticia de bienestar tiene {count} franjas de cita por organizar."
+        ],
+        "legal": [
+          "La cláusula {item} del acuerdo ficticio necesita una comprobación administrativa de cumplimiento.",
+          "El aviso de conservación {reference} corresponde al registro contractual ficticio de fecha {date}."
+        ],
+        "other": [
+          "El instrumento {item} ha registrado {count} pulsos sintéticos en la secuencia de prueba.",
+          "Un dispositivo ambiental ficticio emitió el boletín {reference} sin datos de ubicación."
+        ]
+      }
+    },
+    "zh": {
+      "script": "Hans",
+      "subject_forms": [
+        "{topic}：{reference}",
+        "{reference} | {topic}"
+      ],
+      "greetings": [
+        "您好，{person}！",
+        "{person}，祝您愉快！"
+      ],
+      "notes": [
+        "此虚构案例请使用参考编号 {reference}。",
+        "此案例的虚构联系地址是 {email}。"
+      ],
+      "closings": [
+        "此致，{sender}",
+        "谢谢，{sender}"
+      ],
+      "priority": {
+        "low": "此案例可以等待，没有紧迫期限。",
+        "normal": "请在常规队列中处理此案例。",
+        "high": "请在今天工作结束前关注此案例。",
+        "urgent": "此案例需要在一小时内立即关注。"
+      },
+      "action": {
+        "none": "此内容仅供参考，无需回复或归档。",
+        "review": "请选择后续步骤之前先检查此案例。",
+        "reply": "请就此案例发送回复。",
+        "archive": "此案例已完成，请将记录保存在档案中。"
+      },
+      "security": {
+        "normal": "",
+        "spam": "未经请求的广告：无需订阅即可领取未申请的奖励。",
+        "phishing": "一则未经核实的警告威胁停用账户，并要求在 portal.invalid 登录。"
+      },
+      "topic_names": {
+        "work": "团队交付事项",
+        "personal": "家庭提醒",
+        "finance": "演示发票",
+        "shopping": "虚构订单",
+        "travel": "行程预订",
+        "social": "社区活动",
+        "newsletters": "订阅期刊",
+        "marketing": "推广优惠",
+        "education": "学习模块",
+        "health": "预约管理",
+        "legal": "合同管理",
+        "other": "仪器简报"
+      },
+      "facts": {
+        "work": [
+          "项目 {project} 有 {count} 项交付事项等待团队协调。",
+          "请在项目 {project} 内安排任务 {item} 的交接。"
+        ],
+        "personal": [
+          "我们虚构家庭的清单中有 {count} 项共同家务。",
+          "请将物品 {item} 加入家庭共享的家用物品清单。"
+        ],
+        "finance": [
+          "演示发票 {reference} 记录了 {amount} 个测试积分。",
+          "虚构账户 {account} 的一份对账单等待余额核对。"
+        ],
+        "shopping": [
+          "订单 {reference} 包含 {count} 件物品 {item}。",
+          "虚构卖家已将物品 {item} 分配给配送案例 {reference}。"
+        ],
+        "travel": [
+          "预订 {reference} 中的行程日期为虚构日历日期 {date}。",
+          "虚构住宿方请您确认参考编号 {reference} 下的 {count} 个名额。"
+        ],
+        "social": [
+          "计划中的社区工作坊有 {count} 个参与名额。",
+          "请使用邀请编号 {reference} 协调集体庆祝活动。"
+        ],
+        "newsletters": [
+          "您的订阅摘要在本期包含 {count} 个编辑栏目。",
+          "订阅 {reference} 现在包含最新一期定期简报。"
+        ],
+        "marketing": [
+          "演示推广活动以 {amount} 个测试积分提供物品 {item}。",
+          "优惠 {reference} 中的虚构促销组合包含 {count} 件物品。"
+        ],
+        "education": [
+          "学习模块 {item} 包含 {count} 道练习题。",
+          "虚构课程办公室已附上注册参考编号 {reference}。"
+        ],
+        "health": [
+          "诊所管理部门已建立预约案例 {reference}，其中不含患者信息。",
+          "一场虚构健康活动有 {count} 个预约时段需要安排。"
+        ],
+        "legal": [
+          "虚构协议中的条款 {item} 需要进行管理性的合规核对。",
+          "保留通知 {reference} 涉及日期为 {date} 的虚构合同记录。"
+        ],
+        "other": [
+          "仪器 {item} 在测试序列中记录了 {count} 个合成脉冲。",
+          "一台虚构环境设备发布了不含位置数据的简报 {reference}。"
+        ]
+      }
+    },
+    "ar": {
+      "script": "Arab",
+      "subject_forms": [
+        "{topic}: {reference}",
+        "{reference} | {topic}"
+      ],
+      "greetings": [
+        "مرحباً {person}،",
+        "طاب يومك {person}،"
+      ],
+      "notes": [
+        "استخدم المرجع {reference} لهذه الحالة الخيالية.",
+        "عنوان الاتصال الخيالي لهذه الحالة هو {email}."
+      ],
+      "closings": [
+        "مع التحية، {sender}",
+        "شكراً، {sender}"
+      ],
+      "priority": {
+        "low": "يمكن أن تنتظر هذه الحالة؛ لا يوجد موعد نهائي فوري.",
+        "normal": "عالج هذه الحالة في قائمة الانتظار المعتادة.",
+        "high": "يرجى الاهتمام بهذه الحالة قبل نهاية عمل اليوم.",
+        "urgent": "تحتاج هذه الحالة إلى اهتمام فوري خلال ساعة."
+      },
+      "action": {
+        "none": "هذه معلومات للاطلاع؛ لا يُطلب رد أو نقل إلى الأرشيف.",
+        "review": "افحص هذه الحالة قبل اختيار أي خطوات أخرى.",
+        "reply": "أرسل رداً بشأن هذه الحالة.",
+        "archive": "اكتملت الحالة؛ احتفظ بالسجل في الأرشيف."
+      },
+      "security": {
+        "normal": "",
+        "spam": "إعلان غير مطلوب: اطلب مكافأة لم تطلبها دون أي اشتراك.",
+        "phishing": "يهدد تحذير غير موثق بتعليق الحساب ويطلب تسجيل الدخول في portal.invalid."
+      },
+      "topic_names": {
+        "work": "تسليمات الفريق",
+        "personal": "تذكير منزلي",
+        "finance": "فاتورة توضيحية",
+        "shopping": "طلب خيالي",
+        "travel": "حجز رحلة",
+        "social": "نشاط مجتمعي",
+        "newsletters": "إصدار الاشتراك",
+        "marketing": "عرض ترويجي",
+        "education": "وحدة تعليمية",
+        "health": "إدارة المواعيد",
+        "legal": "إدارة العقود",
+        "other": "نشرة الجهاز"
+      },
+      "facts": {
+        "work": [
+          "لدى المشروع {project} عدد من التسليمات ينتظر تنسيق الفريق مقداره {count}.",
+          "يرجى تنظيم تسليم المهمة {item} ضمن المشروع {project}."
+        ],
+        "personal": [
+          "تحتوي قائمة منزلنا الخيالي على أعمال مشتركة عددها {count}.",
+          "يرجى إضافة العنصر {item} إلى سجل مقتنيات المنزل المشترك للعائلة."
+        ],
+        "finance": [
+          "تسجل الفاتورة التوضيحية {reference} مبلغاً من أرصدة الاختبار قدره {amount}.",
+          "للحساب الخيالي {account} كشف ينتظر مطابقة الرصيد."
+        ],
+        "shopping": [
+          "يتضمن الطلب {reference} وحدات من العنصر {item} عددها {count}.",
+          "خصص البائع الخيالي العنصر {item} لحالة التسليم {reference}."
+        ],
+        "travel": [
+          "يسرد الحجز {reference} رحلة في تاريخ التقويم الخيالي {date}.",
+          "يطلب مكان الإقامة المتخيل تأكيد أماكن عددها {count} تحت المرجع {reference}."
+        ],
+        "social": [
+          "تتوفر للقاء الورشة المجتمعية المخطط له أماكن عددها {count}.",
+          "يرجى تنسيق احتفال المجموعة باستخدام الدعوة {reference}."
+        ],
+        "newsletters": [
+          "يحتوي ملخص اشتراكك في هذا الإصدار على أقسام تحريرية عددها {count}.",
+          "يتضمن الاشتراك {reference} الآن أحدث نشرة دورية."
+        ],
+        "marketing": [
+          "تعلن الحملة التوضيحية عن العنصر {item} مقابل أرصدة اختبار قدرها {amount}.",
+          "تتضمن الحزمة الترويجية الخيالية عناصر عددها {count} ضمن العرض {reference}."
+        ],
+        "education": [
+          "تحتوي الوحدة التعليمية {item} على تدريبات عملية عددها {count}.",
+          "أرفق مكتب الدورة الخيالية مرجع التسجيل {reference}."
+        ],
+        "health": [
+          "فتحت إدارة العيادة حالة الموعد {reference} دون أي بيانات للمرضى.",
+          "لجلسة عافية خيالية فترات مواعيد عددها {count} تحتاج إلى تنظيم."
+        ],
+        "legal": [
+          "يحتاج البند {item} في الاتفاقية الخيالية إلى فحص إداري للامتثال.",
+          "يتعلق إشعار الاحتفاظ {reference} بسجل عقد خيالي مؤرخ في {date}."
+        ],
+        "other": [
+          "سجل الجهاز {item} نبضات اصطناعية عددها {count} في تسلسل الاختبار.",
+          "أصدر جهاز بيئي خيالي النشرة {reference} دون بيانات عن الموقع."
+        ]
+      }
+    }
+  }
+}

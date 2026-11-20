@@ -1,0 +1,26 @@
+﻿{
+    "notice_file":  {
+                        "sha256":  "f252cfc36865886b4a700cfc08077351c283dce890a735fee68ecdc58630245c",
+                        "path":  "NOTICE"
+                    },
+    "real_mail_inputs":  false,
+    "catalog_sha256":  "3d1d4446e55dbbf6dd496505e5f8cfaa1aa904056662d967fcca52ff8452c794",
+    "redistribution":  "separate-review",
+    "schema":  "fdec-augmentation-rights/v1",
+    "license_file":  {
+                         "sha256":  "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                         "path":  "LICENSE"
+                     },
+    "review":  "Original Apache-2.0 project code with truthful Codex-assisted authorship. Commercial training rights unresolved; no applicable provider permission established. Software fixture admission only.",
+    "training_scope":  "specialized-email-classifier",
+    "allowed_purposes":  [
+                             "software_fixture"
+                         ],
+    "evidence":  {
+                     "sha256":  "9f559afb84f267284cba92a84be35c900b46aebeb580644a0ce016f8eb2bd2c0",
+                     "path":  "training/augmentation/NATIVE-RIGHTS-v1.md"
+                 },
+    "pack_id":  "fdec-native-templates-v1",
+    "authoring_origin":  "codex-assisted-original-native-grammar",
+    "declared_source_license":  "Apache-2.0"
+}

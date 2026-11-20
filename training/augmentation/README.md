@@ -1,9 +1,10 @@
 # Multilingual synthetic augmentation infrastructure
 
 Status: software implementation candidate; **FDEC-011 is not complete**.
-The only checked-in source pack is a software fixture, not approved training or
-evaluation data. See [the source rights assessment](RIGHTS.md). It must not feed
-model training, including through a later reuse of fixture annotations.
+Both checked-in source packs are software candidates, not approved training or
+evaluation data. See the [original fixture assessment](RIGHTS.md) and the distinct
+[native grammar and rights assessment](NATIVE-v1.md). Neither may feed model
+training, including through a later reuse of fixture annotations.
 
 This standard-library Python tool builds messages from original parallel phrase
 resources, bounded generated case identifiers and explicit annotation metadata.
@@ -21,7 +22,8 @@ authoring provenance, confirms no real-mail inputs and states the allowed
 purposes. Every generation and translation checks those identities before output.
 No CLI option can approve a source or replace a rights audit.
 
-The current `codex-fixture-v1` pack permits only `software_fixture`.
+The current `codex-fixture-v1` and `fdec-native-templates-v1` packs permit only
+`software_fixture`.
 `commercial_training`, `evaluation`, redistribution and unrecognized purposes
 reject before output creation. A declared Apache-2.0 source-code license does
 not override these purpose restrictions. Every receipt and sample marks training

@@ -14,6 +14,20 @@
                       "allowed_purposes":  [
                                                "software_fixture"
                                            ]
+                  },
+                  {
+                      "catalog":  {
+                                      "sha256":  "3d1d4446e55dbbf6dd496505e5f8cfaa1aa904056662d967fcca52ff8452c794",
+                                      "path":  "training/config/fdec-native-templates-v1.json"
+                                  },
+                      "audit":  {
+                                    "sha256":  "2036d091054bde6bb2481fb88ad7ab03d33b51ebabeea3c5f9e8e5d690bea3dc",
+                                    "path":  "training/config/fdec-native-rights-v1.json"
+                                },
+                      "id":  "fdec-native-templates-v1",
+                      "allowed_purposes":  [
+                                               "software_fixture"
+                                           ]
                   }
               ]
 }

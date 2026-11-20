@@ -85,6 +85,10 @@ def phrase(value, empty=False):
 
 
 def check_catalog(catalog):
+    if isinstance(catalog, dict) and catalog.get("schema") == "fdec-native-parallel-grammar/v1":
+        import native_templates
+        native_templates.validate(catalog, sys.modules[__name__])
+        return
     if not isinstance(catalog, dict) or set(catalog) != {"schema", "authorship", "license", "languages"} or catalog["schema"] != "fdec-original-parallel-templates/v1":
         raise AugmentationError("invalid_catalog")
     languages = catalog["languages"]
@@ -137,12 +141,18 @@ def load_pack(pack_id, purpose):
     check_catalog(catalog)
     if catalog["license"] != audit["declared_source_license"] or catalog["authorship"] != audit["authoring_origin"]:
         raise AugmentationError("catalog_rights_mismatch")
-    implementation = sha(b"".join((ROOT / "training/augmentation" / name).read_bytes().replace(b"\r\n", b"\n") for name in ("augment.py", "generate.py", "translate_synthetic.py")))
+    implementation_files = ["augment.py", "generate.py", "translate_synthetic.py"]
+    if catalog["schema"] == "fdec-native-parallel-grammar/v1":
+        implementation_files.append("native_templates.py")
+    implementation = sha(b"".join((ROOT / "training/augmentation" / name).read_bytes().replace(b"\r\n", b"\n") for name in implementation_files))
     context = {"generator_version": VERSION, "implementation_sha256": implementation, "registry_sha256": file_hash(REGISTRY), "catalog_sha256": file_hash(catalog_path), "audit_sha256": file_hash(audit_path), "pack_id": pack_id, "purpose": purpose}
     return {"catalog": catalog, "audit": audit, "context": context, "context_sha256": digest(context)}
 
 
 def render(pack, *, topic, language, seed, index):
+    if pack["catalog"]["schema"] == "fdec-native-parallel-grammar/v1":
+        import native_templates
+        return native_templates.render(pack, topic=topic, language=language, seed=seed, index=index, api=sys.modules[__name__])
     if not isinstance(topic, str) or not isinstance(language, str) or topic not in TOPICS or language not in pack["catalog"]["languages"] or not integer(seed, 2**32 - 1) or not integer(index, 999):
         raise AugmentationError("invalid_synthetic_controls")
     choice = bytes.fromhex(digest([VERSION, seed, topic, index]))
@@ -221,6 +231,10 @@ def _write_file(path, data):
 def _publish(records, pack, output_dir, request):
     if len({row["content_id"] for row in records}) != len(records):
         raise AugmentationError("duplicate_synthetic_output")
+    native_quality = None
+    if pack["catalog"]["schema"] == "fdec-native-parallel-grammar/v1":
+        import native_templates
+        native_quality = native_templates.quality_report(records, pack, sys.modules[__name__]) if records else {"schema": "fdec-native-quality/v1", "rows": 0, "unique_messages": 0, "structural_variants": 0, "template_families": 0, "label_counts": {}, "training_rights_established": pack["context"]["purpose"] == "commercial_training", "human_language_review": "not_asserted"}
     # Records originate exclusively in the bounded renderer above.
     streams = {"samples.jsonl": records, "capsules.jsonl": [row["provenance"]["capsule"] for row in records], "annotations.jsonl": [{"content_id": row["content_id"], "annotations": [{"source_row": index, "labels": row["labels"]}]} for index, row in enumerate(records)]}
     output = private_output(output_dir, ROOT)
@@ -244,6 +258,9 @@ def _publish(records, pack, output_dir, request):
             _write_file(output / name, data)
             files[name] = {"sha256": sha(data), "bytes": len(data), "rows": len(values)}
         receipt = {"schema": "fdec-augmentation-receipt/v1", "context": pack["context"], "rows": len(records), "files": files, "request": request, "annotation_source": {"dataset_id": "fdec/canonical-annotations", "revision": "1", "artifact": "annotations.jsonl", "sha256": files["annotations.jsonl"]["sha256"]}, "training_allowed": pack["context"]["purpose"] == "commercial_training", "redistribution": "separate-review", "quality_review": "required"}
+        if native_quality is not None:
+            receipt["schema"] = "fdec-native-augmentation-receipt/v1"
+            receipt["quality"] = native_quality
         _write_file(output / ".receipt.part", (canonical(receipt) + "\n").encode("utf-8"))
         os.replace(output / ".receipt.part", output / "receipt.json")
         return receipt
