@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fdemailclassifier:annotation-mapping:1",
+  "title": "Private training annotation mapping v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "profile",
+    "mapping_sha256",
+    "content_id",
+    "source",
+    "annotations",
+    "dimensions",
+    "training_mask",
+    "classification"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fdec-annotation-mapping/v1"
+    },
+    "profile": {
+      "enum": [
+        "canonical/v1",
+        "triage-seed/v1"
+      ]
+    },
+    "mapping_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "content_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_id",
+        "revision",
+        "artifact",
+        "sha256"
+      ],
+      "properties": {
+        "dataset_id": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "revision": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "artifact": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_annotation",
+          "status",
+          "dimensions"
+        ],
+        "properties": {
+          "source_annotation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_row",
+              "labels"
+            ],
+            "properties": {
+              "source_row": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99999
+              },
+              "labels": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "category": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "pattern": "^[^\\u0000-\\u001f\\u007f]*$"
+                  },
+                  "priority": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "pattern": "^[^\\u0000-\\u001f\\u007f]*$"
+                  },
+                  "action": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "pattern": "^[^\\u0000-\\u001f\\u007f]*$"
+                  },
+                  "security": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "pattern": "^[^\\u0000-\\u001f\\u007f]*$"
+                  },
+                  "status": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "pattern": "^[^\\u0000-\\u001f\\u007f]*$"
+                  },
+                  "labels": {
+                    "type": "array",
+                    "maxItems": 32,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 256,
+                      "pattern": "^[^\\u0000-\\u001f\\u007f]*$"
+                    }
+                  }
+                }
+              },
+              "source_round": {
+                "type": "string",
+                "maxLength": 256,
+                "pattern": "^[^\\u0000-\\u001f\\u007f]*$"
+              }
+            }
+          },
+          "status": {
+            "enum": [
+              "classified",
+              "unknown",
+              "abstained"
+            ]
+          },
+          "dimensions": {
+            "$ref": "#/$defs/dimensions"
+          }
+        }
+      }
+    },
+    "dimensions": {
+      "$ref": "#/$defs/dimensions"
+    },
+    "training_mask": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topics",
+        "priority",
+        "spam",
+        "phishing",
+        "malware",
+        "action"
+      ],
+      "properties": {
+        "topics": {
+          "type": "boolean"
+        },
+        "priority": {
+          "type": "boolean"
+        },
+        "spam": {
+          "type": "boolean"
+        },
+        "phishing": {
+          "type": "boolean"
+        },
+        "malware": {
+          "type": "boolean"
+        },
+        "action": {
+          "type": "boolean"
+        }
+      }
+    },
+    "classification": {
+      "$ref": "urn:fdemailclassifier:classification:1"
+    }
+  },
+  "$defs": {
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topics",
+        "priority",
+        "spam",
+        "phishing",
+        "malware",
+        "action"
+      ],
+      "properties": {
+        "topics": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/decision"
+            },
+            {
+              "properties": {
+                "values": {
+                  "items": {
+                    "enum": [
+                      "work",
+                      "personal",
+                      "finance",
+                      "shopping",
+                      "travel",
+                      "social",
+                      "newsletters",
+                      "marketing",
+                      "education",
+                      "health",
+                      "legal",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "priority": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/decision"
+            },
+            {
+              "properties": {
+                "values": {
+                  "items": {
+                    "enum": [
+                      "low",
+                      "normal",
+                      "high",
+                      "urgent"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "spam": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/decision"
+            },
+            {
+              "properties": {
+                "values": {
+                  "items": {
+                    "enum": [
+                      "clear",
+                      "flagged"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "phishing": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/decision"
+            },
+            {
+              "properties": {
+                "values": {
+                  "items": {
+                    "enum": [
+                      "clear",
+                      "flagged"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "malware": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/decision"
+            },
+            {
+              "properties": {
+                "values": {
+                  "items": {
+                    "enum": [
+                      "clear",
+                      "flagged"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "action": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/decision"
+            },
+            {
+              "properties": {
+                "values": {
+                  "items": {
+                    "enum": [
+                      "none",
+                      "review",
+                      "reply",
+                      "archive"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "values",
+        "supervise"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "mapped",
+            "missing",
+            "unknown",
+            "abstained",
+            "ambiguous",
+            "unmapped"
+          ]
+        },
+        "values": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 12,
+          "items": {
+            "type": "string"
+          }
+        },
+        "supervise": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "mapped"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "supervise": {
+                "const": true
+              },
+              "values": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "supervise": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
