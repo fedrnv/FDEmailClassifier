@@ -1,0 +1,135 @@
+﻿{
+    "schema":  "fdec-outcome-continuity/v1",
+    "epic_id":  "FDEC-EPIC-D002",
+    "correction_id":  "FDEC-099",
+    "historical_source":  "16e293aadc15f8dd50fac44720a7949e788c9eff",
+    "original_source":  "0bcd4c4f377af86ee8b83d1d0bf770f0eb448ad8",
+    "process_source":  "406e0121fae75e6c0623bf331d11e8e4d8aeccd1",
+    "original_outcome":  {
+                             "sha256":  "5fe8f7f87420d78fe8193cf44e8b8dc1d77f177d41023dec3f734b0e50ac5aa8",
+                             "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/effective-outcome-v1.json"
+                         },
+    "authority":  {
+                      "sha256":  "084d286ae4084953624503fac2f4711dca9fe58d0cf94a5b2ee9a701cbee607a",
+                      "path":  "Tasks/epics/FDEC-EPIC-D002/evidence/outcome-authority-v1.md"
+                  },
+    "historical_verification":  {
+                                    "sha256":  "7977cae94de02833932433a4d4161cf851c1540f318b909d81c18d48d5566f48",
+                                    "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/result-v1.json"
+                                },
+    "process_spec":  {
+                         "sha256":  "407dd1163b3a8423bf7ae235d373f6604eabf7103a8f981d07d38827446740fc",
+                         "path":  "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/TASK.md"
+                     },
+    "process_done":  {
+                         "sha256":  "6c433dc9f3ffb7fc08472e4119f38acca61c9a9e82f0317b69bf1caf84d6eb23",
+                         "path":  "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/events/20261120T201910564Z-codex-status-changed-6e88f9f1.md"
+                     },
+    "process_proof":  {
+                          "sha256":  "2a3aeb958d82d0ed3eb81cd6945b1640eb58d1ad679a2beacce510835d17d8a7",
+                          "path":  "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/evidence/closure-readiness-v1.json"
+                      },
+    "process_result":  {
+                           "sha256":  "d08b70a816b2cf4d2f3697abca7e02fe4dc959a1aac31f6e4afc525fd383ee66",
+                           "path":  "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/evidence/result-v1.json"
+                       },
+    "request_recovery":  {
+                             "sha256":  "23d2c4d177af935395b17961b9f879ba0af1aa631207245fb29f3793eb29bb30",
+                             "path":  "Tasks/request-recoveries/FDEC-099-R001.json"
+                         },
+    "original_request":  {
+                             "sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c",
+                             "path":  "Tasks/version-requests/FDEC-099.json"
+                         },
+    "allowed_process_changes":  [
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/check-adoption.ps1",
+                                        "sha256":  "16651f88edeee2f13c3e664d7f983afccb15022d0dd4526c7e8fb443f48021a6",
+                                        "original_blob":  "e1881be5b3b88ed42faccd1490e01a8bfb2d432f",
+                                        "accepted_blob":  "ca2fd3f840fecc5fc647c24e6cd87eb8a1145c50"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/fixture-matrix.ps1",
+                                        "sha256":  "b83280d01c6f28f035c15ec9c08877c2f3671d98fbbb56f42c9e432b8b451db3",
+                                        "original_blob":  "502e46774f2e50ba95a3d3a649aa9ea7bd41c1ad",
+                                        "accepted_blob":  "135e01efa684c4de76a0595fa8c0538699f1b498"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/repository.ps1",
+                                        "sha256":  "59132f283b5f4c0d227dc37889d184dd637d43e9ee25c0d22db08a0da217916e",
+                                        "original_blob":  "20da5abadfc93e8ed01c12781e279073faf4e0c0",
+                                        "accepted_blob":  "b2c076c4ff50fa6c43ac99eb9b054803d7d0e1ed"
+                                    },
+                                    {
+                                        "status":  "A",
+                                        "path":  "scripts/validate_tasks/request-recovery.ps1",
+                                        "sha256":  "0070363c6e5958b6ccfb892eb05ce033f33febae03e70d7756bf7847441c0d2e",
+                                        "original_blob":  null,
+                                        "accepted_blob":  "d2c31eefbd0b083786c1b62a2158d3af06470582"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/test-acceptance-matrix.ps1",
+                                        "sha256":  "0c9fab48e0619adebde214d3c6ff2a68ba20418a5683141da224a1eb5fd51abc",
+                                        "original_blob":  "a117fc101736cb71a9a1f8ca2d1ee99423252612",
+                                        "accepted_blob":  "330f3389b6d8c07c4a5751610e0d2e988da54f89"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/test-identity.ps1",
+                                        "sha256":  "6573481729890e5b61f4edec56dfd185ffca7ede8c08eb3df46c6c9c8cf26250",
+                                        "original_blob":  "947ce3a8149baeb2ee6374c88b31f39377a7a12b",
+                                        "accepted_blob":  "06648daabcc94a59fd7ebf0b854c31728ac0fb3a"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/test-plan-sync.ps1",
+                                        "sha256":  "56ca058671683d0a87da0c6e0b9bcf629920f6285a783a8bbcb7ee35f23ccdf0",
+                                        "original_blob":  "40da97a4ee72093d8f80d3bea67f297d05a1d1b4",
+                                        "accepted_blob":  "677bfc1ea43a6cafb40f7dd4adebd72e5c8c23cd"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/test-readiness-events.ps1",
+                                        "sha256":  "bc1a46edaa26e1c47dd1d997171a2b54db83e5c85464e32d18d0e6bea1432c37",
+                                        "original_blob":  "39e3a8e28d59eb008e6db7e68393db0f6842fde8",
+                                        "accepted_blob":  "0b36a4e87f670373161698dbf54f8e54bd2a980b"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/test-reopened-requests.ps1",
+                                        "sha256":  "93fa083ec6286d5869191080869f456cff3397cea6a78fd551d32df5c6038803",
+                                        "original_blob":  "dc856f4aeac653d4363367add4aa911382f1294c",
+                                        "accepted_blob":  "99c75b4aaf5f470c6fa28e45aa205f71f784c73e"
+                                    },
+                                    {
+                                        "status":  "A",
+                                        "path":  "scripts/validate_tasks/test-request-recovery.ps1",
+                                        "sha256":  "b0a5528cfc0be0e3604b2869983774a1ea4e6ccf48a80fe5d7d6dd1c3700f5d3",
+                                        "original_blob":  null,
+                                        "accepted_blob":  "bf7e3afce8ecd1784a40faa17b72d76507cc3e62"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/test-source-readiness.ps1",
+                                        "sha256":  "1e00bfff25731982576c922836e65171f664ade2b9d5e98f5d01bf2a27658782",
+                                        "original_blob":  "ff790fe2022eddd70b13b1a185b63b7785f80815",
+                                        "accepted_blob":  "b30842a9150c5d5d7ab70f75662bc739ec5c09ec"
+                                    },
+                                    {
+                                        "status":  "M",
+                                        "path":  "scripts/validate_tasks/test-validation.ps1",
+                                        "sha256":  "63fca85da46ca6dd36da0e7ff693a047bc9cf7c7aff9a3ef6018c83676644bf8",
+                                        "original_blob":  "f071d3583069c348e24437e8ad6aa48b2f793639",
+                                        "accepted_blob":  "35b268c20908d071e963915b23554cf475287726"
+                                    }
+                                ],
+    "actual_data_admitted":  false,
+    "source_rights_changed":  false,
+    "original_request_rewritten":  false,
+    "full_project_objective_preserved":  true,
+    "reason":  "Preserve the original authorized D002 software/preparation outcome and historical source proof while explicitly accounting for the separate accepted FDEC-100 process repair. Freeze current protected code to that tested process source; actual data/training/release remain unfulfilled requirements."
+}
