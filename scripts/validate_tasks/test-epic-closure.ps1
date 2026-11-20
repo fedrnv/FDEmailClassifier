@@ -121,8 +121,8 @@ try {
     $round="$epic/reviews/R001"
     $gateHash=(Bound "$gate/evidence/result.json").sha256
     $identity="review_id: R001`nreview_task_id: FDEC-903`nepic_id: FDEC-EPIC-D001`ncandidate_sha: $script:candidate`ncandidate_tree: $tree`npolicy_sha256: $policy`ngate_result_sha256: $gateHash"
-    Put "$round/REQUEST.md" "---`n$identity`n---`nSynthetic independent request.`n"
-    Put "$round/RESULT.md" "---`n$identity`nresult: Accepted`n---`nSynthetic independent result; not real acceptance evidence.`n"
+    Put "$round/REQUEST.md" "---`nschema: fdec-independent-review-request/v1`n$identity`n---`nSynthetic independent request.`n"
+    Put "$round/RESULT.md" "---`nschema: fdec-independent-review-result/v1`n$identity`nreviewer: independent-fixture`nresult: Accepted`n---`nSynthetic independent result; not real acceptance evidence.`n"
     Json "$review/evidence/reconciliation.json" @{schema='fdec-review-reconciliation/v1';task_id='FDEC-903';result='Accepted';candidate_sha=$script:candidate;artifacts=@((Bound "$round/RESULT.md"))}
     CloseTask $review FDEC-903 @((Bound "$review/evidence/reconciliation.json"))
     Validate
@@ -158,16 +158,22 @@ try {
     Reject 'unfinished new review round' {Put "$epic/reviews/R002/REQUEST.md" "---`n$identity`n---`nNew request without result."} 'Review is not the latest requested round'
     Reject 'ChangesRequired review' {
         $newIdentity=$identity.Replace('R001','R002')
-        Put "$epic/reviews/R002/REQUEST.md" "---`n$newIdentity`n---`nSynthetic new request."
-        Put "$epic/reviews/R002/RESULT.md" "---`n$newIdentity`nresult: ChangesRequired`n---`nSynthetic rejected review."
+        Put "$epic/reviews/R002/REQUEST.md" "---`nschema: fdec-independent-review-request/v1`n$newIdentity`n---`nSynthetic new request."
+        Put "$epic/reviews/R002/RESULT.md" "---`nschema: fdec-independent-review-result/v1`n$newIdentity`nreviewer: independent-fixture`nresult: ChangesRequired`n---`nSynthetic rejected review."
         ChangeProof {param($p)$p.review_result=Bound "$epic/reviews/R002/RESULT.md"}
     } 'Independent review is not Accepted'
     Reject 'ambiguous independent decision' {
         $newIdentity=$identity.Replace('R001','R002')
-        Put "$epic/reviews/R002/REQUEST.md" "---`n$newIdentity`n---`nSynthetic new request."
-        Put "$epic/reviews/R002/RESULT.md" "---`n$newIdentity`nresult: Accepted`nresult: ChangesRequired`n---`nAmbiguous decision."
+        Put "$epic/reviews/R002/REQUEST.md" "---`nschema: fdec-independent-review-request/v1`n$newIdentity`n---`nSynthetic new request."
+        Put "$epic/reviews/R002/RESULT.md" "---`nschema: fdec-independent-review-result/v1`n$newIdentity`nreviewer: independent-fixture`nresult: Accepted`nresult: ChangesRequired`n---`nAmbiguous decision."
         ChangeProof {param($p)$p.review_result=Bound "$epic/reviews/R002/RESULT.md"}
     } 'Missing or ambiguous Epic field: result'
+    Reject 'invalid review schema' {
+        $newIdentity=$identity.Replace('R001','R002')
+        Put "$epic/reviews/R002/REQUEST.md" "---`nschema: fdec-independent-review-request/v1`n$newIdentity`n---`nSynthetic new request."
+        Put "$epic/reviews/R002/RESULT.md" "---`nschema: unknown/v1`n$newIdentity`nreviewer: independent-fixture`nresult: Accepted`n---`nInvalid schema."
+        ChangeProof {param($p)$p.review_result=Bound "$epic/reviews/R002/RESULT.md"}
+    } 'Invalid independent review schema'
     Reject 'changed tracked implementation' {Put 'implementation.txt' 'Changed after passing gate'} 'Implementation differs from passing candidate'
     Reject 'new implementation' {Put 'new-source.rs' 'New code after passing gate'} 'Implementation differs from passing candidate'
     Reject 'staged implementation' {Put 'implementation.txt' 'Staged change';git -C $temp add implementation.txt} 'Implementation differs from passing candidate'

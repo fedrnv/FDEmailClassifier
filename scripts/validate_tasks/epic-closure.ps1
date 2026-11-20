@@ -116,6 +116,8 @@ function Assert-EpicClosureEvent([string]$Root,$Records,$Request,[string]$GitHea
     $rounds=@($paths|Where-Object {$_ -cmatch ('^'+[regex]::Escape($prefix)+'/R[0-9]{3,}/REQUEST\.md$')}|Sort-Object {[int]([regex]::Match($_,'/R([0-9]+)/REQUEST\.md$').Groups[1].Value)})
     if(!$rounds.Count -or $reviewRelative -cne $rounds[-1].Replace('/REQUEST.md','/RESULT.md')){throw 'Review is not the latest requested round'}
     $result=Envelope $reviewPath;$reviewRequest=Envelope (Join-Path (Split-Path $reviewPath) 'REQUEST.md')
+    if((Epic-Field $result.front 'schema') -cne 'fdec-independent-review-result/v1' -or (Epic-Field $reviewRequest.front 'schema') -cne 'fdec-independent-review-request/v1'){throw 'Invalid independent review schema'}
+    $null=Epic-Field $result.front 'reviewer'
     foreach($front in @($result.front,$reviewRequest.front)){
         foreach($pair in @(@('review_task_id',$review),@('epic_id',$id),@('candidate_sha',$proof.candidate_sha),@('candidate_tree',$proof.candidate_tree),@('policy_sha256',$proof.policy_sha256),@('gate_result_sha256',$proof.gate_result.sha256))){if((Epic-Field $front $pair[0]) -cne $pair[1]){throw 'Mismatched independent review identity'}}
     }
