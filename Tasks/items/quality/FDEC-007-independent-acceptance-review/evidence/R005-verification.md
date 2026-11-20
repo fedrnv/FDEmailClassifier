@@ -1,0 +1,11 @@
+﻿# FDEC-007 R005 completion
+
+AC-01 PASS: fresh independent session /root/review_d001_r005 reviewed the exact passing 9c4f4ef1a9f8e3746ec1ef5f9b634e5d63f929f6 candidate and returned Accepted. The immutable RESULT.md discloses independence and assesses current foundation security, correctness, licensing, effective acceptance completeness, architecture and presentation plus direct process interactions. R001 remedies, R003 index-only remedy and R004 committed-rename remedy are confirmed; no new blocker remains within that scope. R005-reconciliation.json binds the actual request/result, selected test output and proof.
+
+AC-02 PASS: the independent shared item/Epic suite reproduced correct rejection of both committed rename modes, index-only/restored-working first closure and reclosure, invalid staged evidence/index states, failed Git inspection, missing or invalid membership/gate/review/proof and duplicate/unsupported requests. Clean completion and historical replay remain valid. The suite monitor completed exit 0; no failing run was counted as acceptance. The executor required actual current Accepted identity bindings and reran the review boundary proof successfully before task closure.
+
+Commands, environment and limitations are in RESULT.md. Boundary proof checks exact candidate/tree, nine ledger-only gate descendants, actual gate/policy hashes, current gate Done proof, original request preservation, unchanged historical Tasks and preview identity. The unchanged full gate was not repeated by the reviewer; its recorded evidence remains attributed to FDEC-006. No planned inference/SDK/REST/allocator behavior, source push or distribution approval is implied.
+
+All reviewer fixtures are cleaned, the monitor is terminal and the clean detached candidate is retained. Original review first-closure request raw SHA256 remains f21695ecf2e48a48374814f01b9e4946266e9088d4bc06bb47f0d368e86f6910. Reclosure adds evidence/events without another request. All prior rounds and evidence remain immutable. No source implementation, external settings, allocated version, release or model/data distribution changed; upstream redistribution limitations remain recorded.
+
+Next action is a separate D001 Epic closure assessment using the current passing gate and Accepted R005. This review task does not itself close the Epic or authorize publication.

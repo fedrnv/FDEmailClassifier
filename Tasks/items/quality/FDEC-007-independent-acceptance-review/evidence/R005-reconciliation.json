@@ -1,0 +1,39 @@
+﻿{
+    "verification":  "Independent full-scope result inspected; shared item/Epic suite monitor b6010ab9-42b6-4141-946e-bec8091f068c exit 0; executor reran boundary proof PASS; no new blockers",
+    "findings_resolved":  [
+                              "R001-01",
+                              "R001-02",
+                              "R001-03",
+                              "R001-04",
+                              "R003-01",
+                              "R004-01"
+                          ],
+    "original_version_request_sha256":  "f21695ecf2e48a48374814f01b9e4946266e9088d4bc06bb47f0d368e86f6910",
+    "result":  "Accepted",
+    "reviewer_session":  "/root/review_d001_r005",
+    "artifacts":  [
+                      {
+                          "sha256":  "4ac12c88cc0767053336634ed4c1498357f9469c157f0cfb29fec194c910fe0c",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R005/REQUEST.md"
+                      },
+                      {
+                          "sha256":  "463bb4ee101b2edde05a7ec09ff292fc2dad2ee9358dd0c87415e222e2b050ed",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R005/RESULT.md"
+                      },
+                      {
+                          "sha256":  "b2a6536b06e0466d2bd44cccd89adfffeb9621b44ee6467fdb3e2e23d15b55b6",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R005/focused-output.txt"
+                      },
+                      {
+                          "sha256":  "959eec13d9025f001799f1731f9c63b647477413ee66eaf910ea5e10a829aca4",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R005/verify-boundary.ps1"
+                      }
+                  ],
+    "schema":  "fdec-review-reconciliation/v1",
+    "task_id":  "FDEC-007",
+    "continuation":  "Separate D001 Epic closure assessment next; no new review version request or publication",
+    "independence":  "Fresh model session, fork_turns none, no implementation-author history",
+    "candidate_sha":  "9c4f4ef1a9f8e3746ec1ef5f9b634e5d63f929f6",
+    "cleanup":  "Reviewer monitor terminal; guarded fixture repositories removed; unchanged detached candidate retained",
+    "candidate_tree":  "de9417aedf25c107d7de9e6e95bddeabebaffd72"
+}
