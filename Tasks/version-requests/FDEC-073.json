@@ -1,0 +1,11 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "9fbe833a-4576-490f-bf84-89f5dafcbde5",
+    "epic_id":  "FDEC-EPIC-S001",
+    "work_item_id":  "FDEC-073",
+    "summary":  "Explicit hash-bound FDTasks 5.6 bootstrap adoption",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/evidence/verification.md"
+                     ]
+}

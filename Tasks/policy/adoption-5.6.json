@@ -1,0 +1,375 @@
+﻿{
+    "adopted_policy":  "5.6",
+    "pending_version_requests":  [
+
+                                 ],
+    "numeric_epics":  [
+
+                      ],
+    "source_commit":  "00a0d019c1e73d5ecf4c4e75c42c38497c154e50",
+    "inventory":  [
+                      {
+                          "sha256":  "43d73ff4c10734dcf7e7710ea7982783d622c29cdf6b2897975a432b5ba8034c",
+                          "path":  "AGENTS.md"
+                      },
+                      {
+                          "sha256":  "7de6ccfcacd00f54dbdcd071701ad87ef66c20407d4cb16b73c336526c17e2b8",
+                          "path":  "DEVELOPMENT.md"
+                      },
+                      {
+                          "sha256":  "cf5e70942475a43772dee0472b0ce6d3c3189c71f3981484fa59d8c53d48582d",
+                          "path":  "Tasks/AGENTS.md"
+                      },
+                      {
+                          "sha256":  "2921eba850c47fb5518880c7c53606ab87ed0ff6769764c11a313040a14cb8ae",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                      },
+                      {
+                          "sha256":  "28f6dbcf58948c6ecc1fa5b64265008a08d7750b2e00e142038770acac0cda9a",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                      },
+                      {
+                          "sha256":  "082d7fcaba52c09c0da85863fbc4997fbc4bdf977088d81b953dcf43dff13007",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                      },
+                      {
+                          "sha256":  "71a63ed989d9d3c60fa435345fc21c4dd20683f3c894d5e47fa2ec482b3f3875",
+                          "path":  "Tasks/epics/FDEC-EPIC-D003/EPIC.md"
+                      },
+                      {
+                          "sha256":  "90f8596a5e29ca055fc0d1e983f1c24cbf2bf00c97ae5cb6b88d0ede55d20d83",
+                          "path":  "Tasks/epics/FDEC-EPIC-D004/EPIC.md"
+                      },
+                      {
+                          "sha256":  "e1900635d58ab27e11adc63a0ccb984a541bfaef9b97f5a8aa2a69bc0af96739",
+                          "path":  "Tasks/epics/FDEC-EPIC-D005/EPIC.md"
+                      },
+                      {
+                          "sha256":  "154368a4efc9ea1942c10831b634099b856019eefd7b4e3a2d371c5519970189",
+                          "path":  "Tasks/epics/FDEC-EPIC-D006/EPIC.md"
+                      },
+                      {
+                          "sha256":  "64c242aaab8f4cdd943c9a3217b427699bd1def0dcbf64512072d69ac51d7fe6",
+                          "path":  "Tasks/epics/FDEC-EPIC-D007/EPIC.md"
+                      },
+                      {
+                          "sha256":  "83490987aaad921515a3191decfac9522d35d0332920e9778ddeeb2a7e1b4263",
+                          "path":  "Tasks/epics/FDEC-EPIC-D008/EPIC.md"
+                      },
+                      {
+                          "sha256":  "7d88122e022a09537b1f89c3d093a47e7384e46c1cd0691172d4848170b35a3e",
+                          "path":  "Tasks/epics/FDEC-EPIC-D009/EPIC.md"
+                      },
+                      {
+                          "sha256":  "f4c9994291afb7529b560e3d161c336ed831748b42d15b9d8e0f8f6816a363a0",
+                          "path":  "Tasks/epics/FDEC-EPIC-D010/EPIC.md"
+                      },
+                      {
+                          "sha256":  "58985cc645f8ec5a8adf9faf93931a24880f22b91ddf341c8b750491f779f848",
+                          "path":  "Tasks/epics/FDEC-EPIC-S001/EPIC.md"
+                      },
+                      {
+                          "sha256":  "c5eb9ef605c113ae7db8fdbdd3dbcfba8d23e803585ea068ac0098e2f590c547",
+                          "path":  "Tasks/epics/FDEC-EPIC-S002/EPIC.md"
+                      },
+                      {
+                          "sha256":  "73bf4fe5e68536b69388a4f08af46e122924b3b88523e79543a4ce377faad9f7",
+                          "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/TASK.md"
+                      },
+                      {
+                          "sha256":  "f1dd0e71dc3276a5efd7a12b1ccd64cf942db24087e77bdff5616288bf713f1a",
+                          "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/TASK.md"
+                      },
+                      {
+                          "sha256":  "87cf04d38cf659d64f3778ae1de34ba58af8e4eae92f5f7b4beb933026f224b8",
+                          "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/TASK.md"
+                      },
+                      {
+                          "sha256":  "1abea711a658c842d0cb7b69f8a9c9818867b8a80a6ce4a591e66571942d7713",
+                          "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/TASK.md"
+                      },
+                      {
+                          "sha256":  "039a97d7f29a1809ce6787830ce0d7c1b6bd5e685e7c6ec7445c7c4f02bd5d4f",
+                          "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/TASK.md"
+                      },
+                      {
+                          "sha256":  "e247bdbd7a009bd2f5d82041f517e595052ba5ac52ee79555245412e7fe980c3",
+                          "path":  "Tasks/items/ai/FDEC-015-zero-shot-baseline/TASK.md"
+                      },
+                      {
+                          "sha256":  "4a2b17c8baef3e77a2a63986d74a68379a1b034be397986ca5cdd04c5607fd84",
+                          "path":  "Tasks/items/ai/FDEC-016-lora-qlora-trainer/TASK.md"
+                      },
+                      {
+                          "sha256":  "43aafcfc24b0567aa033e67edc301d26f1c80020dff09097b9fea9c1b35160cc",
+                          "path":  "Tasks/items/ai/FDEC-017-multi-label-evaluation-suite/TASK.md"
+                      },
+                      {
+                          "sha256":  "6046340900da485a6b7ad93a47f5d32d89409551f5b34b9096d3e16a30b3467c",
+                          "path":  "Tasks/items/ai/FDEC-018-score-calibration-and-abstention/TASK.md"
+                      },
+                      {
+                          "sha256":  "488bceb3922c7d0dfa51f69cd906e400cf7e2a6ec8f397260f6ec869a57dc1a6",
+                          "path":  "Tasks/items/ai/FDEC-019-model-export-and-provenance/TASK.md"
+                      },
+                      {
+                          "sha256":  "f331263d9b9a1c8e232fdc365e63273b7b5a4ab1ee6178cf0d8ccc2f66070c94",
+                          "path":  "Tasks/items/foundation/FDEC-001-open-source-governance/TASK.md"
+                      },
+                      {
+                          "sha256":  "feeb29c3c136a07c76c180e2568227a48dae1bac28d00584695022d18e9f0de2",
+                          "path":  "Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/TASK.md"
+                      },
+                      {
+                          "sha256":  "72bb798723aeac67d0fdcc6132026c3f4acae9e215dfdcb931d5fd31e63273f4",
+                          "path":  "Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/TASK.md"
+                      },
+                      {
+                          "sha256":  "6c0cd95973c167cf19ccebecfc93beb31d4b7ef61433f2b9ade9c209366f4e62",
+                          "path":  "Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/TASK.md"
+                      },
+                      {
+                          "sha256":  "c826dffba18fc208b0dd08f1ef41645fe5af305b671ff2c605820c5dec7b176a",
+                          "path":  "Tasks/items/foundation/FDEC-005-architecture-and-backend-adr/TASK.md"
+                      },
+                      {
+                          "sha256":  "ff0f8f120db62cfb3932289cb713ee700735c002ec96b88872e93a13f9a4e6b2",
+                          "path":  "Tasks/items/foundation/FDEC-022-local-gguf-backend/TASK.md"
+                      },
+                      {
+                          "sha256":  "55dc9104db148d54b0c06d9eb4bf3bd777204801a968bfb45d0b7fe798f58032",
+                          "path":  "Tasks/items/foundation/FDEC-023-email-preprocessing-and-limits/TASK.md"
+                      },
+                      {
+                          "sha256":  "af40b25421ea51193b2bd8914bef5a4dc652d0a2e061553e8233d19f624be671",
+                          "path":  "Tasks/items/foundation/FDEC-024-structured-classification-engine/TASK.md"
+                      },
+                      {
+                          "sha256":  "49fd037fc3dcec51eb8d2e3e3af68406b8f58a506ce93336c97660d9d4199843",
+                          "path":  "Tasks/items/foundation/FDEC-025-model-registry-and-hot-reload/TASK.md"
+                      },
+                      {
+                          "sha256":  "cbf8641685567b4f11323bcd8bc5d420bacdfb81d2e8dd047562839d16923097",
+                          "path":  "Tasks/items/foundation/FDEC-026-safe-concurrent-inference/TASK.md"
+                      },
+                      {
+                          "sha256":  "ef0e849bafb20b0a79f438f19e0b367d43b6627ec804da5bff94ae3266c4b01a",
+                          "path":  "Tasks/items/foundation/FDEC-029-native-rust-sdk/TASK.md"
+                      },
+                      {
+                          "sha256":  "acf2b63990504dd206357c0dd339a9adb6febf2fdb842da85740896444a932ea",
+                          "path":  "Tasks/items/foundation/FDEC-030-stable-c-abi/TASK.md"
+                      },
+                      {
+                          "sha256":  "1dc83375c71792904965b086f350c5d4f9245feb13154e8802f097d797f5182d",
+                          "path":  "Tasks/items/foundation/FDEC-031-c-wrapper/TASK.md"
+                      },
+                      {
+                          "sha256":  "1e52506678d39fa9fadf1cc726d46c3a99b58491d4bcc5001fc1377dd1bb5b53",
+                          "path":  "Tasks/items/foundation/FDEC-032-python-pyo3-bindings/TASK.md"
+                      },
+                      {
+                          "sha256":  "704f9de14dec400e08321c39e407a491ee81b09821ec9bc90c8418eef51b7995",
+                          "path":  "Tasks/items/foundation/FDEC-033-cross-language-conformance/TASK.md"
+                      },
+                      {
+                          "sha256":  "3dfc82d9753642f8269b07407c550115ee003bb3db710cc26349e9f5358539d2",
+                          "path":  "Tasks/items/foundation/FDEC-065-issue-pr-contribution-templates/TASK.md"
+                      },
+                      {
+                          "sha256":  "d78adb61800338d182e8d34531fdf5a7608307b71be08e0271861c67f452a754",
+                          "path":  "Tasks/items/foundation/FDEC-066-installation-and-release-documentation/TASK.md"
+                      },
+                      {
+                          "sha256":  "e8248ba64e7a6f788a008c535cc20374b570016033f3287f09edf627f32a47aa",
+                          "path":  "Tasks/items/foundation/FDEC-067-fdfiles-integration-acceptance/TASK.md"
+                      },
+                      {
+                          "sha256":  "21a4cabee27ae6abbcbc51457ee7d52532b8fed79aca71bd2845782f343eafa1",
+                          "path":  "Tasks/items/foundation/FDEC-068-first-public-beta-release-acceptance/TASK.md"
+                      },
+                      {
+                          "sha256":  "29d4730811c2bd4bc2f29b91122e16b1f60d0b66ed3aece7131c92b87e61f90d",
+                          "path":  "Tasks/items/foundation/FDEC-069-operational-handoff-and-maintenance/TASK.md"
+                      },
+                      {
+                          "sha256":  "d9f3c408019c4e224bf610524f1ada7f5dd634ecf9bd5fcb91cca69e095dba3f",
+                          "path":  "Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/TASK.md"
+                      },
+                      {
+                          "sha256":  "0f3f8e91cc03571856273875e7afa5122513dbb61d3aae5164267b475aa651be",
+                          "path":  "Tasks/items/operations/FDEC-050-manual-github-actions-build-matrix/TASK.md"
+                      },
+                      {
+                          "sha256":  "61c4dd020fcdb4e0eda16b4d78e23a7b2b9d150b27dc049ee3f28ec3c204abdc",
+                          "path":  "Tasks/items/operations/FDEC-051-artifact-manifest-and-signing/TASK.md"
+                      },
+                      {
+                          "sha256":  "53b9acfcd35b6832728693defc793ba6977fd2bdb6041b6a83bee39cbd8e4f03",
+                          "path":  "Tasks/items/operations/FDEC-052-fdupdate-publisher-integration/TASK.md"
+                      },
+                      {
+                          "sha256":  "755e26490f577a3cbd600986cc504e5752f13aec63b96f3e69168d8c4b08e236",
+                          "path":  "Tasks/items/operations/FDEC-053-github-release-and-registry-distribution/TASK.md"
+                      },
+                      {
+                          "sha256":  "99573a060ca12b18b0fd753095910f093d7424068939acf8922eec8c03ed5c67",
+                          "path":  "Tasks/items/operations/FDEC-054-manual-artifact-cleanup-and-rollback/TASK.md"
+                      },
+                      {
+                          "sha256":  "d6ec286f0dd376974122b8222ad96d04397b08af4f71eaa5c401659235f1344b",
+                          "path":  "Tasks/items/operations/FDEC-055-version-policy-and-changelog/TASK.md"
+                      },
+                      {
+                          "sha256":  "2ed1052d994721c57fb6c64d558107ac9d257137a56549a16e189de134fc23d3",
+                          "path":  "Tasks/items/quality/FDEC-006-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "e46b43d23c59dff2367bf836d1a24b868ed625dc813701187feab5e091d4e445",
+                          "path":  "Tasks/items/quality/FDEC-006-targeted-integration-gate/events/20261120T110500Z-project-planning-dependency-added-072.md"
+                      },
+                      {
+                          "sha256":  "af9aa4684c32fc1ab671592050007c9a09d1ee337011436ffa65feed9249285f",
+                          "path":  "Tasks/items/quality/FDEC-007-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "8b0432bea27424df3ad59a7422c19cac0306b1551301eebd6de595a9cfc1c04e",
+                          "path":  "Tasks/items/quality/FDEC-013-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "e360f861710965f00be8e58eb91ed39decc8c974d471b03aed72277f3ac7a4ff",
+                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "54a371262e9de763d3af0f5f8110b3b2639699d3885f4a6224d121bf008967fc",
+                          "path":  "Tasks/items/quality/FDEC-020-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "0dc5545046d9643f4e408e71c135cc727279ca6709ec7c29adbf6b74fd3456f9",
+                          "path":  "Tasks/items/quality/FDEC-021-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "fd0333c82d5ccf56bb1ff6d78bf93e7d69db98bb3c3e78f770547859ba0d9d2f",
+                          "path":  "Tasks/items/quality/FDEC-027-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "618b68296296b239801c7d99e7b68d1dc2c77b143ded1876062d0693d10094ef",
+                          "path":  "Tasks/items/quality/FDEC-028-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "82cdd735c62860b30f7261957f6b964e45add45e0a73a70716e66536c604876c",
+                          "path":  "Tasks/items/quality/FDEC-034-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "08becadb95c8bf2f3b8696c6b9dcd69e7cfd75a9b95647c2ed900535c3a80ca3",
+                          "path":  "Tasks/items/quality/FDEC-035-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "c9c46638a01091d3f1ff674c7625507d8238352863df08d77da90176a86c7842",
+                          "path":  "Tasks/items/quality/FDEC-041-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "7c170784d5f0e966572c1587febdbc96124bb15cabf46a601441e664bc509558",
+                          "path":  "Tasks/items/quality/FDEC-042-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "7e69ab421bea834341926729378323d53053be0b29774e1e1d26fdb768550da8",
+                          "path":  "Tasks/items/quality/FDEC-043-threat-model-and-private-data-policy/TASK.md"
+                      },
+                      {
+                          "sha256":  "4c12532974a1e09ed82969b31042965b88ee5101d35d992e5b17bdb31be9719b",
+                          "path":  "Tasks/items/quality/FDEC-044-performance-profile/TASK.md"
+                      },
+                      {
+                          "sha256":  "d35902e42e1a348141f6a051ec36071f3a008eca8a5f00a2c4a4becaafeba49e",
+                          "path":  "Tasks/items/quality/FDEC-045-119-language-quality-report/TASK.md"
+                      },
+                      {
+                          "sha256":  "1e536044beb173144fc94fea0bc47c9694cbafe68bf70f15b0fd7e9c8d1aced3",
+                          "path":  "Tasks/items/quality/FDEC-046-compatibility-regression-suite/TASK.md"
+                      },
+                      {
+                          "sha256":  "3e014a4de2accaf08ac843a4f6a7247de0c1598ad01c1ad7dec5751061a76c35",
+                          "path":  "Tasks/items/quality/FDEC-047-supply-chain-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "fd79f0ac29c3138ba525c8fe650d44c191447332303fadf41706b7b52fd885f2",
+                          "path":  "Tasks/items/quality/FDEC-048-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "2d87e3174bbfe158d60cfa6886fd2f3a1b90a1b37de486dec66b4855a609a7b7",
+                          "path":  "Tasks/items/quality/FDEC-049-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "3c77c829f24e9c3c7e39a3c335fabf600ba391b6dc2b1456b04cfcf78ac1040e",
+                          "path":  "Tasks/items/quality/FDEC-056-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "153bd413842c99814114c4310a5621c597ee56ce099306763447beeff25bd705",
+                          "path":  "Tasks/items/quality/FDEC-057-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "69a2828139e2429081c3e3fe76e95feed0d482b9e7acbd00b85ef55a017ff3f6",
+                          "path":  "Tasks/items/quality/FDEC-063-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "0353ddee44bf8ae0172393ec1452bf61dc6d0583d5299704f1629f7394e1ef98",
+                          "path":  "Tasks/items/quality/FDEC-064-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "758adc0f2f9ff8d6e72d2fb660ead795d98aadefb4b094bd41617eb57a6e7499",
+                          "path":  "Tasks/items/quality/FDEC-070-targeted-integration-gate/TASK.md"
+                      },
+                      {
+                          "sha256":  "c037f0d0aaaf2d3fd82434ba4cddf5c75b37cf552b42011f65e1854881bd102c",
+                          "path":  "Tasks/items/quality/FDEC-071-independent-acceptance-review/TASK.md"
+                      },
+                      {
+                          "sha256":  "bcc518c7c39b33ec7556b2299bb13f48c258b193347a3e4f3d3ada8595fcc241",
+                          "path":  "Tasks/items/server/FDEC-036-rest-classification-api/TASK.md"
+                      },
+                      {
+                          "sha256":  "8e08c0a3657cd6d6267288e32501ae34d8cd4c78de12d9a16380e3e02e08adf1",
+                          "path":  "Tasks/items/server/FDEC-037-job-and-resource-controls/TASK.md"
+                      },
+                      {
+                          "sha256":  "b3512a5e275c25545cde61b52a1b5c0574c6227a50d0a2e21391961525d7ee14",
+                          "path":  "Tasks/items/server/FDEC-038-service-authorization/TASK.md"
+                      },
+                      {
+                          "sha256":  "33adadc3155909949c006a86c9e67c7fcd1b4e3435a2b39b47644fbf514c3881",
+                          "path":  "Tasks/items/server/FDEC-039-docker-deployment/TASK.md"
+                      },
+                      {
+                          "sha256":  "8cabbebb0cb93038dcbcbe61cf7a28c6c8946c0f82a60141fe1c20a919c57c83",
+                          "path":  "Tasks/items/server/FDEC-040-fdfiles-adapter-examples/TASK.md"
+                      },
+                      {
+                          "sha256":  "84c3482a70125ad74244867e5d8544207f714df0914e6e055d223a33ae444225",
+                          "path":  "Tasks/items/web/FDEC-058-site-design-and-content/TASK.md"
+                      },
+                      {
+                          "sha256":  "e0713fcb26d31f215bf6d61479fee81f14fafdf4f65a66e8b3c7aa6476c118c1",
+                          "path":  "Tasks/items/web/FDEC-059-sdk-docs-and-quickstarts/TASK.md"
+                      },
+                      {
+                          "sha256":  "0ba4b9872616565ddb9cee0158b15a39cd009f6823631247bdda3b7bfcf52b30",
+                          "path":  "Tasks/items/web/FDEC-060-model-and-quality-transparency/TASK.md"
+                      },
+                      {
+                          "sha256":  "9da866d7704e5748d0a173a2cf163b0a94de27d2e2e0489ce33936a9ae585cfb",
+                          "path":  "Tasks/items/web/FDEC-061-domain-deployment-and-https/TASK.md"
+                      },
+                      {
+                          "sha256":  "2a0da6f77f7f9aef0e74953625f8d8af1cd90e8302e6fce4a02500502f640fef",
+                          "path":  "Tasks/items/web/FDEC-062-website-build-publication-workflow/TASK.md"
+                      }
+                  ],
+    "previous_policy":  "5.6 declared, not admitted",
+    "correction":  "FDEC-073",
+    "schema":  "fdec-policy-adoption/v1",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "workflows":  [
+
+                  ]
+}
