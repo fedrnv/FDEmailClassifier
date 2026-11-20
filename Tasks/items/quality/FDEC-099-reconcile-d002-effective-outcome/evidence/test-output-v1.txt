@@ -1,0 +1,12 @@
+{
+    "schema":  "fdec-outcome-verification/v1",
+    "result":  "PASS",
+    "task_id":  "FDEC-099",
+    "preserved_files":  100,
+    "negative_checks":  14,
+    "actual_training_data_admitted":  false,
+    "semantic_independent_review_required":  true,
+    "mutations":  false
+}
+PASS: 113 records, immutable history, correction membership, reopened gate dependency, independent review pending and one active D002
+SOURCE: 16e293aadc15f8dd50fac44720a7949e788c9eff

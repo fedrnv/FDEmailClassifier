@@ -1,0 +1,13 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "595fb0a1-8236-4d62-a8d3-38f53a1b64f2",
+    "epic_id":  "FDEC-EPIC-D002",
+    "work_item_id":  "FDEC-099",
+    "summary":  "Explicitly reconcile D002 software/preparation outcome while retaining actual data, training and release obligations",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/verification-v1.md",
+                         "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/result-v1.json",
+                         "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/test-output-v1.txt"
+                     ]
+}
