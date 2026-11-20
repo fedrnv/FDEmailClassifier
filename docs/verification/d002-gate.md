@@ -3,10 +3,12 @@
 Run from a clean committed candidate:
 
 ```powershell
-powershell -NoProfile -File scripts/verification/D002.ps1 -ExpectedSource <full-40-character-commit>
+powershell -NoProfile -File docs/verification/run-d002-current.ps1 -ExpectedSource <full-40-character-commit>
 ```
 
 This supplements the immutable adoption-bound `DEVELOPMENT.md`; FDEC-013 records the documentation-location refinement through append-only acceptance events. Run acceptance locally. No hosted workflow, corpus download, provider API, training, artifact upload or publication is part of this command.
+
+The current command first verifies the FDEC-099 outcome/source continuity and accepted FDEC-100 process repair, then runs the unchanged eight-stage `scripts/verification/D002.ps1` component. It produces one combined nine-stage result on the same frozen candidate. The original component command remains available for its narrower software integration scope. The current outcome check replays its historical verifier in a bounded temporary worktree and removes it; source/data rights are not broadened. See `d002-outcome-continuity.md` for the preserved outcome and deferred actual-data obligations.
 
 ## Prerequisites and source identity
 
@@ -18,6 +20,7 @@ The requested commit must be HEAD. Tracked working bytes and the index must both
 
 | Stage | Verification |
 | --- | --- |
+| Effective outcome/source continuity | Exact original outcome and owner-authority interpretation, accepted process repair and immutable original request; 102 protected files, 23 current metadata/index negatives and 14 historical negatives |
 | Frozen-source negatives | Wrong candidate, working/index differences, hidden Git flags, untracked implementation and state changes reject |
 | Dataset rights and ingestion | Existing audited allowlist negatives; exact-byte opt-in private ingestion, MIME normalization, actual pinned Parquet decoding, provenance and rollback |
 | Annotation/schema boundary | Mapping ambiguity/missing/abstention semantics, masks, mapping schema and existing classification v1 schema |
@@ -34,6 +37,8 @@ Fixture runs verify source hashes before decoding and replay normalized text/ann
 ## Result and limits
 
 Only after all stages and the final source check pass, stdout includes `GATE_RESULT_BEGIN`, a `fdec-gate-result/v1` JSON object, and `GATE_RESULT_END`. It binds FDEC-013, D002, candidate SHA/tree and policy SHA, with each stage's command/result. A failed stage returns failure and emits no passing result object. Capture the command, complete log and typed result in fresh immutable task evidence; never overwrite earlier runs. Temporary fixture cleanup is bounded to owned resolved paths, and previously existing data/results are preserved on invalid input.
+
+The current runner relabels the inner component markers as `COMPONENT_GATE_RESULT_BEGIN/END`; its eight-stage decision is component evidence. Only the outer nine-stage decision is current gate acceptance. The result preserves both actual sub-results and hashes of the current runner, composition module, original component and outcome verifier. Composition rejects mismatched candidate/tree/policy/state, missing or substituted stages, unsafe claims and invalid runner identities. Run `powershell -NoProfile -File docs/verification/test-d002-current-result.ps1` for its metadata-only positive and 26 negative checks; those counterfactual fixtures do not attest real acceptance or source rights.
 
 The gate is deliberately independent of the ignored Sinabis source copy. Its public metadata/rights profile is checked, while corpus-level measurements remain in FDEC-011's pinned verification evidence. Missing optional data does not block testing the components. All Codex packs remain fixture-only; this command does not approve actual training or evaluation on their contents.
 

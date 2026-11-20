@@ -1,0 +1,9 @@
+﻿{
+    "counted_as_acceptance":  false,
+    "production_gate_executed":  false,
+    "passing_cases_before_failure":  22,
+    "schema":  "fdec-local-verification/v1",
+    "command":  "powershell -NoProfile -File docs/verification/test-d002-current-result.ps1",
+    "result":  "FAIL",
+    "reason":  "PowerShell 5 JSON-array fixture was wrapped in an additional array, so the 23rd negative-case setup could not set sha256. Removed that extra fixture wrapper before source acceptance."
+}
