@@ -1,0 +1,193 @@
+﻿{
+    "task":  "FDEC-003",
+    "schema":  "fdec-dependency-audit/v1",
+    "packages":  [
+                     {
+                         "version":  "1.0.18",
+                         "name":  "itoa",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/itoa-1.0.18/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/itoa-1.0.18/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "2.8.3",
+                         "name":  "memchr",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+                                             "path":  "docs/api/dependency-notices/memchr-2.8.3/COPYING"
+                                         },
+                                         {
+                                             "sha256":  "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+                                             "path":  "docs/api/dependency-notices/memchr-2.8.3/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "Unlicense OR MIT"
+                     },
+                     {
+                         "version":  "1.0.107",
+                         "name":  "proc-macro2",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/proc-macro2-1.0.107/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/proc-macro2-1.0.107/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "1.0.47",
+                         "name":  "quote",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/quote-1.0.47/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/quote-1.0.47/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "1.0.229",
+                         "name":  "serde",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/serde-1.0.229/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/serde-1.0.229/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "1.0.229",
+                         "name":  "serde_core",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/serde_core-1.0.229/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/serde_core-1.0.229/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "1.0.229",
+                         "name":  "serde_derive",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/serde_derive-1.0.229/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/serde_derive-1.0.229/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "1.0.151",
+                         "name":  "serde_json",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/serde_json-1.0.151/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/serde_json-1.0.151/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "3.0.5",
+                         "name":  "syn",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/syn-3.0.5/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/syn-3.0.5/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT OR Apache-2.0"
+                     },
+                     {
+                         "version":  "1.0.24",
+                         "name":  "unicode-ident",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+                                             "path":  "docs/api/dependency-notices/unicode-ident-1.0.24/LICENSE-APACHE"
+                                         },
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/unicode-ident-1.0.24/LICENSE-MIT"
+                                         },
+                                         {
+                                             "sha256":  "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1",
+                                             "path":  "docs/api/dependency-notices/unicode-ident-1.0.24/LICENSE-UNICODE"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "(MIT OR Apache-2.0) AND Unicode-3.0"
+                     },
+                     {
+                         "version":  "1.0.23",
+                         "name":  "zmij",
+                         "source":  "registry+https://github.com/rust-lang/crates.io-index",
+                         "notices":  [
+                                         {
+                                             "sha256":  "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+                                             "path":  "docs/api/dependency-notices/zmij-1.0.23/LICENSE-MIT"
+                                         }
+                                     ],
+                         "decision":  "accepted with preserved notices",
+                         "license":  "MIT"
+                     }
+                 ]
+}

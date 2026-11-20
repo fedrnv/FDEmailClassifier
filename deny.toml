@@ -1,3 +1,3 @@
-# No registry dependencies at bootstrap; audit additions before extending this list.
+# FDEC-003 audit and exact notices: docs/api/dependency-audit.md.
 [licenses]
-allow = ["Apache-2.0"]
+allow = ["Apache-2.0", "MIT", "Unicode-3.0"]

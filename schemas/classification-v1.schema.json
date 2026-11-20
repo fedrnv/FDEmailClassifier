@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fdemailclassifier:classification:1",
+  "title": "Advisory classification v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "topics", "priority", "security", "suggested_action"],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "status": { "enum": ["classified", "unknown", "abstained"] },
+    "topics": { "type": "array", "uniqueItems": true, "maxItems": 12, "items": { "enum": ["work", "personal", "finance", "shopping", "travel", "social", "newsletters", "marketing", "education", "health", "legal", "other"] } },
+    "priority": { "enum": ["unknown", "low", "normal", "high", "urgent"] },
+    "security": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spam", "phishing", "malware"],
+      "properties": { "spam": { "$ref": "#/$defs/assessment" }, "phishing": { "$ref": "#/$defs/assessment" }, "malware": { "$ref": "#/$defs/assessment" } }
+    },
+    "suggested_action": { "enum": ["none", "review", "reply", "archive"] }
+  },
+  "$defs": { "assessment": { "enum": ["unknown", "clear", "flagged"] } },
+  "allOf": [{
+    "if": { "properties": { "status": { "const": "classified" } } },
+    "then": { "properties": { "topics": { "minItems": 1 } } },
+    "else": { "properties": { "topics": { "maxItems": 0 }, "priority": { "const": "unknown" }, "suggested_action": { "const": "review" } } }
+  }]
+}

@@ -1,0 +1,15 @@
+{
+    "schema_version":  "1",
+    "status":  "classified",
+    "topics":  [
+                   "work",
+                   "finance"
+               ],
+    "priority":  "high",
+    "security":  {
+                     "spam":  "clear",
+                     "phishing":  "unknown",
+                     "malware":  "unknown"
+                 },
+    "suggested_action":  "delete"
+}

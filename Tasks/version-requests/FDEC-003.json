@@ -1,0 +1,11 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "e1c23460-7d35-439f-8df0-468455803a65",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-003",
+    "summary":  "Define strict advisory classification v1 JSON and Serde taxonomy contract",
+    "verification":  [
+                         "Tasks/items/foundation/FDEC-003-classification-schema-and-taxonomy/evidence/verification.md"
+                     ]
+}
