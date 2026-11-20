@@ -1,0 +1,12 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "88fab1e1-d018-43b8-86d7-3a60f2c57a81",
+    "epic_id":  "FDEC-EPIC-D002",
+    "work_item_id":  "FDEC-008",
+    "summary":  "Audit three pinned dataset rights and enforce scoped allowlist with unresolved-source rejection",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-008-dataset-license-audit/evidence/verification.md",
+                         "Tasks/items/ai/FDEC-008-dataset-license-audit/evidence/result.json"
+                     ]
+}

@@ -1,0 +1,25 @@
+PASS: complete three-source registry valid; pinned scoped seed training/evaluation descriptor only
+PASS: reject MIT-tagged source with unresolved provenance without input mutation
+PASS: reject unknown-license real-mail corpus without input mutation
+PASS: reject unknown source without input mutation
+PASS: reject unapproved revision main without input mutation
+PASS: reject unapproved revision 0000000000000000000000000000000000000000 without input mutation
+PASS: reject unapproved artifact messages.jsonl without input mutation
+PASS: reject unapproved artifact ../outside.parquet without input mutation
+PASS: reject redistribution without input mutation
+PASS: reject general model target without input mutation
+PASS: reject missing target without input mutation
+PASS: reject selection under validate action without input mutation
+PASS: reject missing audit without input mutation
+PASS: reject changed report without input mutation
+PASS: reject changed observations without input mutation
+PASS: reject escaping audit binding without input mutation
+PASS: reject duplicate source without input mutation
+PASS: reject omitted audit source without input mutation
+PASS: reject license substituted in reviewed record without input mutation
+PASS: reject artifact checksum substituted in reviewed record without input mutation
+PASS: reject promoted unresolved record imnim/multiclass-email-classification without input mutation
+PASS: reject promoted unresolved record talby/spamassassin without input mutation
+PASS: reject unknown decision status without input mutation
+PASS: reject malformed manifest without input mutation
+PASS: positive/negative rights admission complete; no corpus download, training or publication
