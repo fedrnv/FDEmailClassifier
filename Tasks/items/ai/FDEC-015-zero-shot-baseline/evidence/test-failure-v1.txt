@@ -1,0 +1,39 @@
+Source: cbd72d1cd921718510c3cc7e95306ab7ac969d38
+Monitor: 949ca489-1716-40b7-825f-96530fb2822f
+Command: powershell -NoProfile -File training/baseline/test-baseline.ps1
+Exit: 1
+test_mutated_labels_text_and_source_set_are_rejected (test_baseline.AdmissionTests.test_mutated_labels_text_and_source_set_are_rejected) ... ok
+test_real_ingestion_split_rights_review_roundtrip_and_revocation (test_baseline.AdmissionTests.test_real_ingestion_split_rights_review_roundtrip_and_revocation) ... ok
+test_review_signature_expiry_bindings_and_fixture_denials (test_baseline.AdmissionTests.test_review_signature_expiry_bindings_and_fixture_denials) ... ok
+test_adapter_protocol_disables_thinking_and_decodes_only_suffix (test_baseline.CoreTests.test_adapter_protocol_disables_thinking_and_decodes_only_suffix) ... ERROR
+test_cli_missing_inputs_are_static_and_never_initialize_model (test_baseline.CoreTests.test_cli_missing_inputs_are_static_and_never_initialize_model) ... ok
+test_gold_validation_rejects_ambiguous_masks_duplicates_and_missing_rows (test_baseline.CoreTests.test_gold_validation_rejects_ambiguous_masks_duplicates_and_missing_rows) ... ok
+test_metrics_oracle_includes_failures_and_excludes_unknown_gold (test_baseline.CoreTests.test_metrics_oracle_includes_failures_and_excludes_unknown_gold) ... ok
+test_profile_binds_real_observation_and_rejects_fake_snapshot (test_baseline.CoreTests.test_profile_binds_real_observation_and_rejects_fake_snapshot) ... ok
+test_prompt_keeps_input_as_data_and_has_no_training_examples (test_baseline.CoreTests.test_prompt_keeps_input_as_data_and_has_no_training_examples) ... ok
+test_rollback_and_existing_output_preservation (test_baseline.CoreTests.test_rollback_and_existing_output_preservation) ... ok
+test_strict_model_output_and_static_errors (test_baseline.CoreTests.test_strict_model_output_and_static_errors) ... ok
+
+======================================================================
+ERROR: test_adapter_protocol_disables_thinking_and_decodes_only_suffix (test_baseline.CoreTests.test_adapter_protocol_disables_thinking_and_decodes_only_suffix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\baseline\tests\test_baseline.py", line 115, in test_adapter_protocol_disables_thinking_and_decodes_only_suffix
+    class Tokenizer:
+    ...<5 lines>...
+        length = 3
+  File "C:\GitHub\FDEmailClassifier\training\baseline\tests\test_baseline.py", line 117, in Tokenizer
+    decode = staticmethod(decode)
+                          ^^^^^^
+NameError: name 'decode' is not defined
+
+----------------------------------------------------------------------
+Ran 11 tests in 71.117s
+
+FAILED (errors=1)
+Baseline software checks failed
+At C:\GitHub\FDEmailClassifier\training\baseline\test-baseline.ps1:6 char:25
++ if($LASTEXITCODE -ne 0){throw 'Baseline software checks failed'}
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Baseline software checks failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Baseline software checks failed

@@ -109,12 +109,12 @@ class CoreTests(unittest.TestCase):
             print("private diagnostic token", file=sys.stderr)
             calls["generate"] = kwargs
             return [[1, 2, 3, 5, 9]]
-        def decode(tokens, **kwargs):
+        def decode_tokens(tokens, **kwargs):
             calls["decoded"] = tokens
             return "technical-result-token"
         class Tokenizer:
             apply_chat_template = staticmethod(template)
-            decode = staticmethod(decode)
+            decode = staticmethod(decode_tokens)
             def __call__(self, values, **kwargs):
                 calls["tokenizer"] = kwargs
                 return {"input_ids": SimpleNamespace(shape=(1, self.length))}
