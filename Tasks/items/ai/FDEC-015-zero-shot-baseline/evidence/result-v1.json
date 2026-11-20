@@ -1,0 +1,47 @@
+{
+    "schema":  "fdec-baseline-development-result/v1",
+    "task_id":  "FDEC-015",
+    "source_sha":  "5c3d286041a2f6baf49723c79b621637fedbcf07",
+    "source_tree":  "7ead8b801134788e5489e558a0d7a4f60653c017",
+    "source_state_algorithm":  "fdec-source-state/v1",
+    "source_state_sha256":  "6b569156beedd5731c168783bd71de07bbfa5b54ecc8505bfcaae7de8af35bb4",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "result":  "INCOMPLETE",
+    "task_status":  "Blocked",
+    "original_contract_preserved":  true,
+    "criteria":  {
+                     "AC-02":  {
+                                   "actual_model_integration_verified":  false,
+                                   "status":  "SOFTWARE_CHECKS_PASS"
+                               },
+                     "AC-01":  {
+                                   "status":  "NOT_FULFILLED",
+                                   "reason":  "No admitted independently reviewed non-OpenAI multilingual held-out corpus and current signed consent/review authority; no stock-model run"
+                               }
+                 },
+    "verification":  {
+                         "exit_code":  0,
+                         "software_tests":  11,
+                         "monitor_id":  "fb0e7e44-8ff0-4c98-afa1-17c8cc7f6168",
+                         "command":  "powershell -NoProfile -File training/baseline/test-baseline.ps1",
+                         "availability_sha256":  "6b0351abd8574fe9241f26cfb9824a5c59ede561f4530be1bcfb7bd3273c4396",
+                         "python":  "Python 3.14.5",
+                         "output_sha256":  "70460439f54bbab86f76915bc65e053aef24538f1915069f0830eebc17241f37"
+                     },
+    "actual_stock_model_executed":  false,
+    "actual_model_metrics":  null,
+    "training_performed":  false,
+    "codex_fixture_model_consumption":  false,
+    "model_tensors_downloaded":  false,
+    "model_runtime_installed":  false,
+    "model_runtime_compatibility_verified":  false,
+    "protected_preparation_files_changed":  [
+
+                                            ],
+    "public_artifact_release_approved":  false,
+    "external_spend_eur":  0,
+    "vps_used":  false,
+    "mac_handoff_started":  false,
+    "next_independent_task":  "FDEC-016",
+    "closure_request_created":  false
+}

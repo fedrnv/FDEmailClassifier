@@ -1,0 +1,22 @@
+Source: 5c3d286041a2f6baf49723c79b621637fedbcf07
+Monitor: fb0e7e44-8ff0-4c98-afa1-17c8cc7f6168
+Command: powershell -NoProfile -File training/baseline/test-baseline.ps1
+Exit: 0
+test_mutated_labels_text_and_source_set_are_rejected (test_baseline.AdmissionTests.test_mutated_labels_text_and_source_set_are_rejected) ... ok
+test_real_ingestion_split_rights_review_roundtrip_and_revocation (test_baseline.AdmissionTests.test_real_ingestion_split_rights_review_roundtrip_and_revocation) ... ok
+test_review_signature_expiry_bindings_and_fixture_denials (test_baseline.AdmissionTests.test_review_signature_expiry_bindings_and_fixture_denials) ... ok
+test_adapter_protocol_disables_thinking_and_decodes_only_suffix (test_baseline.CoreTests.test_adapter_protocol_disables_thinking_and_decodes_only_suffix) ... ok
+test_cli_missing_inputs_are_static_and_never_initialize_model (test_baseline.CoreTests.test_cli_missing_inputs_are_static_and_never_initialize_model) ... ok
+test_gold_validation_rejects_ambiguous_masks_duplicates_and_missing_rows (test_baseline.CoreTests.test_gold_validation_rejects_ambiguous_masks_duplicates_and_missing_rows) ... ok
+test_metrics_oracle_includes_failures_and_excludes_unknown_gold (test_baseline.CoreTests.test_metrics_oracle_includes_failures_and_excludes_unknown_gold) ... ok
+test_profile_binds_real_observation_and_rejects_fake_snapshot (test_baseline.CoreTests.test_profile_binds_real_observation_and_rejects_fake_snapshot) ... ok
+test_prompt_keeps_input_as_data_and_has_no_training_examples (test_baseline.CoreTests.test_prompt_keeps_input_as_data_and_has_no_training_examples) ... ok
+test_rollback_and_existing_output_preservation (test_baseline.CoreTests.test_rollback_and_existing_output_preservation) ... ok
+test_strict_model_output_and_static_errors (test_baseline.CoreTests.test_strict_model_output_and_static_errors) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 72.096s
+
+OK
+{"actual_stock_model_executed": false, "availability_is_admission": false, "current_consent_present": false, "current_label_review_present": false, "requires": ["audited-independent-source-runs", "current-signed-consent", "verified-grouped-test-partition", "independently-reviewed-non-openai-multilingual-gold", "verified-local-stock-model", "compatible-local-runtime"], "schema": "fdec-baseline-availability/v1", "status": "not_measured"}
+SOFTWARE_CHECKS=PASS; ACTUAL_STOCK_MODEL_BENCHMARK=NOT_RUN
