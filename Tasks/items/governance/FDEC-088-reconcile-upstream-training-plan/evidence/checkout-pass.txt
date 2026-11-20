@@ -1,0 +1,3 @@
+PASS: clean core.autocrlf=true checkout, legacy proof replay and text/binary rejection on 724b1c413314c041303d4892e9c7e68b65b89ccf
+PASS: clean core.autocrlf=false checkout, legacy proof replay and text/binary rejection on 724b1c413314c041303d4892e9c7e68b65b89ccf
+PASS: FDEC-088 selected local checks completed

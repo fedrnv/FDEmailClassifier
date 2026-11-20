@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "90b54f95-922f-4a82-b0b1-38d39c7d9dfd",
+    "type":  "correction_closed",
+    "work_item_id":  "FDEC-088",
+    "epic_id":  "FDEC-EPIC-S001",
+    "summary":  "Integrate owner development/training plan with exact immutable identity reconciliation and preserved admission guarantees",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/verification.md",
+                         "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/result.json",
+                         "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/evidence/test-output.txt"
+                     ]
+}

@@ -1,0 +1,38 @@
+﻿{
+    "schema":  "fdec-local-verification/v1",
+    "task_id":  "FDEC-088",
+    "result":  "PASS",
+    "candidate_sha":  "724b1c413314c041303d4892e9c7e68b65b89ccf",
+    "candidate_tree":  "67f138c930beb218026fb5681ccccb427e25bb88",
+    "upstream_sha":  "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "environment":  {
+                        "powershell":  "5.1.26100.33296",
+                        "git":  "git version 2.45.1.windows.1",
+                        "os":  "Windows x64",
+                        "python":  "Python 3.14.5"
+                    },
+    "checks":  [
+                   {
+                       "monitor_task_id":  "a315869f-5438-43b2-9059-3718fe14d2ae",
+                       "evidence":  "migration-and-identity-pass.txt",
+                       "command":  "run-checks.ps1 (passed migration and identity phases; full phase transcript retained)",
+                       "full_run_exit_code":  1,
+                       "phase_result":  "PASS"
+                   },
+                   {
+                       "monitor_task_id":  "5963e7a5-1a0e-4b99-807b-30dca8884e9b",
+                       "command":  "run-checks.ps1 -ValidationOnly",
+                       "evidence":  "validation-and-epic-pass.txt",
+                       "exit_code":  0
+                   },
+                   {
+                       "monitor_task_id":  "2b2236a4-04b6-4ab4-8db2-0c6445b93e6c",
+                       "command":  "run-checks.ps1 -CheckoutOnly",
+                       "evidence":  "checkout-pass.txt",
+                       "exit_code":  0
+                   }
+               ],
+    "continuation":  "Resume FDEC-011 with fresh merged-plan readiness, then dependency-ready D002 gate/review; no Mac transition yet",
+    "cleanup":  "All selected monitors terminal; guarded temporary fixtures removed; unrelated IDE state preserved; no purchase, training, push or publication"
+}
