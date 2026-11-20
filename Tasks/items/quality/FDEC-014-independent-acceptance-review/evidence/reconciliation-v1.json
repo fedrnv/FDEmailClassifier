@@ -1,0 +1,53 @@
+﻿{
+    "verification":  "Executor read full independent decision; binding checks and twenty negative metadata cases pass; missing RESULT separately rejected. Six independent pipeline tests pass; 182 gate closure bindings and focused scope/boundary probes are reviewer evidence, not executor reruns.",
+    "binding_check":  {
+                          "schema":  "fdec-review-binding-check/v1",
+                          "decision":  "ChangesRequired",
+                          "negative_checks":  20,
+                          "gate_ledger_added_paths":  9,
+                          "semantic_acceptance_automated":  false,
+                          "mutations":  false
+                      },
+    "result":  "ChangesRequired",
+    "reviewer_session":  "/root/review_d002_r001",
+    "artifacts":  [
+                      {
+                          "sha256":  "90765605e087ccf0049d8d41021899a3bde7e0719b0ffc927d6df3f40a4b16de",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R001/check-identities-v1.py"
+                      },
+                      {
+                          "sha256":  "2f63db6d47d953ebc9f84d4bd46e01995563e33247ca8beabc5516466655a39b",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R001/pipeline-output-v1.txt"
+                      },
+                      {
+                          "sha256":  "d94e258729f62125d8082788685cb94d00bf0018dbc844b5f8edfe2c203af812",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R001/probe-results-v1.json"
+                      },
+                      {
+                          "sha256":  "8156e66744f6df5e046bbb2650db956cbe64b614a589e5cc1b868b865efc7400",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R001/probe-scope-v1.py"
+                      },
+                      {
+                          "sha256":  "45943942f92c2018ea0d5a46217db02e4a24a70d3af7bfadfbc3763d5cb5488e",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R001/REQUEST.md"
+                      },
+                      {
+                          "sha256":  "7025ef165eb4f588237dabebd20f00ae288fe5e46465bf0e5d7b94c961a65934",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R001/RESULT.md"
+                      }
+                  ],
+    "schema":  "fdec-review-reconciliation/v1",
+    "task_id":  "FDEC-014",
+    "findings":  [
+                     {
+                         "outcome":  "Explicitly reconcile the effective D002 accepted outcome and its demonstrated evidence without changing data-rights guards",
+                         "correction_id":  "FDEC-099",
+                         "id":  "R001-B1"
+                     }
+                 ],
+    "independence":  "Fresh model session without implementation-author history; shared runtime/filesystem disclosed",
+    "continuation":  "FDEC-099 is Planned in D002; reopen gate and add its dependency immediately. Execute correction next turn, repeat gate on fresh candidate and request R002. Do not close FDEC-014 or D002, allocate a version, or publish.",
+    "candidate_sha":  "0bcd4c4f377af86ee8b83d1d0bf770f0eb448ad8",
+    "cleanup":  "Reviewer monitor completed; clean detached candidate retained; private corpus was not read or downloaded",
+    "candidate_tree":  "558697de3b18fd1bea8358a144bae90a90231c76"
+}

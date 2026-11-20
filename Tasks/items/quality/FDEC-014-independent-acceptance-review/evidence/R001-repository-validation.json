@@ -1,0 +1,15 @@
+﻿{
+    "exit_code":  0,
+    "training_performed":  false,
+    "monitor_task_id":  "05414118-71f9-48c2-b632-27bfaf2a507d",
+    "correction":  "FDEC-099",
+    "review_state":  "InProgress",
+    "schema":  "fdec-local-verification/v1",
+    "publication":  false,
+    "epic_state":  "Active",
+    "status":  "completed",
+    "command":  "powershell -NoProfile -File scripts/validate_tasks/repository.ps1",
+    "review_result":  "ChangesRequired",
+    "output":  "PASS: 113 records, immutable history, graph, requests and hosted publication boundary",
+    "gate_state":  "InProgress"
+}
