@@ -1,6 +1,7 @@
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/identity.ps1"
+. "$PSScriptRoot/epic-closure.ps1"
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-epic-'+[guid]::NewGuid())
 $epic='Tasks/epics/FDEC-EPIC-D001'
 $gate='Tasks/items/quality/FDEC-902-gate'
@@ -137,6 +138,12 @@ try {
     WriteClosure
     Validate
     Write-Output 'PASS: valid development Epic first closure and request admitted without allocation'
+    git -C $temp add -- $epic Tasks/version-requests/FDEC-EPIC-D001.json
+    if($LASTEXITCODE -ne 0){throw 'Staged closure setup failed'}
+    Validate
+    git -C $temp reset --quiet $script:ledger
+    if($LASTEXITCODE -ne 0){throw 'Staged closure reset failed'}
+    Write-Output 'PASS: staged append-only completion matches inspected working evidence'
     Reject 'missing request' {Remove-Item -LiteralPath "$temp/Tasks/version-requests/FDEC-EPIC-D001.json"} 'Missing verified Epic closure request'
     Reject 'never-closed Epic' {Remove-Item -LiteralPath "$temp/$epic/events/closed.md"} 'Invalid development Epic closure request'
     Reject 'special Epic' {$copy=$script:request.Clone();$copy.epic_id='FDEC-EPIC-S001';$copy.work_item_id='FDEC-EPIC-S001';Json 'Tasks/version-requests/FDEC-EPIC-D001.json' $copy} 'Invalid development Epic closure request'
@@ -177,6 +184,64 @@ try {
     Reject 'changed tracked implementation' {Put 'implementation.txt' 'Changed after passing gate'} 'Implementation differs from passing candidate'
     Reject 'new implementation' {Put 'new-source.rs' 'New code after passing gate'} 'Implementation differs from passing candidate'
     Reject 'staged implementation' {Put 'implementation.txt' 'Staged change';git -C $temp add implementation.txt} 'Implementation differs from passing candidate'
+    Reject 'index-only implementation with restored working bytes' {
+        Put 'implementation.txt' 'Unreviewed staged implementation.'
+        git -C $temp add implementation.txt
+        if($LASTEXITCODE -ne 0){throw 'Index-only setup failed'}
+        Put 'implementation.txt' 'Synthetic frozen implementation.'
+        git -C $temp diff --cached --quiet -- implementation.txt
+        if($LASTEXITCODE -ne 1){throw 'Expected an independent staged change'}
+        git -C $temp diff HEAD --quiet -- implementation.txt
+        if($LASTEXITCODE -ne 0){throw 'Working bytes were not restored'}
+    } 'Git index differs from current closure evidence'
+    Reject 'staged deletion with restored working file' {
+        git -C $temp rm --quiet -- implementation.txt
+        if($LASTEXITCODE -ne 0){throw 'Staged deletion setup failed'}
+        Put 'implementation.txt' 'Synthetic frozen implementation.'
+    } 'Implementation differs from passing candidate'
+    Reject 'staged new implementation absent from working files' {
+        Put 'new-source.rs' 'Staged new implementation'
+        git -C $temp add new-source.rs
+        if($LASTEXITCODE -ne 0){throw 'Staged new file setup failed'}
+        Remove-Item -LiteralPath "$temp/new-source.rs"
+    } 'Git index differs from current closure evidence'
+    Reject 'conflicting staged and working completion evidence' {
+        Put "$epic/evidence/extra.md" 'Staged evidence'
+        git -C $temp add -- "$epic/evidence/extra.md"
+        if($LASTEXITCODE -ne 0){throw 'Staged evidence setup failed'}
+        Put "$epic/evidence/extra.md" 'Different working evidence'
+    } 'Git index differs from current closure evidence'
+    Reject 'index-only historical ledger rewrite' {
+        $original=[IO.File]::ReadAllText("$temp/$gate/evidence/result.json")
+        Put "$gate/evidence/result.json" 'Unverified staged replacement'
+        git -C $temp add -- "$gate/evidence/result.json"
+        if($LASTEXITCODE -ne 0){throw 'Staged ledger rewrite setup failed'}
+        Put "$gate/evidence/result.json" $original
+    } 'Immutable candidate ledger changed in index'
+    foreach($flag in '--assume-unchanged','--skip-worktree'){
+        Reject "unsupported index flag $flag" {
+            git -C $temp update-index $flag -- implementation.txt
+            if($LASTEXITCODE -ne 0){throw 'Index flag setup failed'}
+        } 'Unsupported Epic index flags'
+        # Git reset deliberately preserves these flags; clear only our fixture.
+        git -C $temp update-index --no-assume-unchanged --no-skip-worktree -- implementation.txt
+        if($LASTEXITCODE -ne 0){throw 'Index flag reset failed'}
+    }
+    Reject 'unmerged index' {
+        $blob=git -C $temp rev-parse 'HEAD:implementation.txt'
+        if($LASTEXITCODE -ne 0){throw 'Conflict blob missing'}
+        git -C $temp update-index --force-remove -- implementation.txt
+        "100644 $blob 1`timplementation.txt`n100644 $blob 2`timplementation.txt`n100644 $blob 3`timplementation.txt" | git -C $temp update-index --index-info
+        if($LASTEXITCODE -ne 0){throw 'Conflict index setup failed'}
+    } 'Unsupported or unmerged Epic index entry'
+    # Exercise the shared checked Git invocation with a nonzero native exit
+    # that prints only stdout, without replacing git or altering global PATH.
+    Put 'implementation.txt' 'Changed source for Git failure probe'
+    $failed=$false
+    try{$null=Epic-GitOutput $temp @('diff','--exit-code','--name-only',$script:ledger)}catch{if($_.Exception.Message -match 'Cannot inspect current Epic source'){$failed=$true}else{throw}}
+    if(!$failed){throw 'Nonzero Git inspection was ignored'}
+    Put 'implementation.txt' 'Synthetic frozen implementation.'
+    Write-Output 'PASS: nonzero Git inspection fails closed'
     Reject 'release allocation request' {$copy=$script:request.Clone();$copy.type='release_published';Json 'Tasks/version-requests/FDEC-EPIC-D001.json' $copy} 'Release/major requests require'
     # Accepted immutable request survives later reopen and reclose; its proof is
     # evaluated at the first closure, not against today's mutable projection.
@@ -204,6 +269,17 @@ try {
     Json "$epic/evidence/reclosure.json" $reproof
     Event $epic FDEC-EPIC-D001 reclose 'Active -> Done' "closure_proof: evidence/reclosure.json`nclosure_proof_sha256: $((Bound "$epic/evidence/reclosure.json").sha256)"
     Validate
+    Put 'implementation.txt' 'Unreviewed staged reclosure implementation'
+    git -C $temp add implementation.txt
+    if($LASTEXITCODE -ne 0){throw 'Reclosure index setup failed'}
+    Put 'implementation.txt' 'Synthetic frozen implementation.'
+    $failed=$false
+    try{Validate}catch{if($_.Exception.Message -match 'Git index differs from current closure evidence'){$failed=$true}else{throw}}
+    if(!$failed){throw 'Current reclosure admitted index-only change'}
+    git -C $temp restore --staged -- implementation.txt
+    if($LASTEXITCODE -ne 0){throw 'Reclosure index reset failed'}
+    Validate
+    Write-Output 'PASS: current reclosure rejects index-only implementation independently of historical proof'
     if((Get-FileHash "$temp/Tasks/version-requests/FDEC-EPIC-D001.json").Hash -ne $before){throw 'Historical request changed'}
     if(Test-Path "$temp/Tasks/version.json"){throw 'Validator allocated a version'}
     Write-Output 'PASS: Epic reopen/reclose retains first request; reclosure needs current proof; no versions allocated'

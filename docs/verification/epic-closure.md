@@ -6,6 +6,13 @@ Done transition. S001/S002 never close. Version allocation, network publication,
 release/major transitions and generated version history remain separate work.
 Request acceptance alone does not assign a version or authorize publication.
 
+FDEC-082 independently inspects the current index, working changes and nonignored
+new paths. Restoring working bytes does not hide staged content. Staged ledger
+changes may only add permitted completion files and must match their inspected
+working content. Unmerged/nonregular index entries and sparse/assume-unchanged
+flags are unsupported and reject; Git inspection errors also reject. Historical
+proof replay remains tied to its recorded source instead of today's index.
+
 Before closing, inspect every effective member and dependency, current gate and
 independent review. Changes after the tested candidate require a repeated gate
 and review unless they are strictly append-only completion/review bookkeeping

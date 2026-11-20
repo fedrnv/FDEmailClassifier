@@ -1,5 +1,30 @@
 # Mechanical closure provenance; semantic review remains the executor's duty.
 # Loaded by repository.ps1, using its Envelope/IdList helpers.
+function Epic-GitOutput([string]$Root,[string[]]$Arguments) {
+    $output=@(& git -C $Root -c core.quotepath=false @Arguments)
+    if($LASTEXITCODE -ne 0){throw "Cannot inspect current Epic source: git $($Arguments -join ' ')"}
+    return $output
+}
+function Epic-CurrentSourcePaths([string]$Root,[string]$GitHead) {
+    $index=@(Epic-GitOutput $Root @('ls-files','--stage'))
+    foreach($entry in $index){
+        if($entry -cnotmatch '^(100644|100755) [a-f0-9]{40} 0\t[^\x00-\x1f"]+$'){throw 'Unsupported or unmerged Epic index entry'}
+    }
+    # These flags can hide actual working changes from Git diff. This closure
+    # envelope does not support sparse/assume-unchanged source checkouts.
+    $flags=@(Epic-GitOutput $Root @('ls-files','-v'))
+    if(@($flags|Where-Object {$_ -cnotmatch '^H '}).Count){throw 'Unsupported Epic index flags'}
+    $staged=@(Epic-GitOutput $Root @('diff','--cached','--no-ext-diff','--no-renames','--name-only',$GitHead))
+    $stagedHistory=@(Epic-GitOutput $Root @('diff','--cached','--no-ext-diff','--no-renames','--name-status',$GitHead,'--','Tasks'))
+    if(@($stagedHistory|Where-Object {$_ -cnotmatch '^A\t'}).Count){throw 'Immutable candidate ledger changed in index'}
+    $working=@(Epic-GitOutput $Root @('diff','--no-ext-diff','--no-renames','--name-only',$GitHead))
+    $indexToWorking=@(Epic-GitOutput $Root @('diff','--no-ext-diff','--no-renames','--name-only'))
+    # A staged completion file must be the same file whose working bytes were
+    # inspected above; a second version in the index is not verified evidence.
+    foreach($path in $staged){if($indexToWorking -ccontains $path){throw "Git index differs from current closure evidence: $path"}}
+    $other=@(Epic-GitOutput $Root @('ls-files','--others','--exclude-standard'))
+    return @($staged)+@($working)+@($other)
+}
 function Epic-Field([string]$Text,[string]$Key) {
     $fields=[regex]::Matches($Text,"(?m)^$([regex]::Escape($Key)): ([^\r\n]+)")
     if($fields.Count -ne 1){throw "Missing or ambiguous Epic field: $Key"}
@@ -139,10 +164,13 @@ function Assert-EpicClosureEvent([string]$Root,$Records,$Request,[string]$GitHea
     if($LASTEXITCODE -ne 0){throw 'Cannot inspect closure source'}
     $history=@(git -C $Root diff --name-status --no-renames $proof.candidate_sha $proof.source_sha -- Tasks)
     if($LASTEXITCODE -ne 0 -or @($history|Where-Object {$_ -cnotmatch '^A\t'}).Count){throw 'Immutable candidate ledger changed'}
-    if(!$Accepted){$changed+=@(git -C $Root -c core.quotepath=false diff --name-only $GitHead);$changed+=@(git -C $Root -c core.quotepath=false ls-files --others --exclude-standard)}
+    if(!$Accepted){$changed+=@(Epic-CurrentSourcePaths $Root $GitHead)}
     $memberPattern=(@($snapshot.members|ForEach-Object {[regex]::Escape($_)}) -join '|')
     foreach($path in $changed){
-        if(!$Accepted -and $path -match '^\.idea/(workspace\.xml|vcs\.xml|modules\.xml|misc\.xml|\.gitignore|[^/]+\.iml|inspectionProfiles/[^/]+\.xml)$' -and !(git -C $Root ls-files -- $path)){continue}
+        if(!$Accepted -and $path -match '^\.idea/(workspace\.xml|vcs\.xml|modules\.xml|misc\.xml|\.gitignore|[^/]+\.iml|inspectionProfiles/[^/]+\.xml)$'){
+            $tracked=@(Epic-GitOutput $Root @('ls-files','--',$path))
+            if(!$tracked.Count){continue}
+        }
         if($path -cmatch ('^Tasks/items/[^/]+/('+$memberPattern+')-[^/]+/(events|evidence)/') -or $path -cmatch ('^Tasks/version-requests/('+$memberPattern+'|'+[regex]::Escape($id)+')\.json$') -or $path -cmatch ('^Tasks/epics/'+[regex]::Escape($id)+'/(events|evidence|reviews)/')){continue}
         throw "Implementation differs from passing candidate: $path"
     }
