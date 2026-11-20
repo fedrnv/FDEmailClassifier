@@ -1,0 +1,12 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "38df893b-a3a7-464e-be65-394e4d4d1c4d",
+    "epic_id":  "FDEC-EPIC-D002",
+    "work_item_id":  "FDEC-014",
+    "summary":  "Independently accept current D002 software and conditional preparation with explicit actual-data limits",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/verification-v2.md",
+                         "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/reconciliation-v2.json"
+                     ]
+}

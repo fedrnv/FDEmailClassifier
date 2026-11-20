@@ -1,0 +1,22 @@
+﻿{
+    "exit_code":  0,
+    "allocated":  false,
+    "independent_result":  {
+                               "sha256":  "23df020d138e486e8da8e419f05d600567291713dd17b8fdf6fbd7f62ebb2c64",
+                               "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R002/RESULT.md"
+                           },
+    "monitor_task_id":  "d8f6b1d8-b96c-4fc8-a7dd-d86f8620418e",
+    "command":  "powershell -NoProfile -File scripts/validate_tasks/repository.ps1",
+    "records":  114,
+    "schema":  "fdec-local-verification/v1",
+    "published":  false,
+    "epic_closed":  false,
+    "source_sha":  "7dc4a1b895bffd188c1ed1697dbe1f21ac89b2c2",
+    "timing":  "Actual current Done event and first request checked before closure commit",
+    "request":  {
+                    "path":  "Tasks/version-requests/FDEC-014.json",
+                    "sha256":  "5f9979a0f93c9163883bc65f7ddeba446e3fe1560124a1de1c2b2f76d0c38abc",
+                    "type":  "task_closed"
+                },
+    "result":  "PASS"
+}

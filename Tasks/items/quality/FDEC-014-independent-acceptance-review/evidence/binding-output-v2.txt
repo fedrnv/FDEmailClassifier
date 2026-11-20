@@ -1,0 +1,11 @@
+{
+  "schema": "fdec-review-binding-check/v1",
+  "decision": "Accepted",
+  "negative_checks": 20,
+  "gate_ledger_added_paths": 12,
+  "latest_gate_done_verified": true,
+  "gate_stages": 9,
+  "original_gate_request_unchanged": true,
+  "semantic_acceptance_automated": false,
+  "mutations": false
+}

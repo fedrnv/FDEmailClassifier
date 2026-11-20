@@ -1,0 +1,80 @@
+﻿{
+    "reviewer_session":  "/root/review_d002_r002",
+    "gate_result_sha256":  "b296cd4acf6267a82f829d1e37c09992640435485ccdd993e12112ee3bb0988b",
+    "continuation":  "First verified FDEC-014 closure only; separate D002 Epic closure assessment next, no publication or version allocation",
+    "independence":  "Fresh independent model session without implementation-author history; shared runtime/filesystem/evidence and actual limits disclosed",
+    "ledger_sha":  "b1a99b5613b60146ead9e0fac122fd936ab2d48f",
+    "task_id":  "FDEC-014",
+    "candidate_sha":  "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+    "actual_training_data_admitted":  false,
+    "artifacts":  [
+                      {
+                          "sha256":  "bc0724d5c9e3ecc1d50f47128695aff1ec800890a6f7ad74665bd39a2e965cdd",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R002/check-identities-v1.py"
+                      },
+                      {
+                          "sha256":  "703474ff9b8fb1d323aaf73a91ce41ce3ef2a53ab737f2a043b460e468db11a9",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R002/observations-v1.json"
+                      },
+                      {
+                          "sha256":  "94ddcf82c874bf3220af3f62ed842ad4d78dfd58784300a0a07baef58d49de6c",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R002/probe-boundaries-v1.py"
+                      },
+                      {
+                          "sha256":  "b39da975a71f3084c6246952f13632acdbc502e45faa579baad876a95eb2e7e0",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R002/REQUEST.md"
+                      },
+                      {
+                          "sha256":  "23df020d138e486e8da8e419f05d600567291713dd17b8fdf6fbd7f62ebb2c64",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/R002/RESULT.md"
+                      },
+                      {
+                          "sha256":  "ce10407f7c789dfe927ee917d9e58624b642aefc739ac85a410dc92bdd7abece",
+                          "path":  "Tasks/epics/FDEC-EPIC-D002/reviews/.gitattributes"
+                      },
+                      {
+                          "sha256":  "d8c86b0aaf4cf8a28087d3f2ad6ec3af73a4f69bb3c656e4ca533c0913683c5b",
+                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/.gitattributes"
+                      },
+                      {
+                          "sha256":  "f74e2c5e14c68995ae457723057ee35d2b56d200ebf006c9b6dfd06a4388360a",
+                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/check-review-v2.py"
+                      },
+                      {
+                          "sha256":  "1bc779ab5216d24a4b462a18f186a00e924a5658fa6a89dbd0d49468a34df80d",
+                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/primary-preflight-v2.json"
+                      },
+                      {
+                          "sha256":  "61647cdacc803cf60b4a2865ab9ef29bfc7920437cddc5138915a359c6fefefd",
+                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/reviewer-terminal-checks-v2.json"
+                      },
+                      {
+                          "sha256":  "f99e1eb6243bcd1bd44b6c9f9b55209fda07355856cd7a083894c0562a6b0198",
+                          "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/binding-output-v2.txt"
+                      }
+                  ],
+    "schema":  "fdec-review-reconciliation/v1",
+    "actual_training_performed":  false,
+    "candidate_tree":  "6b7af50ea1fdbb1a6ad12cdad5dd445cf491560c",
+    "new_blockers":  [
+
+                     ],
+    "findings_resolved":  [
+                              "R001-B1"
+                          ],
+    "model_release_approved":  false,
+    "binding_check":  {
+                          "schema":  "fdec-review-binding-check/v1",
+                          "decision":  "Accepted",
+                          "negative_checks":  20,
+                          "gate_ledger_added_paths":  12,
+                          "latest_gate_done_verified":  true,
+                          "gate_stages":  9,
+                          "original_gate_request_unchanged":  true,
+                          "semantic_acceptance_automated":  false,
+                          "mutations":  false
+                      },
+    "cleanup":  "Reviewer commands terminal, guarded fixtures and replay checkout cleaned; clean detached candidate retained; proof-script LF transport checked",
+    "result":  "Accepted",
+    "verification":  "Executor read actual independent Accepted result/observations, verified its submitted identity and latest gate proof chain, observed all four reviewer commands terminal completed/exit 0, and requires independent semantic judgment rather than machine-derived acceptance"
+}
