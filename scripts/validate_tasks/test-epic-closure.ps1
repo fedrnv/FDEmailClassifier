@@ -54,6 +54,25 @@ function CloseTask($Directory,$Id,$Verification){
     Json "Tasks/version-requests/$Id.json" @{schema='fdtasks-version-request/v1';request_id="request-$Id";type='task_closed';epic_id='FDEC-EPIC-D001';work_item_id=$Id;summary='Synthetic completed outcome';verification=@($Verification|ForEach-Object {$_.path})}
 }
 function Validate {& "$PSScriptRoot/repository.ps1" -Root $temp}
+function Commit-ImplementationRename([string]$RenameMode) {
+    $destination="$epic/evidence/moved-implementation.txt"
+    $prefix=[IO.Path]::GetFullPath($temp)+[IO.Path]::DirectorySeparatorChar
+    foreach($path in 'implementation.txt',$destination){
+        if(![IO.Path]::GetFullPath((Join-Path $temp $path)).StartsWith($prefix,[StringComparison]::OrdinalIgnoreCase)){throw 'Unsafe fixture move'}
+    }
+    git -C $temp config diff.renames $RenameMode
+    if($LASTEXITCODE -ne 0){throw 'Rename configuration failed'}
+    git -C $temp mv -- implementation.txt $destination
+    if($LASTEXITCODE -ne 0){throw 'Committed rename setup failed'}
+    git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m rename -- implementation.txt $destination
+    if($LASTEXITCODE -ne 0){throw 'Rename commit failed'}
+    $status=@(git -C $temp diff --name-status $script:ledger HEAD -- implementation.txt $destination)
+    if($LASTEXITCODE -ne 0 -or $status.Count -ne 1 -or $status[0] -cne "R100`timplementation.txt`t$destination"){throw 'Fixture did not exercise collapsed committed rename'}
+    git -C $temp diff --quiet HEAD
+    if($LASTEXITCODE -ne 0){throw 'Rename working state is not clean'}
+    git -C $temp diff --cached --quiet HEAD
+    if($LASTEXITCODE -ne 0){throw 'Rename index is not clean'}
+}
 function Reject([string]$Label,[scriptblock]$Change,[string]$Pattern){
     & $Change
     $failed=$false
@@ -184,6 +203,12 @@ try {
     Reject 'changed tracked implementation' {Put 'implementation.txt' 'Changed after passing gate'} 'Implementation differs from passing candidate'
     Reject 'new implementation' {Put 'new-source.rs' 'New code after passing gate'} 'Implementation differs from passing candidate'
     Reject 'staged implementation' {Put 'implementation.txt' 'Staged change';git -C $temp add implementation.txt} 'Implementation differs from passing candidate'
+    foreach($renameMode in 'true','copies'){
+        Reject "committed implementation rename with diff.renames=$renameMode" {
+            Commit-ImplementationRename $renameMode
+            ChangeProof {param($p)$p.source_sha=git -C $temp rev-parse HEAD}
+        } 'Implementation differs from passing candidate: implementation.txt'
+    }
     Reject 'index-only implementation with restored working bytes' {
         Put 'implementation.txt' 'Unreviewed staged implementation.'
         git -C $temp add implementation.txt

@@ -13,6 +13,13 @@ working content. Unmerged/nonregular index entries and sparse/assume-unchanged
 flags are unsupported and reject; Git inspection errors also reject. Historical
 proof replay remains tied to its recorded source instead of today's index.
 
+FDEC-083 disables rename/copy detection in committed candidate-to-closure path
+comparisons as well. Both the original and destination paths are checked, so
+committing a move of implementation into a completion directory cannot turn
+implementation removal into an allowed ledger addition. This is independent of
+the repository's `diff.renames` setting. Committed inspection uses the same
+checked Git invocation as current index/working inspection.
+
 Before closing, inspect every effective member and dependency, current gate and
 independent review. Changes after the tested candidate require a repeated gate
 and review unless they are strictly append-only completion/review bookkeeping

@@ -160,10 +160,11 @@ function Assert-EpicClosureEvent([string]$Root,$Records,$Request,[string]$GitHea
     if($LASTEXITCODE -ne 0 -or $tree -cne $proof.candidate_tree){throw 'Candidate tree mismatch'}
     git -C $Root merge-base --is-ancestor $proof.candidate_sha $proof.source_sha
     if($LASTEXITCODE -ne 0){throw 'Closure source does not descend from candidate'}
-    $changed=@(git -C $Root diff --name-only $proof.candidate_sha $proof.source_sha)
-    if($LASTEXITCODE -ne 0){throw 'Cannot inspect closure source'}
-    $history=@(git -C $Root diff --name-status --no-renames $proof.candidate_sha $proof.source_sha -- Tasks)
-    if($LASTEXITCODE -ne 0 -or @($history|Where-Object {$_ -cnotmatch '^A\t'}).Count){throw 'Immutable candidate ledger changed'}
+    # Never let rename/copy detection hide removal of an implementation path
+    # behind an allowed completion destination. Inspect both sides independently.
+    $changed=@(Epic-GitOutput $Root @('diff','--no-ext-diff','--no-renames','--name-only',$proof.candidate_sha,$proof.source_sha))
+    $history=@(Epic-GitOutput $Root @('diff','--no-ext-diff','--no-renames','--name-status',$proof.candidate_sha,$proof.source_sha,'--','Tasks'))
+    if(@($history|Where-Object {$_ -cnotmatch '^A\t'}).Count){throw 'Immutable candidate ledger changed'}
     if(!$Accepted){$changed+=@(Epic-CurrentSourcePaths $Root $GitHead)}
     $memberPattern=(@($snapshot.members|ForEach-Object {[regex]::Escape($_)}) -join '|')
     foreach($path in $changed){
