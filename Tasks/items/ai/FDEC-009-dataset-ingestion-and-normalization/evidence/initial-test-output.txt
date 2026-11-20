@@ -1,0 +1,163 @@
+test_bad_hash_never_reaches_parser_and_rolls_back (test_ingestion.IngestionTests.test_bad_hash_never_reaches_parser_and_rolls_back) ... FAIL
+test_cli_no_opt_in_and_invalid_arguments_do_not_echo_content (test_ingestion.IngestionTests.test_cli_no_opt_in_and_invalid_arguments_do_not_echo_content) ... ok
+test_download_explicit_pinned_request_and_failed_transfer_cleanup (test_ingestion.IngestionTests.test_download_explicit_pinned_request_and_failed_transfer_cleanup) ... ERROR
+test_existing_run_and_unignored_repo_output_are_preserved (test_ingestion.IngestionTests.test_existing_run_and_unignored_repo_output_are_preserved) ... ok
+test_html_is_visible_text_only_without_network (test_ingestion.IngestionTests.test_html_is_visible_text_only_without_network) ... ok
+test_invalid_mime_and_content_types_are_static_errors (test_ingestion.IngestionTests.test_invalid_mime_and_content_types_are_static_errors) ... ok
+test_invalid_records_and_parser_failures_rollback_without_content (test_ingestion.IngestionTests.test_invalid_records_and_parser_failures_rollback_without_content) ... ok
+test_json_array_loader (test_ingestion.IngestionTests.test_json_array_loader) ... ERROR
+test_jsonl_dedup_preserves_annotations_and_is_reproducible (test_ingestion.IngestionTests.test_jsonl_dedup_preserves_annotations_and_is_reproducible) ... ERROR
+test_mime_alternative_charset_attachment_and_eml_loader (test_ingestion.IngestionTests.test_mime_alternative_charset_attachment_and_eml_loader) ... ERROR
+test_no_opt_in_has_no_guard_transfer_or_output (test_ingestion.IngestionTests.test_no_opt_in_has_no_guard_transfer_or_output) ... ok
+test_parquet_actual_pinned_reader (test_ingestion.IngestionTests.test_parquet_actual_pinned_reader) ... ERROR
+test_parquet_row_limit_before_decoding_rows (test_ingestion.IngestionTests.test_parquet_row_limit_before_decoding_rows) ... FAIL
+test_real_production_audit_blocks_unresolved_source_before_io (test_ingestion.IngestionTests.test_real_production_audit_blocks_unresolved_source_before_io) ... ok
+test_real_repository_ignore_contract (test_ingestion.IngestionTests.test_real_repository_ignore_contract) ... ok
+test_receipt_commit_failure_removes_only_owned_new_run (test_ingestion.IngestionTests.test_receipt_commit_failure_removes_only_owned_new_run) ... FAIL
+test_redirect_boundary_has_no_network (test_ingestion.IngestionTests.test_redirect_boundary_has_no_network) ... ok
+test_symlinked_output_is_rejected (test_ingestion.IngestionTests.test_symlinked_output_is_rejected) ... ok
+test_truncation_and_oversize_preserve_original (test_ingestion.IngestionTests.test_truncation_and_oversize_preserve_original) ... 
+  test_truncation_and_oversize_preserve_original (test_ingestion.IngestionTests.test_truncation_and_oversize_preserve_original) (difference=-1) ... FAIL
+  test_truncation_and_oversize_preserve_original (test_ingestion.IngestionTests.test_truncation_and_oversize_preserve_original) (difference=1) ... FAIL
+test_unicode_and_round_provenance_not_false_label_conflict (test_ingestion.IngestionTests.test_unicode_and_round_provenance_not_false_label_conflict) ... ok
+
+======================================================================
+ERROR: test_download_explicit_pinned_request_and_failed_transfer_cleanup (test_ingestion.IngestionTests.test_download_explicit_pinned_request_and_failed_transfer_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 221, in test_download_explicit_pinned_request_and_failed_transfer_cleanup
+    receipt = ingestion.ingest(**self.arguments)
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 203, in ingest
+    output = private_output(output_dir, policy_root)
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 50, in private_output
+    raise IngestionError("output_not_private")
+normalize_email.IngestionError: output_not_private
+
+======================================================================
+ERROR: test_json_array_loader (test_ingestion.IngestionTests.test_json_array_loader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 103, in test_json_array_loader
+    self.assertEqual(ingestion.ingest(**self.arguments)["unique_rows"], 1)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 203, in ingest
+    output = private_output(output_dir, policy_root)
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 50, in private_output
+    raise IngestionError("output_not_private")
+normalize_email.IngestionError: output_not_private
+
+======================================================================
+ERROR: test_jsonl_dedup_preserves_annotations_and_is_reproducible (test_ingestion.IngestionTests.test_jsonl_dedup_preserves_annotations_and_is_reproducible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 79, in test_jsonl_dedup_preserves_annotations_and_is_reproducible
+    receipt = self.run_json([first, second, third, self.sample(2)])
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 73, in run_json
+    return ingestion.ingest(**self.arguments)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 203, in ingest
+    output = private_output(output_dir, policy_root)
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 50, in private_output
+    raise IngestionError("output_not_private")
+normalize_email.IngestionError: output_not_private
+
+======================================================================
+ERROR: test_mime_alternative_charset_attachment_and_eml_loader (test_ingestion.IngestionTests.test_mime_alternative_charset_attachment_and_eml_loader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 114, in test_mime_alternative_charset_attachment_and_eml_loader
+    self.assertEqual(ingestion.ingest(**self.arguments)["unique_rows"], 1)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 203, in ingest
+    output = private_output(output_dir, policy_root)
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 50, in private_output
+    raise IngestionError("output_not_private")
+normalize_email.IngestionError: output_not_private
+
+======================================================================
+ERROR: test_parquet_actual_pinned_reader (test_ingestion.IngestionTests.test_parquet_actual_pinned_reader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 98, in test_parquet_actual_pinned_reader
+    receipt = ingestion.ingest(**self.arguments)
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 203, in ingest
+    output = private_output(output_dir, policy_root)
+  File "C:\GitHub\FDEmailClassifier\training\scripts\ingest_dataset.py", line 50, in private_output
+    raise IngestionError("output_not_private")
+normalize_email.IngestionError: output_not_private
+
+======================================================================
+FAIL: test_bad_hash_never_reaches_parser_and_rolls_back (test_ingestion.IngestionTests.test_bad_hash_never_reaches_parser_and_rolls_back)
+----------------------------------------------------------------------
+normalize_email.IngestionError: output_not_private
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 151, in test_bad_hash_never_reaches_parser_and_rolls_back
+    with self.assertRaisesRegex(IngestionError, "artifact_checksum_mismatch"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "artifact_checksum_mismatch" does not match "output_not_private"
+
+======================================================================
+FAIL: test_parquet_row_limit_before_decoding_rows (test_ingestion.IngestionTests.test_parquet_row_limit_before_decoding_rows)
+----------------------------------------------------------------------
+normalize_email.IngestionError: output_not_private
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 242, in test_parquet_row_limit_before_decoding_rows
+    with self.assertRaisesRegex(IngestionError, "row_limit"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "row_limit" does not match "output_not_private"
+
+======================================================================
+FAIL: test_receipt_commit_failure_removes_only_owned_new_run (test_ingestion.IngestionTests.test_receipt_commit_failure_removes_only_owned_new_run)
+----------------------------------------------------------------------
+normalize_email.IngestionError: output_not_private
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 251, in test_receipt_commit_failure_removes_only_owned_new_run
+    with patch.object(ingestion.os, "replace", side_effect=OSError("commit failed")), self.assertRaisesRegex(IngestionError, "ingestion_failed"):
+                                                                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "ingestion_failed" does not match "output_not_private"
+
+======================================================================
+FAIL: test_truncation_and_oversize_preserve_original (test_ingestion.IngestionTests.test_truncation_and_oversize_preserve_original) (difference=-1)
+----------------------------------------------------------------------
+normalize_email.IngestionError: output_not_private
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 162, in test_truncation_and_oversize_preserve_original
+    with self.assertRaisesRegex(IngestionError, "artifact_(checksum|size)_mismatch"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "artifact_(checksum|size)_mismatch" does not match "output_not_private"
+
+======================================================================
+FAIL: test_truncation_and_oversize_preserve_original (test_ingestion.IngestionTests.test_truncation_and_oversize_preserve_original) (difference=1)
+----------------------------------------------------------------------
+normalize_email.IngestionError: output_not_private
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\FDEmailClassifier\training\scripts\test_ingestion.py", line 162, in test_truncation_and_oversize_preserve_original
+    with self.assertRaisesRegex(IngestionError, "artifact_(checksum|size)_mismatch"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "artifact_(checksum|size)_mismatch" does not match "output_not_private"
+
+----------------------------------------------------------------------
+Ran 20 tests in 11.871s
+
+FAILED (failures=5, errors=5)
+Synthetic ingestion acceptance failed
+At C:\GitHub\FDEmailClassifier\training\datasets\test-ingestion.ps1:6 char:25
++ ... f($LASTEXITCODE -ne 0){throw 'Synthetic ingestion acceptance failed'}
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Synthetic ingestion acceptance failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Synthetic ingestion acceptance failed

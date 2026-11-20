@@ -1,0 +1,19 @@
+{
+  "schema": "fdec-task-verification/v1",
+  "task_id": "FDEC-009",
+  "outcome": "PASS",
+  "command": "powershell -NoProfile -File training/datasets/test-ingestion.ps1",
+  "monitor_task_id": "c205b471-f2b1-45dc-a0e0-c67237298a29",
+  "exit_code": 0,
+  "ingestion_tests": 20,
+  "allowlist_negative_cases": 23,
+  "python": "3.14.5",
+  "pyarrow": "26.0.1",
+  "real_corpus_downloaded": false,
+  "publication_performed": false,
+  "source_sha": "b7ea834",
+  "criteria": {
+    "AC-01": "PASS",
+    "AC-02": "PASS"
+  }
+}

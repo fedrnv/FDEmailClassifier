@@ -1,0 +1,52 @@
+test_bad_hash_never_reaches_parser_and_rolls_back (test_ingestion.IngestionTests.test_bad_hash_never_reaches_parser_and_rolls_back) ... ok
+test_cli_no_opt_in_and_invalid_arguments_do_not_echo_content (test_ingestion.IngestionTests.test_cli_no_opt_in_and_invalid_arguments_do_not_echo_content) ... ok
+test_download_explicit_pinned_request_and_failed_transfer_cleanup (test_ingestion.IngestionTests.test_download_explicit_pinned_request_and_failed_transfer_cleanup) ... ok
+test_existing_run_and_unignored_repo_output_are_preserved (test_ingestion.IngestionTests.test_existing_run_and_unignored_repo_output_are_preserved) ... ok
+test_html_is_visible_text_only_without_network (test_ingestion.IngestionTests.test_html_is_visible_text_only_without_network) ... ok
+test_invalid_mime_and_content_types_are_static_errors (test_ingestion.IngestionTests.test_invalid_mime_and_content_types_are_static_errors) ... ok
+test_invalid_records_and_parser_failures_rollback_without_content (test_ingestion.IngestionTests.test_invalid_records_and_parser_failures_rollback_without_content) ... ok
+test_json_array_loader (test_ingestion.IngestionTests.test_json_array_loader) ... ok
+test_jsonl_dedup_preserves_annotations_and_is_reproducible (test_ingestion.IngestionTests.test_jsonl_dedup_preserves_annotations_and_is_reproducible) ... ok
+test_mime_alternative_charset_attachment_and_eml_loader (test_ingestion.IngestionTests.test_mime_alternative_charset_attachment_and_eml_loader) ... ok
+test_no_opt_in_has_no_guard_transfer_or_output (test_ingestion.IngestionTests.test_no_opt_in_has_no_guard_transfer_or_output) ... ok
+test_parquet_actual_pinned_reader (test_ingestion.IngestionTests.test_parquet_actual_pinned_reader) ... ok
+test_parquet_row_limit_before_decoding_rows (test_ingestion.IngestionTests.test_parquet_row_limit_before_decoding_rows) ... ok
+test_real_production_audit_blocks_unresolved_source_before_io (test_ingestion.IngestionTests.test_real_production_audit_blocks_unresolved_source_before_io) ... ok
+test_real_repository_ignore_contract (test_ingestion.IngestionTests.test_real_repository_ignore_contract) ... ok
+test_receipt_commit_failure_removes_only_owned_new_run (test_ingestion.IngestionTests.test_receipt_commit_failure_removes_only_owned_new_run) ... ok
+test_redirect_boundary_has_no_network (test_ingestion.IngestionTests.test_redirect_boundary_has_no_network) ... ok
+test_symlinked_output_is_rejected (test_ingestion.IngestionTests.test_symlinked_output_is_rejected) ... ok
+test_truncation_and_oversize_preserve_original (test_ingestion.IngestionTests.test_truncation_and_oversize_preserve_original) ... ok
+test_unicode_and_round_provenance_not_false_label_conflict (test_ingestion.IngestionTests.test_unicode_and_round_provenance_not_false_label_conflict) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 13.914s
+
+OK
+PASS: complete three-source registry valid; pinned scoped seed training/evaluation descriptor only
+PASS: reject MIT-tagged source with unresolved provenance without input mutation
+PASS: reject unknown-license real-mail corpus without input mutation
+PASS: reject unknown source without input mutation
+PASS: reject unapproved revision main without input mutation
+PASS: reject unapproved revision 0000000000000000000000000000000000000000 without input mutation
+PASS: reject unapproved artifact messages.jsonl without input mutation
+PASS: reject unapproved artifact ../outside.parquet without input mutation
+PASS: reject redistribution without input mutation
+PASS: reject general model target without input mutation
+PASS: reject missing target without input mutation
+PASS: reject selection under validate action without input mutation
+PASS: reject missing audit without input mutation
+PASS: reject changed report without input mutation
+PASS: reject changed observations without input mutation
+PASS: reject escaping audit binding without input mutation
+PASS: reject duplicate source without input mutation
+PASS: reject omitted audit source without input mutation
+PASS: reject license substituted in reviewed record without input mutation
+PASS: reject artifact checksum substituted in reviewed record without input mutation
+PASS: reject promoted unresolved record imnim/multiclass-email-classification without input mutation
+PASS: reject promoted unresolved record talby/spamassassin without input mutation
+PASS: reject unknown decision status without input mutation
+PASS: reject malformed manifest without input mutation
+PASS: positive/negative rights admission complete; no corpus download, training or publication
+No broken requirements found.
+PASS: opt-in verified private ingestion, MIME/body normalization, dedup provenance, negative recovery and audited inclusion regression

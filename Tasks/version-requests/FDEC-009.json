@@ -1,0 +1,13 @@
+﻿{
+    "request_id":  "b80c3a49-47c1-4d75-8f07-17aeb0133ffe",
+    "schema":  "fdtasks-version-request/v1",
+    "type":  "task_closed",
+    "epic_id":  "FDEC-EPIC-D002",
+    "work_item_id":  "FDEC-009",
+    "summary":  "Implement opt-in audited private ingestion, MIME normalization and provenance-preserving deduplication",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/verification.md",
+                         "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/result.json",
+                         "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/test-output.txt"
+                     ]
+}

@@ -1,0 +1,17 @@
+﻿{
+    "size":  29757743,
+    "version":  "26.0.1",
+    "license":  "Apache-2.0",
+    "wheel":  "pyarrow-26.0.1-cp314-cp314-win_amd64.whl",
+    "requires_dist":  [
+
+                      ],
+    "schema":  "fdec-training-dependency-pin/v1",
+    "source":  "https://pypi.org/pypi/pyarrow/26.0.1/json",
+    "license_source":  "https://raw.githubusercontent.com/apache/arrow/apache-arrow-26.0.1/LICENSE.txt",
+    "scope":  "Local training preprocessing only; inspect installed notices, no wheel/source redistribution",
+    "observed_at":  "2026-11-20T15:08:01.8391439+00:00",
+    "package":  "pyarrow",
+    "python":  "CPython 3.14 x64",
+    "sha256":  "492dc499097968e51cac46e03e0054c68dd3c5f39d75098343f5ad05ec79f7df"
+}

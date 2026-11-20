@@ -1,0 +1,290 @@
+﻿{
+    "semantic_review":  "accepted",
+    "dependency_revisions":  [
+                                 {
+                                     "sha256":  "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                 },
+                                 {
+                                     "sha256":  "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                 },
+                                 {
+                                     "sha256":  "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                 },
+                                 {
+                                     "sha256":  "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                 },
+                                 {
+                                     "sha256":  "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                 },
+                                 {
+                                     "sha256":  "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                 },
+                                 {
+                                     "sha256":  "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                 },
+                                 {
+                                     "sha256":  "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+                                 },
+                                 {
+                                     "sha256":  "dec705eaa3ff18891e29ef098ded64ca14721d081455941717d19283dbd2caa4",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md"
+                                 },
+                                 {
+                                     "sha256":  "184ae8bf6328b2edd86eedfaf00552b6203383db3a502c4933b52843ea96228c",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T144622540Z-codex-status-changed-bd990490.md"
+                                 },
+                                 {
+                                     "sha256":  "66c1655a359cd8f329b9c13053d808b1d0406a994a2dd4b427047bd264a73507",
+                                     "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145415010Z-codex-readiness-accepted-71d2467a.md"
+                                 },
+                                 {
+                                     "sha256":  "689a153a78bb031fbe517f3276d74af31d2a4a8ce030e876c905579afca7b2af",
+                                     "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145431474Z-codex-work-started-44ca9467.md"
+                                 },
+                                 {
+                                     "sha256":  "d913e92f271183093ad36b2faf31281cad56816c3fdc2a98ce7b7a315a577452",
+                                     "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T145947870Z-codex-readiness-accepted-b274b416.md"
+                                 },
+                                 {
+                                     "sha256":  "3cc332dc22de4aeca8799d21bb1930a4a1fe94f2ea8f8b379eb63e02f947b2d4",
+                                     "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T150200794Z-codex-readiness-accepted-09b51873.md"
+                                 },
+                                 {
+                                     "sha256":  "1524ceca4a5371aef5f1035387dd5df5133dafafcc51006b91699b0f15db7b74",
+                                     "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/events/20261120T150205107Z-codex-status-changed-0e16c3a9.md"
+                                 },
+                                 {
+                                     "sha256":  "e738a0b3d0ac7ea303ced91333328026a483c024fd12441565935593bdec6e30",
+                                     "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/TASK.md"
+                                 }
+                             ],
+    "matrix":  [
+                   {
+                       "id":  "AC-01",
+                       "environment":  "Windows x64, isolated CPython 3.14.5/PyArrow 26.0.1 venv, synthetic messages and temporary audited fixtures; no real corpus",
+                       "level":  "Local training ingestion acceptance",
+                       "scenario":  "Pinned opt-in Parquet/structured/MIME fixtures normalize and deduplicate with retained provenance in private ignored output",
+                       "command":  "powershell -NoProfile -File training/datasets/test-ingestion.ps1",
+                       "expected":  "Deterministic versioned records/receipt with valid hashes; invalid input rejected without data logging or prior artifact mutation",
+                       "criterion_sha256":  "6e081f0fda20c571fb767625517b1b4b4a192fc152b1648c5ce87b156e9b3925"
+                   },
+                   {
+                       "id":  "AC-02",
+                       "environment":  "Windows x64, isolated CPython 3.14.5/PyArrow 26.0.1 venv, synthetic messages and temporary audited fixtures; no real corpus",
+                       "level":  "Local training ingestion acceptance",
+                       "scenario":  "No opt-in, denied rights, corrupt bytes/records/MIME, unsafe output or failed transfer preserve prior state and emit no content",
+                       "command":  "powershell -NoProfile -File training/datasets/test-ingestion.ps1",
+                       "expected":  "Deterministic versioned records/receipt with valid hashes; invalid input rejected without data logging or prior artifact mutation",
+                       "criterion_sha256":  "c7d3094ed07f5f2ff6abe939b929bfea71b9eba341ccdc1309003e5b033f73c2"
+                   }
+               ],
+    "epic_state_evidence":  [
+                                {
+                                    "sha256":  "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                },
+                                {
+                                    "sha256":  "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                },
+                                {
+                                    "sha256":  "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                },
+                                {
+                                    "sha256":  "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                },
+                                {
+                                    "sha256":  "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                },
+                                {
+                                    "sha256":  "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                },
+                                {
+                                    "sha256":  "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+                                },
+                                {
+                                    "sha256":  "dec705eaa3ff18891e29ef098ded64ca14721d081455941717d19283dbd2caa4",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md"
+                                },
+                                {
+                                    "sha256":  "184ae8bf6328b2edd86eedfaf00552b6203383db3a502c4933b52843ea96228c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T144622540Z-codex-status-changed-bd990490.md"
+                                },
+                                {
+                                    "sha256":  "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "184ddb4dcccf4c3076b0d7c63347c1b4531c06f26efad3fa73c8e7c2ac825483",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T145114999Z-codex-status-changed-3a28b4ae.md"
+                                },
+                                {
+                                    "sha256":  "1c7b7892b576268bb453b3a1e96d734c13ce9f7502be88d2b2b433d15c5cfa22",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D003/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "4aaba119f41c17dd4f1b123030fe4a81a90d02582033c755fda1bd948a1a6d51",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D004/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "31cb20c86ad524686f447642ae8a28e02cdd19ea6e28aeac2f9c67afbf5fd957",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D005/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "fa4fdbec6ba6f972e39dbbfaf4e0cea1380456ad65cf1cedac5f4a108c353836",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D006/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c2adaa26a5e9f2e04e75c77db8e37c3206cfb22103379b3e2945af92b4d18ac",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D007/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "11190dd28bd4e21be8ed6c08ac6b2f0da6e8680fecc59441886bd9560a74beb8",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D008/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "36b30c100d29d15a6a043372e4c30bb09736185b689a54a7136f98d29802c9d6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "bc4b4732f70845d2bafb2e5a3b7a7372d2cf895b90f08cafd9fce68ae3c125a3",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T113500Z-project-planning-membership-073.md"
+                                },
+                                {
+                                    "sha256":  "62a2c73f54633e98f167cade6b0c3851bbf7d7c516f2fa0198ad57b9f1b50398",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T114908034Z-codex-membership-replaced-81c55913.md"
+                                },
+                                {
+                                    "sha256":  "71a557c0bafb0c7ec7a58c04c5448858ce77f3e7a34d1ee45d84cc0827b249fb",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D010/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "84f4aaccbbfe7a24df8fa82d72643eeed5a9cd9e588662cdc48bc62f705ecd35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "eab686188a77ef7fbe6cb100d29a83aab34ff419d62d446d328f6e31d6e0d3f6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T105835Z-codex-membership-added-d3a33ce1.md"
+                                },
+                                {
+                                    "sha256":  "5298206a9a687ddc5337b60437e7cf040f86196b393bc7c0969039adea5e2c35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T114907650Z-codex-membership-added-f57a3567.md"
+                                },
+                                {
+                                    "sha256":  "82d1353d8b88c9153581e45357c128d7d50f1bf769e4dcc6f292e9d3cae96dcc",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T120758097Z-codex-membership-added-97e3d59b.md"
+                                },
+                                {
+                                    "sha256":  "7bb74097561c1330923631301de0455b8cb5a1709604ec5677070878722d7871",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T131945683Z-codex-membership-added-237ab6bf.md"
+                                },
+                                {
+                                    "sha256":  "b04d21796230a59aeca36e6d1970aefbfacf1325102d24268dcc51986ffd3f3b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S002/EPIC.md"
+                                }
+                            ],
+    "task_sha256":  "018b7c6ddb969a18d141e7a25840d95e48099c3519712c06fa30d471577eef00",
+    "atomicity":  {
+                      "boundary_reason":  "One ingestion contract; no label mapping, splits, sanitization policy, training or publication",
+                      "outcomes":  [
+                                       "Opt-in verified dataset ingestion with normalized MIME/body extraction and content deduplication"
+                                   ],
+                      "packets":  [
+                                      "Implement and verify one audited private ingestion transaction from pinned artifact to normalized records/receipt"
+                                  ],
+                      "independent_acceptance":  false
+                  },
+    "rule_sources":  [
+                         {
+                             "sha256":  "43d73ff4c10734dcf7e7710ea7982783d622c29cdf6b2897975a432b5ba8034c",
+                             "path":  "AGENTS.md"
+                         },
+                         {
+                             "sha256":  "7de6ccfcacd00f54dbdcd071701ad87ef66c20407d4cb16b73c336526c17e2b8",
+                             "path":  "DEVELOPMENT.md"
+                         },
+                         {
+                             "sha256":  "cf5e70942475a43772dee0472b0ce6d3c3189c71f3981484fa59d8c53d48582d",
+                             "path":  "Tasks/AGENTS.md"
+                         },
+                         {
+                             "sha256":  "3bb61cd71eccd8cd0b57c60771757b69712b8de2a4782694917e7111577f6b7f",
+                             "path":  "Tasks/policy/checkout-identities-076.json"
+                         }
+                     ],
+    "allowed_paths":  [
+                          "training/datasets",
+                          "training/scripts"
+                      ],
+    "migration_revisions":  [
+                                {
+                                    "sha256":  "7a29d1aed1151af360bd478aeaa22b6ce846251b197d4a384894fff1e5b894f0",
+                                    "path":  "Tasks/migrations/FDEC-074.json"
+                                },
+                                {
+                                    "sha256":  "51f18360d853be9e0c3bee90d3f3b694af66f550d4d597276e7b106fe2d87cc9",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "cf631520b8491140e74613ff22a1d504acff888ad5db4b4cc64375027ab6c1d1",
+                                    "path":  "Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/TASK.md"
+                                },
+                                {
+                                    "sha256":  "49c749dc20f419959f65b0fcfe34f139494cc51e8051028de3723bcc4cc25646",
+                                    "path":  "Tasks/items/web/FDEC-075-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "d83d4820c058aa95d0f317ff49657cd52976da2ab82ae300f2b4725df4e7802d",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/events/20261120T114908434Z-codex-superseded-a396e5df.md"
+                                }
+                            ],
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "source_sha":  "b7ea834b15e324df9003a83ff02ee502167d5644",
+    "source_state_algorithm":  "fdec-source-state/v1",
+    "source_state_sha256":  "d5a46dfa0eee62e74e664cedeb736a5f6e6ede5b3f21ba449e6a21fe3916555c",
+    "verification":  [
+
+                     ],
+    "upstream_datasets":  [
+                              {
+                                  "revision":  "e95090f0bb6dae0b05c9cd6db314dcae1d40db3f",
+                                  "card_sha256":  "de69b0adb28d0117105547af1f761bd2220aecab635f4dad429e53e69865c329",
+                                  "id":  "imnim/multiclass-email-classification"
+                              },
+                              {
+                                  "revision":  "8c98baa8b10a1dddd676c860d9e1b86c89141c38",
+                                  "card_sha256":  "2bb851c855d60a96ef3f648bb078afd0d09f280486bdbac0e0a090ec4fa64aaa",
+                                  "id":  "weijianzhg/email-triage-action-seed"
+                              },
+                              {
+                                  "revision":  "a1b3371d2df15575f766c081cb329543955d27f6",
+                                  "card_sha256":  "b96c66b37ef939d6a48db4d52da45def96b2a982afd268c0c91da6eba3f12c1a",
+                                  "id":  "talby/spamassassin"
+                              }
+                          ],
+    "source_observations":  {
+                                "sha256":  "7f12bd82d9803554176c98cab0e8f05b50e4d0b63d59e3d8d5c055731bd0b382",
+                                "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/evidence/source-observations.json"
+                            },
+    "training_dependency":  {
+                                "sha256":  "93359c833e0a80046bb954e5e9a6d79e1444550359087b78e6bf170308c2cabd",
+                                "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/evidence/dependency-pin.json"
+                            }
+}
