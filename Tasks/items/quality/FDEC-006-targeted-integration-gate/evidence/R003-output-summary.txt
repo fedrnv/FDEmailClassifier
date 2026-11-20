@@ -1,0 +1,117 @@
+﻿STAGE: crates/check-bootstrap.ps1
+licenses ok
+PASS: workspace, individual crates, isolated binding, sample, negative inputs and licenses
+STAGE: strict core contract
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+STAGE: schemas/check-schema.ps1
+STAGE: docs/legal/test-governance.ps1
+licenses ok
+PASS: source governance and inventory integrity (distribution requires -ForDistribution)
+PASS: missing/corrupt license, unresolved distribution and unknown approval rejected; input preserved
+licenses ok
+STAGE: scripts/validate_tasks/test-validation.ps1
+PASS: 93 records, immutable history, graph, requests and hosted publication boundary
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: 93 records, immutable history, graph, requests and hosted publication boundary
+PASS: all action entrypoints, stale source, immutable history, dependency readiness, scoped rules, active Epics, requests and hosted boundary
+STAGE: scripts/validate_tasks/test-identity.ps1
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: retained/replacement identities, gate relinking, all admission actions and incomplete/stale/unrelated migration rejection
+STAGE: scripts/validate_tasks/check-adoption.ps1
+PASS: immutable baseline and dispatch admission inputs
+PASS: all five actions reject missing readiness and tampered baseline
+STAGE: scripts/validate_tasks/test-checkout-identities.ps1
+PASS: clean core.autocrlf=true checkout, legacy proof replay and text/binary rejection on a65f26c5dee5ecc23c0c2e7c07eec6cf2e9a25c5
+PASS: clean core.autocrlf=false checkout, legacy proof replay and text/binary rejection on a65f26c5dee5ecc23c0c2e7c07eec6cf2e9a25c5
+STAGE: scripts/validate_tasks/test-reopened-requests.ps1
+PASS: reopen/reclose preserves first request; duplicate, never-closed, fabricated proof, wrong parent and foreign evidence reject
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: valid development Epic first closure and request admitted without allocation
+PASS: reject missing request
+PASS: reject never-closed Epic
+PASS: reject special Epic
+PASS: reject duplicate identity
+PASS: reject missing member request
+PASS: reject omitted member
+PASS: reject unfinished member
+PASS: reject duplicate member
+PASS: reject stale snapshot
+PASS: reject stale source
+PASS: reject wrong candidate tree
+PASS: reject wrong gate identity
+PASS: reject tampered Epic evidence
+PASS: reject foreign verification
+PASS: reject gate mismatch
+PASS: reject failed latest gate
+PASS: reject gate candidate mismatch
+PASS: reject review mismatch
+PASS: reject unfinished new review round
+PASS: reject ChangesRequired review
+PASS: reject ambiguous independent decision
+PASS: reject invalid review schema
+PASS: reject changed tracked implementation
+PASS: reject new implementation
+PASS: reject staged implementation
+PASS: reject release allocation request
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: Epic reopen/reclose retains first request; reclosure needs current proof; no versions allocated
+STAGE: scripts/validate_tasks/test-source-readiness.ps1
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: tracked/staged/deleted/new source invalidates all five actions; renewed current state and task-owned progress admitted
+STAGE: scripts/validate_tasks/test-readiness-events.ps1
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: all five actions require exact latest accepted evidence; missing, alternate, changed, superseded, ambiguous and legacy-only decisions reject
+STAGE: scripts/validate_tasks/test-acceptance-matrix.ps1
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: immutable baseline and claim admission inputs
+PASS: immutable baseline and dispatch admission inputs
+PASS: immutable baseline and resume admission inputs
+PASS: immutable baseline and execute admission inputs
+PASS: immutable baseline and close admission inputs
+PASS: exact complete base/amended criteria admitted; omitted, duplicate, unknown, stale, incomplete and unbound matrices rejected on all five actions
+STAGE: scripts/validate_tasks/test-criterion-refinement.ps1
+PASS: same-ID refinement changes criterion hash; tampered and unknown refinements reject
+PASS: D001 changed-area integration on a65f26c5dee5ecc23c0c2e7c07eec6cf2e9a25c5

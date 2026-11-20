@@ -1,0 +1,14 @@
+﻿{
+    "failed_stage":  "scripts/validate_tasks/test-source-readiness.ps1",
+    "cause":  "Copied historical readiness template lacked the current FDEC-081 S001 membership event; production admission correctly rejected Unbound Epic revision",
+    "candidate_tree":  "f9b174688af4baf77a32add77985c9f5a9a8cd97",
+    "monitor_task_id":  "34522ff0-383f-4eb0-8c7e-2ba227d1833a",
+    "task_id":  "FDEC-006",
+    "command":  "powershell -NoProfile -File scripts/verification/D001.ps1 -ExpectedSource 0a0e247919c5cd6f6259e8aad8ec243f46ce308c",
+    "cleanup":  "Monitor terminal, fixture finally cleanup executed; retain immutable failed attempt evidence",
+    "candidate_sha":  "0a0e247919c5cd6f6259e8aad8ec243f46ce308c",
+    "correction":  "Rebuild exact Epic bindings from each owned fixture snapshot in source/readiness-event/acceptance-matrix test setup; no production admission semantics changed",
+    "schema":  "fdec-gate-attempt/v1",
+    "exit_code":  1,
+    "result":  "FAIL"
+}

@@ -1,0 +1,40 @@
+﻿{
+    "exit_code":  0,
+    "stages":  [
+                   "workspace and individual builds, isolated Python binding, CLI boundaries, fmt",
+                   "Rust schema: four tests",
+                   "JSON Schema: three valid and nine invalid fixtures",
+                   "governance and negative rights checks; both Cargo license graphs",
+                   "shared validation, identity migration and adoption",
+                   "fresh core.autocrlf=true and false checkout identities",
+                   "item and development Epic first-closure request preservation, invalid Epic evidence rejection",
+                   "actual tracked/index/new source state on all five admission actions",
+                   "exact latest accepted readiness event on all five actions",
+                   "complete base/amended AC matrix on all five actions",
+                   "same-ID criterion refinement and tampering rejection",
+                   "README, architecture and preview paths; frozen actual source invariants"
+               ],
+    "monitor_task_id":  "f50a0c20-e090-42bf-8d20-e9d737900b7a",
+    "result":  "PASS",
+    "schema":  "fdec-gate-result/v1",
+    "task_id":  "FDEC-006",
+    "environment":  {
+                        "ajv_cli":  "5.0.0",
+                        "cargo_deny":  "0.20.2",
+                        "powershell":  "5.1",
+                        "node":  "24.22.1",
+                        "git":  "2.45.1.windows.1",
+                        "cargo":  "1.98.0",
+                        "os":  "Windows x86_64 MSVC"
+                    },
+    "negative_source_guard":  "PASS: all-zero SHA rejected before stages",
+    "command":  "powershell -NoProfile -File scripts/verification/D001.ps1 -ExpectedSource a65f26c5dee5ecc23c0c2e7c07eec6cf2e9a25c5",
+    "candidate_sha":  "a65f26c5dee5ecc23c0c2e7c07eec6cf2e9a25c5",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "epic_id":  "FDEC-EPIC-D001",
+    "candidate_tree":  "307b2a2a8e5912f50164d4c679e8fd66c15b4ff7",
+    "attempts":  2,
+    "original_version_request_sha256":  "bad997f4843a2063b0a2884ac1b2173309187c9bf3adc9c3ec1aa363ab8a406b",
+    "failed_attempt":  "R003-attempt-01.json",
+    "fixture_correction":  "Only copied source/readiness/matrix fixture Epic-state bindings changed; production admission unchanged"
+}
