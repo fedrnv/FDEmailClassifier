@@ -1,0 +1,11 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "724eeb61-956f-4fae-b351-e00baa7d73d1",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-004",
+    "summary":  "Enforce offline immutable FDTasks records and shared local admission",
+    "verification":  [
+                         "Tasks/items/foundation/FDEC-004-repository-policy-and-fdtasks-adoption/evidence/verification.md"
+                     ]
+}
