@@ -1,0 +1,16 @@
+﻿{
+    "homepage":  "https://emailclassifier.fedrv.de",
+    "description":  "Open-source multilingual AI email classifier. Rust, Python, C and C++ SDKs planned. Local inference, privacy-first, Apache 2.0 original code.",
+    "topics":  [
+                   "apache-2-0",
+                   "cpp",
+                   "email-classification",
+                   "machine-learning",
+                   "multilingual",
+                   "privacy",
+                   "python",
+                   "qwen3",
+                   "rust"
+               ],
+    "verified_at":  "2026-11-20T11:23:26.2442215Z"
+}

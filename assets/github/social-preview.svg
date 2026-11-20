@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">FDEmailClassifier — local-first email intelligence</title>
+  <desc id="desc">Original project card. Rust core. Multilingual classification. SDKs planned. Early development.</desc>
+  <rect width="1280" height="640" fill="#101d30"/>
+  <rect x="64" y="64" width="1152" height="512" rx="28" fill="#162a43" stroke="#315371" stroke-width="2"/>
+  <rect x="100" y="104" width="260" height="42" rx="21" fill="#24495b"/>
+  <text x="230" y="132" text-anchor="middle" fill="#a5f1db" font-family="Arial, sans-serif" font-size="18" font-weight="bold" letter-spacing="2">EARLY DEVELOPMENT</text>
+  <text x="100" y="239" fill="#f4f8fc" font-family="Arial, sans-serif" font-size="64" font-weight="bold">FDEmailClassifier</text>
+  <text x="102" y="302" fill="#96e8d1" font-family="Arial, sans-serif" font-size="32">Local-first. Privacy by design.</text>
+  <text x="102" y="363" fill="#c0d1e3" font-family="Arial, sans-serif" font-size="25">Multilingual email classification • Rust core</text>
+  <path d="M102 408H818" stroke="#315371" stroke-width="2"/>
+  <text x="102" y="456" fill="#c0d1e3" font-family="Arial, sans-serif" font-size="22">Planned SDKs: Rust / C / C++ / Python</text>
+  <text x="102" y="512" fill="#8ca8c3" font-family="Arial, sans-serif" font-size="21">Open source · Original code: Apache-2.0</text>
+  <g transform="translate(959 340)">
+    <rect width="170" height="124" rx="16" fill="#1e3d56" stroke="#96e8d1" stroke-width="4"/>
+    <path d="M5 8L85 67L165 8M5 116L57 66M165 116L113 66" fill="none" stroke="#96e8d1" stroke-width="4"/>
+    <circle cx="151" cy="119" r="32" fill="#96e8d1"/>
+    <path d="M137 119L147 129L166 109" fill="none" stroke="#162a43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

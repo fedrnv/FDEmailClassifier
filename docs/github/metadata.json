@@ -1,0 +1,8 @@
+{
+  "repository": "fedrnv/FDEmailClassifier",
+  "description": "Open-source multilingual AI email classifier. Rust, Python, C and C++ SDKs planned. Local inference, privacy-first, Apache 2.0 original code.",
+  "homepage": "https://emailclassifier.fedrv.de",
+  "topics": ["rust", "email-classification", "machine-learning", "qwen3", "multilingual", "python", "cpp", "privacy", "apache-2-0"],
+  "website_status": "planned",
+  "social_preview": "assets/github/social-preview.png"
+}
