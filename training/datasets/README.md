@@ -28,3 +28,7 @@ reviewed audit and updated binding, not an unchecked inclusion switch.
 
 See [the source-specific audit](../../docs/legal/datasets/audit-2026-11-20.md).
 Run `test-allowlist.ps1` for metadata-only positive/negative acceptance fixtures.
+
+FDEC-009's [opt-in ingestion](INGESTION.md) consumes this guard before transfer or
+parsing, verifies artifact bytes, normalizes MIME/body text and preserves duplicate
+annotations in ignored private runs. It does not broaden any rights decision.

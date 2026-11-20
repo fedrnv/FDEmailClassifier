@@ -1,0 +1,2 @@
+# Verified Windows x64 CPython 3.14 training environment; no source builds.
+pyarrow==26.0.1 --hash=sha256:492dc499097968e51cac46e03e0054c68dd3c5f39d75098343f5ad05ec79f7df
