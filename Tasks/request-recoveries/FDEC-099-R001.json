@@ -1,0 +1,37 @@
+﻿{
+    "correction_id":  "FDEC-100",
+    "expected_type":  "correction_closed",
+    "request":  {
+                    "sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c",
+                    "path":  "Tasks/version-requests/FDEC-099.json"
+                },
+    "governing_spec":  {
+                           "sha256":  "407dd1163b3a8423bf7ae235d373f6604eabf7103a8f981d07d38827446740fc",
+                           "path":  "Tasks/items/governance/FDEC-100-recover-rejected-closure-request/TASK.md"
+                       },
+    "first_closure":  {
+                          "sha256":  "d0d276dd8fd56424e95e05491e90097f4a1111ef69ae18ff04865b83e63a3023",
+                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/events/20261120T194141005Z-codex-status-changed-8740251b.md"
+                      },
+    "schema":  "fdec-rejected-request-recovery/v1",
+    "closure_proof":  {
+                          "sha256":  "2bc30a2e0f1f2e3a91b6fbf54620c94ebc206c90c3f7b455dbec7f2652a445d3",
+                          "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/closure-readiness-v1.json"
+                      },
+    "contract":  {
+                     "sha256":  "94807329818f2cc02f6f31af8aa543640620f73235850a734c53da26d825ee4d",
+                     "path":  "Tasks/policy/rejected-request-recovery-1.0.md"
+                 },
+    "reason":  "The rejected, never allocated first request used task_closed for an immutable Correction. Preserve every original byte/identity and derive only the matching effective type through an explicit audited recovery.",
+    "source_sha":  "65a44ee8db230cd32effeb678fc56062e2045e57",
+    "spec":  {
+                 "sha256":  "4dab7fbe3695aae5a4398d32e2e3a90aefc94edd303a0d06df371c1d7b8c5592",
+                 "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/TASK.md"
+             },
+    "recovery_id":  "FDEC-099-R001",
+    "rejection":  {
+                      "sha256":  "8ec5ffa64d7f0343d531a448d946b82f13999b6fbc5b8899d0f553644145351a",
+                      "path":  "Tasks/items/quality/FDEC-099-reconcile-d002-effective-outcome/evidence/post-closure-rejection-v1.json"
+                  },
+    "adoption_event":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T194918165Z-codex-scope-amended-25997029.md"
+}

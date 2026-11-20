@@ -4,6 +4,7 @@ $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/identity.ps1"
 . "$PSScriptRoot/epic-closure.ps1"
 . "$PSScriptRoot/identity-migrations.ps1"
+. "$PSScriptRoot/request-recovery.ps1"
 function Field($text, $key) {
     $match = [regex]::Match($text, "(?m)^$([regex]::Escape($key)): ([^\r\n]+)")
     if (!$match.Success) { throw "Missing field: $key" }
@@ -26,7 +27,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Git baseline unavailable' }
 $changes = @(git -C $Root -c core.quotepath=false diff --name-status HEAD -- Tasks)
 if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect immutable history' }
 foreach ($line in $changes) {
-    if ($line -match '^[MDRCTU]' -and $line -match '(TASK\.md|EPIC\.md|/events/|/evidence/|/reviews/|/decisions/|/version-requests/|/policy/|/migrations/)') { throw "Immutable record changed: $line" }
+    if ($line -match '^[MDRCTU]' -and $line -match '(TASK\.md|EPIC\.md|/events/|/evidence/|/reviews/|/decisions/|/version-requests/|/request-recoveries/|/policy/|/migrations/)') { throw "Immutable record changed: $line" }
 }
 $retiredPaths=@{}; $resolutions=@()
 if (Test-Path "$Root/Tasks/migrations") {
@@ -154,11 +155,13 @@ if ($active.Count -gt 1) { throw 'Multiple active development Epics' }
 foreach ($special in 'FDEC-EPIC-S001','FDEC-EPIC-S002') { if (!$records.ContainsKey($special) -or $records[$special].status -ne 'Active') { throw 'Special Epic must remain Active' } }
 $requests=@{}; $closed=@{}
 $requestFiles=@(Get-ChildItem "$Root/Tasks/version-requests" -Filter '*.json' -ErrorAction SilentlyContinue)
-$requestBodies=@($requestFiles | ForEach-Object { Get-Content $_.FullName -Raw | ConvertFrom-Json })
+$requestEntries=@(Get-ResolvedClosureRequests $rootPath $records $requestFiles $gitHead)
+$requestBodies=@($requestEntries | ForEach-Object {$_.request})
 if (@($requestBodies | Group-Object request_id | Where-Object Count -GT 1).Count) { throw 'Invalid or duplicate version request' }
 if (@($requestBodies | Group-Object work_item_id | Where-Object Count -GT 1).Count) { throw 'Invalid closed item request' }
-foreach ($file in $requestFiles) {
-    $r=Get-Content $file.FullName -Raw | ConvertFrom-Json
+foreach ($entry in $requestEntries) {
+    $file=$entry.file
+    $r=$entry.request
     if ($r.schema -ne 'fdtasks-version-request/v1' -or !$r.request_id -or $requests.ContainsKey($r.request_id) -or !$r.summary -or !$r.verification) { throw 'Invalid or duplicate version request' }
     $requests[$r.request_id]=$true
     if ($r.type -eq 'epic_closed') {

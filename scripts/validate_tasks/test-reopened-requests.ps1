@@ -1,5 +1,6 @@
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
+. "$PSScriptRoot/fixture-matrix.ps1"
 $records=& "$PSScriptRoot/repository.ps1" -Root $root -AsObject
 if ($records['FDEC-006'].status -notin 'Planned','InProgress','Done' -or !$records['FDEC-006'].closure_history.Count) { throw 'Expected gate closure history' }
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-reopen-'+[guid]::NewGuid())
@@ -47,7 +48,7 @@ server_revision: null
 ---
 Add FDEC-999 as a synthetic fixture member only.
 '@|Set-Content "$temp/Tasks/epics/FDEC-EPIC-S001/events/fixture-member.md" -Encoding UTF8
-    git -C $temp init --quiet
+    Initialize-FixtureHistory $temp $root
     git -C $temp add .
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture
     if($LASTEXITCODE -ne 0){throw 'Fixture baseline failed'}

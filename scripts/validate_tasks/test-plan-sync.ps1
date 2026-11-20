@@ -50,7 +50,7 @@ try{
     Remove-Item -LiteralPath $owned -Recurse -Force
     $null=New-Item -ItemType Directory $owned
     Remove-Item -LiteralPath "$temp/Tasks/version-requests/FDEC-088.json" -ErrorAction SilentlyContinue
-    git -C $temp init --quiet
+    Initialize-FixtureHistory $temp $root
     git -C $temp config core.autocrlf false
     git -C $temp add AGENTS.md DEVELOPMENT.md Tasks/version-requests
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture

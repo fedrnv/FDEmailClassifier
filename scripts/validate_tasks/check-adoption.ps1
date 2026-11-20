@@ -1,5 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path "$PSScriptRoot/../..").Path
+. "$PSScriptRoot/fixture-matrix.ps1"
 & "$PSScriptRoot/admission.ps1" -Root $root
 $temp = Join-Path ([IO.Path]::GetTempPath()) ('fdec-adoption-' + [guid]::NewGuid())
 try {
@@ -8,7 +9,7 @@ try {
     Copy-Item "$root/AGENTS.md", "$root/DEVELOPMENT.md" $temp
     # This fixture deliberately has no ready decision for FDEC-001.
     Remove-Item -LiteralPath "$temp/Tasks/items/foundation/FDEC-001-open-source-governance/evidence/readiness.json" -ErrorAction SilentlyContinue
-    git -C $temp init --quiet
+    Initialize-FixtureHistory $temp $root
     git -C $temp add .
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture
     if ($LASTEXITCODE -ne 0) { throw 'Cannot create fixture baseline' }

@@ -33,7 +33,7 @@ try {
         }
     }
     Remove-Item -LiteralPath "$temp/Tasks/version-requests/FDEC-006.json" -ErrorAction SilentlyContinue
-    git -C $temp init --quiet
+    Initialize-FixtureHistory $temp $root
     git -C $temp config core.autocrlf false
     git -C $temp add .
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture

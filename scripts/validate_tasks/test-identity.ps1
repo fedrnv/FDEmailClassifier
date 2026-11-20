@@ -39,7 +39,7 @@ Planned -> Blocked.
     Remove-Item -LiteralPath "$temp/Tasks/version-requests/FDEC-072.json" -ErrorAction SilentlyContinue
     # Synthetic candidate files remain untracked here to exercise semantic hash
     # rejection separately from the immutable-history tests in test-validation.
-    git -C $temp init --quiet
+    Initialize-FixtureHistory $temp $root
     git -C $temp add AGENTS.md DEVELOPMENT.md Tasks/version-requests
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture
     if ($LASTEXITCODE -ne 0) { throw 'Fixture initialization failed' }

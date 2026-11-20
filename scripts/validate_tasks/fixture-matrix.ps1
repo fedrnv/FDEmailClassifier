@@ -1,4 +1,18 @@
 # Synthetic fixture authoring only; this does not claim real task acceptance.
+function Initialize-FixtureHistory([string]$Root,[string]$Source) {
+    # Historical source bindings in copied Tasks require their actual ancestry.
+    # Use a local fetch, not invented commits or a production validation bypass.
+    $absolute=[IO.Path]::GetFullPath($Root)
+    $parent=[IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\')+'\'
+    if(!$absolute.StartsWith($parent,[StringComparison]::OrdinalIgnoreCase) -or !(Split-Path $absolute -Leaf).StartsWith('fdec-') -or $absolute -eq [IO.Path]::GetFullPath($Source)){throw 'Unsafe fixture history target'}
+    git -C $absolute init --quiet
+    if($LASTEXITCODE -ne 0){throw 'Fixture Git initialization failed'}
+    git -C $absolute fetch --quiet --no-tags -- $Source HEAD
+    if($LASTEXITCODE -ne 0){throw 'Fixture local history fetch failed'}
+    git -C $absolute reset --soft FETCH_HEAD
+    if($LASTEXITCODE -ne 0){throw 'Fixture history initialization failed'}
+    if(Test-Path (Join-Path $Source '.gitattributes')){Copy-Item -LiteralPath (Join-Path $Source '.gitattributes') -Destination (Join-Path $absolute '.gitattributes')}
+}
 . "$PSScriptRoot/acceptance-matrix.ps1"
 . "$PSScriptRoot/identity-migrations.ps1"
 function New-FixtureMigrationBindings([string]$Root) {

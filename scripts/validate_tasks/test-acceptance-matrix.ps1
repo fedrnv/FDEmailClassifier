@@ -25,7 +25,7 @@ try{
     if(!$owned.StartsWith([IO.Path]::GetFullPath($temp)+[IO.Path]::DirectorySeparatorChar)){throw 'Unsafe fixture reset'}
     Remove-Item -LiteralPath $owned -Recurse -Force
     Remove-Item -LiteralPath "$temp/Tasks/version-requests/FDEC-005.json"
-    git -C $temp init --quiet
+    Initialize-FixtureHistory $temp $root
     git -C $temp add .
     git -C $temp -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m fixture
     if($LASTEXITCODE -ne 0){throw 'Fixture baseline failed'}
