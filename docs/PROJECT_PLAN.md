@@ -1,0 +1,3 @@
+# FDEmailClassifier delivery plan
+
+10 development Epics (D001–D010), sequential by default under one-active-Epic FDTasks v5.6 policy. Each has up to six functional items, a targeted local integration gate and independent review. D001 foundation; D002 lawful datasets; D003 training/evaluation; D004 inference; D005 language SDKs; D006 optional server; D007 privacy/quality; D008 public FDUpdate/GitHub release; D009 website; D010 community and beta. S001/S002 remain permanently open. No code, dataset or weights are represented as completed merely by these plans. Core output is 12 multi-label categories with separate priority/security/action and language confidence reporting. No full quality guarantee across all 119 languages without benchmark evidence. 

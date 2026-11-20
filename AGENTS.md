@@ -1,0 +1,3 @@
+# FDEmailClassifier agent rules
+
+Follow the [FDTasks v5.6 normative lifecycle](https://github.com/fedrnv/FDTasks/blob/main/Tasks/tasks_file_structure_v5_6.md), this repository's DEVELOPMENT.md, and each immutable Tasks/items/<area>/<ID>/TASK.md. New Epics D001+, process S001, isolated maintenance S002. Only one development Epic active at a time. Every Task has a narrowly bounded single outcome and local AC-to-test matrix. All hosted Actions are workflow_dispatch only and may build/package/publish but never run acceptance or integration tests. No model/dataset redistribution without a documented license audit. Public code/documentation in English. No credentials, email bodies, secrets or private training data in git. Do not alter accepted tasks; append events.

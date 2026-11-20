@@ -1,0 +1,16 @@
+/target/
+/.venv/
+__pycache__/
+*.pyc
+/training/data/
+/training/outputs/
+/models/downloads/
+/models/checkpoints/
+/Tasks/generated/
+.env
+.env.*
+!.env.example
+*.gguf
+*.safetensors
+*.onnx
+*.log
