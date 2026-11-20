@@ -1,0 +1,1 @@
+{"build":"fresh-cmake-cpu-static-completion; not a redistributed runtime","cmake_cache_sha256":"1744405e5b006efdbe2918b9afdcaac5414dc70b9d56676a252aead5c340bc2b","executable_relative":"build/bin/Release/llama-completion.exe","executable_sha256":"5e4a2acbbad532f5f29f2564eb25901a6ebce9039bc096fd4eb6e3c8a8d44ac2","source_revision":"29b52d398b294509746ec0a3f28948a3107c0213"}

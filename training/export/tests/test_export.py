@@ -144,7 +144,7 @@ class ExportTests(unittest.TestCase):
         import os
         import runtime_load
         build_dir=self.base/"private-build"
-        name="llama-cli.exe" if os.name=="nt" else "llama-cli"
+        name="llama-completion.exe" if os.name=="nt" else "llama-completion"
         def compile_double(command, **kwargs):
             if "--build" in command:
                 executable=build_dir/"bin"/name

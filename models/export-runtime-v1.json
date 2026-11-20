@@ -38,5 +38,6 @@
     }
   ],
   "trained_model_export_verified": false,
-  "weight_redistribution_approved": false
+  "weight_redistribution_approved": false,
+  "observation_hash_scope": "UTF-8 text with LF newlines; no BOM"
 }

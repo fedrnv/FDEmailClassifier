@@ -18,6 +18,10 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True, parser_class=Parser)
     software = commands.add_parser("software-check")
     software.add_argument("--output-dir", required=True)
+    model_check = commands.add_parser("software-model-check")
+    model_check.add_argument("--output-dir", required=True)
+    model_check.add_argument("--llama-cpp-dir", required=True)
+    model_check.add_argument("--reuse-observed-build", action="store_true")
     verify = commands.add_parser("verify")
     verify.add_argument("--candidate-dir", required=True)
     export = commands.add_parser("export")
@@ -42,6 +46,12 @@ def main(argv=None):
                 write_json(directory / "sbom.cdx.json", sbom(directory))
             candidate(args.output_dir, build=build, context=dict(kind="technical-container-fixture", actual_trained_model_used=False, model_runtime_load_verified=False), current_check=lambda: None)
             print(json.dumps(dict(scope="technical-container-fixture-only", actual_trained_model_used=False, model_inference_roundtrip_verified=False, format_roundtrips=report)))
+        elif args.command == "software-model-check":
+            from tiny_model_check import run as check_model
+            from local_model import quiet_runtime
+            with quiet_runtime():
+                report = check_model(args.output_dir, args.llama_cpp_dir, reuse_observed_build=args.reuse_observed_build)
+            print(json.dumps(dict(scope="technical-random-model-only",actual_trained_model_used=False,actual_model_training=False,model_inference_roundtrip_verified=report["model_inference_roundtrip_verified"])))
         elif args.command == "verify":
             # No unsigned real model candidate can pass; fixture verification
             # does not grant any real training/model redistribution permission.

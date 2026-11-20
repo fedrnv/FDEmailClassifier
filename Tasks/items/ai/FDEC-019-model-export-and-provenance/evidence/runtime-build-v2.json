@@ -1,0 +1,1 @@
+{"build":"fresh-cmake-cpu-static-cli; not a redistributed runtime","cmake_cache_sha256":"3d650caf806250b3f2ae49dc7a0642d455eb3768e199f48d107c70eb8e377568","executable_relative":"build/bin/Release/llama-cli.exe","executable_sha256":"ede219d0ad3a98a33964bb3febfb38e1e19bd9c927940de9959abf87251cb840","source_revision":"29b52d398b294509746ec0a3f28948a3107c0213"}

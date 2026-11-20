@@ -1,0 +1,18 @@
+{
+  "schema": "fdec-export-tooling-supplement/v1",
+  "name": "sentencepiece",
+  "version": "0.2.3",
+  "filename": "sentencepiece-0.2.3-cp314-cp314-win_amd64.whl",
+  "url": "https://files.pythonhosted.org/packages/10/5f/54ded99266afba048f53d7cd0f6383178172415005dff5f298cb13786145/sentencepiece-0.2.3-cp314-cp314-win_amd64.whl",
+  "metadata_url": "https://pypi.org/pypi/sentencepiece/0.2.3/json",
+  "size": 1774639,
+  "sha256": "0d1235ccd36c3e8c2021355258b47866c694a55003a89f00701c513eac1aef06",
+  "license": "Apache-2.0",
+  "license_supplement": {
+    "url": "https://raw.githubusercontent.com/google/sentencepiece/eafd99cf3b8bfa5101c2c5f42aab2cc39947938d/LICENSE",
+    "source_revision": "eafd99cf3b8bfa5101c2c5f42aab2cc39947938d",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "size": 11358
+  },
+  "scope": "local converter dependency only; official version notice retained outside wheel; no model training or redistribution approval"
+}

@@ -1,11 +1,13 @@
 # Private model export and weight-release admission
 
-FDEC-019 is incomplete. Real numerical safetensors/GGUF containers round-trip in
-local tests. Actual trained Qwen checkpoint export, CPU PEFT reload/merge and
-llama.cpp model load/probe have not run. No trained checkpoint, complete independent
-training provenance, verified model-runtime result or weight-redistribution audit is
-available in this checkout. Container tests and counterfactual policies do not
-satisfy the remaining original model-conversion/load acceptance obligation.
+The exporter supports private PEFT float32 LoRA, F16 base GGUF, F16 GGUF LoRA and
+F16 merged GGUF with integrity/provenance metadata and a separate default-deny
+weight-release gate. Local acceptance uses a complete tiny randomly initialized
+Qwen3: real PEFT save/reload/merge, real upstream conversion and real llama.cpp
+load/inference. This is the original task's synthetic-fixture acceptance scope.
+No email training, pretrained tensor download, actual trained-classifier quality
+or public weight clearance is established. FDEC-015/FDEC-016 retain their separate
+real-data/training acceptance obligations.
 
 ## Local tooling and numerical checks
 
@@ -16,12 +18,20 @@ ignored `.venv/export` was installed offline with no dependency/index resolution
 the ingestion/training environments are unchanged. gguf 0.19.0 and safetensors
 0.8.0 null PyPI license fields were resolved using their wheel MIT/Apache-2.0
 license files for local use. This does not approve wheel/runtime redistribution.
-No Torch/Transformers/PEFT runtime or model tensors were installed/downloaded.
+The optional model-check profile adds audited Torch/Transformers/PEFT tooling,
+their dependencies and sentencepiece (49 pinned wheels total), plus published
+tokenizer metadata. No pretrained tensors or email datasets are downloaded.
 On a fresh Windows CPython 3.14 amd64 checkout, run
 `python training/export/bootstrap.py --opt-in` to materialize the exact previously
 audited wheels and official schema hashes, then install the isolated offline
 environment. Existing files/environments are preserved; package mismatches reject
 when the runtime is used. Other platforms require their own wheel audit/lock.
+Use `--model-check` to install the larger numerical-model-check profile into the
+isolated export environment. All installation is offline after hash-verified
+acquisition. The tokenizers and sentencepiece wheels omit their license files;
+exact official version-tag LICENSE supplements establish local-use permission.
+The failed initial audits and successor observations are retained. Runtime or
+tokenizer redistribution is not approved by this tooling review.
 
 ```powershell
 powershell -NoProfile -File training/export/test-export.ps1
@@ -35,6 +45,27 @@ safetensors, writes/reads real GGUF Qwen3 LoRA-format metadata/tensors and check
 the values. This is a container-level check: the two-tensor fixture is not a
 complete loadable classifier. Its signed/unsigned manifest kind is exclusively
 `technical-container-fixture`; the release gate always rejects this kind.
+
+For the full model check, prepare the exact clean upstream converter checkout
+using the task's `fetch-converter-source-v1.py` acquisition helper, then run:
+
+```powershell
+python training/export/bootstrap.py --opt-in --model-check
+powershell -NoProfile -File training/export/test-model-export.ps1 `
+  -OutputDirectory C:/GitHub/FDEmailClassifier/training/outputs/numerical-model-run-001
+```
+
+The full fixture has one Qwen3 layer, hidden size 32, rank-2 LoRA, deterministic
+random numerical tensors and a fixed numeric-token probe. It does not run an
+optimizer or use email/category gold. It copies hash-verified published tokenizer,
+chat template and Apache LICENSE metadata, creates all four variants, model cards,
+dataset manifest and SBOM, then verifies the actual artifact inventory and real
+registry release denial. The numeric HF probe checks adapter reload and merge
+tolerance; the GGUF runtime checks exact agreement of two generated tokens for
+base+LoRA versus merged F16. This is not full-logit or task-quality equivalence.
+The optional `-ReuseObservedBuild` accepts only the fixed locally observed build
+path and exact recorded binary/source identities; otherwise it builds afresh.
+No arbitrary executable is accepted. Weights stay in ignored private output.
 
 The actual [GGUF Python package](https://github.com/ggml-org/llama.cpp/tree/29b52d398b294509746ec0a3f28948a3107c0213/gguf-py)
 is used rather than a private format imitation. Offline cached AJV validates the
@@ -72,8 +103,9 @@ python training/export/export_cli.py export --opt-in `
 ```
 
 This uses a prepared interpreter matching the export tool profile plus Torch
-2.15.0, Transformers 5.23.0 and PEFT 0.22.0. Those three packages and the full
-trained-model path are unverified here. Export is CPU-based and can need multiple
+2.15.0, Transformers 5.23.0 and PEFT 0.22.0. These versions passed the complete
+random-tensor model check; no real trained checkpoint is available here.
+Export is CPU-based and can need multiple
 gigabytes of memory and temporary disk. No runtime/model auto-install, Hub download,
 host provisioning, Mac transition or upload exists in the exporter.
 
@@ -109,13 +141,18 @@ classifier quality. Captured model output is never logged; only a hash is retain
 These checks are implemented but have not run with actual trained weights.
 
 The exporter builds the exact clean pinned llama.cpp source in a new private
-owned temporary directory, CPU-only, with curl/tests disabled and only the CLI
-target selected. It rechecks the source before/after the build, records the binary
+owned temporary directory, CPU-only, with curl/tests disabled and only the
+completion target selected. It rechecks the source before/after the build, records the binary
 and CMake-cache hashes, and rechecks binary identity before each probe and after
 completion. No arbitrary executable flag or extra operator build-approval flow
 exists. Build output is not distributed and is cleaned up only under the verified
-temporary path. CMake/compiler availability and actual compilation are unverified
-here; software tests use an explicitly labeled build-process protocol double.
+temporary path. Actual compilation passed in the Windows MSVC 2022 build,
+followed by complete numerical-model load acceptance.
+Protocol unit tests separately use a labeled process double. An older MinGW build
+failed on Windows SDK thread-power types; that failed attempt is retained and no
+pinned source was patched. The pinned version's interactive `llama-cli` rejects
+`--no-conversation`; the production probe uses its supported `llama-completion`
+target. Fresh builds require CMake and a compatible compiler (MSVC 2022 on Windows).
 
 Candidates are new private/ignored directories. File hashes and context are HMAC
 bound; the checksum receipt is written last. Failed build/authority checks roll
@@ -149,5 +186,6 @@ Even a successful gate returns only `eligible_for_operator_review: true`,
 `published: false`. Separate explicit operator authorization is still required for
 any later public publication. Counterfactual test policies are isolated outside
 the real registry and confer no actual permission. No real entry or legal evidence
-claiming cleared weights has been added. FDEC-019 remains open until actual
-trained-model export/load and the original acceptance scope can be demonstrated.
+claiming cleared weights has been added. A successful numerical-model check
+demonstrates export software acceptance only. Actual trained weights require
+current independent provenance and the complete separate release audit.
