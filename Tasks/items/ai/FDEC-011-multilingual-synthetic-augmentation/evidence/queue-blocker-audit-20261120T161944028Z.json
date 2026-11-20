@@ -1,0 +1,54 @@
+﻿{
+    "resource_status":  "No pending own command or data-generation job; latest test handles were terminal. Unrelated .idea preserved.",
+    "source_admission":  {
+                             "pack_id":  "codex-fixture-v1",
+                             "requested_purpose":  "commercial_training",
+                             "allowed_purposes":  [
+                                                      "software_fixture"
+                                                  ],
+                             "actual_result":  "template_training_rights_not_approved"
+                         },
+    "current_state":  {
+                          "active_development_epic":  "FDEC-EPIC-D002",
+                          "next_epic_dependency":  "FDEC-EPIC-D002",
+                          "FDEC012":  "Done",
+                          "eligible_items":  [
+
+                                             ],
+                          "FDEC011":  "Blocked",
+                          "unfinished_special_items":  [
+
+                                                       ],
+                          "gate013_unfinished_dependencies":  [
+                                                                  "FDEC-011"
+                                                              ],
+                          "gate014_dependency":  "FDEC-013"
+                      },
+    "goal_decision":  "blocked after third consecutive observation of the same external-input condition and exhaustion of independent ready items; objective not complete",
+    "resume_action":  "Inspect the supplied source/permission evidence, retain exact authorship, audit and pin the suitable pack, refresh FDEC-011 readiness and verify intended-purpose admission before full task acceptance; then run D002 gate and independent review in separate turns",
+    "blocker_occurrences":  [
+                                "FDEC-011 implementation checkpoint: required source rights unresolved",
+                                "FDEC-012 completion: independent work finished, FDEC-011 rights still unresolved",
+                                "Current continuation: no eligible item remains; source admission still rejects training"
+                            ],
+    "schema":  "fdec-goal-blocker-audit/v1",
+    "task_id":  "FDEC-011",
+    "source_sha":  "38ae512a4ed7a782da91224c16f534552b25a8e9",
+    "required_input":  "A suitable documented synthetic parallel source with rights applicable to intended training and public/commercial model distribution, or applicable provider-specific permission. No real personal mail or credentials.",
+    "evidence":  [
+                     {
+                         "sha256":  "cd06f5b87439bf92bf1a78e529183b8dbb28382b60f2ee48266fef0c0dd38827",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/blocker.json"
+                     },
+                     {
+                         "sha256":  "5d8aee1aa30bff8e95b4c3cbf242b1c1315316c38d32f7289367512d0c8d9137",
+                         "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/checkpoint.json"
+                     },
+                     {
+                         "sha256":  "9cc961b461ef3a50e7f85a70418509a7fe1dc1bbeedacee185d6a2f8f1823ebf",
+                         "path":  "training/config/augmentation-sources-v1.json"
+                     }
+                 ],
+    "previous_goal_turn":  "progress: FDEC-012 implemented, verified and closed at 38ae512",
+    "checked_at":  "2026-11-20T16:19:44.0281136+00:00"
+}
