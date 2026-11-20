@@ -36,7 +36,9 @@ def git(args, cwd):
 
 
 def private_output(path, policy_root):
-    path = reject_links(path)
+    # Resolve existing ancestors (including Windows 8.3 aliases) only after
+    # rejecting links, so Git's canonical root and this path share spelling.
+    path = reject_links(path).resolve()
     if path.exists():
         raise IngestionError("output_already_exists")
     parent = path.parent
