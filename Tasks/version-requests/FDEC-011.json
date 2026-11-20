@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "d8c01226-c9fa-41d9-add8-6268b9f6c716",
+    "type":  "task_closed",
+    "work_item_id":  "FDEC-011",
+    "epic_id":  "FDEC-EPIC-D002",
+    "summary":  "Verify multilingual fixture-only augmentation and conditional independent-source preparation with unchanged rights and leakage protections",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/verification-v13.md",
+                         "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/result-v13.json",
+                         "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/test-output-v13.txt"
+                     ]
+}

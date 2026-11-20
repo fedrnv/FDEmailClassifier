@@ -1,0 +1,173 @@
+test_aggregate_counts_only_fill_measured_deficit_and_zero_is_explicit (test_augmentation.AugmentationTests.test_aggregate_counts_only_fill_measured_deficit_and_zero_is_explicit) ... ok
+test_capsule_tampering_and_real_text_never_reaches_output (test_augmentation.AugmentationTests.test_capsule_tampering_and_real_text_never_reaches_output) ... ok
+test_catalog_rejects_contacts_external_hosts_and_incomplete_translations (test_augmentation.AugmentationTests.test_catalog_rejects_contacts_external_hosts_and_incomplete_translations) ... ok
+test_cli_reports_only_counts_and_static_errors (test_augmentation.AugmentationTests.test_cli_reports_only_counts_and_static_errors) ... ok
+test_duplicate_translation_outputs_and_empty_source_slice_reject (test_augmentation.AugmentationTests.test_duplicate_translation_outputs_and_empty_source_slice_reject) ... ok
+test_existing_unignored_and_linked_outputs_are_preserved (test_augmentation.AugmentationTests.test_existing_unignored_and_linked_outputs_are_preserved) ... ok
+test_failed_final_receipt_removes_only_owned_new_run (test_augmentation.AugmentationTests.test_failed_final_receipt_removes_only_owned_new_run) ... ok
+test_invalid_capsule_files_and_duplicate_keys (test_augmentation.AugmentationTests.test_invalid_capsule_files_and_duplicate_keys) ... ok
+test_invalid_quota_inputs_preserve_original_state (test_augmentation.AugmentationTests.test_invalid_quota_inputs_preserve_original_state) ... ok
+test_mapping_bridge_uses_actual_annotation_artifact_hash (test_augmentation.AugmentationTests.test_mapping_bridge_uses_actual_annotation_artifact_hash) ... ok
+test_no_network_calls_during_generation_or_translation (test_augmentation.AugmentationTests.test_no_network_calls_during_generation_or_translation) ... ok
+test_no_opt_in_does_not_load_rights_or_create_output (test_augmentation.AugmentationTests.test_no_opt_in_does_not_load_rights_or_create_output) ... ok
+test_partial_stream_write_rollback_and_input_preservation (test_augmentation.AugmentationTests.test_partial_stream_write_rollback_and_input_preservation) ... ok
+test_pinned_registry_audit_and_catalog_reject_mutation (test_augmentation.AugmentationTests.test_pinned_registry_audit_and_catalog_reject_mutation) ... ok
+test_provider_output_training_and_evaluation_rights_fail_closed (test_augmentation.AugmentationTests.test_provider_output_training_and_evaluation_rights_fail_closed) ... ok
+test_quota_order_independence_of_messages (test_augmentation.AugmentationTests.test_quota_order_independence_of_messages) ... ok
+test_repeatable_bytes_and_receipts_not_dependent_on_output_path (test_augmentation.AugmentationTests.test_repeatable_bytes_and_receipts_not_dependent_on_output_path) ... ok
+test_six_language_twelve_class_default_deficits_and_private_hashes (test_augmentation.AugmentationTests.test_six_language_twelve_class_default_deficits_and_private_hashes) ... ok
+test_translation_preserves_labels_roots_and_cross_seed_families (test_augmentation.AugmentationTests.test_translation_preserves_labels_roots_and_cross_seed_families) ... ok
+test_translation_source_slice_validates_all_inputs (test_augmentation.AugmentationTests.test_translation_source_slice_validates_all_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 3.111s
+
+OK
+test_all_topics_languages_priorities_security_actions_and_true_variation (test_native.NativeTests.test_all_topics_languages_priorities_security_actions_and_true_variation) ... ok
+test_artificial_identity_slots_only_use_reserved_fictional_namespaces (test_native.NativeTests.test_artificial_identity_slots_only_use_reserved_fictional_namespaces) ... ok
+test_both_codex_packs_remain_fixture_only_under_owner_policy (test_native.NativeTests.test_both_codex_packs_remain_fixture_only_under_owner_policy) ... ok
+test_catalog_and_quota_interfaces_have_capacity_for_119_vetted_resources (test_native.NativeTests.test_catalog_and_quota_interfaces_have_capacity_for_119_vetted_resources) ... ok
+test_duplicate_messages_are_rejected (test_native.NativeTests.test_duplicate_messages_are_rejected) ... ok
+test_existing_split_policy_rejects_cross_source_and_family_partitions (test_native.NativeTests.test_existing_split_policy_rejects_cross_source_and_family_partitions) ... ok
+test_native_cli_retains_rights_denial_and_logs_no_message_fields (test_native.NativeTests.test_native_cli_retains_rights_denial_and_logs_no_message_fields) ... ok
+test_native_facts_are_new_resources_not_renamed_fixture_sentences (test_native.NativeTests.test_native_facts_are_new_resources_not_renamed_fixture_sentences) ... ok
+test_native_output_bytes_quality_and_canonical_annotations_repeat (test_native.NativeTests.test_native_output_bytes_quality_and_canonical_annotations_repeat) ... ok
+test_parallel_translation_preserves_labels_identity_and_lineage (test_native.NativeTests.test_parallel_translation_preserves_labels_identity_and_lineage) ... ok
+test_previous_fixture_catalog_audit_and_rights_evidence_are_unchanged (test_native.NativeTests.test_previous_fixture_catalog_audit_and_rights_evidence_are_unchanged) ... ok
+test_regeneration_checks_actual_text_annotations_identity_and_provenance (test_native.NativeTests.test_regeneration_checks_actual_text_annotations_identity_and_provenance) ... ok
+test_seed_changes_preserve_scenario_families_not_independent_test_samples (test_native.NativeTests.test_seed_changes_preserve_scenario_families_not_independent_test_samples) ... ok
+test_unsafe_format_expressions_and_incomplete_languages_reject (test_native.NativeTests.test_unsafe_format_expressions_and_incomplete_languages_reject) ... ok
+test_zero_deficit_has_explicit_empty_native_receipt (test_native.NativeTests.test_zero_deficit_has_explicit_empty_native_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.212s
+
+OK
+test_accidental_matching_audit_and_registry_promotion_cannot_allow_codex (test_training_boundary.TrainingBoundaryTests.test_accidental_matching_audit_and_registry_promotion_cannot_allow_codex) ... ok
+test_actual_pinned_parquet_decoder_replays_independent_snapshot (test_training_boundary.TrainingBoundaryTests.test_actual_pinned_parquet_decoder_replays_independent_snapshot) ... ok
+test_both_codex_run_types_and_their_annotation_streams_are_not_training (test_training_boundary.TrainingBoundaryTests.test_both_codex_run_types_and_their_annotation_streams_are_not_training) ... ok
+test_changed_raw_bytes_are_rejected_before_parser_without_mutation (test_training_boundary.TrainingBoundaryTests.test_changed_raw_bytes_are_rejected_before_parser_without_mutation) ... ok
+test_changed_receipt_counters_implementation_purpose_or_paths_fail (test_training_boundary.TrainingBoundaryTests.test_changed_receipt_counters_implementation_purpose_or_paths_fail) ... ok
+test_changed_rights_evidence_and_duplicate_source_policy_denied (test_training_boundary.TrainingBoundaryTests.test_changed_rights_evidence_and_duplicate_source_policy_denied) ... ok
+test_copied_text_or_labels_cannot_be_laundered_by_updating_checksum (test_training_boundary.TrainingBoundaryTests.test_copied_text_or_labels_cannot_be_laundered_by_updating_checksum) ... ok
+test_independent_ingestion_bytes_and_labels_have_verified_snapshot (test_training_boundary.TrainingBoundaryTests.test_independent_ingestion_bytes_and_labels_have_verified_snapshot) ... ok
+test_missing_corrupt_or_linked_proofs_fail_without_data_logging (test_training_boundary.TrainingBoundaryTests.test_missing_corrupt_or_linked_proofs_fail_without_data_logging) ... ok
+test_openai_origin_or_unknown_provider_denied_despite_source_license (test_training_boundary.TrainingBoundaryTests.test_openai_origin_or_unknown_provider_denied_despite_source_license) ... ok
+test_parsing_uses_verified_bytes_even_if_file_changes_after_snapshot (test_training_boundary.TrainingBoundaryTests.test_parsing_uses_verified_bytes_even_if_file_changes_after_snapshot) ... ok
+test_real_production_independent_source_metadata_uses_existing_audit (test_training_boundary.TrainingBoundaryTests.test_real_production_independent_source_metadata_uses_existing_audit) ... ok
+test_unlisted_revisions_and_changed_artifacts_have_no_admission (test_training_boundary.TrainingBoundaryTests.test_unlisted_revisions_and_changed_artifacts_have_no_admission) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 14.333s
+
+OK
+PASS: original native grammar software, variation, synthetic identities, multilingual capacity, duplicate/lineage checks and unchanged fixture denial
+PASS: clarified software acceptance; Codex texts/labels remain fixture-only and actual training requires independently audited input, consent and safe splits
+test_all_dimensions_missing_no_defaults_or_codex_per_message_labels (test_sinabis.SinabisTests.test_all_dimensions_missing_no_defaults_or_codex_per_message_labels) ... ok
+test_both_codex_packs_remain_denied_after_new_source_registration (test_sinabis.SinabisTests.test_both_codex_packs_remain_denied_after_new_source_registration) ... ok
+test_cli_preserves_unicode_attribution_through_ascii_pipe (test_sinabis.SinabisTests.test_cli_preserves_unicode_attribution_through_ascii_pipe) ... ok
+test_evidence_attribution_and_separate_distribution_decision_required (test_sinabis.SinabisTests.test_evidence_attribution_and_separate_distribution_decision_required) ... ok
+test_exact_duplicates_consolidate_all_lineage (test_sinabis.SinabisTests.test_exact_duplicates_consolidate_all_lineage) ... ok
+test_forged_family_metadata_does_not_make_split_safe (test_sinabis.SinabisTests.test_forged_family_metadata_does_not_make_split_safe) ... ok
+test_incomplete_cases_or_unknown_links_never_silently_pass (test_sinabis.SinabisTests.test_incomplete_cases_or_unknown_links_never_silently_pass) ... ok
+test_inserted_labels_cannot_become_reviewed_projection_targets (test_sinabis.SinabisTests.test_inserted_labels_cannot_become_reviewed_projection_targets) ... ok
+test_invalid_cli_arguments_do_not_echo_supplied_content (test_sinabis.SinabisTests.test_invalid_cli_arguments_do_not_echo_supplied_content) ... ok
+test_legacy_license_guard_still_rejects_the_cc_by_profile (test_sinabis.SinabisTests.test_legacy_license_guard_still_rejects_the_cc_by_profile) ... ok
+test_legacy_receipt_cannot_launder_unfiltered_sinabis_rows (test_sinabis.SinabisTests.test_legacy_receipt_cannot_launder_unfiltered_sinabis_rows) ... ok
+test_near_duplicate_and_explicit_reply_components_preserved (test_sinabis.SinabisTests.test_near_duplicate_and_explicit_reply_components_preserved) ... ok
+test_pair_size_filter_matches_all_nonempty_subsets (test_sinabis.SinabisTests.test_pair_size_filter_matches_all_nonempty_subsets) ... ok
+test_prefix_candidate_filter_matches_exhaustive_jaccard (test_sinabis.SinabisTests.test_prefix_candidate_filter_matches_exhaustive_jaccard) ... ok
+test_production_source_admission_checks_three_uses_but_not_release (test_sinabis.SinabisTests.test_production_source_admission_checks_three_uses_but_not_release) ... ok
+test_profile_cannot_promote_unknown_or_openai_origin (test_sinabis.SinabisTests.test_profile_cannot_promote_unknown_or_openai_origin) ... ok
+test_projection_repeatability_and_resource_failures_preserve_inputs (test_sinabis.SinabisTests.test_projection_repeatability_and_resource_failures_preserve_inputs) ... ok
+test_rule_based_rows_need_calendar_evidence (test_sinabis.SinabisTests.test_rule_based_rows_need_calendar_evidence) ... ok
+test_snapshot_checksum_and_opt_in_reject_without_mutation (test_sinabis.SinabisTests.test_snapshot_checksum_and_opt_in_reject_without_mutation) ... ok
+test_thread_component_and_family_splits_fail_closed (test_sinabis.SinabisTests.test_thread_component_and_family_splits_fail_closed) ... ok
+test_unapproved_revision_hash_model_and_purposes_fail (test_sinabis.SinabisTests.test_unapproved_revision_hash_model_and_purposes_fail) ... ok
+test_vocabulary_and_29_language_extension_without_coverage_claim (test_sinabis.SinabisTests.test_vocabulary_and_29_language_extension_without_coverage_claim) ... ok
+test_whole_case_and_linked_duplicate_quarantine (test_sinabis.SinabisTests.test_whole_case_and_linked_duplicate_quarantine) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.617s
+
+OK
+{
+  "implementation_sha256": "41340e07670daa6fb822c08b62316e870b94b9bb73053d25a1b7981e6e0ef185",
+  "remaining_gates": [
+    "independent_permitted_annotation",
+    "quality_evaluation",
+    "current_source_consent_and_split_integration",
+    "training_task_admission"
+  ],
+  "schema": "fdec-sinabis-preparation/v1",
+  "source_admission": {
+    "attribution": {
+      "creator": "Sinabis GmbH",
+      "endorsement": false,
+      "license_uri": "https://creativecommons.org/licenses/by/4.0/",
+      "modifications": [
+        "whole-component origin quarantine",
+        "own-message extraction",
+        "normalization",
+        "exact-duplicate consolidation"
+      ],
+      "source_uri": "https://huggingface.co/datasets/sinabis-group/sinabis-10k-synthetic-emails",
+      "synthetic_notice": "Publisher-declared AI-generated fictional correspondence; may contain errors.",
+      "title": "Sinabis Oil \u2013 Synthetic Email Dataset (10k Emails)",
+      "warranty_uri": "https://creativecommons.org/licenses/by/4.0/legalcode.en#s5",
+      "year": 2026
+    },
+    "authoring_provider": "sinabis-publisher-declared-reviewed-non-openai",
+    "descriptor": {
+      "artifact": "data/train-00000-of-00001.parquet",
+      "dataset_id": "sinabis-group/sinabis-10k-synthetic-emails",
+      "license": "CC-BY-4.0",
+      "purpose": "commercial_training",
+      "revision": "4b8e73e28074c94b9c70934501bee1ed8c98e395",
+      "row_scope": "reviewed-whole-cases-only",
+      "sha256": "4c016783ff5f69211f869448d8d87f24044e055deed0304d48793401383f4175",
+      "size": 7133232,
+      "target": "specialized-email-classifier"
+    },
+    "downstream_rights": {
+      "commercial_inference": "compatible_subject_to_conditions",
+      "commercial_training": "compatible_subject_to_conditions",
+      "public_model_distribution": "compatible_subject_to_separate_artifact_audit"
+    },
+    "origin_policy_sha256": "f2176ca643367dfbfe284dcd4b8103fcca638a9cb63d468c40afaa0b5f9aeab5",
+    "release_approved": false,
+    "requires_independent_labels": true,
+    "requires_origin_projection": true,
+    "requires_split_and_consent": true,
+    "schema": "fdec-independent-source-admission/v2",
+    "scope": "reviewed-row-source-rights-only"
+  },
+  "summary": {
+    "exact_duplicate_rows": 1,
+    "feature_algorithm": "unicode-alnum-5gram-jaccard80/v1",
+    "independent_source_cohorts": 1,
+    "input_cases": 3190,
+    "input_rows": 10100,
+    "languages": {
+      "de": 2439,
+      "en": 5205,
+      "fr": 982,
+      "it": 761
+    },
+    "near_duplicate_pairs": 118,
+    "quarantined_cases": 235,
+    "quarantined_rows": 712,
+    "reason_rows": {
+      "unresolved_generation_origin": 712
+    },
+    "records_sha256": "ca364b7cb425383d11460d8727e7f91d7fb9385dcfe3fdf836fa881d546d6f17",
+    "retained_exact_duplicate_rows": 1,
+    "retained_source_rows": 9388,
+    "supervised_records": 0,
+    "unicode_version": "16.0.0",
+    "unique_records": 9387
+  },
+  "training_ready": false
+}
+PASS: Sinabis exact source review, origin quarantine, untrusted mapping, language extension, duplicate and split protections; no actual training or release
+PASS: FDEC-011 selected component checks complete; no model training
