@@ -43,6 +43,7 @@ Planned -> Blocked.
     $ready.source_sha=git -C $temp rev-parse HEAD
     $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File | ForEach-Object {Bound $_.FullName.Substring($temp.Length+1).Replace('\','/')})
     $ready.allowed_paths=@('Tasks')
+    $ready.rule_sources+= (Bound 'Tasks/policy/checkout-identities-076.json')
     $migration=Get-Content "$temp/Tasks/migrations/FDEC-074.json" -Raw | ConvertFrom-Json
     $ready | Add-Member migration_revisions @(@('Tasks/migrations/FDEC-074.json',$migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path) | ForEach-Object {Bound $_}) -Force
     $ready | Add-Member verification @((Bound "$target/evidence/github-preview-verified.md")) -Force

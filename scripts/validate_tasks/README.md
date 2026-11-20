@@ -1,5 +1,14 @@
 # First closure and reopening
 
+FDEC-076 adds `identity.ps1`: new bindings should use `Get-IdentityHash`. Explicit
+UTF-8 text types normalize CRLF to LF only, preserving BOM and every other byte;
+binary/NUL-containing input stays exact. Accepted legacy raw hashes remain intact.
+`Tasks/policy/checkout-identities-076.json` binds their path-specific equivalents,
+generated from the clean accepted source at its recorded SHA. It is an immutable
+compatibility catalog, not permission to hash arbitrary changed content. Current
+readiness must also bind this catalog as a governing identity source. New .gitattributes
+stabilizes future text checkout; historical specs and evidence are not rewritten.
+
 FDEC-080 separates current task state from validated closure history. A prior
 first-closure request stays valid when an item reopens or recloses; it is not
 deleted or emitted again. Duplicate request/work-item identities remain errors,

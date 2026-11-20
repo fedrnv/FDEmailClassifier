@@ -5,14 +5,15 @@ param(
     [ValidateSet('claim','dispatch','resume','execute','close')][string]$Action = 'dispatch'
 )
 $ErrorActionPreference = 'Stop'
+. "$PSScriptRoot/identity.ps1"
 $pin = Get-Content "$Root/Tasks/policy/adoption-5.6.json" -Raw | ConvertFrom-Json
 foreach ($entry in $pin.inventory) {
     $path = Join-Path $Root $entry.path
-    if (!(Test-Path -LiteralPath $path) -or (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) {
+    if (!(Test-IdentityBinding $Root $entry.path $entry.sha256)) {
         throw "Accepted baseline changed or missing: $($entry.path)"
     }
 }
-if ((Get-FileHash "$Root/Tasks/policy/upstream-5.6.md" -Algorithm SHA256).Hash.ToLowerInvariant() -ne $pin.policy_sha256) { throw 'Policy hash mismatch' }
+if (!(Test-IdentityBinding $Root 'Tasks/policy/upstream-5.6.md' $pin.policy_sha256)) { throw 'Policy hash mismatch' }
 $records = & "$PSScriptRoot/repository.ps1" -Root $Root -AsObject
 if ($TaskId) {
     if (!$records.ContainsKey($TaskId) -or $records[$TaskId].epic) { throw 'Task must resolve uniquely' }
@@ -21,7 +22,7 @@ if ($TaskId) {
     if (!$readyPath.StartsWith($spec.DirectoryName + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) { throw 'Readiness escapes task directory' }
     if (!(Test-Path $readyPath)) { throw 'Missing accepted readiness' }
     $ready = Get-Content $readyPath -Raw | ConvertFrom-Json
-    if ($ready.task_sha256 -ne (Get-FileHash $spec.FullName -Algorithm SHA256).Hash.ToLowerInvariant() -or $ready.policy_sha256 -ne $pin.policy_sha256) { throw 'Stale task or policy readiness' }
+    if (!(Test-IdentityBinding $Root $spec.FullName.Substring(([IO.Path]::GetFullPath($Root).TrimEnd('\','/')).Length+1) $ready.task_sha256) -or $ready.policy_sha256 -ne $pin.policy_sha256) { throw 'Stale task or policy readiness' }
     $head = git -C $Root rev-parse HEAD
     if ($LASTEXITCODE -ne 0 -or $ready.source_sha -ne $head) { throw 'Stale source readiness' }
     if ($ready.atomicity.outcomes.Count -ne 1 -or $ready.atomicity.packets.Count -lt 1 -or $ready.atomicity.packets.Count -gt 3 -or $ready.atomicity.independent_acceptance -ne $false -or !$ready.atomicity.boundary_reason) { throw 'Invalid atomicity' }
@@ -30,6 +31,7 @@ if ($TaskId) {
     foreach ($row in $ready.matrix) { if (!$row.id -or !$row.command -or !$row.expected) { throw 'Incomplete AC row' } }
     if (!$ready.allowed_paths) { throw 'Missing bounded path scope' }
     $requiredRules = @('AGENTS.md','DEVELOPMENT.md','Tasks/AGENTS.md')
+    if (Test-Path "$Root/Tasks/policy/checkout-identities-076.json") { $requiredRules+='Tasks/policy/checkout-identities-076.json' }
     $rootAbsolute = [IO.Path]::GetFullPath($Root).TrimEnd('\','/')
     foreach ($scope in $ready.allowed_paths) {
         $absolute = [IO.Path]::GetFullPath((Join-Path $Root $scope))
@@ -58,7 +60,7 @@ if ($TaskId) {
         if ($null -eq $entry) { continue }
         $boundPath = [IO.Path]::GetFullPath((Join-Path $Root $entry.path))
         if (!$boundPath.StartsWith($rootAbsolute + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) { throw 'Readiness input escapes repository' }
-        if (!$entry.path -or !$entry.sha256 -or (Get-FileHash (Join-Path $Root $entry.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) { throw 'Changed readiness input' }
+        if (!(Test-IdentityBinding $Root $entry.path $entry.sha256)) { throw 'Changed readiness input' }
     }
     $record = $records[$TaskId]
     if (!$record -or $record.status -in 'Done','Cancelled') { throw 'Task is terminal or missing' }
@@ -84,7 +86,7 @@ if ($TaskId) {
     if ($Action -eq 'close') {
         foreach ($entry in $ready.verification) {
             $path = [IO.Path]::GetFullPath((Join-Path $Root $entry.path))
-            if (!$path.StartsWith((Join-Path $spec.DirectoryName 'evidence') + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase) -or !$entry.sha256 -or (Get-FileHash $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) { throw 'Invalid closure evidence' }
+            if (!$path.StartsWith((Join-Path $spec.DirectoryName 'evidence') + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase) -or !(Test-IdentityBinding $Root $entry.path $entry.sha256)) { throw 'Invalid closure evidence' }
         }
     }
 }

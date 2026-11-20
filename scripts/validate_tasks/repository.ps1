@@ -1,6 +1,7 @@
 # Offline validation of the repository's deliberately restricted FDTasks envelope.
 param([string]$Root = (Resolve-Path "$PSScriptRoot/../..").Path, [switch]$AsObject)
 $ErrorActionPreference = 'Stop'
+. "$PSScriptRoot/identity.ps1"
 function Field($text, $key) {
     $match = [regex]::Match($text, "(?m)^$([regex]::Escape($key)): ([^\r\n]+)")
     if (!$match.Success) { throw "Missing field: $key" }
@@ -33,7 +34,7 @@ if (Test-Path "$Root/Tasks/migrations") {
         foreach ($binding in @($resolution.retired,$resolution.retained,$resolution.replacement,$resolution.retirement_event)) {
             if (!$binding.path -or !$binding.sha256) { throw 'Incomplete identity binding' }
             $absolute=[IO.Path]::GetFullPath((Join-Path $Root $binding.path))
-            if (!$absolute.StartsWith($rootPath+[IO.Path]::DirectorySeparatorChar) -or !(Test-Path -LiteralPath $absolute -PathType Leaf) -or (Get-FileHash $absolute -Algorithm SHA256).Hash.ToLowerInvariant() -ne $binding.sha256) { throw 'Stale or missing identity binding' }
+            if (!(Test-IdentityBinding $Root $binding.path $binding.sha256)) { throw 'Stale or missing identity binding' }
         }
         $old=Envelope (Join-Path $Root $resolution.retired.path)
         $kept=Envelope (Join-Path $Root $resolution.retained.path)
@@ -170,13 +171,13 @@ foreach ($file in $requestFiles) {
     $proofMatch=[regex]::Match($firstClosure.front,'(?m)^closure_proof: ([^\r\n]+)')
     if ($proofMatch.Success) {
         $proofPath=[IO.Path]::GetFullPath((Join-Path (Split-Path $target.path) $proofMatch.Groups[1].Value.Trim()))
-        if (!$proofPath.StartsWith($evidenceRoot,[StringComparison]::OrdinalIgnoreCase) -or !(Test-Path -LiteralPath $proofPath -PathType Leaf) -or (Get-FileHash $proofPath -Algorithm SHA256).Hash.ToLowerInvariant() -ne (Field $firstClosure.front 'closure_proof_sha256')) { throw 'Invalid closure proof binding' }
+        if (!$proofPath.StartsWith($evidenceRoot,[StringComparison]::OrdinalIgnoreCase) -or !(Test-IdentityBinding $Root $proofPath.Substring($rootPath.Length+1) (Field $firstClosure.front 'closure_proof_sha256'))) { throw 'Invalid closure proof binding' }
         $proof=Get-Content -LiteralPath $proofPath -Raw | ConvertFrom-Json
-        if ($proof.task_sha256 -ne (Get-FileHash $target.path -Algorithm SHA256).Hash.ToLowerInvariant() -or !$proof.verification) { throw 'Unverified closure proof' }
+        if (!(Test-IdentityBinding $Root $target.path.Substring($rootPath.Length+1) $proof.task_sha256) -or !$proof.verification) { throw 'Unverified closure proof' }
         if (!$accepted.Count -and $proof.source_sha -ne $gitHead) { throw 'Stale first closure source' }
         foreach ($path in $r.verification) {
             $entries=@($proof.verification | Where-Object path -EQ $path)
-            if ($entries.Count -ne 1 -or !$entries[0].sha256 -or (Get-FileHash (Join-Path $Root $path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entries[0].sha256) { throw 'Unverified closure evidence' }
+            if ($entries.Count -ne 1 -or !(Test-IdentityBinding $Root $path $entries[0].sha256)) { throw 'Unverified closure evidence' }
         }
     } elseif (!$accepted.Count) { throw 'New closure request requires verified first-closure proof' }
 }
