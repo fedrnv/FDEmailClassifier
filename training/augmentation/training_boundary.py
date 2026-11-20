@@ -65,6 +65,11 @@ def assert_training_source(identity, *, purpose, policy_root=ROOT):
             raise TrainingBoundaryError("unsupported_training_purpose")
         if not isinstance(identity, dict) or set(identity) != {"dataset_id", "revision", "artifact", "sha256"} or any(not isinstance(value, str) for value in identity.values()):
             raise TrainingBoundaryError("invalid_training_source_identity")
+        if identity["dataset_id"] == "sinabis-group/sinabis-10k-synthetic-emails":
+            # A separate exact-artifact CC BY review; the legacy guard is not
+            # broadened and no unfiltered Sinabis ingestion receipt is admitted.
+            from sinabis_source import assert_source
+            return assert_source(identity, purpose=purpose, policy_root=policy_root)
         policy = read_json(Path(policy_root) / POLICY_PATH)
         if not isinstance(policy, dict) or set(policy) != {"schema", "scope", "codex_data_usage", "policy_evidence", "sources"} or policy["schema"] != "fdec-independent-training-sources/v1" or policy["scope"] != "specialized-email-classifier" or policy["codex_data_usage"] != "software_fixture_only" or not isinstance(policy["sources"], list):
             raise TrainingBoundaryError("invalid_independent_source_policy")
@@ -145,6 +150,8 @@ def admit_training_run(run_directory, *, purpose="commercial_training", policy_r
             raise TrainingBoundaryError("training_ingestion_purpose_changed")
         identity = {name: receipt["input"][name] for name in ("dataset_id", "revision", "artifact", "sha256")}
         admitted = assert_training_source(identity, purpose=purpose, policy_root=policy_root)
+        if admitted.get("requires_origin_projection"):
+            raise TrainingBoundaryError("reviewed_source_requires_dedicated_preparation")
         if receipt["input"] != admitted["descriptor"]:
             raise TrainingBoundaryError("training_ingestion_rights_changed")
         implementation = hashlib.sha256()

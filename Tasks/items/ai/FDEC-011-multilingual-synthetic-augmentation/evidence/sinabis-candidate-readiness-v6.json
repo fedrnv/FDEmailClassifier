@@ -1,0 +1,718 @@
+﻿{
+    "semantic_review":  "accepted",
+    "task_sha256":  "181fb8ca6772798642f1c83829eaebe2601fb98b40ec7a73993f056f73c56cdc",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "source_sha":  "62163b3203482a6cb9e0f7a6f2b09fb33ce07fb9",
+    "source_state_algorithm":  "fdec-source-state/v1",
+    "source_state_sha256":  "75f761ee25aed0cd22b1b8022580b540a6e8e5a4b3eaee4848acd9a8dd281690",
+    "atomicity":  {
+                      "boundary_reason":  "One augmentation/input-provenance outcome under owner amendments; no accepted split-policy change, training run or later task execution",
+                      "outcomes":  [
+                                       "Verified multilingual generator and independent-source preparation with truthful rights, labels and leakage boundaries"
+                                   ],
+                      "packets":  [
+                                      "Verify fixture-only native software and an exact reviewed Sinabis preparation profile without training or publication"
+                                  ],
+                      "independent_acceptance":  false
+                  },
+    "allowed_paths":  [
+                          "training/augmentation",
+                          "training/config"
+                      ],
+    "rule_sources":  [
+                         {
+                             "sha256":  "806994a11629e57309deb540f52dc33959d43c5d7ffbe4ce2d5449691f4d84c4",
+                             "path":  "AGENTS.md"
+                         },
+                         {
+                             "sha256":  "1305259929eaf37b443706c02376f896fcd0b3edc919272a789867b36453c889",
+                             "path":  "DEVELOPMENT.md"
+                         },
+                         {
+                             "sha256":  "501c7a96efad4975cef7606cb3147634849f5505bfc00294ec9d4436e6835637",
+                             "path":  "Tasks/AGENTS.md"
+                         },
+                         {
+                             "sha256":  "3bb61cd71eccd8cd0b57c60771757b69712b8de2a4782694917e7111577f6b7f",
+                             "path":  "Tasks/policy/checkout-identities-076.json"
+                         }
+                     ],
+    "dependency_revisions":  [
+                                 {
+                                     "sha256":  "0467fec85fc8ed9c084c3065e5d8872212234d8864c0f61926203ef45ba28c0f",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/TASK.md"
+                                 },
+                                 {
+                                     "sha256":  "063429e567b0617d6b555d912d4e84eb7d14c21fefab15413156481a43192be7",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153012901Z-codex-dependency-added-9991e2a6.md"
+                                 },
+                                 {
+                                     "sha256":  "94e845b23f00e8ade5cbad9bb4a0a0550b41e672e6b308e74ef8eb410d11c30f",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153018732Z-codex-readiness-accepted-4f3eb7ff.md"
+                                 },
+                                 {
+                                     "sha256":  "5eaf2c1fd2e63a17ab7bd78166217061b89b77e19f55d2949920f8708d2696db",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153024373Z-codex-work-started-d9452800.md"
+                                 },
+                                 {
+                                     "sha256":  "b399813026e3745704f9b99794cb2c04f82cb8af45f274e3248e2aecf1fe8e1c",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153524847Z-codex-readiness-accepted-dfd8b373.md"
+                                 },
+                                 {
+                                     "sha256":  "a8ed09b4ddc681882fbb1ef60743ca536b2d83e7d47aba2c47ff9426dfc852c1",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153559433Z-codex-readiness-accepted-0a261645.md"
+                                 },
+                                 {
+                                     "sha256":  "0820d68eebe18b76c8fa38a0191075dd40ad5a612b558101b3b159bf4890f968",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153750744Z-codex-readiness-accepted-e820cd4d.md"
+                                 },
+                                 {
+                                     "sha256":  "7212eee2b5e3a755621473c1d77bffa56815f01a41a2a55c0f648d99651b6ecf",
+                                     "path":  "Tasks/items/ai/FDEC-010-canonical-annotation-mapping/events/20261120T153821588Z-codex-status-changed-9fb06d32.md"
+                                 },
+                                 {
+                                     "sha256":  "c6aefa62f0e670d09e435a8fcfc51de10eb7ec90c7202943dde254ae2fb9cd4a",
+                                     "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/TASK.md"
+                                 },
+                                 {
+                                     "sha256":  "90c013aaf32c978e40f9721bb6a8c7036b7b533dfc8d4c3c29a204fb226830ac",
+                                     "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160053298Z-codex-dependency-added-cc080058.md"
+                                 },
+                                 {
+                                     "sha256":  "0560d21dbf4803e1a373f9e028592ef3172cd5c099347f6f4aa778a7bd74a0a5",
+                                     "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160058378Z-codex-readiness-accepted-fa1e2ea1.md"
+                                 },
+                                 {
+                                     "sha256":  "f458c83712754b0fe02e3fb185033857b419228ff33a296069cfcf52c769c9de",
+                                     "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T160102429Z-codex-work-started-87be8679.md"
+                                 },
+                                 {
+                                     "sha256":  "b5b64c4462222f8764f4d513124f6ebd4635589479ff2c9165943e23e6fa7ef5",
+                                     "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161357887Z-codex-readiness-accepted-b4460d83.md"
+                                 },
+                                 {
+                                     "sha256":  "a1930715c864d9d62bc7e63334ac9b17cd6d3e9031a3324d403487d6ffb653dc",
+                                     "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161642597Z-codex-readiness-accepted-007e087f.md"
+                                 },
+                                 {
+                                     "sha256":  "9173736c5e33e7b26e87a5203f50a8267adfce469e3a01eeb68084957a7649f5",
+                                     "path":  "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/events/20261120T161706667Z-codex-status-changed-16653b22.md"
+                                 },
+                                 {
+                                     "sha256":  "f808af9c0783733a663e18252df3e7f077ec2505b7b2e98f7f1c145e181b233e",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/TASK.md"
+                                 },
+                                 {
+                                     "sha256":  "18a6f19c078540f4c3314dfcdf92abc13fbd7ceb10da3258851d80e001909993",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T173133875Z-codex-readiness-accepted-d277241a.md"
+                                 },
+                                 {
+                                     "sha256":  "79138d58eb406b8323c7dfd4073f97c6a9a8807fee4651cc24f0992a50bf13c5",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T173137418Z-codex-work-started-09e3a701.md"
+                                 },
+                                 {
+                                     "sha256":  "9509842530ba9b60f939d4b34f07a31165121e25247ae648bd55059e6c45f55b",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T173817398Z-codex-readiness-accepted-51894709.md"
+                                 },
+                                 {
+                                     "sha256":  "4a14446988ee9f271bfb644998b0aef142f5683df7da16962191f933164cc75e",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174024783Z-codex-readiness-accepted-7e319127.md"
+                                 },
+                                 {
+                                     "sha256":  "f912b6dcc52974123b501ff61230ec35d4665d283266f72509f07cd3feabd833",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174110433Z-codex-readiness-accepted-22f67637.md"
+                                 },
+                                 {
+                                     "sha256":  "e46d4a369a60df7e29f6a22fde29cff177f22528bbf760655712aa8280055f52",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174215797Z-codex-readiness-accepted-bc44e47c.md"
+                                 },
+                                 {
+                                     "sha256":  "256cb7a5014e45c1e92bae156a700dd6fece17fe277408196894159cc52bc736",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174331074Z-codex-readiness-accepted-4521c152.md"
+                                 },
+                                 {
+                                     "sha256":  "c45c2c5465ea893e0cd5b9ff0e1f8e60d0c52fbab599ac19c4cf30d041b57614",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T174606713Z-codex-readiness-accepted-6312d2c0.md"
+                                 },
+                                 {
+                                     "sha256":  "fec0617fb6c474c834eb80d96fa0c846b35a266bf01205c8f443a849a4f32c6d",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T175436874Z-codex-readiness-accepted-a4bcc6c9.md"
+                                 },
+                                 {
+                                     "sha256":  "be7223d15287cb969b80df4f8a9ab0944fe7f4519aa2d19cf1c23592efaf266e",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T175557514Z-codex-readiness-accepted-c18c4891.md"
+                                 },
+                                 {
+                                     "sha256":  "6044aff322de70e99c4d13c8dc493174c5e18ca7c93ad75fbb4da3802c6ab75f",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T180115141Z-codex-readiness-accepted-1043051d.md"
+                                 },
+                                 {
+                                     "sha256":  "ac92a78d14f9bce8689b554607ab5b0f0954ca3f67898474d72f330ef8f8753c",
+                                     "path":  "Tasks/items/governance/FDEC-088-reconcile-upstream-training-plan/events/20261120T180210856Z-codex-status-changed-5fa28ff1.md"
+                                 },
+                                 {
+                                     "sha256":  "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                 },
+                                 {
+                                     "sha256":  "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                 },
+                                 {
+                                     "sha256":  "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                 },
+                                 {
+                                     "sha256":  "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                 },
+                                 {
+                                     "sha256":  "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                 },
+                                 {
+                                     "sha256":  "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                 },
+                                 {
+                                     "sha256":  "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                 },
+                                 {
+                                     "sha256":  "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+                                 },
+                                 {
+                                     "sha256":  "dec705eaa3ff18891e29ef098ded64ca14721d081455941717d19283dbd2caa4",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md"
+                                 },
+                                 {
+                                     "sha256":  "184ae8bf6328b2edd86eedfaf00552b6203383db3a502c4933b52843ea96228c",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T144622540Z-codex-status-changed-bd990490.md"
+                                 }
+                             ],
+    "epic_state_evidence":  [
+                                {
+                                    "sha256":  "84f4aaccbbfe7a24df8fa82d72643eeed5a9cd9e588662cdc48bc62f705ecd35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "eab686188a77ef7fbe6cb100d29a83aab34ff419d62d446d328f6e31d6e0d3f6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T105835Z-codex-membership-added-d3a33ce1.md"
+                                },
+                                {
+                                    "sha256":  "5298206a9a687ddc5337b60437e7cf040f86196b393bc7c0969039adea5e2c35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T114907650Z-codex-membership-added-f57a3567.md"
+                                },
+                                {
+                                    "sha256":  "82d1353d8b88c9153581e45357c128d7d50f1bf769e4dcc6f292e9d3cae96dcc",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T120758097Z-codex-membership-added-97e3d59b.md"
+                                },
+                                {
+                                    "sha256":  "7bb74097561c1330923631301de0455b8cb5a1709604ec5677070878722d7871",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T131945683Z-codex-membership-added-237ab6bf.md"
+                                },
+                                {
+                                    "sha256":  "e42a093682016bf2dc4407e287d48cb4d8d927eaa3efb5410fa839bbfdab2024",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T172730217Z-codex-membership-added-cefec483.md"
+                                },
+                                {
+                                    "sha256":  "1c7b7892b576268bb453b3a1e96d734c13ce9f7502be88d2b2b433d15c5cfa22",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D003/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "6cf9997d9f6db8dc6caa245bfd83e9ca31e4c1cb1c9b8fffa74f77e3490aaef1",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D003/events/20261120T173200Z-owner-membership-added-087.md"
+                                },
+                                {
+                                    "sha256":  "31cb20c86ad524686f447642ae8a28e02cdd19ea6e28aeac2f9c67afbf5fd957",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D005/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c2adaa26a5e9f2e04e75c77db8e37c3206cfb22103379b3e2945af92b4d18ac",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D007/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "fa4fdbec6ba6f972e39dbbfaf4e0cea1380456ad65cf1cedac5f4a108c353836",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D006/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                },
+                                {
+                                    "sha256":  "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                },
+                                {
+                                    "sha256":  "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                },
+                                {
+                                    "sha256":  "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                },
+                                {
+                                    "sha256":  "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                },
+                                {
+                                    "sha256":  "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                },
+                                {
+                                    "sha256":  "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+                                },
+                                {
+                                    "sha256":  "dec705eaa3ff18891e29ef098ded64ca14721d081455941717d19283dbd2caa4",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md"
+                                },
+                                {
+                                    "sha256":  "184ae8bf6328b2edd86eedfaf00552b6203383db3a502c4933b52843ea96228c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T144622540Z-codex-status-changed-bd990490.md"
+                                },
+                                {
+                                    "sha256":  "917eafc40e1aeb003c9a08799e78ba145012908ec67ea7f6387d8179d85ea4b6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D011/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "5c78c4969c11451c3e8e9932d15225951a08cceee5de281f9b10e561a77a7ed1",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423398663Z-codex-membership-replaced-98316da7.md"
+                                },
+                                {
+                                    "sha256":  "8ea9b29765614b31e52e53c345cec8bbc7e4006fee75dadb2c156cd8c07f494f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423538254Z-codex-membership-replaced-9a3a8877.md"
+                                },
+                                {
+                                    "sha256":  "a4f2d8b5aee1ec26f9d2e6a64265a33b6485ababdc33c0281810c357978f33bc",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423641171Z-codex-membership-replaced-87fc5f82.md"
+                                },
+                                {
+                                    "sha256":  "bb83a17d4e844bb319023d30e994c3bf9d7597578a16fab924338c0f5b20f490",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423779563Z-codex-membership-replaced-aef1c708.md"
+                                },
+                                {
+                                    "sha256":  "9e8a9fd47e67f0aaa9d1b4600ba01147a94859dddf7fc39cea10707ba839827c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423893225Z-codex-membership-replaced-81241c72.md"
+                                },
+                                {
+                                    "sha256":  "402e13399e624d1870f14fc3903dcbb43187a9cb0530220f556366d775493911",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423999967Z-codex-membership-replaced-d3f3aeb6.md"
+                                },
+                                {
+                                    "sha256":  "b04d21796230a59aeca36e6d1970aefbfacf1325102d24268dcc51986ffd3f3b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S002/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "71a557c0bafb0c7ec7a58c04c5448858ce77f3e7a34d1ee45d84cc0827b249fb",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D010/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "4aaba119f41c17dd4f1b123030fe4a81a90d02582033c755fda1bd948a1a6d51",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D004/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "11190dd28bd4e21be8ed6c08ac6b2f0da6e8680fecc59441886bd9560a74beb8",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D008/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "184ddb4dcccf4c3076b0d7c63347c1b4531c06f26efad3fa73c8e7c2ac825483",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T145114999Z-codex-status-changed-3a28b4ae.md"
+                                },
+                                {
+                                    "sha256":  "7a3a2184f62f155686fcb2f27b13f941903aef60a193ccddb791a922feb77d75",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D012/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "bc785e723ddab581d86854eb2909313f7101d9dc13b3285c46d9eadd575a87f5",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424200972Z-codex-membership-replaced-9e1d5cf9.md"
+                                },
+                                {
+                                    "sha256":  "4c54e537b933aac1a7ee133582b9b812c238b4d7d8ce1fb6c820a38b2c614ed6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424310424Z-codex-membership-replaced-12aa58fa.md"
+                                },
+                                {
+                                    "sha256":  "d07ed20d5fe32c0f483d8017e5cac9bcb040b373c2ce2f53fe3faa3c192eb84f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424405809Z-codex-membership-replaced-c128f9e8.md"
+                                },
+                                {
+                                    "sha256":  "31790d06fc71dcaa25155ce3d5d560d78b2fe11ca475b3a9fb55186e57b2070f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424513368Z-codex-membership-replaced-80a11fb3.md"
+                                },
+                                {
+                                    "sha256":  "36b30c100d29d15a6a043372e4c30bb09736185b689a54a7136f98d29802c9d6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "bc4b4732f70845d2bafb2e5a3b7a7372d2cf895b90f08cafd9fce68ae3c125a3",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T113500Z-project-planning-membership-073.md"
+                                },
+                                {
+                                    "sha256":  "62a2c73f54633e98f167cade6b0c3851bbf7d7c516f2fa0198ad57b9f1b50398",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T114908034Z-codex-membership-replaced-81c55913.md"
+                                }
+                            ],
+    "migration_revisions":  [
+                                {
+                                    "sha256":  "d3ad36148c53582628331bda9c23e8b84394c19331776b90047c38744c7c1297",
+                                    "path":  "Tasks/migrations/FDEC-074.json"
+                                },
+                                {
+                                    "sha256":  "17034f7d38ef1c52ad6ca82b1ceeb76dd229f0236ec613ffbb31cc0684086188",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "574d2415d868e66e0086b23e3a80f9aec32150cc66b87319304e7d6b0bcf9768",
+                                    "path":  "Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/TASK.md"
+                                },
+                                {
+                                    "sha256":  "5bbe059cf583567bbd18affafb137c9a9a9fbce0730b07824e1cbdd9785ec48e",
+                                    "path":  "Tasks/items/web/FDEC-075-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "0aabb217529345340e4d62c3edc949fe857c49078a2d2de52328e9e2046a452c",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/events/20261120T114908434Z-codex-superseded-a396e5df.md"
+                                },
+                                {
+                                    "sha256":  "f41b9a2c0b3926ce80da235beb47e541ca05b4f8f8686ab93d38fc16b03033a8",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-074.json"
+                                },
+                                {
+                                    "sha256":  "d2c2f8466d749e0842c55fc3ef0ed256f2abb7c04b0d217f85105362bf825cf6",
+                                    "path":  "Tasks/items/ai/FDEC-074-audited-training-source-registry/TASK.md"
+                                },
+                                {
+                                    "sha256":  "40697a05354685fa0056f1559164ecfbe24d6a6383cbf0a4bda1285ad0c65d51",
+                                    "path":  "Tasks/items/governance/FDEC-074-resolve-task-identity-collision/TASK.md"
+                                },
+                                {
+                                    "sha256":  "360372de6b4e34603afad9cace173f571a2e14a86d02b23086c2f0552c29c6ea",
+                                    "path":  "Tasks/items/ai/FDEC-089-audited-training-source-registry/TASK.md"
+                                },
+                                {
+                                    "sha256":  "79ef97aed1194bb13f488046ed3fc608548771d0e8fcb0f89d7c4d5c469a45d0",
+                                    "path":  "Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T173423345933Z-codex-superseded-fbd93e40.md"
+                                },
+                                {
+                                    "sha256":  "4d5bbdfe2555d47d83f81c0652ba69b005cc189266e09480cd6cf92fdb45716d",
+                                    "path":  "Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md"
+                                },
+                                {
+                                    "sha256":  "73cee53060e5d5ea91112e1e3ffbe65262eb9584619d674cecdfad67d5ba6e9a",
+                                    "path":  "Tasks/items/ai/FDEC-089-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md"
+                                },
+                                {
+                                    "sha256":  "2a029833806f47d061de095974ad8c56c1f1fbc60611ee34837e6dc6213ab945",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-075.json"
+                                },
+                                {
+                                    "sha256":  "f0adc267133a016f39660f9b497c5dfbdefbc7f96ae929d98ac7627c5ae4c223",
+                                    "path":  "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/TASK.md"
+                                },
+                                {
+                                    "sha256":  "49a9f6bce9b52235ddfbb31329940c78841e9012c3bafb38a41ecb78fc25a735",
+                                    "path":  "Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/TASK.md"
+                                },
+                                {
+                                    "sha256":  "5422603215390d808adb16236cd0bc123d172b21d5be71d5eeeec779df720bed",
+                                    "path":  "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173423490215Z-codex-superseded-c3663f52.md"
+                                },
+                                {
+                                    "sha256":  "ed3d7c8d165545f2146afb1f06c6d096938d590e47aef4fe073e1dffae72a4c7",
+                                    "path":  "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md"
+                                },
+                                {
+                                    "sha256":  "efb75704bfc66ce320cac2bedf490cbd215c957fc46ad64bd1249743f80ef589",
+                                    "path":  "Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md"
+                                },
+                                {
+                                    "sha256":  "ca0a13eff7b6f5d9312a72bd9f95f9db59a5b2621579ff57aefb77589afb936e",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-076.json"
+                                },
+                                {
+                                    "sha256":  "1543603140441c06920505c0f7b33b707dbff12baf8aa1942273bfe3b1653a0b",
+                                    "path":  "Tasks/items/ai/FDEC-076-graceful-training-source-fallback/TASK.md"
+                                },
+                                {
+                                    "sha256":  "298bc21ebc8a573e773eaa3a596e5e65d358ec6b199c9d93a13bf6161023e833",
+                                    "path":  "Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/TASK.md"
+                                },
+                                {
+                                    "sha256":  "78603c6c0d06ed9d3878fc8a7aa589180c87a078bf1902595adf1d192b3998c2",
+                                    "path":  "Tasks/items/ai/FDEC-091-graceful-training-source-fallback/TASK.md"
+                                },
+                                {
+                                    "sha256":  "54d40d07ded9dd8a288280438ebc7427192d60e7a2a76b7fde1060751ac97f95",
+                                    "path":  "Tasks/items/ai/FDEC-076-graceful-training-source-fallback/events/20261120T173423593979Z-codex-superseded-1938c2c7.md"
+                                },
+                                {
+                                    "sha256":  "edeba397e7a2b124a2c0c01cafeaa6a0d3720a669d23c947f77de2775734e9cd",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-077.json"
+                                },
+                                {
+                                    "sha256":  "06007f723834e9220e5b96c3cecc6d5f8bc2b2be3d7c32291beec8283795789e",
+                                    "path":  "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/TASK.md"
+                                },
+                                {
+                                    "sha256":  "3d4451d36cf95415297a9a9111f956babbf436c4065ce24dc0360cffed339d5d",
+                                    "path":  "Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/TASK.md"
+                                },
+                                {
+                                    "sha256":  "88fa1c3be35558adb44d7ab33e6e64f012c5e5d3939bee9a07f89a71a89a0be4",
+                                    "path":  "Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/TASK.md"
+                                },
+                                {
+                                    "sha256":  "a49b50716e2caf4865f4c4e3edb3c5c44ca28c17115bd361c7bb642153b54a87",
+                                    "path":  "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T173423731886Z-codex-superseded-b966964e.md"
+                                },
+                                {
+                                    "sha256":  "21e744a7520986f8513bee214ec3c3fd5a6488fd0855a36f3194e2d0fd9cd105",
+                                    "path":  "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md"
+                                },
+                                {
+                                    "sha256":  "d339446ecc0e7e1568b071fa76e3ef4be18bd70fa9da12698f8d1bb916c26007",
+                                    "path":  "Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md"
+                                },
+                                {
+                                    "sha256":  "03268d77908b5cc188d856632404b5eaebd47812fb54bd55173c0187599741ff",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-078.json"
+                                },
+                                {
+                                    "sha256":  "491dfbec13be0ce3619d5b918f2d3a68784a802dc772531f231039a5382e4058",
+                                    "path":  "Tasks/items/quality/FDEC-078-targeted-integration-gate/TASK.md"
+                                },
+                                {
+                                    "sha256":  "27281e1871d6bb1eca01980998319f3e6782696173cb8ea4413eb12a1c701ded",
+                                    "path":  "Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/TASK.md"
+                                },
+                                {
+                                    "sha256":  "e8123e4e623442beb1569f804099815b071729224064ce787feb9bada1b8d789",
+                                    "path":  "Tasks/items/quality/FDEC-093-targeted-integration-gate/TASK.md"
+                                },
+                                {
+                                    "sha256":  "e4f059fd87e98336c20e6e7b9c08989d8408bb6e3039951748b25e8a6d5c8211",
+                                    "path":  "Tasks/items/quality/FDEC-078-targeted-integration-gate/events/20261120T173423839220Z-codex-superseded-c0110132.md"
+                                },
+                                {
+                                    "sha256":  "46f645f470b626f584d01fc9a2b0d08c8a665988a051647009243b4c775fa75c",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-079.json"
+                                },
+                                {
+                                    "sha256":  "2d81403f32ca179607b05aa6622fbd921be1f1af3dfa640e52949d3e2ed700fb",
+                                    "path":  "Tasks/items/quality/FDEC-079-independent-acceptance-review/TASK.md"
+                                },
+                                {
+                                    "sha256":  "18d47ad261c89aed403e0f8edeae03fded0b6df05206c0b9448b9afe71fe3452",
+                                    "path":  "Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/TASK.md"
+                                },
+                                {
+                                    "sha256":  "c484aacbc560b6cf4ceb0d6f2970c2978d789b2d651a6eb4a241e60d5db1712a",
+                                    "path":  "Tasks/items/quality/FDEC-094-independent-acceptance-review/TASK.md"
+                                },
+                                {
+                                    "sha256":  "1f0fdf83a516da7a836b9ad451dbec1a831721eb4f3b934682079d5c7dab40e5",
+                                    "path":  "Tasks/items/quality/FDEC-079-independent-acceptance-review/events/20261120T173423952392Z-codex-superseded-e93e66db.md"
+                                },
+                                {
+                                    "sha256":  "51070a44ebaa3e0638798daf23699fb294cc140f30231cb889f4c207ba6e25aa",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-080.json"
+                                },
+                                {
+                                    "sha256":  "cc144cb633b908e774ca4d6761457adf2cd10e55a2c423403c7681972a5b1df3",
+                                    "path":  "Tasks/items/quality/FDEC-080-independent-benchmark-data-specification/TASK.md"
+                                },
+                                {
+                                    "sha256":  "79cc3fed34c038ea453afcf5be1bbabf266221591950c30262fa80140d60984b",
+                                    "path":  "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/TASK.md"
+                                },
+                                {
+                                    "sha256":  "bc3e7b93e1c1c881399f684d3a8ff5286fad8adfc8078357d8e4ebd4398956dd",
+                                    "path":  "Tasks/items/quality/FDEC-095-independent-benchmark-data-specification/TASK.md"
+                                },
+                                {
+                                    "sha256":  "324aad3a788941d96e1f5c2277e35ac00d5a7122ea79433e0d9cab3974b9cb1f",
+                                    "path":  "Tasks/items/quality/FDEC-080-independent-benchmark-data-specification/events/20261120T173424053725Z-codex-superseded-ee2a5904.md"
+                                },
+                                {
+                                    "sha256":  "d79ed3b6b9431f02c33db3fcd8bcbb3fe3a66e09786b5b96e42e71a3319d915e",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-081.json"
+                                },
+                                {
+                                    "sha256":  "bc4f6a7c76128960699aaeba9c65234d5c3ab006de905516036ebebdced7584a",
+                                    "path":  "Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/TASK.md"
+                                },
+                                {
+                                    "sha256":  "42579da787536f7803fedd089cdd48ff4116fbe9ab96301fc3ee90a3c2e2eac9",
+                                    "path":  "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/TASK.md"
+                                },
+                                {
+                                    "sha256":  "bc2d22bbd4e92822d42ea235c02f9f6039775cccd9205b079843965615bbe53c",
+                                    "path":  "Tasks/items/quality/FDEC-096-open-benchmark-fixture-pack/TASK.md"
+                                },
+                                {
+                                    "sha256":  "b1a19697e8683ff940bc0818ccf044410156aeb83f00cc2cee989c31c09ff5d4",
+                                    "path":  "Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/events/20261120T173424258305Z-codex-superseded-1015c1d6.md"
+                                },
+                                {
+                                    "sha256":  "88ee32b689069ddc0b1e7796f8f1d66d8a034d4f92c7fcdbf88f82e7b5f38a6c",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-082.json"
+                                },
+                                {
+                                    "sha256":  "c15474bbb90e715e3bc1ce2648bcacd13905161fac6cdcaae9b15a9fc9d7091a",
+                                    "path":  "Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/TASK.md"
+                                },
+                                {
+                                    "sha256":  "528a10a733c9fe261cc59ce6ca2d28e9a9e987da8e426aabf3d8c5c2a027331d",
+                                    "path":  "Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/TASK.md"
+                                },
+                                {
+                                    "sha256":  "5ce824ce6926b5359afb2a46593851d6a1a929e4005ae94fd38aca335041c1eb",
+                                    "path":  "Tasks/items/quality/FDEC-097-private-real-email-benchmark-adapter/TASK.md"
+                                },
+                                {
+                                    "sha256":  "5dd4aa521f0ab52b53f17f3c15fcdd49d7676b2a3750b186a2fd2505f9ae9f8b",
+                                    "path":  "Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/events/20261120T173424362672Z-codex-superseded-0596f4fa.md"
+                                },
+                                {
+                                    "sha256":  "6cae8c9339848bd9966a10a39877db48163e55066e49d05247a4dbb531f757a6",
+                                    "path":  "Tasks/migrations/FDEC-088-FDEC-083.json"
+                                },
+                                {
+                                    "sha256":  "5c171d92f025e5b0a1dd9f58fe9839ec39a5d447ac7a56d75099a1bc046affb0",
+                                    "path":  "Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/TASK.md"
+                                },
+                                {
+                                    "sha256":  "4c342d5102c7e7a289df90083e58f4272c771ccc553bbb7dbc1721f18e1cd466",
+                                    "path":  "Tasks/items/quality/FDEC-083-preserve-committed-source-paths/TASK.md"
+                                },
+                                {
+                                    "sha256":  "3cfc0720756a594cba20e42fc71f670ec0a06fc4be89caec2e2f7e2a4d607701",
+                                    "path":  "Tasks/items/quality/FDEC-098-reproducible-evaluation-runner/TASK.md"
+                                },
+                                {
+                                    "sha256":  "bdf889c99058d097f96e78da61dd711b13ef9750bed58f45604ce2cc8166dd98",
+                                    "path":  "Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/events/20261120T173424464017Z-codex-superseded-7ab20d2e.md"
+                                }
+                            ],
+    "criteria_revisions":  [
+                               {
+                                   "sha256":  "f0917410d94f066779c9a84fa754ece09dc57a92adaec2bca4382a4a1869b526",
+                                   "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T164242114Z-codex-scope-amended-5deba0cb.md"
+                               },
+                               {
+                                   "sha256":  "3ea81ce31adbe2be28db01805a77e1a95b13f747b8a0d85d29b1828a5bd11104",
+                                   "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/native-acceptance-v1.json"
+                               },
+                               {
+                                   "sha256":  "e6b0d5f07dd0b06d2ee5098755869434ccdfeb51335241614909c87a886f5cb5",
+                                   "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T170053613Z-codex-scope-amended-efcbfb68.md"
+                               },
+                               {
+                                   "sha256":  "497a6c8884aab19f28b7a9eb5af8c79c912a5bf92a3ef34c377cfb51d300fff5",
+                                   "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/independent-data-acceptance-v2.json"
+                               },
+                               {
+                                   "sha256":  "9cae9c2f17f2b0287ce404c5648b1abf7aaa525397b72130c73ae2d94c92f457",
+                                   "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/events/20261120T172103865Z-codex-scope-amended-ce96411a.md"
+                               },
+                               {
+                                   "sha256":  "93e9a017bef69f5e998b362ef2acb9e68d84461b2a1f2e9701c05ab2f1511d39",
+                                   "path":  "Tasks/items/ai/FDEC-011-multilingual-synthetic-augmentation/evidence/sinabis-acceptance-v3.json"
+                               }
+                           ],
+    "matrix":  [
+                   {
+                       "id":  "AC-01",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Implement and locally verify reproducible multilingual generation/translation software, provenance and license tracking using permitted technical fixtures without real personal mail; actual training data requires separate audited independent-source admission.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "ab8779879ebec6944d0f83b597bb506ef1e7290e29c4f1dc5f3d55253da6a12c"
+                   },
+                   {
+                       "id":  "AC-02",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Invalid/missing input does not silently corrupt state or publish unsafe output",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "c7d3094ed07f5f2ff6abe939b929bfea71b9eba341ccdc1309003e5b033f73c2"
+                   },
+                   {
+                       "id":  "AC-03",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Create fdec-native-templates-v1 with original project-authored template grammar for twelve topics, priorities, security and actions, artificial identities only, and truthful authorship/provenance plus Apache-2.0 source licensing.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "9559f1201813a98665d3ce1687b8e4d7ba57934ddb9487cbe59cfe55536b3ebb"
+                   },
+                   {
+                       "id":  "AC-04",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Keep codex-fixture-v1 and fdec-native-templates-v1 texts and labels excluded from actual commercial training and evaluation, including accidental per-pack promotion. Missing OpenAI permission does not block software development or permitted technical tests; actual training inputs must come from independently audited non-OpenAI sources.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "afc8fe9fe2e2a573128bc10a2981f20b9118c870a2a846ab7c583f923085ef72"
+                   },
+                   {
+                       "id":  "AC-05",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Reproduce multilingual generation with explicit reviewed language resources and an extension path toward the 119 Qwen3 languages and dialects, without claiming unimplemented translations or measured quality.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "0b0321a192361a465daa25cc47425d5b8c16c1a47ae09e74d7914bb930f7980e"
+                   },
+                   {
+                       "id":  "AC-06",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Verify label consistency, meaningful variation, duplicate detection and template/translation lineage isolation under the existing train/test leakage policy using local synthetic software fixtures.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "bfccfe25c4b4e9cbcce99b0889f197ab37841007750d16af1fe042ba9c22231b"
+                   },
+                   {
+                       "id":  "AC-07",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Verify a training-input boundary that rejects Codex-derived run artifacts and admits only an unchanged ingestion run from a current hash-bound independently audited non-OpenAI source; modified rights evidence, source bytes or normalized text/labels reject without changing inputs.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "2a2a471b432ca4e7635a41b23ce0f5369cc78975467d00f06514799987268c6e"
+                   },
+                   {
+                       "id":  "AC-08",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "Research pinned Sinabis 10K and 10M sources, CC BY 4.0, declared generation origins and applicable generator restrictions; document attribution and the conditions for public distribution of derived classifier weights without claiming unproven rights or making purchases.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "bcf17a6127474895af2c9549b9facedb0a22897e121c045e7bb02e7895354e9a"
+                   },
+                   {
+                       "id":  "AC-09",
+                       "environment":  "Windows CPython 3.14.5/PyArrow 26.0.1, permitted technical fixtures, pinned independent public-source bytes in private storage",
+                       "level":  "Local generator, source-rights/integrity and preparation-boundary verification",
+                       "scenario":  "If source-rights review succeeds, admit the exact Sinabis 10K artifact through a strict audited independent-source profile; prepare untrusted mapping to all canonical dimensions, whole-thread/source-family split protection and duplicate checks, retaining an extensible 29-language schema. Otherwise document a concrete denial and continue independent component development. Never use Codex text or generated per-message labels for actual training.",
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1; powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "expected":  "PASS with Codex denials, exact reviewed source rights, untrusted canonical mapping, whole-thread/family and duplicate protection; no real training or release claim",
+                       "criterion_sha256":  "3e5b685fd16c69034dc27c9fb36ee2524269a635be6ed1fee8ec6f900103e5e8"
+                   }
+               ],
+    "verification":  [
+
+                     ]
+}

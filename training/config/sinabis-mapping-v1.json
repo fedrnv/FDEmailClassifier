@@ -1,0 +1,14 @@
+{
+  "schema": "fdec-sinabis-mapping/v1",
+  "label_status": "independent_review_required",
+  "automatic_supervision": false,
+  "topics": ["work", "personal", "finance", "shopping", "travel", "social", "newsletters", "marketing", "education", "health", "legal", "other"],
+  "priority": ["low", "normal", "high", "urgent"],
+  "security": {"spam": ["clear", "flagged"], "phishing": ["clear", "flagged"], "malware": ["clear", "flagged"]},
+  "action": ["none", "review", "reply", "archive"],
+  "missing_policy": "missing_with_supervision_false_for_every_dimension",
+  "languages": ["en", "es", "ja", "zh", "ar", "de", "ko", "hi", "it", "fr", "pt", "nl", "pl", "id", "tr", "ru", "tl", "vi", "th", "he", "ro", "nb", "da", "uk", "el", "sv", "cs", "hu", "fi"],
+  "annotation_requirements": ["independent_non_openai_origin", "source_row_binding", "reviewer_and_rights_evidence", "dimension_specific_review", "conflict_and_abstention_handling", "separate_quality_evaluation"],
+  "source_metadata_only": ["case_kind", "calendar_method", "lang", "model"],
+  "notes": "Business topics and calendar metadata are not canonical gold labels. Missing labels do not imply normal priority, clear security, other topic or no action. This file defines vocabulary and review requirements, not per-message training labels."
+}

@@ -142,3 +142,33 @@ The checks cover quota deficits, all languages/classes, repeatability, translati
 semantics and family IDs, canonical metadata compatibility, rights refusals,
 malformed input, no network calls, static diagnostics and rollback. A passing
 software suite does not satisfy the task's unresolved source-rights requirement.
+## Sinabis reviewed-source preparation
+
+The current [Sinabis audit](SINABIS-AUDIT-v2.md) and exact-artifact
+`training/config/sinabis-reviewed-source-v1.json` admit only a reviewed whole-case
+projection of the pinned 10K source. This is a separate CC BY profile; the legacy
+MIT/Apache ingestion guard and its denials are unchanged. Sinabis 10M remains
+unadmitted. Both Codex packs remain technical fixtures.
+
+Run `test-sinabis.ps1` for metadata/token software tests. An operator may also
+provide `-Source <private-pinned-parquet-path>` to inspect the actual source
+read-only; no download occurs and only aggregate preparation/provenance is printed.
+The implementation checks the full artifact hash before decoding its immutable
+snapshot, filters unresolved origin across complete thread/duplicate components,
+extracts own-message text and consolidates exact duplicates. Metadata admission
+does not authorize use of unfiltered rows through an FDEC-009 receipt.
+
+`sinabis-mapping-v1.json` defines all twelve topics and priority/security/action
+review vocabulary plus the extensible 29-language schema. It supplies no
+per-message targets: all dimensions stay missing and supervision stays disabled.
+The 10K source has four observed languages. Preparation produces no actual
+train/test allocation or training-ready data: independent annotation, quality,
+current consent and the accepted split gate remain required. The existing split
+gate has not been broadened to this CC BY profile. The entire Oil family remains
+one source cohort; dividing its rows across train/test is rejected.
+
+Commercial training, commercial inference and public weight-distribution
+compatibility are recorded separately. Dataset-side compatibility is conditional;
+it does not authorize a particular model release. Retain source attribution,
+synthetic-data and modification notices and perform the separate base/weight
+artifact audit before publication.

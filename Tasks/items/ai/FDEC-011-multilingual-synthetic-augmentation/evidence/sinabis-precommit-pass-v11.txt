@@ -1,0 +1,107 @@
+test_all_dimensions_missing_no_defaults_or_codex_per_message_labels (test_sinabis.SinabisTests.test_all_dimensions_missing_no_defaults_or_codex_per_message_labels) ... ok
+test_both_codex_packs_remain_denied_after_new_source_registration (test_sinabis.SinabisTests.test_both_codex_packs_remain_denied_after_new_source_registration) ... ok
+test_cli_preserves_unicode_attribution_through_ascii_pipe (test_sinabis.SinabisTests.test_cli_preserves_unicode_attribution_through_ascii_pipe) ... ok
+test_evidence_attribution_and_separate_distribution_decision_required (test_sinabis.SinabisTests.test_evidence_attribution_and_separate_distribution_decision_required) ... ok
+test_exact_duplicates_consolidate_all_lineage (test_sinabis.SinabisTests.test_exact_duplicates_consolidate_all_lineage) ... ok
+test_forged_family_metadata_does_not_make_split_safe (test_sinabis.SinabisTests.test_forged_family_metadata_does_not_make_split_safe) ... ok
+test_incomplete_cases_or_unknown_links_never_silently_pass (test_sinabis.SinabisTests.test_incomplete_cases_or_unknown_links_never_silently_pass) ... ok
+test_inserted_labels_cannot_become_reviewed_projection_targets (test_sinabis.SinabisTests.test_inserted_labels_cannot_become_reviewed_projection_targets) ... ok
+test_invalid_cli_arguments_do_not_echo_supplied_content (test_sinabis.SinabisTests.test_invalid_cli_arguments_do_not_echo_supplied_content) ... ok
+test_legacy_license_guard_still_rejects_the_cc_by_profile (test_sinabis.SinabisTests.test_legacy_license_guard_still_rejects_the_cc_by_profile) ... ok
+test_legacy_receipt_cannot_launder_unfiltered_sinabis_rows (test_sinabis.SinabisTests.test_legacy_receipt_cannot_launder_unfiltered_sinabis_rows) ... ok
+test_near_duplicate_and_explicit_reply_components_preserved (test_sinabis.SinabisTests.test_near_duplicate_and_explicit_reply_components_preserved) ... ok
+test_pair_size_filter_matches_all_nonempty_subsets (test_sinabis.SinabisTests.test_pair_size_filter_matches_all_nonempty_subsets) ... ok
+test_prefix_candidate_filter_matches_exhaustive_jaccard (test_sinabis.SinabisTests.test_prefix_candidate_filter_matches_exhaustive_jaccard) ... ok
+test_production_source_admission_checks_three_uses_but_not_release (test_sinabis.SinabisTests.test_production_source_admission_checks_three_uses_but_not_release) ... ok
+test_profile_cannot_promote_unknown_or_openai_origin (test_sinabis.SinabisTests.test_profile_cannot_promote_unknown_or_openai_origin) ... ok
+test_projection_repeatability_and_resource_failures_preserve_inputs (test_sinabis.SinabisTests.test_projection_repeatability_and_resource_failures_preserve_inputs) ... ok
+test_rule_based_rows_need_calendar_evidence (test_sinabis.SinabisTests.test_rule_based_rows_need_calendar_evidence) ... ok
+test_snapshot_checksum_and_opt_in_reject_without_mutation (test_sinabis.SinabisTests.test_snapshot_checksum_and_opt_in_reject_without_mutation) ... ok
+test_thread_component_and_family_splits_fail_closed (test_sinabis.SinabisTests.test_thread_component_and_family_splits_fail_closed) ... ok
+test_unapproved_revision_hash_model_and_purposes_fail (test_sinabis.SinabisTests.test_unapproved_revision_hash_model_and_purposes_fail) ... ok
+test_vocabulary_and_29_language_extension_without_coverage_claim (test_sinabis.SinabisTests.test_vocabulary_and_29_language_extension_without_coverage_claim) ... ok
+test_whole_case_and_linked_duplicate_quarantine (test_sinabis.SinabisTests.test_whole_case_and_linked_duplicate_quarantine) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.585s
+
+OK
+{
+  "implementation_sha256": "41340e07670daa6fb822c08b62316e870b94b9bb73053d25a1b7981e6e0ef185",
+  "remaining_gates": [
+    "independent_permitted_annotation",
+    "quality_evaluation",
+    "current_source_consent_and_split_integration",
+    "training_task_admission"
+  ],
+  "schema": "fdec-sinabis-preparation/v1",
+  "source_admission": {
+    "attribution": {
+      "creator": "Sinabis GmbH",
+      "endorsement": false,
+      "license_uri": "https://creativecommons.org/licenses/by/4.0/",
+      "modifications": [
+        "whole-component origin quarantine",
+        "own-message extraction",
+        "normalization",
+        "exact-duplicate consolidation"
+      ],
+      "source_uri": "https://huggingface.co/datasets/sinabis-group/sinabis-10k-synthetic-emails",
+      "synthetic_notice": "Publisher-declared AI-generated fictional correspondence; may contain errors.",
+      "title": "Sinabis Oil \u2013 Synthetic Email Dataset (10k Emails)",
+      "warranty_uri": "https://creativecommons.org/licenses/by/4.0/legalcode.en#s5",
+      "year": 2026
+    },
+    "authoring_provider": "sinabis-publisher-declared-reviewed-non-openai",
+    "descriptor": {
+      "artifact": "data/train-00000-of-00001.parquet",
+      "dataset_id": "sinabis-group/sinabis-10k-synthetic-emails",
+      "license": "CC-BY-4.0",
+      "purpose": "commercial_training",
+      "revision": "4b8e73e28074c94b9c70934501bee1ed8c98e395",
+      "row_scope": "reviewed-whole-cases-only",
+      "sha256": "4c016783ff5f69211f869448d8d87f24044e055deed0304d48793401383f4175",
+      "size": 7133232,
+      "target": "specialized-email-classifier"
+    },
+    "downstream_rights": {
+      "commercial_inference": "compatible_subject_to_conditions",
+      "commercial_training": "compatible_subject_to_conditions",
+      "public_model_distribution": "compatible_subject_to_separate_artifact_audit"
+    },
+    "origin_policy_sha256": "f2176ca643367dfbfe284dcd4b8103fcca638a9cb63d468c40afaa0b5f9aeab5",
+    "release_approved": false,
+    "requires_independent_labels": true,
+    "requires_origin_projection": true,
+    "requires_split_and_consent": true,
+    "schema": "fdec-independent-source-admission/v2",
+    "scope": "reviewed-row-source-rights-only"
+  },
+  "summary": {
+    "exact_duplicate_rows": 1,
+    "feature_algorithm": "unicode-alnum-5gram-jaccard80/v1",
+    "independent_source_cohorts": 1,
+    "input_cases": 3190,
+    "input_rows": 10100,
+    "languages": {
+      "de": 2439,
+      "en": 5205,
+      "fr": 982,
+      "it": 761
+    },
+    "near_duplicate_pairs": 118,
+    "quarantined_cases": 235,
+    "quarantined_rows": 712,
+    "reason_rows": {
+      "unresolved_generation_origin": 712
+    },
+    "records_sha256": "ca364b7cb425383d11460d8727e7f91d7fb9385dcfe3fdf836fa881d546d6f17",
+    "retained_exact_duplicate_rows": 1,
+    "retained_source_rows": 9388,
+    "supervised_records": 0,
+    "unicode_version": "16.0.0",
+    "unique_records": 9387
+  },
+  "training_ready": false
+}
+PASS: Sinabis exact source review, origin quarantine, untrusted mapping, language extension, duplicate and split protections; no actual training or release

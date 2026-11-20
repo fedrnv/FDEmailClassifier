@@ -1,0 +1,82 @@
+{
+  "schema": "fdec-reviewed-independent-source/v2",
+  "identity": {
+    "dataset_id": "sinabis-group/sinabis-10k-synthetic-emails",
+    "revision": "4b8e73e28074c94b9c70934501bee1ed8c98e395",
+    "artifact": "data/train-00000-of-00001.parquet",
+    "sha256": "4c016783ff5f69211f869448d8d87f24044e055deed0304d48793401383f4175"
+  },
+  "artifact_bytes": 7133232,
+  "license": "CC-BY-4.0",
+  "status": "allowed_reviewed_whole_cases_only",
+  "allowed_purposes": [
+    "commercial_training",
+    "evaluation"
+  ],
+  "provenance_basis": "publisher_declaration_and_primary_generator_terms_review",
+  "openai_derived": false,
+  "origin_policy": {
+    "qwen3.6-35b-a3b-awq": "reviewed_local_qwen",
+    "deepseek-v4-flash": "reviewed_deepseek_api",
+    "": "verified_rule_based_calendar_only"
+  },
+  "unresolved_origin_policy": "quarantine_entire_connected_component",
+  "source_family": "sinabis-oil-source-family/v1",
+  "observed_languages": [
+    "en",
+    "de",
+    "fr",
+    "it"
+  ],
+  "downstream_rights": {
+    "commercial_training": "compatible_subject_to_conditions",
+    "commercial_inference": "compatible_subject_to_conditions",
+    "public_model_distribution": "compatible_subject_to_separate_artifact_audit"
+  },
+  "release_approved": false,
+  "attribution": {
+    "creator": "Sinabis GmbH",
+    "year": 2026,
+    "title": "Sinabis Oil – Synthetic Email Dataset (10k Emails)",
+    "source_uri": "https://huggingface.co/datasets/sinabis-group/sinabis-10k-synthetic-emails",
+    "license_uri": "https://creativecommons.org/licenses/by/4.0/",
+    "warranty_uri": "https://creativecommons.org/licenses/by/4.0/legalcode.en#s5",
+    "synthetic_notice": "Publisher-declared AI-generated fictional correspondence; may contain errors.",
+    "modifications": [
+      "whole-component origin quarantine",
+      "own-message extraction",
+      "normalization",
+      "exact-duplicate consolidation"
+    ],
+    "endorsement": false
+  },
+  "evidence": [
+    {
+      "path": "training/augmentation/SINABIS-AUDIT-v1.md",
+      "sha256": "ea7e3f72204af2367cc86d3deff7199bdf924cf55719641972dbf2308ae767d0"
+    },
+    {
+      "path": "training/augmentation/SINABIS-AUDIT-v2.md",
+      "sha256": "52d740013c978573e54f5267e75f93e922cf7ae2ae435fe4a092c8012b84f7ed"
+    },
+    {
+      "path": "training/augmentation/sinabis-source-observations-v1.json",
+      "sha256": "562e3b804a2862778c37110b72dc8ed0f9a696005402ae4d565e6c8d3d74b88e"
+    },
+    {
+      "path": "training/config/sinabis-mapping-v1.json",
+      "sha256": "76004f3df00f92b82ef933750bce315a4c4807190e1d829576513c81f4fd502d"
+    },
+    {
+      "path": "docs/legal/COMMERCIAL_USE_POLICY.md",
+      "sha256": "6850614390ff9cdd5e54109db4fdff3da54829bff92a51023b5bc0a205549c66"
+    }
+  ],
+  "not_admitted": [
+    {
+      "dataset_id": "sinabis-group/sinabis-10m-synthetic-emails",
+      "revision": "62385fbfe6aeb838305183215b55456ff5345cd5",
+      "reason": "complete_artifact_and_row_origin_audit_not_performed"
+    }
+  ]
+}
