@@ -27,7 +27,10 @@ try {
     New-Item -ItemType Directory "$temp/$task/evidence" -Force | Out-Null
     $ready.task_sha256=(Bound "$task/TASK.md").sha256
     $ready.source_sha=git -C $temp rev-parse HEAD
+    $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File | ForEach-Object { Bound $_.FullName.Substring($temp.Length+1).Replace('\','/') })
     $ready.allowed_paths=@('Tasks')
+    $migration=Get-Content "$temp/Tasks/migrations/FDEC-074.json" -Raw | ConvertFrom-Json
+    $ready | Add-Member migration_revisions @(@('Tasks/migrations/FDEC-074.json',$migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path) | ForEach-Object {Bound $_}) -Force
     [IO.File]::WriteAllText("$temp/$task/evidence/fixture-proof.md",'Synthetic PASS evidence')
     $ready | Add-Member verification @((Bound "$task/evidence/fixture-proof.md")) -Force
     $ready | ConvertTo-Json -Depth 10 | Set-Content "$temp/$task/evidence/fixture-ready.json" -Encoding UTF8

@@ -1,0 +1,11 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "367b3753-5034-417e-80ef-310f188a3f43",
+    "epic_id":  "FDEC-EPIC-S001",
+    "work_item_id":  "FDEC-074",
+    "summary":  "Resolve merged task identity collision through immutable replacement-first migration",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-074-resolve-task-identity-collision/evidence/verification.md"
+                     ]
+}

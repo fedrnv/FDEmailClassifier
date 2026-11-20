@@ -23,11 +23,38 @@ if ($LASTEXITCODE -ne 0) { throw 'Git baseline unavailable' }
 $changes = @(git -C $Root -c core.quotepath=false diff --name-status HEAD -- Tasks)
 if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect immutable history' }
 foreach ($line in $changes) {
-    if ($line -match '^[MDRCTU]' -and $line -match '(TASK\.md|EPIC\.md|/events/|/evidence/|/reviews/|/decisions/|/version-requests/|/policy/)') { throw "Immutable record changed: $line" }
+    if ($line -match '^[MDRCTU]' -and $line -match '(TASK\.md|EPIC\.md|/events/|/evidence/|/reviews/|/decisions/|/version-requests/|/policy/|/migrations/)') { throw "Immutable record changed: $line" }
+}
+$retiredPaths=@{}; $resolutions=@()
+if (Test-Path "$Root/Tasks/migrations") {
+    foreach ($file in Get-ChildItem "$Root/Tasks/migrations" -Filter '*.json') {
+        $resolution=Get-Content $file.FullName -Raw | ConvertFrom-Json
+        if ($resolution.schema -ne 'fdec-identity-resolution/v1') { throw 'Unsupported identity migration' }
+        foreach ($binding in @($resolution.retired,$resolution.retained,$resolution.replacement,$resolution.retirement_event)) {
+            if (!$binding.path -or !$binding.sha256) { throw 'Incomplete identity binding' }
+            $absolute=[IO.Path]::GetFullPath((Join-Path $Root $binding.path))
+            if (!$absolute.StartsWith($rootPath+[IO.Path]::DirectorySeparatorChar) -or !(Test-Path -LiteralPath $absolute -PathType Leaf) -or (Get-FileHash $absolute -Algorithm SHA256).Hash.ToLowerInvariant() -ne $binding.sha256) { throw 'Stale or missing identity binding' }
+        }
+        $old=Envelope (Join-Path $Root $resolution.retired.path)
+        $kept=Envelope (Join-Path $Root $resolution.retained.path)
+        $new=Envelope (Join-Path $Root $resolution.replacement.path)
+        $retirement=Envelope (Join-Path $Root $resolution.retirement_event.path)
+        $oldId=Field $old.front 'id'; $newId=Field $new.front 'id'
+        $oldParent=Field $old.front 'epic_id'
+        if ($oldId -ne (Field $kept.front 'id') -or $oldId -eq $newId -or $newId -notmatch '^FDEC-[0-9]{3}$' -or $oldParent -ne (Field $new.front 'epic_id') -or $oldParent -eq (Field $kept.front 'epic_id') -or (Field $old.front 'initial_status') -ne 'Planned') { throw 'Invalid collision identity mapping' }
+        if ((Field $retirement.front 'event_type') -ne 'superseded' -or (Field $retirement.front 'task_id') -ne $oldId -or (Field $retirement.front 'replacement_id') -ne $newId -or (Field $retirement.front 'correction_id') -ne $resolution.correction_id -or (Split-Path (Split-Path $retirement.path)) -ne (Split-Path $old.path)) { throw 'Invalid retirement event' }
+        if (@(Get-ChildItem (Join-Path (Split-Path $old.path) 'events') -Filter '*.md').Count -ne 1) { throw 'Retired collision has unsupported execution history' }
+        if ($retiredPaths.ContainsKey($old.path)) { throw 'Duplicate retirement mapping' }
+        $resolution | Add-Member old_id $oldId
+        $resolution | Add-Member new_id $newId
+        $resolution | Add-Member old_parent $oldParent
+        $retiredPaths[$old.path]=$true; $resolutions+= $resolution
+    }
 }
 $records = @{}
 foreach ($file in Get-ChildItem "$Root/Tasks/items","$Root/Tasks/epics" -Recurse -File | Where-Object Name -In 'TASK.md','EPIC.md') {
     $record = Envelope $file.FullName
+    if ($retiredPaths.ContainsKey($file.FullName)) { continue }
     $id = Field $record.front 'id'
     if ($records.ContainsKey($id)) { throw "Duplicate record: $id" }
     $epic = $file.Name -eq 'EPIC.md'
@@ -69,7 +96,7 @@ foreach ($record in $records.Values) {
         if ((Field $event.front 'schema') -ne 'fdtasks-event/v3' -or (Field $event.front 'task_id') -ne $record.id) { throw 'Invalid event envelope' }
         $null=Field $event.front 'actor'; $null=Field $event.front 'base_revision'
         $kind=Field $event.front 'event_type'
-        if ($kind -notin 'status-changed','work-started','dependency-added','membership-added','readiness-accepted','scope-amended') { throw "Unsupported event semantics: $kind" }
+        if ($kind -notin 'status-changed','work-started','dependency-added','membership-added','readiness-accepted','scope-amended','membership-replaced','dependency-replaced') { throw "Unsupported event semantics: $kind" }
         $record.state_paths+= $event.path
         if ($kind -in 'status-changed','work-started') {
             $transitions=[regex]::Matches($event.text,'\b(Planned|Active|InProgress|Done|Blocked|Cancelled) -> (Planned|Active|InProgress|Done|Blocked|Cancelled)\b')
@@ -83,7 +110,19 @@ foreach ($record in $records.Values) {
             if (!$m.Success) { throw 'Unsupported relationship amendment' }
             if ($kind -eq 'dependency-added') { $record.dependencies+= $m.Groups[1].Value } else { $record.members+= $m.Groups[1].Value }
         }
+        if ($kind -in 'membership-replaced','dependency-replaced') {
+            $oldId=Field $event.front 'old_task_id'; $newId=Field $event.front 'new_task_id'
+            $owner=if($record.epic){$record.id}else{$record.parent}
+            $matching=@($resolutions | Where-Object {$_.old_id -eq $oldId -and $_.new_id -eq $newId -and $_.old_parent -eq $owner})
+            if ($matching.Count -ne 1) { throw 'Unbound relationship replacement' }
+            $key=if($kind -eq 'membership-replaced'){'members'}else{'dependencies'}
+            if ($record[$key] -notcontains $oldId -or $record[$key] -contains $newId) { throw 'Invalid relationship replacement' }
+            $record[$key]=@($record[$key] | ForEach-Object {if($_ -eq $oldId){$newId}else{$_}})
+        }
     }
+}
+foreach ($resolution in $resolutions) {
+    if (!$records.ContainsKey($resolution.correction_id) -or $records[$resolution.correction_id].parent -ne 'FDEC-EPIC-S001' -or (Field $records[$resolution.correction_id].front 'type') -ne 'Correction' -or !$records.ContainsKey($resolution.new_id)) { throw 'Missing governing identity Correction or replacement' }
 }
 foreach ($record in $records.Values) {
     foreach ($dependency in $record.dependencies) { if (!$records.ContainsKey($dependency)) { throw "Missing dependency: $dependency" } }

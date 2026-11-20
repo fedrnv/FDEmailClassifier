@@ -15,9 +15,8 @@ foreach ($entry in $pin.inventory) {
 if ((Get-FileHash "$Root/Tasks/policy/upstream-5.6.md" -Algorithm SHA256).Hash.ToLowerInvariant() -ne $pin.policy_sha256) { throw 'Policy hash mismatch' }
 $records = & "$PSScriptRoot/repository.ps1" -Root $Root -AsObject
 if ($TaskId) {
-    $specs = @(Get-ChildItem "$Root/Tasks/items" -Filter TASK.md -Recurse | Where-Object { (Get-Content $_.FullName -Raw) -match "(?m)^id: $([regex]::Escape($TaskId))\r?$" })
-    if ($specs.Count -ne 1) { throw 'Task must resolve uniquely' }
-    $spec = $specs[0]
+    if (!$records.ContainsKey($TaskId) -or $records[$TaskId].epic) { throw 'Task must resolve uniquely' }
+    $spec = Get-Item -LiteralPath $records[$TaskId].path
     $readyPath = [IO.Path]::GetFullPath((Join-Path $spec.DirectoryName $ReadinessFile))
     if (!$readyPath.StartsWith($spec.DirectoryName + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) { throw 'Readiness escapes task directory' }
     if (!(Test-Path $readyPath)) { throw 'Missing accepted readiness' }
@@ -48,7 +47,15 @@ if ($TaskId) {
         }
     }
     foreach ($rule in $requiredRules | Select-Object -Unique) { if ($ready.rule_sources.path -notcontains $rule) { throw "Missing governing rule: $rule" } }
-    foreach ($entry in @($ready.rule_sources) + @($ready.dependency_revisions) + @($ready.epic_state_evidence)) {
+    if (Test-Path "$Root/Tasks/migrations") {
+        foreach ($file in Get-ChildItem "$Root/Tasks/migrations" -Filter '*.json') {
+            $migration=Get-Content $file.FullName -Raw | ConvertFrom-Json
+            $paths=@($file.FullName.Substring($rootAbsolute.Length+1).Replace('\','/')) + @($migration.retired.path,$migration.retained.path,$migration.replacement.path,$migration.retirement_event.path)
+            foreach ($path in $paths) { if ($ready.migration_revisions.path -notcontains $path) { throw "Unbound identity migration: $path" } }
+        }
+    }
+    foreach ($entry in @($ready.rule_sources) + @($ready.dependency_revisions) + @($ready.epic_state_evidence) + @($ready.migration_revisions)) {
+        if ($null -eq $entry) { continue }
         $boundPath = [IO.Path]::GetFullPath((Join-Path $Root $entry.path))
         if (!$boundPath.StartsWith($rootAbsolute + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) { throw 'Readiness input escapes repository' }
         if (!$entry.path -or !$entry.sha256 -or (Get-FileHash (Join-Path $Root $entry.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256) { throw 'Changed readiness input' }
