@@ -1,0 +1,14 @@
+{
+  "schema": "fdec-peft-runtime-profile/v1",
+  "observation_sha256": "eef718a3b997346cf0a80f8ed2e7d10426dce9d79b73648d231437e9b7029cc4",
+  "packages": {
+    "torch": "2.15.0",
+    "transformers": "5.23.0",
+    "peft": "0.22.0",
+    "safetensors": "0.8.0",
+    "bitsandbytes": "0.50.2",
+    "numpy": "2.5.5"
+  },
+  "runtime_integration_verified": false,
+  "distribution_license_audit_complete": false
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "fdec-trainer-runtime-observations/v1",
+  "observed_at": "2026-11-20T21:51:37.147803+00:00",
+  "packages": [
+    {
+      "name": "torch",
+      "version": "2.15.0",
+      "requires_python": ">=3.11",
+      "license": "Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND ISC AND MIT AND Zlib",
+      "metadata_url": "https://pypi.org/pypi/torch/json",
+      "metadata_sha256": "d701ff3e0226814ef0fcdf5a4e8f8cb6167aead26ae304a90631bb5bad9b3289"
+    },
+    {
+      "name": "transformers",
+      "version": "5.23.0",
+      "requires_python": ">=3.11.0",
+      "license": "Apache 2.0 License",
+      "metadata_url": "https://pypi.org/pypi/transformers/json",
+      "metadata_sha256": "d19b400b458cc1314092e5e0ea79bea0117d0ac3d4770f0c8077a37d02b90b02"
+    },
+    {
+      "name": "peft",
+      "version": "0.22.0",
+      "requires_python": ">=3.11.0",
+      "license": "Apache",
+      "metadata_url": "https://pypi.org/pypi/peft/json",
+      "metadata_sha256": "2dce10da105d98a4cf4f6a14767aeeec6a56535456704254ed55304f2d273dc5"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0",
+      "requires_python": ">=3.10",
+      "license": null,
+      "metadata_url": "https://pypi.org/pypi/safetensors/json",
+      "metadata_sha256": "0b048ecf815d2e61aae7ed6a9a3f545931b4ffd2a633525706b621ef93d089d3"
+    },
+    {
+      "name": "bitsandbytes",
+      "version": "0.50.2",
+      "requires_python": ">=3.10",
+      "license": "MIT",
+      "metadata_url": "https://pypi.org/pypi/bitsandbytes/json",
+      "metadata_sha256": "529600d1d8785e233ac23cae90d1cb902f3ac7675b781c03b93535f11c30c150"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.5",
+      "requires_python": ">=3.12",
+      "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "metadata_url": "https://pypi.org/pypi/numpy/json",
+      "metadata_sha256": "b9188fde2ff9e3d6f244de88c7dd3f1790a0f79fb80ad39c1deb11f81356beaa"
+    }
+  ],
+  "installation_performed": false,
+  "actual_runtime_verified": false,
+  "wheel_or_transitive_license_audit_complete": false
+}
