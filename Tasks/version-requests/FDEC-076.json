@@ -1,0 +1,11 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "b7410806-f35b-4e6c-b793-5fb0b1f17139",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-076",
+    "summary":  "Make pinned text identities checkout-stable without rewriting history",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/evidence/verification.md"
+                     ]
+}

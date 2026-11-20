@@ -1,0 +1,208 @@
+﻿{
+    "semantic_review":  "accepted",
+    "dependency_revisions":  [
+                                 {
+                                     "sha256":  "2b09c9e6e0c09c6898d292d051a501d199ec3409f97bf9dc649b97d5459c2873",
+                                     "path":  "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/TASK.md"
+                                 },
+                                 {
+                                     "sha256":  "ce3ea04249b7b42ec54e2525bfcddc9bf318ab91cba8d9aadb7579dfaaa54c94",
+                                     "path":  "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121354815Z-codex-readiness-accepted-6b1d0270.md"
+                                 },
+                                 {
+                                     "sha256":  "ad9d7013b648e3f0e9a3b870464ad6a2b3f48682555a21df58d6ebd784d93017",
+                                     "path":  "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121354868Z-codex-work-started-5ac81f8d.md"
+                                 },
+                                 {
+                                     "sha256":  "0334118b3956e8d433d3c5aace3228d27c960e11c7170e40e60fefc3b1e55b0a",
+                                     "path":  "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121356606Z-codex-readiness-accepted-1cfe79a1.md"
+                                 },
+                                 {
+                                     "sha256":  "03db7bbfcfc096e106ca9a31fd01255dce3871f3927ec690168207edb7d8c48c",
+                                     "path":  "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/events/20261120T121356623Z-codex-status-changed-305429e2.md"
+                                 }
+                             ],
+    "matrix":  [
+                   {
+                       "expected":  "Clean autocrlf=true/false checkouts admit unchanged pinned records",
+                       "command":  "powershell -NoProfile -File scripts/validate_tasks/test-checkout-identities.ps1",
+                       "id":  "AC-01"
+                   },
+                   {
+                       "expected":  "Tampering rejected, accepted source blobs unchanged",
+                       "command":  "Same script with text and binary mutation",
+                       "id":  "AC-02"
+                   }
+               ],
+    "epic_state_evidence":  [
+                                {
+                                    "sha256":  "2921eba850c47fb5518880c7c53606ab87ed0ff6769764c11a313040a14cb8ae",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "c5da7998c40a396904d37d4217513e4f454df9968adc4d321cf985378773f2f0",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                },
+                                {
+                                    "sha256":  "28f6dbcf58948c6ecc1fa5b64265008a08d7750b2e00e142038770acac0cda9a",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                },
+                                {
+                                    "sha256":  "664cc7b95bc79970c3b70efaa960bcbe3197d62712ace7fa4b4c27df146e6833",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                },
+                                {
+                                    "sha256":  "802a60dddd40da6085b31f33d834462fe8a87ecec8779bd08ab3571b1fbf9c02",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                },
+                                {
+                                    "sha256":  "53a0fff8444336fd2abcfc8140fd83d27f046e63d57c56733566a243e5947529",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                },
+                                {
+                                    "sha256":  "5384aecb5e1d67405ee5d3302efae7c42b12fa271d90b9d798e211e8fedf1848",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                },
+                                {
+                                    "sha256":  "9d73e1796e95e53df671289943b521784c96ba1c0a788e62080088cbac95407c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R001/reproduce-admission.ps1"
+                                },
+                                {
+                                    "sha256":  "ba44a556dbfbdc87f13864f100429f5fdbce13f196142c005e9ee4a2de78aaea",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R001/REQUEST.md"
+                                },
+                                {
+                                    "sha256":  "04ee970148a40ff07517b3f3d3454554a424e9cbba0beb955ff69bd5b005bf04",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R001/RESULT.md"
+                                },
+                                {
+                                    "sha256":  "082d7fcaba52c09c0da85863fbc4997fbc4bdf977088d81b953dcf43dff13007",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "71a63ed989d9d3c60fa435345fc21c4dd20683f3c894d5e47fa2ec482b3f3875",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D003/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "90f8596a5e29ca055fc0d1e983f1c24cbf2bf00c97ae5cb6b88d0ede55d20d83",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D004/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "e1900635d58ab27e11adc63a0ccb984a541bfaef9b97f5a8aa2a69bc0af96739",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D005/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "154368a4efc9ea1942c10831b634099b856019eefd7b4e3a2d371c5519970189",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D006/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "64c242aaab8f4cdd943c9a3217b427699bd1def0dcbf64512072d69ac51d7fe6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D007/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "83490987aaad921515a3191decfac9522d35d0332920e9778ddeeb2a7e1b4263",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D008/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "7d88122e022a09537b1f89c3d093a47e7384e46c1cd0691172d4848170b35a3e",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "d26181eb3c9243b3e736b5d4797f8b2e5541459f352714bd2de31b95991ae8a6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T113500Z-project-planning-membership-073.md"
+                                },
+                                {
+                                    "sha256":  "a58c67d7245aae26e82d30b2979e8d289d11ecbfad238bb7816dba47f14128c7",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T114908034Z-codex-membership-replaced-81c55913.md"
+                                },
+                                {
+                                    "sha256":  "f4c9994291afb7529b560e3d161c336ed831748b42d15b9d8e0f8f6816a363a0",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D010/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "58985cc645f8ec5a8adf9faf93931a24880f22b91ddf341c8b750491f779f848",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "4d7f5e62f6e5d60c41942c113ed3431de09dbf8f0e74bb461f75d72b65164bf7",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T105835Z-codex-membership-added-d3a33ce1.md"
+                                },
+                                {
+                                    "sha256":  "45b8db0dbed9f402d314b4e63d19a906da3c869758cea984cec89a7082da21f7",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T114907650Z-codex-membership-added-f57a3567.md"
+                                },
+                                {
+                                    "sha256":  "259372b8f06e58539ba61b7099fea5b66283eb74c9ed7ae05b3b78aaaacb0a9f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T120758097Z-codex-membership-added-97e3d59b.md"
+                                },
+                                {
+                                    "sha256":  "c5eb9ef605c113ae7db8fdbdd3dbcfba8d23e803585ea068ac0098e2f590c547",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S002/EPIC.md"
+                                }
+                            ],
+    "task_sha256":  "cf1b0d048e43053ca5adcc242bc670ea34cfd404af7e7a7ef17b8029d8c67984",
+    "atomicity":  {
+                      "boundary_reason":  "One identity compatibility contract",
+                      "outcomes":  [
+                                       "Checkout-stable identities preserving accepted raw hash history"
+                                   ],
+                      "packets":  [
+                                      "Add explicit canonical text identities and verify fresh checkouts"
+                                  ],
+                      "independent_acceptance":  false
+                  },
+    "rule_sources":  [
+                         {
+                             "sha256":  "43d73ff4c10734dcf7e7710ea7982783d622c29cdf6b2897975a432b5ba8034c",
+                             "path":  "AGENTS.md"
+                         },
+                         {
+                             "sha256":  "7de6ccfcacd00f54dbdcd071701ad87ef66c20407d4cb16b73c336526c17e2b8",
+                             "path":  "DEVELOPMENT.md"
+                         },
+                         {
+                             "sha256":  "cf5e70942475a43772dee0472b0ce6d3c3189c71f3981484fa59d8c53d48582d",
+                             "path":  "Tasks/AGENTS.md"
+                         },
+                         {
+                             "sha256":  "3bb61cd71eccd8cd0b57c60771757b69712b8de2a4782694917e7111577f6b7f",
+                             "path":  "Tasks/policy/checkout-identities-076.json"
+                         }
+                     ],
+    "allowed_paths":  [
+                          ".gitattributes",
+                          "scripts/validate_tasks",
+                          "Tasks/policy",
+                          "Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities"
+                      ],
+    "migration_revisions":  [
+                                {
+                                    "sha256":  "7a29d1aed1151af360bd478aeaa22b6ce846251b197d4a384894fff1e5b894f0",
+                                    "path":  "Tasks/migrations/FDEC-074.json"
+                                },
+                                {
+                                    "sha256":  "51f18360d853be9e0c3bee90d3f3b694af66f550d4d597276e7b106fe2d87cc9",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "cf631520b8491140e74613ff22a1d504acff888ad5db4b4cc64375027ab6c1d1",
+                                    "path":  "Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/TASK.md"
+                                },
+                                {
+                                    "sha256":  "49c749dc20f419959f65b0fcfe34f139494cc51e8051028de3723bcc4cc25646",
+                                    "path":  "Tasks/items/web/FDEC-075-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "d83d4820c058aa95d0f317ff49657cd52976da2ab82ae300f2b4725df4e7802d",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/events/20261120T114908434Z-codex-superseded-a396e5df.md"
+                                }
+                            ],
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "source_sha":  "91f0522159947cee46b2b9ca63cebe7cf8369c61",
+    "verification":  [
+                         {
+                             "sha256":  "baedede0608d04fa13bfe421e64bba1839ae1d5c54901622c9d66333c4aeadeb",
+                             "path":  "Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/evidence/verification.md"
+                         }
+                     ]
+}
