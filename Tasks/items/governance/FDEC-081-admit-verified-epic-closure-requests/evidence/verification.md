@@ -1,0 +1,15 @@
+﻿# FDEC-081 completion
+
+PASS. Existing FDTasks 5.6 lifecycle rule implemented without a normative change.
+
+AC-01: A completed synthetic development Epic with all first-closure requests, exact historical state, latest passing gate and Accepted independent round admits one Epic request. Reopen preserves the historical proof; reclosure requires a new current proof and preserves the original request byte-for-byte. The validator neither allocates a version nor publishes. Every new Epic Done transition is checked, not only the first request.
+
+AC-02: Focused final tests reject missing request, never-closed/special Epic, duplicate identity, missing member request, omitted/unfinished/duplicate member, stale state/source, wrong candidate/tree/gate identity, tampered/foreign evidence, mismatched/failed gate, unfinished/ChangesRequired/ambiguous/incorrectly typed review, tracked/staged/new implementation changes, and release allocation attempts. Source ancestry, candidate tree and append-only ledger descendants are checked. Review schema and reviewer identity fields are mandatory; actual independent semantic review remains the authorized executor's responsibility.
+
+Exact source, policy, commands, monitor IDs and terminal exit codes are in result.json and selected output in test-output.txt. The final focused suite passed at d6f60a7. Existing item/Epic integration entrypoint and all-five-action admission regression passed at 5452f3b; the final delta only adds stricter typed Epic review checks and their fixture, exercised by the final focused suite. The existing D001 gate reaches the new Epic fixtures through test-reopened-requests.ps1.
+
+Diagnostics are retained honestly: the initial readiness dispatch rejected an empty dependency-evidence list; a new immutable admitted-readiness.json binds the direct FDEC-080 contract and dispatch passed. The first fixture run (monitor 45d807de-b420-4edf-894d-8e6a4a706e21) expected a missing member request error but immutability correctly rejected deletion of an accepted request earlier. The assertion was corrected; subsequent runs passed. A typed-review schema omission found during executor inspection was added before the final source freeze and retested. These diagnostics are not passing runs or evidence of independent acceptance.
+
+Owned synthetic fixtures are removed by guarded cleanup, all monitors are terminal, and unrelated IDE state is preserved. No accepted record, allocated version, source branch on the server, release, model/data or GitHub setting was modified. FDEC-055 retains allocation/publication scope. The documented upstream redistribution restriction remains unchanged.
+
+FDEC-006 and FDEC-007 were reopened by immutable events because the shared validator changed after R002. Their original first-closure requests and all review rounds remain intact. Next turn executes the repeated local gate; only after it passes may a fresh independent R003 session review this corrected candidate. D001 alone remains active and is not closed by this task.

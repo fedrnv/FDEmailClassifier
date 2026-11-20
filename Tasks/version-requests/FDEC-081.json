@@ -1,0 +1,12 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "9df8e392-770c-4ace-b2af-37e4e553d572",
+    "epic_id":  "FDEC-EPIC-S001",
+    "work_item_id":  "FDEC-081",
+    "summary":  "Admit verified development Epic closure requests without allocation",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/evidence/verification.md",
+                         "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/evidence/result.json"
+                     ]
+}

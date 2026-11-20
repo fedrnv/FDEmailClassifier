@@ -1,0 +1,44 @@
+FDEC-081 focused final source d6f60a7834d5dc3e142fad396f2d218da24c5d92
+powershell -NoProfile -File scripts/validate_tasks/test-epic-closure.ps1
+Monitor fc7092f6-762f-4a55-9484-756a409a7694; exit 0
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: valid development Epic first closure and request admitted without allocation
+PASS: reject missing request
+PASS: reject never-closed Epic
+PASS: reject special Epic
+PASS: reject duplicate identity
+PASS: reject missing member request
+PASS: reject omitted member
+PASS: reject unfinished member
+PASS: reject duplicate member
+PASS: reject stale snapshot
+PASS: reject stale source
+PASS: reject wrong candidate tree
+PASS: reject wrong gate identity
+PASS: reject tampered Epic evidence
+PASS: reject foreign verification
+PASS: reject gate mismatch
+PASS: reject failed latest gate
+PASS: reject gate candidate mismatch
+PASS: reject review mismatch
+PASS: reject unfinished new review round
+PASS: reject ChangesRequired review
+PASS: reject ambiguous independent decision
+PASS: reject invalid review schema
+PASS: reject changed tracked implementation
+PASS: reject new implementation
+PASS: reject staged implementation
+PASS: reject release allocation request
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: Epic reopen/reclose retains first request; reclosure needs current proof; no versions allocated
+
+Prior shared regression on 5452f3bb164e24db65a5afd4198338a1fb7e5577
+powershell -NoProfile -File scripts/validate_tasks/test-reopened-requests.ps1
+Monitor 5e31bba0-a38d-48c2-acdd-9126f7533150; exit 0
+PASS: existing item reopen/reclose and Epic suite via existing gate entrypoint
+powershell -NoProfile -File scripts/validate_tasks/test-validation.ps1
+Monitor 6fadea3e-912e-4664-9e3b-86cbb9a1f3ae; exit 0
+PASS: all five action entrypoints, stale source, immutable history, dependencies, scoped rules, active Epics, requests and hosted boundary
