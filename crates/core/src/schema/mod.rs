@@ -3,6 +3,8 @@
 //! Version 1 advisory output. No type in this module executes suggested actions.
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 
+pub mod calibration;
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SchemaVersion {
     #[serde(rename = "1")]

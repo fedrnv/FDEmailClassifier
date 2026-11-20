@@ -1,0 +1,17 @@
+{
+  "minimum": -2.0,
+  "maximum": 3.0,
+  "negative_cut": -1.0,
+  "positive_cut": 2.0,
+  "cases": [
+    {"score": -2.0, "decision": "clear"},
+    {"score": -1.0, "decision": "clear"},
+    {"score": -0.999, "decision": "abstained:uncertain_band"},
+    {"score": 0.0, "decision": "abstained:uncertain_band"},
+    {"score": 1.999, "decision": "abstained:uncertain_band"},
+    {"score": 2.0, "decision": "flagged"},
+    {"score": 3.0, "decision": "flagged"},
+    {"score": 3.001, "decision": "abstained:outside_validation_range"},
+    {"score": null, "decision": "abstained:unmeasured"}
+  ]
+}

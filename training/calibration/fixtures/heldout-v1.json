@@ -1,0 +1,218 @@
+{
+  "schema": "fdec-calibration-observations/v1",
+  "score_kind": "binary-logit-margin/v1",
+  "model": {
+    "id": "technical-numerical-fixture",
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "rows": [
+    {
+      "record_id": "7a416c546b4afac684536efd4761365af5e99a5b9e40e59d8783c339f6e3ebbb",
+      "group_id": "7a416c546b4afac684536efd4761365af5e99a5b9e40e59d8783c339f6e3ebbb",
+      "role": "validation",
+      "language": "en",
+      "label": "topic:work",
+      "score": -2,
+      "gold": 0
+    },
+    {
+      "record_id": "7a416c546b4afac684536efd4761365af5e99a5b9e40e59d8783c339f6e3ebbb",
+      "group_id": "7a416c546b4afac684536efd4761365af5e99a5b9e40e59d8783c339f6e3ebbb",
+      "role": "validation",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 6,
+      "gold": 0
+    },
+    {
+      "record_id": "c9a80d6d8b7d8bfca2b4a76429c572dbd296ec54681b252d18eca897b4161e6b",
+      "group_id": "c9a80d6d8b7d8bfca2b4a76429c572dbd296ec54681b252d18eca897b4161e6b",
+      "role": "validation",
+      "language": "en",
+      "label": "topic:work",
+      "score": -1,
+      "gold": 0
+    },
+    {
+      "record_id": "c9a80d6d8b7d8bfca2b4a76429c572dbd296ec54681b252d18eca897b4161e6b",
+      "group_id": "c9a80d6d8b7d8bfca2b4a76429c572dbd296ec54681b252d18eca897b4161e6b",
+      "role": "validation",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 8,
+      "gold": 0
+    },
+    {
+      "record_id": "8860ffd9290b14677b5486f371b8c97babbc8680dff22320a6d9d11152b66635",
+      "group_id": "8860ffd9290b14677b5486f371b8c97babbc8680dff22320a6d9d11152b66635",
+      "role": "validation",
+      "language": "en",
+      "label": "topic:work",
+      "score": 0,
+      "gold": 1
+    },
+    {
+      "record_id": "8860ffd9290b14677b5486f371b8c97babbc8680dff22320a6d9d11152b66635",
+      "group_id": "8860ffd9290b14677b5486f371b8c97babbc8680dff22320a6d9d11152b66635",
+      "role": "validation",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 10,
+      "gold": 1
+    },
+    {
+      "record_id": "1f973fb8fc82ebe30cec157c5073e3e62314b74bd7141c47f6c30004c46ca2f1",
+      "group_id": "1f973fb8fc82ebe30cec157c5073e3e62314b74bd7141c47f6c30004c46ca2f1",
+      "role": "validation",
+      "language": "en",
+      "label": "topic:work",
+      "score": 1,
+      "gold": 0
+    },
+    {
+      "record_id": "1f973fb8fc82ebe30cec157c5073e3e62314b74bd7141c47f6c30004c46ca2f1",
+      "group_id": "1f973fb8fc82ebe30cec157c5073e3e62314b74bd7141c47f6c30004c46ca2f1",
+      "role": "validation",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 12,
+      "gold": 0
+    },
+    {
+      "record_id": "224a7c58f4e6fba29f2d529a0260afe94311767c3c0777f0fa22afee10cf46e7",
+      "group_id": "224a7c58f4e6fba29f2d529a0260afe94311767c3c0777f0fa22afee10cf46e7",
+      "role": "validation",
+      "language": "en",
+      "label": "topic:work",
+      "score": 2,
+      "gold": 1
+    },
+    {
+      "record_id": "224a7c58f4e6fba29f2d529a0260afe94311767c3c0777f0fa22afee10cf46e7",
+      "group_id": "224a7c58f4e6fba29f2d529a0260afe94311767c3c0777f0fa22afee10cf46e7",
+      "role": "validation",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 14,
+      "gold": 1
+    },
+    {
+      "record_id": "b837699cac86f33c6b79c254f33b82bd994ba0ddb05e9d12376d11c0e694d5bc",
+      "group_id": "b837699cac86f33c6b79c254f33b82bd994ba0ddb05e9d12376d11c0e694d5bc",
+      "role": "validation",
+      "language": "en",
+      "label": "topic:work",
+      "score": 3,
+      "gold": 1
+    },
+    {
+      "record_id": "b837699cac86f33c6b79c254f33b82bd994ba0ddb05e9d12376d11c0e694d5bc",
+      "group_id": "b837699cac86f33c6b79c254f33b82bd994ba0ddb05e9d12376d11c0e694d5bc",
+      "role": "validation",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 16,
+      "gold": 1
+    },
+    {
+      "record_id": "590c9f8430c7435807df8ba9a476e3f1295d46ef210f6efae2043a4c085a569e",
+      "group_id": "590c9f8430c7435807df8ba9a476e3f1295d46ef210f6efae2043a4c085a569e",
+      "role": "test",
+      "language": "en",
+      "label": "topic:work",
+      "score": -1,
+      "gold": 0
+    },
+    {
+      "record_id": "590c9f8430c7435807df8ba9a476e3f1295d46ef210f6efae2043a4c085a569e",
+      "group_id": "590c9f8430c7435807df8ba9a476e3f1295d46ef210f6efae2043a4c085a569e",
+      "role": "test",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 8,
+      "gold": 0
+    },
+    {
+      "record_id": "1b4f0e9851971998e732078544c96b36c3d01cedf7caa332359d6f1d83567014",
+      "group_id": "1b4f0e9851971998e732078544c96b36c3d01cedf7caa332359d6f1d83567014",
+      "role": "test",
+      "language": "en",
+      "label": "topic:work",
+      "score": 0,
+      "gold": 1
+    },
+    {
+      "record_id": "1b4f0e9851971998e732078544c96b36c3d01cedf7caa332359d6f1d83567014",
+      "group_id": "1b4f0e9851971998e732078544c96b36c3d01cedf7caa332359d6f1d83567014",
+      "role": "test",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 10,
+      "gold": 1
+    },
+    {
+      "record_id": "60303ae22b998861bce3b28f33eec1be758a213c86c93c076dbe9f558c11c752",
+      "group_id": "60303ae22b998861bce3b28f33eec1be758a213c86c93c076dbe9f558c11c752",
+      "role": "test",
+      "language": "en",
+      "label": "topic:work",
+      "score": 2,
+      "gold": 1
+    },
+    {
+      "record_id": "60303ae22b998861bce3b28f33eec1be758a213c86c93c076dbe9f558c11c752",
+      "group_id": "60303ae22b998861bce3b28f33eec1be758a213c86c93c076dbe9f558c11c752",
+      "role": "test",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 14,
+      "gold": 1
+    },
+    {
+      "record_id": "fd61a03af4f77d870fc21e05e7e80678095c92d808cfb3b5c279ee04c74aca13",
+      "group_id": "fd61a03af4f77d870fc21e05e7e80678095c92d808cfb3b5c279ee04c74aca13",
+      "role": "test",
+      "language": "en",
+      "label": "topic:work",
+      "score": 3.1,
+      "gold": 1
+    },
+    {
+      "record_id": "fd61a03af4f77d870fc21e05e7e80678095c92d808cfb3b5c279ee04c74aca13",
+      "group_id": "fd61a03af4f77d870fc21e05e7e80678095c92d808cfb3b5c279ee04c74aca13",
+      "role": "test",
+      "language": "en",
+      "label": "security:phishing",
+      "score": 16.2,
+      "gold": 1
+    },
+    {
+      "record_id": "426287028223fcba47c8b8f678c29b02f980e6f1e3d0bf03a3ded79096d23606",
+      "group_id": "426287028223fcba47c8b8f678c29b02f980e6f1e3d0bf03a3ded79096d23606",
+      "role": "validation",
+      "language": "de",
+      "label": "topic:work",
+      "score": -1,
+      "gold": 0
+    },
+    {
+      "record_id": "98601b251a39eb7193500ac0faaddf3daf302d3ab04396d331436bac0d5a76a0",
+      "group_id": "98601b251a39eb7193500ac0faaddf3daf302d3ab04396d331436bac0d5a76a0",
+      "role": "validation",
+      "language": "de",
+      "label": "topic:work",
+      "score": 1,
+      "gold": 1
+    },
+    {
+      "record_id": "ac1c66a3d97b5a1c1d1e92738b58dac4b9fea0ac753b53a2ad10559a4d120798",
+      "group_id": "ac1c66a3d97b5a1c1d1e92738b58dac4b9fea0ac753b53a2ad10559a4d120798",
+      "role": "test",
+      "language": "de",
+      "label": "topic:work",
+      "score": 0,
+      "gold": 1
+    }
+  ]
+}
