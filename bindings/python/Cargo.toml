@@ -1,0 +1,17 @@
+# Separate workspace: Python dependencies must not affect native consumers.
+[workspace]
+resolver = "3"
+
+[package]
+name = "fdemailclassifier-python"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.98"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["rlib"]
+
+[dependencies]
+fdemailclassifier-core = { path = "../../crates/core", version = "=0.0.0" }

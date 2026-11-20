@@ -1,0 +1,22 @@
+[workspace]
+members = ["crates/core", "crates/ffi", "crates/server", "examples/rust"]
+default-members = ["crates/core", "crates/ffi", "crates/server"]
+exclude = ["bindings/python"]
+resolver = "3"
+
+[workspace.package]
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.98"
+license = "Apache-2.0"
+repository = "https://github.com/fedrnv/FDEmailClassifier"
+publish = false
+
+[workspace.dependencies]
+fdemailclassifier-core = { path = "crates/core", version = "=0.0.0" }
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+all = "warn"

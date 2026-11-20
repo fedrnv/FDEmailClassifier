@@ -1,0 +1,13 @@
+[package]
+name = "fdemailclassifier-example"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+fdemailclassifier-core.workspace = true
+
+[lints]
+workspace = true

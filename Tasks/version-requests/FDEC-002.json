@@ -1,0 +1,11 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "004305ef-aba2-45df-93ad-e8ffd6bc341f",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-002",
+    "summary":  "Bootstrap pinned Rust workspace with isolated binding and build samples",
+    "verification":  [
+                         "Tasks/items/foundation/FDEC-002-rust-workspace-bootstrap/evidence/verification.md"
+                     ]
+}

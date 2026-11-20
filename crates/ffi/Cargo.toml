@@ -1,0 +1,18 @@
+[package]
+name = "fdemailclassifier-ffi"
+description = "Native library build scaffold for the future stable C ABI"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[lib]
+crate-type = ["rlib", "cdylib", "staticlib"]
+
+[dependencies]
+fdemailclassifier-core.workspace = true
+
+[lints]
+workspace = true
