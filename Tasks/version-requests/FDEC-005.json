@@ -1,0 +1,11 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "cde841ba-ee4a-4504-a16b-3221ed0130c0",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-005",
+    "summary":  "Approve shared Rust engine and SDK/backend/model compatibility architecture",
+    "verification":  [
+                         "Tasks/items/foundation/FDEC-005-architecture-and-backend-adr/evidence/verification.md"
+                     ]
+}
