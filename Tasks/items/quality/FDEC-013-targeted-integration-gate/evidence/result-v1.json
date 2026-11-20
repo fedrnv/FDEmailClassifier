@@ -1,0 +1,60 @@
+﻿{
+    "schema":  "fdec-gate-result/v1",
+    "task_id":  "FDEC-013",
+    "epic_id":  "FDEC-EPIC-D002",
+    "candidate_sha":  "0bcd4c4f377af86ee8b83d1d0bf770f0eb448ad8",
+    "candidate_tree":  "558697de3b18fd1bea8358a144bae90a90231c76",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "result":  "PASS",
+    "exit_code":  0,
+    "source_state_sha256":  "c003a26275a7451d3ace7d6a47a00668ac262042b357acb3daa7a8eb2eb3d287",
+    "stages":  [
+                   {
+                       "command":  "powershell -NoProfile -File scripts/verification/test-d002-source.ps1",
+                       "name":  "source freeze negatives",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/datasets/test-ingestion.ps1",
+                       "name":  "rights and verified ingestion",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/labels/test-mapping.ps1",
+                       "name":  "annotation and classification schemas",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/augmentation/test-native.ps1",
+                       "name":  "fixture generation and independent-input boundary",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/augmentation/test-sinabis.ps1",
+                       "name":  "Sinabis reviewed-source preparation contract",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "powershell -NoProfile -File training/splits/test-splits.ps1",
+                       "name":  "current consent and split protection",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  ".venv/ingestion/Scripts/python.exe -m unittest discover -s tests/d002 -p test_pipeline.py -v",
+                       "name":  "cross-component data pipeline",
+                       "result":  "PASS"
+                   },
+                   {
+                       "command":  "cargo test --locked --offline -p fdemailclassifier-core schema",
+                       "name":  "unchanged Rust classification contract",
+                       "result":  "PASS"
+                   }
+               ],
+    "scope":  "D002 software integration with isolated technical fixtures and pinned public rights metadata",
+    "actual_training_performed":  false,
+    "actual_dataset_train_test_admission":  "not_verified_by_this_gate",
+    "model_release_approved":  false,
+    "monitor_task_id":  "19cf1aab-f50c-4e54-b10e-ac3ad304f100",
+    "raw_monitor_log_sha256":  "100f08acc32b43a9e3193d716e459dc901cf8f2cc13a8a1921bc040f27a4aca4",
+    "transcript_normalization":  "Trailing whitespace and final blank lines removed; full stage content retained"
+}

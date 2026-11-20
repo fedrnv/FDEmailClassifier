@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "d0f7d3f9-2bcf-4e62-ac7d-52a063064fe5",
+    "type":  "task_closed",
+    "work_item_id":  "FDEC-013",
+    "epic_id":  "FDEC-EPIC-D002",
+    "summary":  "Pass frozen D002 changed-area integration with real component guards and explicit software-only data limits",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/verification-v1.md",
+                         "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/result-v1.json",
+                         "Tasks/items/quality/FDEC-013-targeted-integration-gate/evidence/test-output-v1.txt"
+                     ]
+}
