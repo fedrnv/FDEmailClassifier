@@ -1,0 +1,45 @@
+﻿{
+    "continuation":  "FDEC-083 next, then repeat FDEC-006 and request new independent review; no new review request identity or closure claimed",
+    "independence":  "Fresh model session, fork_turns none, no implementation-author history",
+    "candidate_tree":  "d3529de9fa1de411519d91f1ca8624ca55e2720b",
+    "task_id":  "FDEC-007",
+    "findings":  [
+                     {
+                         "outcome":  "Preserve original implementation paths across committed renames during Epic closure validation",
+                         "correction_id":  "FDEC-083",
+                         "id":  "R004-01"
+                     }
+                 ],
+    "reviewer_session":  "/root/review_d001_r004",
+    "verification":  "Shared suite exit 0 confirms R003 remedy; committed-rename probe reproduces incorrect closure admission; executor boundary proof rerun PASS",
+    "candidate_sha":  "ed9cb62bda2856c21f0ff9c4c874a743d0d90a2e",
+    "artifacts":  [
+                      {
+                          "sha256":  "f4d8428eb74fdd649e4a79c72db814f2f667c6aa6416d53f6fcd21626a44f607",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R004/REQUEST.md"
+                      },
+                      {
+                          "sha256":  "0bcc0fefffb2c200627f566a0201292f94a0efbbbf37a89554fbdf0cdb92a532",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R004/RESULT.md"
+                      },
+                      {
+                          "sha256":  "2d0b452e62524f6069f4b0869e87cfefe8cd40e58473d935af1672b50e54a2fa",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R004/focused-output.txt"
+                      },
+                      {
+                          "sha256":  "1f453c904a70566accc33d537422cc4857035fded3fb51342ea1e68717485750",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R004/reproduce-committed-rename.ps1"
+                      },
+                      {
+                          "sha256":  "0fd2ebf02e7af2c072e6a6ab284e1d7ccd2ef644b2abeb73eee06cd44e555916",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R004/reproduction-output.txt"
+                      },
+                      {
+                          "sha256":  "ee38eb633a803141dc9e6513c00ff63f54ebb1b478b733c255a5c2ad34c99cc4",
+                          "path":  "Tasks/epics/FDEC-EPIC-D001/reviews/R004/verify-boundary.ps1"
+                      }
+                  ],
+    "schema":  "fdec-review-reconciliation/v1",
+    "cleanup":  "Both monitors terminal; guarded synthetic fixtures removed; clean detached source retained",
+    "result":  "ChangesRequired"
+}
