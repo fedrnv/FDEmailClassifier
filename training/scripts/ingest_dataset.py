@@ -167,7 +167,8 @@ def rows(path):
             import pyarrow.parquet as parquet
             if pyarrow.__version__ != PYARROW_VERSION:
                 raise IngestionError("unsupported_parquet_dependency")
-            with parquet.ParquetFile(path, memory_map=False, pre_buffer=False, thrift_string_size_limit=1_000_000, thrift_container_size_limit=100_000, schema_depth_limit=20, page_checksum_verification=True, arrow_extensions_enabled=False) as source:
+            # Own the underlying handle even when ParquetFile construction fails.
+            with path.open("rb") as raw_source, parquet.ParquetFile(raw_source, memory_map=False, pre_buffer=False, thrift_string_size_limit=1_000_000, thrift_container_size_limit=100_000, schema_depth_limit=20, page_checksum_verification=True, arrow_extensions_enabled=False) as source:
                 if source.metadata.num_rows > MAX_ROWS:
                     raise IngestionError("row_limit")
                 uncompressed = sum(source.metadata.row_group(group).column(column).total_uncompressed_size for group in range(source.metadata.num_row_groups) for column in range(source.metadata.num_columns))
