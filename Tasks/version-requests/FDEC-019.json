@@ -1,0 +1,18 @@
+﻿{
+    "request_id":  "72499fab-d12a-4d19-ab0e-0cbca108ab66",
+    "schema":  "fdtasks-version-request/v1",
+    "type":  "task_closed",
+    "epic_id":  "FDEC-EPIC-D003",
+    "work_item_id":  "FDEC-019",
+    "summary":  "Verify private PEFT/GGUF export with complete numerical Qwen3 load round trip, provenance/SBOM and separate default-deny public-weight rights gate",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/verification-v1.md",
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/result-v2.json",
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/test-output-v1.txt",
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/fixture-report-v1.json",
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/fixture-receipt-v1.json",
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/fixture-run-v1.txt",
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/fixture-manifest-v1.json",
+                         "Tasks/items/ai/FDEC-019-model-export-and-provenance/evidence/fixture-sbom-v1.json"
+                     ]
+}

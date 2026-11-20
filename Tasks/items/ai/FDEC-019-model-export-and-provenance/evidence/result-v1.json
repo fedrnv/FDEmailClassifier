@@ -1,0 +1,74 @@
+﻿{
+    "schema":  "fdec-model-export-acceptance-result/v1",
+    "task_id":  "FDEC-019",
+    "source_sha":  "6e4b1c949329e3dab993bba2ae6d06ab896c921f",
+    "source_tree":  [
+                        "be7e31a482fe2aa4a3a62d750d176bd08bd6f0e1",
+                        "-encodedCommand",
+                        "dAByAGUAZQA="
+                    ],
+    "source_state_algorithm":  "fdec-source-state/v1",
+    "source_state_sha256":  "543ff4539b825e41876cd9a21f6c212dd27552cc836a8747965adcbde56af72b",
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "result":  "PASS",
+    "criteria":  {
+                     "AC-02":  {
+                                   "status":  "PASS",
+                                   "scope":  "Invalid/missing inputs, integrity/authority/license failures and rollback preserve prior state"
+                               },
+                     "AC-01":  {
+                                   "status":  "PASS",
+                                   "scope":  "Complete random-tensor model PEFT/GGUF export/load round trip, metadata/SBOM and separate default-deny release gate"
+                               }
+                 },
+    "verification":  {
+                         "exit_code":  0,
+                         "python":  "3.14.5",
+                         "monitor_id":  "2522c1bc-3cf5-40c3-b75e-78a06eb0815d",
+                         "command":  "powershell -NoProfile -File training/export/test-export.ps1",
+                         "test_output_sha256":  "f0243587706d7a8bfca6e02609668b7824e3c89d0bd068edcc99b0d9350111e9",
+                         "python_tests":  6
+                     },
+    "model_fixture":  {
+                          "merge_probe_max_absolute_error":  8.9406967163085938E-08,
+                          "monitor_id":  "fb9499b0-621e-49e2-a255-4b94b6e93c83",
+                          "exit_code":  0,
+                          "runtime":  {
+                                          "build":  "fresh-cmake-cpu-static-completion; not a redistributed runtime",
+                                          "cmake_cache_sha256":  "1744405e5b006efdbe2918b9afdcaac5414dc70b9d56676a252aead5c340bc2b",
+                                          "executable_sha256":  "5e4a2acbbad532f5f29f2564eb25901a6ebce9039bc096fd4eb6e3c8a8d44ac2",
+                                          "merged_adapter_probe_equal":  true,
+                                          "model_load_and_two_token_probe_verified":  true,
+                                          "probe_output_sha256":  "4d6c81d25b182f867ed4b2a31f9eb3c3ac3f8892ac1d9ebb260093417aff8126",
+                                          "scope":  "numerical-probe-only; no classifier-quality measurement",
+                                          "source_revision":  "29b52d398b294509746ec0a3f28948a3107c0213"
+                                      },
+                          "output_sha256":  "31311beec47293029229c92b7535deaef35cf857c4b79b2889a133fbe6c812ab",
+                          "command":  "powershell -NoProfile -File training/export/test-model-export.ps1 -OutputDirectory C:/GitHub/FDEmailClassifier/training/outputs/fdec019-6e4b1c9-v1 -ReuseObservedBuild",
+                          "scope":  "Complete random-tensor Qwen3, numeric tokens only; no trained classifier",
+                          "metadata_hashes":  {
+                                                  "fixture-sbom-v1.json":  "08c21516b0fb4e0c6794a7e421ad72062885b19de85b0d137efae226cfe32edf",
+                                                  "fixture-receipt-v1.json":  "eb74521daab3adb601acefbd86c6d3de27ffa6cd6cf435145419e49b75318e00",
+                                                  "fixture-report-v1.json":  "0854618642952a0120600404bd87d0cf4fdc8a07eae41e1186259a69f9d7f846",
+                                                  "fixture-manifest-v1.json":  "a6df1664e2a4b58476c928c350ddb5a5e99effecd6c6fe09e533ee1b424dcb6e"
+                                              }
+                      },
+    "actual_synthetic_model_used":  true,
+    "actual_trained_model_used":  false,
+    "actual_email_training":  false,
+    "pretrained_tensors_downloaded":  false,
+    "actual_classifier_evaluated":  false,
+    "probabilities_estimated":  false,
+    "real_weight_release_registry_entries":  0,
+    "public_weight_redistribution_approved":  false,
+    "existing_source_rights_origin_consent_split_changed":  [
+
+                                                            ],
+    "external_spend_eur":  0,
+    "unchanged_blocked_tasks":  [
+                                    "FDEC-015",
+                                    "FDEC-016"
+                                ],
+    "epic_status":  "Active",
+    "continuation":  "Reassess unfinished D003 training/handoff and dependency readiness before gate/review"
+}
