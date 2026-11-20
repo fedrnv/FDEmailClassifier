@@ -1,0 +1,12 @@
+﻿{
+    "type":  "task_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "ad96ed25-0a5b-40aa-8909-4b188562db1d",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-072",
+    "summary":  "Align accurate GitHub metadata, local README and verified red-E social preview",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/final-verification.md",
+                         "Tasks/items/governance/FDEC-072-polish-public-github-repository-presentation/evidence/final-public-readback.json"
+                     ]
+}

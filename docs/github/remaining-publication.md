@@ -1,4 +1,4 @@
-# FDEC-072 remaining publication step
+# FDEC-072 presentation publication status
 
 About description, homepage and all nine topics were updated and read back through
 the authorized local Git credential. `metadata.json` is the exact applied value.
@@ -9,9 +9,16 @@ implemented foundation from future inference/SDKs.
 
 The red branded preview is ready at `assets/github/social-preview.png` (1280x640);
 its editable source is adjacent. It was visually inspected locally.
-It has **not** been uploaded to GitHub and AC-03 is not complete.
+The operator uploaded the final neutral-background revision. GitHub's actual
+og:image points to the hosted PNG below; its bytes match the local upload asset:
 
-To finish with an authorized GitHub browser session:
+- URL: https://repository-images.githubusercontent.com/1465302712/1c082c63-b2f6-477d-9a01-2405f08e959a
+- SHA256: a0e8acce656ef17ecb9c6699376a40edec3bad1ac3c6add82c22b43da7a6ed1d
+
+The downloaded card was visually inspected. AC-03 is complete. Historical blocker
+evidence remains unchanged; current readback is in the task's final evidence.
+
+For future image replacements, use an authorized GitHub browser session:
 
 1. Open https://github.com/fedrnv/FDEmailClassifier/settings.
 2. Under General > Social preview, choose Edit > Upload an image.

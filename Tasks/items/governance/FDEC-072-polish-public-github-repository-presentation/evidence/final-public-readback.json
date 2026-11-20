@@ -1,0 +1,37 @@
+﻿{
+    "description":  "Open-source multilingual AI email classifier. Rust, Python, C and C++ SDKs planned. Local inference, privacy-first, Apache 2.0 original code.",
+    "verified_at":  "2026-11-20T11:54:51.6651522Z",
+    "homepage":  "https://emailclassifier.fedrv.de",
+    "topics":  [
+                   "apache-2-0",
+                   "cpp",
+                   "email-classification",
+                   "machine-learning",
+                   "multilingual",
+                   "privacy",
+                   "python",
+                   "qwen3",
+                   "rust"
+               ],
+    "readme_links":  [
+                         "Tasks/decisions/ADR-0001-local-inference-and-sdk-boundaries.md",
+                         "docs/architecture/boundary-review.md",
+                         "crates/README.md",
+                         "examples/README.md",
+                         "bindings/python/README.md",
+                         "docs/api/classification-v1.md",
+                         "schemas/examples/classified.json",
+                         "CONTRIBUTING.md",
+                         "CODE_OF_CONDUCT.md",
+                         "DEVELOPMENT.md",
+                         "Tasks/README.md",
+                         "docs/PROJECT_PLAN.md",
+                         "SECURITY.md",
+                         "LICENSE",
+                         "NOTICE",
+                         "docs/legal/THIRD_PARTY.md",
+                         "docs/api/dependency-audit.md"
+                     ],
+    "card_url":  "https://repository-images.githubusercontent.com/1465302712/1c082c63-b2f6-477d-9a01-2405f08e959a",
+    "card_sha256":  "a0e8acce656ef17ecb9c6699376a40edec3bad1ac3c6add82c22b43da7a6ed1d"
+}
