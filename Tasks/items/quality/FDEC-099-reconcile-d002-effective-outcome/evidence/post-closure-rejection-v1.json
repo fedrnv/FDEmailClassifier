@@ -1,0 +1,19 @@
+﻿{
+    "exit_code":  1,
+    "allocated":  false,
+    "monitor_task_id":  "f3a23ebc-6157-49a6-86a6-15278c1396fe",
+    "result":  "FAIL",
+    "correction":  "FDEC-100",
+    "schema":  "fdec-local-verification/v1",
+    "required_type":  "correction_closed",
+    "source_sha":  "65a44ee",
+    "reason":  "Closure request type does not match item",
+    "command":  "powershell -NoProfile -File scripts/validate_tasks/repository.ps1",
+    "acceptance_claimed":  false,
+    "request":  {
+                    "sha256":  "fb50e63332b571b04e1ad7635ea013a7d8076ab77913a7de93cdd1ffa740ef0c",
+                    "path":  "Tasks/version-requests/FDEC-099.json"
+                },
+    "published":  false,
+    "actual_type":  "task_closed"
+}
