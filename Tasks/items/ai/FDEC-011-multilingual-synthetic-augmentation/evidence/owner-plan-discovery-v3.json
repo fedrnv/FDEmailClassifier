@@ -1,0 +1,27 @@
+﻿{
+    "schema":  "fdec-owner-plan-discovery/v1",
+    "upstream_sha":  "0ea1e407e32eb2671226ab9f8430e54e4207d6b7",
+    "local_sha":  "1d8cd69db48737d33cd3d270d8f7c9e497e2ae7f",
+    "owner_request":  "Update project and follow revised GitHub development/training plan",
+    "new_epics":  [
+                      "FDEC-EPIC-D011",
+                      "FDEC-EPIC-D012"
+                  ],
+    "colliding_incoming_ids":  [
+                                   "FDEC-074",
+                                   "FDEC-075",
+                                   "FDEC-076",
+                                   "FDEC-077",
+                                   "FDEC-078",
+                                   "FDEC-079",
+                                   "FDEC-080",
+                                   "FDEC-081",
+                                   "FDEC-082",
+                                   "FDEC-083"
+                               ],
+    "mac_task":  "FDEC-087",
+    "preferred_training_host":  "Owner MacBook Air M4 / 32 GB with operator-confirmed MLX round trip",
+    "process_correction":  "FDEC-088",
+    "integration_status":  "Fetched and inspected; not merged; identity migration required",
+    "next_action":  "Execute bounded FDEC-088 synchronization before resuming FDEC-011; keep both Codex packs fixture-only and all source gates unchanged"
+}

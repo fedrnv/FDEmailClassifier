@@ -1,0 +1,8 @@
+{
+  "schema": "fdec-acceptance-amendment/v1",
+  "task_id": "FDEC-011",
+  "additions": [
+    {"id":"AC-08","criterion":"Research pinned Sinabis 10K and 10M sources, CC BY 4.0, declared generation origins and applicable generator restrictions; document attribution and the conditions for public distribution of derived classifier weights without claiming unproven rights or making purchases."},
+    {"id":"AC-09","criterion":"If source-rights review succeeds, admit the exact Sinabis 10K artifact through a strict audited independent-source profile; prepare untrusted mapping to all canonical dimensions, whole-thread/source-family split protection and duplicate checks, retaining an extensible 29-language schema. Otherwise document a concrete denial and continue independent component development. Never use Codex text or generated per-message labels for actual training."}
+  ]
+}

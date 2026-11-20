@@ -1,0 +1,20 @@
+﻿{
+    "task_id":  "FDEC-011",
+    "schema":  "fdec-acceptance-amendment/v1",
+    "updates":  [
+                    {
+                        "id":  "AC-01",
+                        "criterion":  "Implement and locally verify reproducible multilingual generation/translation software, provenance and license tracking using permitted technical fixtures without real personal mail; actual training data requires separate audited independent-source admission."
+                    },
+                    {
+                        "id":  "AC-04",
+                        "criterion":  "Keep codex-fixture-v1 and fdec-native-templates-v1 texts and labels excluded from actual commercial training and evaluation, including accidental per-pack promotion. Missing OpenAI permission does not block software development or permitted technical tests; actual training inputs must come from independently audited non-OpenAI sources."
+                    }
+                ],
+    "additions":  [
+                      {
+                          "id":  "AC-07",
+                          "criterion":  "Verify a training-input boundary that rejects Codex-derived run artifacts and admits only an unchanged ingestion run from a current hash-bound independently audited non-OpenAI source; modified rights evidence, source bytes or normalized text/labels reject without changing inputs."
+                      }
+                  ]
+}

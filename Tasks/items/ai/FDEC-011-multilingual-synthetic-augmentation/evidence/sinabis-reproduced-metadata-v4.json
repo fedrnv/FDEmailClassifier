@@ -1,0 +1,49 @@
+﻿{
+  "bytes": 7133232,
+  "case_kinds": {
+    "meeting": 264,
+    "single": 990,
+    "thread": 8846
+  },
+  "cases": 3190,
+  "complete_cases": 3190,
+  "content_duplicate_check": "not_performed_by_metadata_inspection",
+  "declared_duplicate_pointers": 0,
+  "duplicate_message_ids": 0,
+  "languages": {
+    "de": 2618,
+    "en": 5600,
+    "fr": 1052,
+    "it": 830
+  },
+  "model_rows": [
+    {
+      "model": "",
+      "rows": 264
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "rows": 2864
+    },
+    {
+      "model": "qwen3.6",
+      "rows": 712
+    },
+    {
+      "model": "qwen3.6-35b-a3b-awq",
+      "rows": 6260
+    }
+  ],
+  "rows": 10100,
+  "schema": "fdec-sinabis-metadata-inspection/v1",
+  "source": {
+    "artifact": "data/train-00000-of-00001.parquet",
+    "dataset_id": "sinabis-group/sinabis-10k-synthetic-emails",
+    "revision": "4b8e73e28074c94b9c70934501bee1ed8c98e395",
+    "sha256": "4c016783ff5f69211f869448d8d87f24044e055deed0304d48793401383f4175"
+  },
+  "source_training_admission": "not_registered",
+  "training_performed": false,
+  "unresolved_model_cases": 235,
+  "unresolved_replies": 0
+}

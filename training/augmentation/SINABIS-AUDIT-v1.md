@@ -1,0 +1,39 @@
+# Sinabis source-rights decision, 2026-11-20
+
+This is a scoped source-admission review, not a warranty of ownership. Exact source, document and artifact identities are recorded in `sinabis-source-observations-v1.json`. No purchase or provider API call is required. Publisher origin statements are evidence, not independently verified authorship certificates.
+
+Implementation status: **review proposal only**. The conditional profile below is not yet registered or executable. Existing production guards continue to reject Sinabis. The owner has requested synchronization with the updated GitHub plan first; preserve this research as input to the continuing task without claiming source or task acceptance.
+
+## 10K: conditional admission of reviewed whole cases
+
+[Pinned publisher card](https://huggingface.co/datasets/sinabis-group/sinabis-10k-synthetic-emails/blob/4b8e73e28074c94b9c70934501bee1ed8c98e395/README.md): Sinabis GmbH declares fictional Oil-company correspondence under CC BY 4.0. The Parquet artifact contains 10,100 rows in English, German, French and Italian. Publisher generation documentation is available in the pinned 1M repository. The smaller Oil editions overlap; treat the entire Oil family as one source cohort.
+
+Local metadata inspection confirms 6,260 rows tagged `qwen3.6-35b-a3b-awq`, 2,864 `deepseek-v4-flash`, 264 rule-based calendar rows and 712 generic `qwen3.6` rows. The last tag does not resolve an exact model or generation route. Quarantine **entire cases** containing that tag or any unreviewed origin. It is not evidence for an OpenAI origin, but is insufficient for our positive lineage admission. Do not silently promote it based on a family name. All file bytes remain pinned; the reviewed-row projection is an explicit modification. No real-mail provenance is declared by the publisher; no private mailbox data is used here.
+
+## Generator permissions
+
+[Qwen3.6-35B-A3B](https://huggingface.co/Qwen/Qwen3.6-35B-A3B/blob/345d467b117d1fd5eda9b879a5988de9ae5f47a7/LICENSE) is Apache-2.0. That license contains no competing-model-output-training prohibition. The publisher identifies local AWQ generation; this review does not redistribute the quantized generator or assert its converter license has been audited.
+
+[DeepSeek Open Platform terms](https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html), effective 2026-04-29, section 4.2 assign any provider output rights and expressly permit downstream model training/distillation subject to law and terms. [General terms](https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html), updated 2026-03-27, require checking published output, identifying AI generation and observing lawful-use restrictions. There is no identified downstream classifier-weight distribution ban in these reviewed provisions. This relies on the publisher's API-origin declaration; its private account agreement and historical compliance were not independently inspected. Generator-model ownership is not transferred to this project, and no provider endorsement is claimed.
+
+## 10M: research only
+
+[Pinned publisher card](https://huggingface.co/datasets/sinabis-group/sinabis-10m-synthetic-emails/blob/62385fbfe6aeb838305183215b55456ff5345cd5/README.md) declares CC BY 4.0, fictional Green Energy correspondence, 10,088,914 emails and 29 languages. It identifies Gemma 4, Qwen 3.6, a small Qwen 3.5/DeepSeek share, and rule-based messages. Its generation configuration is not published there. No complete artifact or row lineage audit has been performed, so it is **not admitted for training**. Do not download its large archives as part of this task.
+
+[Gemma 4's model card](https://huggingface.co/google/gemma-4-26B-A4B/blob/24548b62aa021d562695c04aaf7758a1ea47990b/README.md) declares Apache-2.0; [Google's Apache license page](https://gemma.ai/resources/apache-2/) distinguishes it from [older Gemma terms](https://gemma.ai/resources/terms/), whose Appendix omits Gemma 4. Do not apply the older synthetic-distillation restrictions indiscriminately to Gemma 4. [Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B/blob/c202236235762e1c871ad0ccb60c8ee5ba337b9a/LICENSE) is Apache-2.0. These observations alone do not approve every 10M row or generation route.
+
+## Attribution and public weight distribution
+
+[CC BY 4.0 legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en), sections 2–3, permits copying, adaptation and sharing without a noncommercial restriction. Retain supplied creator/copyright, source URI, license and warranty references; identify modifications and avoid endorsement claims. Only rights the licensor can grant are covered; privacy, trademark and unrelated third-party rights are not assured. The license does not guarantee the publisher's origin assertions.
+
+Dataset-side review identifies no prohibition on commercial classifier training or free public distribution of resulting classifier weights, provided applicable attribution and other conditions are met. This is not approval of a specific model artifact. Before release, independently audit the exact base model, tokenizer, training inputs and dependency/conversion licenses, test for memorized content, include the attribution below and an accurate modifications/synthetic-data disclosure, retain the CC warranty reference, and obtain operator publication authorization. Do not automatically label all resulting weights CC BY or Apache: classify the actual distributed artifact and preserve all applicable notices.
+
+Attribution to retain in dataset receipts and any derived model card/NOTICE: **Sinabis GmbH (2026), Sinabis Oil – Synthetic Email Dataset (10k Emails)**; source: https://huggingface.co/datasets/sinabis-group/sinabis-10k-synthetic-emails ; license: https://creativecommons.org/licenses/by/4.0/ ; warranty reference: https://creativecommons.org/licenses/by/4.0/legalcode.en#s5 . Modifications: reviewed whole-case filtering, own-message extraction, normalization and duplicate handling; no independently validated classification labels supplied. State that the source correspondence is synthetic and may contain errors. Preserve any further supplied notices if distributing source material. This project grants no rights on behalf of Sinabis or generator providers.
+
+## Label, split and language boundaries
+
+Sinabis does not supply verified targets for our twelve categories, priority, security or action. Calendar metadata may propose a `work`/`social` topic and review action, but these remain review-queue candidates with every supervision mask false. Do not infer low risk, normal priority or no action from an absent annotation. Codex must not create per-message training labels. Independent lawful annotation and quality evaluation remain required before supervised training.
+
+Keep each complete case, linked message chain and duplicate component together. Use the own-message `text` field; never feed quoted-history `body` as independent examples. Exact and near duplicates are checked separately; lack of a source `duplicate_of` value is not proof of uniqueness. All Oil editions belong to one source cohort under FDEC-012. A single source cannot satisfy that accepted three-cohort split policy; do not weaken it to manufacture train/test partitions. The 29-language schema is extensible configuration, not a claim that 10K covers 29 languages or that the classifier is accurate in them.
+
+Legacy MIT/Apache ingestion checks and all prior source denials remain unchanged. A separate, exact-artifact CC BY admission profile with mandatory whole-case origin quarantine and attribution is proposed; it has not been implemented. Both Codex packs remain fixture-only. This review does not admit translations, relabeled corpora, other revisions, 10M or future generated data automatically.

@@ -1,0 +1,32 @@
+﻿{
+    "schema":  "fdec-sinabis-private-inspection/v1",
+    "source_identity":  {
+                            "revision":  "4b8e73e28074c94b9c70934501bee1ed8c98e395",
+                            "sha256":  "4c016783ff5f69211f869448d8d87f24044e055deed0304d48793401383f4175",
+                            "dataset_id":  "sinabis-group/sinabis-10k-synthetic-emails",
+                            "artifact":  "data/train-00000-of-00001.parquet",
+                            "bytes":  7133232
+                        },
+    "rows":  10100,
+    "complete_cases":  3190,
+    "languages":  {
+                      "fr":  1052,
+                      "en":  5600,
+                      "de":  2618,
+                      "it":  830
+                  },
+    "model_rows":  {
+                       "deepseek-v4-flash":  2864,
+                       "qwen3.6-35b-a3b-awq":  6260,
+                       "rule-based-calendar":  264,
+                       "qwen3.6":  712
+                   },
+    "unresolved_model_cases":  235,
+    "duplicate_message_id_count":  0,
+    "unresolved_reply_count":  0,
+    "declared_duplicate_pointer_count":  0,
+    "content_duplicate_verification":  "pending",
+    "source_training_admission":  "not_registered",
+    "actual_training_performed":  false,
+    "scope":  "Metadata-only private inspection; no source email text or per-message labels returned to the agent or committed"
+}

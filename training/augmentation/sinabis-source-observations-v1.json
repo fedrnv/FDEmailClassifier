@@ -1,0 +1,206 @@
+{
+  "schema": "fdec-sinabis-source-observations/v1",
+  "observed_date": "2026-11-20",
+  "datasets": [
+    {
+      "dataset_id": "sinabis-group/sinabis-10k-synthetic-emails",
+      "revision": "4b8e73e28074c94b9c70934501bee1ed8c98e395",
+      "declared_license": "cc-by-4.0",
+      "files": [
+        {
+          "rfilename": "README.md",
+          "size": 12875,
+          "blobId": "b053564c2d8ec201240a061489f601f27d46595d"
+        },
+        {
+          "rfilename": "data/train-00000-of-00001.parquet",
+          "size": 7133232,
+          "blobId": "482b1dde9f01c89d4684157b2e0c63ada6596934",
+          "lfs": {
+            "sha256": "4c016783ff5f69211f869448d8d87f24044e055deed0304d48793401383f4175",
+            "size": 7133232,
+            "pointerSize": 132
+          }
+        }
+      ]
+    },
+    {
+      "dataset_id": "sinabis-group/sinabis-10m-synthetic-emails",
+      "revision": "62385fbfe6aeb838305183215b55456ff5345cd5",
+      "declared_license": "cc-by-4.0",
+      "files": [
+        {
+          "rfilename": "README.md",
+          "size": 18281,
+          "blobId": "5d5a2ffbf711b1c60346cddec57478cfebf90873"
+        }
+      ]
+    },
+    {
+      "dataset_id": "sinabis-group/sinabis-1m-synthetic-emails",
+      "revision": "147b6c501c2910fb06626b9bbb9f109e1c2a6340",
+      "declared_license": "cc-by-4.0",
+      "files": [
+        {
+          "rfilename": "README.md",
+          "size": 14247,
+          "blobId": "2678c58450f396a62970cd1f58ffdb4387565420"
+        },
+        {
+          "rfilename": "docs/generation/company.json",
+          "size": 19223,
+          "blobId": "7ffdc06e2c6ea6b3aa5d3c46010dc92173a98be2"
+        },
+        {
+          "rfilename": "docs/generation/email_prompts.json",
+          "size": 42321,
+          "blobId": "71b1007dc81a60a074d1854442d51de655cb2898"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "model_id": "Qwen/Qwen3.6-35B-A3B",
+      "revision": "345d467b117d1fd5eda9b879a5988de9ae5f47a7",
+      "declared_license": "apache-2.0"
+    },
+    {
+      "model_id": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "declared_license": "apache-2.0"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V4-Flash",
+      "revision": "60d8d70770c6776ff598c94bb586a859a38244f1",
+      "declared_license": "mit"
+    },
+    {
+      "model_id": "google/gemma-4-26B-A4B",
+      "revision": "24548b62aa021d562695c04aaf7758a1ea47990b",
+      "declared_license": "apache-2.0"
+    }
+  ],
+  "documents": [
+    {
+      "url": "https://huggingface.co/api/datasets/sinabis-group/sinabis-10k-synthetic-emails/revision/4b8e73e28074c94b9c70934501bee1ed8c98e395?blobs=true",
+      "bytes": 3339,
+      "sha256": "5bf2efe766880d0c5a1c2be1d1db8fbe1bc3f16c45d80de843862e89b539a300"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sinabis-group/sinabis-10k-synthetic-emails/raw/4b8e73e28074c94b9c70934501bee1ed8c98e395/README.md",
+      "bytes": 12875,
+      "sha256": "e99ee538dd29713d7321f8e2060a9c6bf3e44216c96e3cf3fce2916ef1e186b3"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/sinabis-group/sinabis-10m-synthetic-emails/revision/62385fbfe6aeb838305183215b55456ff5345cd5?blobs=true",
+      "bytes": 5051,
+      "sha256": "efc860c086303e7616ad6d7c71c33b4fa544b35f3acbc5b3760b66ecb8500162"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sinabis-group/sinabis-10m-synthetic-emails/raw/62385fbfe6aeb838305183215b55456ff5345cd5/README.md",
+      "bytes": 18281,
+      "sha256": "ca58bc2daa48e269a4b66cdf3e2a607dc10aa18d21bc1388bebd7697c6d8f4e6"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/sinabis-group/sinabis-1m-synthetic-emails/revision/147b6c501c2910fb06626b9bbb9f109e1c2a6340?blobs=true",
+      "bytes": 6492,
+      "sha256": "0b7083e87867171d29a660ec7fbf1787e117cfe1b304d6d3b2ee71d12e34a9e2"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sinabis-group/sinabis-1m-synthetic-emails/raw/147b6c501c2910fb06626b9bbb9f109e1c2a6340/README.md",
+      "bytes": 14247,
+      "sha256": "bc2f7bec13a5d51ef4d88e64c1f39a2304f6bd34b2d0f92426806d12dc87777e"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sinabis-group/sinabis-1m-synthetic-emails/raw/147b6c501c2910fb06626b9bbb9f109e1c2a6340/docs/generation/company.json",
+      "bytes": 19223,
+      "sha256": "0267eaf07b45c22784f3204cffacdf0cd5e4254e43b826d7476e55b8756fd33f"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sinabis-group/sinabis-1m-synthetic-emails/raw/147b6c501c2910fb06626b9bbb9f109e1c2a6340/docs/generation/email_prompts.json",
+      "bytes": 42321,
+      "sha256": "a3c2e40fb18dc8e461ed24f728d7f18c78c53aa6497386011bbeeb359d23ec57"
+    },
+    {
+      "url": "https://huggingface.co/api/models/Qwen/Qwen3.6-35B-A3B/revision/345d467b117d1fd5eda9b879a5988de9ae5f47a7?blobs=true",
+      "bytes": 20314,
+      "sha256": "2118798a24438c623f0568e1946c3b928fee94628a8836caac93f00cdeb74758"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/raw/345d467b117d1fd5eda9b879a5988de9ae5f47a7/README.md",
+      "bytes": 64550,
+      "sha256": "c4ddaa065649ff6352648f64747a16eda31726f3e34add94ce04abb461c77b75"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/raw/345d467b117d1fd5eda9b879a5988de9ae5f47a7/LICENSE",
+      "bytes": 11343,
+      "sha256": "50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32"
+    },
+    {
+      "url": "https://huggingface.co/api/models/Qwen/Qwen3.5-9B/revision/c202236235762e1c871ad0ccb60c8ee5ba337b9a?blobs=true",
+      "bytes": 22955,
+      "sha256": "fe06d45c139dbc5dfe664472d554c0f41aadfe0301b6dd1de3f5633b26b42458"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B/raw/c202236235762e1c871ad0ccb60c8ee5ba337b9a/README.md",
+      "bytes": 77643,
+      "sha256": "c5f5a8c2dddab69cfbf05279235aa5fddb137939a06539c4c7637aa900fef6d0"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B/raw/c202236235762e1c871ad0ccb60c8ee5ba337b9a/LICENSE",
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    {
+      "url": "https://huggingface.co/api/models/deepseek-ai/DeepSeek-V4-Flash/revision/60d8d70770c6776ff598c94bb586a859a38244f1?blobs=true",
+      "bytes": 18809,
+      "sha256": "7364d18dad13d82205e7c0f4ddf2c691fb12cdffdd4f3b459ccbd81a40757b27"
+    },
+    {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/raw/60d8d70770c6776ff598c94bb586a859a38244f1/README.md",
+      "bytes": 13149,
+      "sha256": "c4d714818a4d3333542edc7d38ea065825a0cf7aa8fea3605bbd1d1c18e4a610"
+    },
+    {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/raw/60d8d70770c6776ff598c94bb586a859a38244f1/LICENSE",
+      "bytes": 1084,
+      "sha256": "f2c6c602815669d292889e5be8c802f2ed950653b77999b1584e8e6aed25d040"
+    },
+    {
+      "url": "https://huggingface.co/api/models/google/gemma-4-26B-A4B/revision/24548b62aa021d562695c04aaf7758a1ea47990b?blobs=true",
+      "bytes": 3052,
+      "sha256": "2ce1bb5fc426402cc7ee49784e834940ee62a39f8cc49e05461d9e98a8e64a5a"
+    },
+    {
+      "url": "https://huggingface.co/google/gemma-4-26B-A4B/raw/24548b62aa021d562695c04aaf7758a1ea47990b/README.md",
+      "bytes": 27830,
+      "sha256": "2d87a2d936e3e03077589114bd1702cf480647fb145a41fe973eba49f934d0ce"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "bytes": 49582,
+      "sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276"
+    },
+    {
+      "url": "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html",
+      "bytes": 33904,
+      "sha256": "2b433c53cbac75491959025eba5a27908f9f1886352dce0a05f3d5a936d87790"
+    },
+    {
+      "url": "https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html",
+      "bytes": 39095,
+      "sha256": "e5c52c238ff59a6d274cd66c449f939ba6bd3183fe7927397b595df02887a76d"
+    },
+    {
+      "url": "https://gemma.ai/resources/apache-2/",
+      "bytes": 126063,
+      "sha256": "761eeb0f44bced4285f233c0a7819d76372b0f70986098b31446979a26deddf9"
+    },
+    {
+      "url": "https://gemma.ai/resources/terms/",
+      "bytes": 121929,
+      "sha256": "98a26148d017ca1d6a058c46d5b0bcdc89fc8ef1ca486d09b7316933c00a14f2"
+    }
+  ]
+}
