@@ -1,0 +1,13 @@
+﻿{
+    "request_id":  "5cb659fa-5ad5-4458-9b3a-52664ed12963",
+    "schema":  "fdtasks-version-request/v1",
+    "type":  "task_closed",
+    "epic_id":  "FDEC-EPIC-D002",
+    "work_item_id":  "FDEC-012",
+    "summary":  "Enforce leakage-safe grouped splits, immutable provenance and current signed consent with revocation controls",
+    "verification":  [
+                         "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/evidence/verification.md",
+                         "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/evidence/result.json",
+                         "Tasks/items/ai/FDEC-012-leakage-safe-splits-and-provenance/evidence/test-output.txt"
+                     ]
+}

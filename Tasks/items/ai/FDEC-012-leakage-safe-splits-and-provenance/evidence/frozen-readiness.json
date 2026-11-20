@@ -1,0 +1,302 @@
+﻿{
+    "semantic_review":  "accepted",
+    "dependency_revisions":  [
+                                 {
+                                     "sha256":  "018b7c6ddb969a18d141e7a25840d95e48099c3519712c06fa30d471577eef00",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/TASK.md"
+                                 },
+                                 {
+                                     "sha256":  "f53f40e7493a65c12416dde2d40f2e4af06ddaf9c175cc965ab13ddf04fb63e9",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150801906Z-codex-dependency-added-851d84a6.md"
+                                 },
+                                 {
+                                     "sha256":  "77b54b57ac7cdbf17fe31af6a244a974995d782b1fd44ef627255fb40229b0bb",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150806435Z-codex-readiness-accepted-b8821caa.md"
+                                 },
+                                 {
+                                     "sha256":  "9892a4807b243b9b748491f34372fc1b86efcbe327aab7999b1095ff2c1e7edd",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T150812748Z-codex-work-started-1cebfe74.md"
+                                 },
+                                 {
+                                     "sha256":  "b3b22c64068164e9dae7d2dff7bfe910639c62978c7c3fa0cc58a9138b5dcf6f",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152159557Z-codex-readiness-accepted-1a55ffb4.md"
+                                 },
+                                 {
+                                     "sha256":  "3a335ee9c0281f16d7a2bcf5a92172e9ffacd0e17c982407d672f3e4cdff42d7",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152531114Z-codex-readiness-accepted-e51aaca9.md"
+                                 },
+                                 {
+                                     "sha256":  "90c9bb7ad1118666893df0ecc75ca12fca5584dce5a3939f1082e902e11c79c0",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152616122Z-codex-readiness-accepted-b9465ab1.md"
+                                 },
+                                 {
+                                     "sha256":  "4b4d14b6f9ad9f7f04009e35ed575280d27710eb5152abaccad8fceb95ba974e",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152705515Z-codex-readiness-accepted-6a405780.md"
+                                 },
+                                 {
+                                     "sha256":  "e9ec3b3d5843e3a3956c6b4a4d38e2b3bee300b17690d5e29562354aee5cf522",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152805390Z-codex-readiness-accepted-962f600b.md"
+                                 },
+                                 {
+                                     "sha256":  "1e8672c0bf9af267f94c538b61adea3d26d94c7525f65a5ea8609af83c5cf18e",
+                                     "path":  "Tasks/items/ai/FDEC-009-dataset-ingestion-and-normalization/events/20261120T152825767Z-codex-status-changed-037feeb1.md"
+                                 },
+                                 {
+                                     "sha256":  "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                 },
+                                 {
+                                     "sha256":  "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                 },
+                                 {
+                                     "sha256":  "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                 },
+                                 {
+                                     "sha256":  "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                 },
+                                 {
+                                     "sha256":  "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                 },
+                                 {
+                                     "sha256":  "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                 },
+                                 {
+                                     "sha256":  "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                 },
+                                 {
+                                     "sha256":  "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+                                 },
+                                 {
+                                     "sha256":  "dec705eaa3ff18891e29ef098ded64ca14721d081455941717d19283dbd2caa4",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md"
+                                 },
+                                 {
+                                     "sha256":  "184ae8bf6328b2edd86eedfaf00552b6203383db3a502c4933b52843ea96228c",
+                                     "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T144622540Z-codex-status-changed-bd990490.md"
+                                 }
+                             ],
+    "matrix":  [
+                   {
+                       "id":  "AC-01",
+                       "environment":  "Windows x64 CPython 3.14.5; synthetic feature/metadata fixtures and isolated source policy; no real mail or actual training data",
+                       "level":  "Local split/provenance acceptance",
+                       "scenario":  "Transitive thread/source/near-duplicate/family grouping, deterministic partitions, bound immutable provenance and active consent; reject contaminated assignments",
+                       "command":  "powershell -NoProfile -File training/splits/test-splits.ps1",
+                       "expected":  "No connected component crosses a split; valid signed consent and source grants required; current-state verifier rejects mutation or revocation without changing historical manifests",
+                       "criterion_sha256":  "ebfb259a6ffcbece4dd4ec0f639c1c714aa3215282ee3db0781367fc1c36804b"
+                   },
+                   {
+                       "id":  "AC-02",
+                       "environment":  "Windows x64 CPython 3.14.5; synthetic feature/metadata fixtures and isolated source policy; no real mail or actual training data",
+                       "level":  "Local split/provenance acceptance",
+                       "scenario":  "Reject missing/changed authority, expired or revoked consent, denied sources, malformed inputs and unsafe writes while preserving original artifacts",
+                       "command":  "powershell -NoProfile -File training/splits/test-splits.ps1",
+                       "expected":  "No connected component crosses a split; valid signed consent and source grants required; current-state verifier rejects mutation or revocation without changing historical manifests",
+                       "criterion_sha256":  "c7d3094ed07f5f2ff6abe939b929bfea71b9eba341ccdc1309003e5b033f73c2"
+                   }
+               ],
+    "epic_state_evidence":  [
+                                {
+                                    "sha256":  "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                },
+                                {
+                                    "sha256":  "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                },
+                                {
+                                    "sha256":  "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                },
+                                {
+                                    "sha256":  "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                },
+                                {
+                                    "sha256":  "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                },
+                                {
+                                    "sha256":  "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                },
+                                {
+                                    "sha256":  "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+                                },
+                                {
+                                    "sha256":  "dec705eaa3ff18891e29ef098ded64ca14721d081455941717d19283dbd2caa4",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md"
+                                },
+                                {
+                                    "sha256":  "184ae8bf6328b2edd86eedfaf00552b6203383db3a502c4933b52843ea96228c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T144622540Z-codex-status-changed-bd990490.md"
+                                },
+                                {
+                                    "sha256":  "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "184ddb4dcccf4c3076b0d7c63347c1b4531c06f26efad3fa73c8e7c2ac825483",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/events/20261120T145114999Z-codex-status-changed-3a28b4ae.md"
+                                },
+                                {
+                                    "sha256":  "1c7b7892b576268bb453b3a1e96d734c13ce9f7502be88d2b2b433d15c5cfa22",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D003/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "4aaba119f41c17dd4f1b123030fe4a81a90d02582033c755fda1bd948a1a6d51",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D004/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "31cb20c86ad524686f447642ae8a28e02cdd19ea6e28aeac2f9c67afbf5fd957",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D005/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "fa4fdbec6ba6f972e39dbbfaf4e0cea1380456ad65cf1cedac5f4a108c353836",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D006/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c2adaa26a5e9f2e04e75c77db8e37c3206cfb22103379b3e2945af92b4d18ac",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D007/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "11190dd28bd4e21be8ed6c08ac6b2f0da6e8680fecc59441886bd9560a74beb8",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D008/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "36b30c100d29d15a6a043372e4c30bb09736185b689a54a7136f98d29802c9d6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "bc4b4732f70845d2bafb2e5a3b7a7372d2cf895b90f08cafd9fce68ae3c125a3",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T113500Z-project-planning-membership-073.md"
+                                },
+                                {
+                                    "sha256":  "62a2c73f54633e98f167cade6b0c3851bbf7d7c516f2fa0198ad57b9f1b50398",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T114908034Z-codex-membership-replaced-81c55913.md"
+                                },
+                                {
+                                    "sha256":  "71a557c0bafb0c7ec7a58c04c5448858ce77f3e7a34d1ee45d84cc0827b249fb",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D010/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "84f4aaccbbfe7a24df8fa82d72643eeed5a9cd9e588662cdc48bc62f705ecd35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "eab686188a77ef7fbe6cb100d29a83aab34ff419d62d446d328f6e31d6e0d3f6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T105835Z-codex-membership-added-d3a33ce1.md"
+                                },
+                                {
+                                    "sha256":  "5298206a9a687ddc5337b60437e7cf040f86196b393bc7c0969039adea5e2c35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T114907650Z-codex-membership-added-f57a3567.md"
+                                },
+                                {
+                                    "sha256":  "82d1353d8b88c9153581e45357c128d7d50f1bf769e4dcc6f292e9d3cae96dcc",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T120758097Z-codex-membership-added-97e3d59b.md"
+                                },
+                                {
+                                    "sha256":  "7bb74097561c1330923631301de0455b8cb5a1709604ec5677070878722d7871",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T131945683Z-codex-membership-added-237ab6bf.md"
+                                },
+                                {
+                                    "sha256":  "b04d21796230a59aeca36e6d1970aefbfacf1325102d24268dcc51986ffd3f3b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S002/EPIC.md"
+                                }
+                            ],
+    "task_sha256":  "c6aefa62f0e670d09e435a8fcfc51de10eb7ec90c7202943dde254ae2fb9cd4a",
+    "atomicity":  {
+                      "boundary_reason":  "One training data partition/provenance contract; no augmentation, model training, rights expansion or publication",
+                      "outcomes":  [
+                                       "Leakage-safe grouped train/validation/test manifests with verified source provenance and consent enforcement"
+                                   ],
+                      "packets":  [
+                                      "Implement and verify one signed-inventory split and immutable-consumption contract"
+                                  ],
+                      "independent_acceptance":  false
+                  },
+    "rule_sources":  [
+                         {
+                             "sha256":  "43d73ff4c10734dcf7e7710ea7982783d622c29cdf6b2897975a432b5ba8034c",
+                             "path":  "AGENTS.md"
+                         },
+                         {
+                             "sha256":  "7de6ccfcacd00f54dbdcd071701ad87ef66c20407d4cb16b73c336526c17e2b8",
+                             "path":  "DEVELOPMENT.md"
+                         },
+                         {
+                             "sha256":  "cf5e70942475a43772dee0472b0ce6d3c3189c71f3981484fa59d8c53d48582d",
+                             "path":  "Tasks/AGENTS.md"
+                         },
+                         {
+                             "sha256":  "3bb61cd71eccd8cd0b57c60771757b69712b8de2a4782694917e7111577f6b7f",
+                             "path":  "Tasks/policy/checkout-identities-076.json"
+                         }
+                     ],
+    "allowed_paths":  [
+                          "training/splits",
+                          "training/manifests"
+                      ],
+    "migration_revisions":  [
+                                {
+                                    "sha256":  "7a29d1aed1151af360bd478aeaa22b6ce846251b197d4a384894fff1e5b894f0",
+                                    "path":  "Tasks/migrations/FDEC-074.json"
+                                },
+                                {
+                                    "sha256":  "51f18360d853be9e0c3bee90d3f3b694af66f550d4d597276e7b106fe2d87cc9",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "cf631520b8491140e74613ff22a1d504acff888ad5db4b4cc64375027ab6c1d1",
+                                    "path":  "Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/TASK.md"
+                                },
+                                {
+                                    "sha256":  "49c749dc20f419959f65b0fcfe34f139494cc51e8051028de3723bcc4cc25646",
+                                    "path":  "Tasks/items/web/FDEC-075-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "d83d4820c058aa95d0f317ff49657cd52976da2ab82ae300f2b4725df4e7802d",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/events/20261120T114908434Z-codex-superseded-a396e5df.md"
+                                }
+                            ],
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "source_sha":  "4c7d5e1fc5c6f0ddd8bd392a6f981fb03349a01a",
+    "source_state_algorithm":  "fdec-source-state/v1",
+    "source_state_sha256":  "f6cc428caee145e509b803e9d57122114d5f41c98fbd59593149db1e49f2bd26",
+    "verification":  [
+
+                     ],
+    "upstream_datasets":  [
+                              {
+                                  "revision":  "e95090f0bb6dae0b05c9cd6db314dcae1d40db3f",
+                                  "card_sha256":  "de69b0adb28d0117105547af1f761bd2220aecab635f4dad429e53e69865c329",
+                                  "id":  "imnim/multiclass-email-classification"
+                              },
+                              {
+                                  "revision":  "8c98baa8b10a1dddd676c860d9e1b86c89141c38",
+                                  "card_sha256":  "2bb851c855d60a96ef3f648bb078afd0d09f280486bdbac0e0a090ec4fa64aaa",
+                                  "id":  "weijianzhg/email-triage-action-seed"
+                              },
+                              {
+                                  "revision":  "a1b3371d2df15575f766c081cb329543955d27f6",
+                                  "card_sha256":  "b96c66b37ef939d6a48db4d52da45def96b2a982afd268c0c91da6eba3f12c1a",
+                                  "id":  "talby/spamassassin"
+                              }
+                          ],
+    "source_observations":  {
+                                "sha256":  "7f12bd82d9803554176c98cab0e8f05b50e4d0b63d59e3d8d5c055731bd0b382",
+                                "path":  "Tasks/items/ai/FDEC-008-dataset-license-audit/evidence/source-observations.json"
+                            }
+}

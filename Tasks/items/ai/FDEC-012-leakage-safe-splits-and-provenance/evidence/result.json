@@ -1,0 +1,31 @@
+﻿{
+    "real_consent_created":  false,
+    "criteria":  {
+                     "AC-02":  "PASS",
+                     "AC-01":  "PASS"
+                 },
+    "tests":  21,
+    "exit_code":  0,
+    "task_id":  "FDEC-012",
+    "source_sha":  "4c7d5e1fc5c6f0ddd8bd392a6f981fb03349a01a",
+    "rights_guard_integration_purposes":  [
+                                              "commercial_training",
+                                              "evaluation"
+                                          ],
+    "schema":  "fdec-task-verification/v1",
+    "source_tree":  "192326e3b7716ef4a614a14265a99396d748a540",
+    "command":  "powershell -NoProfile -File training/splits/test-splits.ps1",
+    "blocked_augmentation_status":  "unchanged; FDEC-011 Blocked",
+    "publication_performed":  false,
+    "outcome":  "PASS",
+    "monitor_task_id":  "e3874ca4-dff2-46c5-a6a8-f4c80aec21db",
+    "real_training_dataset_admitted":  false,
+    "fixture_runs_remaining":  0,
+    "rights_guard_integration_sources":  8,
+    "environment":  {
+                        "unicode_database":  "16.0.0",
+                        "os":  "Windows x64",
+                        "packages":  "standard library only",
+                        "python":  "3.14.5"
+                    }
+}

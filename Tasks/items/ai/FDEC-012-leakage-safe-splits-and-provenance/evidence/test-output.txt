@@ -1,0 +1,27 @@
+test_cli_does_not_echo_arguments_or_secrets_and_signer_does_not_infer_grants (test_splits.SplitTests.test_cli_does_not_echo_arguments_or_secrets_and_signer_does_not_infer_grants) ... ok
+test_consent_activation_is_monotonic_and_prior_history_is_immutable (test_splits.SplitTests.test_consent_activation_is_monotonic_and_prior_history_is_immutable) ... ok
+test_contamination_rejected_even_with_recomputed_file_checksum (test_splits.SplitTests.test_contamination_rejected_even_with_recomputed_file_checksum) ... ok
+test_current_source_rights_change_rejects_accepted_consent (test_splits.SplitTests.test_current_source_rights_change_rejects_accepted_consent) ... ok
+test_failed_authority_activation_preserves_anchor_and_allows_exact_retry (test_splits.SplitTests.test_failed_authority_activation_preserves_anchor_and_allows_exact_retry) ... ok
+test_failed_write_and_existing_or_linked_outputs_preserve_previous_runs (test_splits.SplitTests.test_failed_write_and_existing_or_linked_outputs_preserve_previous_runs) ... ok
+test_immutable_manifest_verify_returns_validated_snapshot (test_splits.SplitTests.test_immutable_manifest_verify_returns_validated_snapshot) ... ok
+test_impossible_splits_and_invalid_ratios_do_not_split_a_component (test_splits.SplitTests.test_impossible_splits_and_invalid_ratios_do_not_split_a_component) ... ok
+test_malformed_inventory_and_signed_provenance_mismatch_fail_statically (test_splits.SplitTests.test_malformed_inventory_and_signed_provenance_mismatch_fail_statically) ... ok
+test_missing_and_corrupt_receipts_do_not_validate (test_splits.SplitTests.test_missing_and_corrupt_receipts_do_not_validate) ... ok
+test_missing_grant_or_wrong_purpose_quarantines_source_peers (test_splits.SplitTests.test_missing_grant_or_wrong_purpose_quarantines_source_peers) ... ok
+test_multiscript_fingerprints_normalize_case_width_and_punctuation (test_splits.SplitTests.test_multiscript_fingerprints_normalize_case_width_and_punctuation) ... ok
+test_near_duplicate_budget_failure_is_explicit (test_splits.SplitTests.test_near_duplicate_budget_failure_is_explicit) ... ok
+test_no_opt_in_has_no_authority_or_source_effect (test_splits.SplitTests.test_no_opt_in_has_no_authority_or_source_effect) ... ok
+test_per_record_expiry_and_ledger_expiry (test_splits.SplitTests.test_per_record_expiry_and_ledger_expiry) ... ok
+test_real_rights_guard_integration_checks_both_purposes (test_splits.SplitTests.test_real_rights_guard_integration_checks_both_purposes) ... ok
+test_repeated_builds_are_byte_identical_and_do_not_alias_inputs (test_splits.SplitTests.test_repeated_builds_are_byte_identical_and_do_not_alias_inputs) ... ok
+test_revocation_quarantines_linked_component_and_blocks_archive_replay (test_splits.SplitTests.test_revocation_quarantines_linked_component_and_blocks_archive_replay) ... ok
+test_transitive_components_keep_source_thread_near_duplicate_family_and_exact_together (test_splits.SplitTests.test_transitive_components_keep_source_thread_near_duplicate_family_and_exact_together) ... ok
+test_withdrawal_during_build_prevents_completion_receipt (test_splits.SplitTests.test_withdrawal_during_build_prevents_completion_receipt) ... ok
+test_wrong_key_tampering_and_duplicate_consent_are_rejected (test_splits.SplitTests.test_wrong_key_tampering_and_duplicate_consent_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 21.504s
+
+OK
+PASS: grouped splits, immutable provenance, current signed consent, rights admission and contamination rejection
