@@ -1,10 +1,11 @@
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/source-state.ps1"
+. "$PSScriptRoot/readiness-events.ps1"
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-source-'+[guid]::NewGuid())
 function Bound($path){@{path=$path;sha256=(Get-IdentityHash (Join-Path $temp $path))}}
 function Reject([scriptblock]$Run){$failed=$false;try{& $Run}catch{if($_.Exception.Message -match 'Stale actual source readiness'){$failed=$true}else{throw}};if(!$failed){throw 'Changed source admitted'}}
-function Actions($file,[bool]$Invalid=$false){foreach($action in 'claim','dispatch','resume','execute','close'){if($Invalid){Reject {& "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -Action $action -ReadinessFile $file}}else{& "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -Action $action -ReadinessFile $file}}}
+function Actions($file,[bool]$Invalid=$false){Write-ReadinessAcceptance $temp $task $file fixture;foreach($action in 'claim','dispatch','resume','execute','close'){if($Invalid){Reject {& "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -Action $action -ReadinessFile $file}}else{& "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -Action $action -ReadinessFile $file}}}
 try{
     New-Item -ItemType Directory $temp|Out-Null
     Copy-Item "$root/Tasks" "$temp/Tasks" -Recurse

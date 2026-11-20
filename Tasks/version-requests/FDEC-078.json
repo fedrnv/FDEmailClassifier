@@ -1,0 +1,11 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "219b5278-da09-4f0a-ba91-8020fb4e3b9c",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-078",
+    "summary":  "Require exact current accepted readiness event on every admission action",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/evidence/verification.md"
+                     ]
+}

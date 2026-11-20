@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/source-state.ps1"
+. "$PSScriptRoot/readiness-events.ps1"
 & "$PSScriptRoot/repository.ps1" -Root $root
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-validation-'+[guid]::NewGuid())
 function Reject([scriptblock]$Run,[string]$Expected) {
@@ -39,6 +40,7 @@ try {
     $ready | Add-Member source_state_sha256 (Get-SourceState $temp 'FDEC-005') -Force
     $ready | ConvertTo-Json -Depth 10 | Set-Content "$temp/$task/evidence/fixture-ready.json" -Encoding UTF8
     foreach ($action in 'claim','dispatch','resume','execute','close') {
+        Write-ReadinessAcceptance $temp $task 'evidence/fixture-ready.json' fixture
         & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -Action $action -ReadinessFile evidence/fixture-ready.json
         $saved=$ready.source_sha
         $ready.source_sha='0000000000000000000000000000000000000000'
@@ -64,6 +66,7 @@ try {
     $scoped=$ready|ConvertTo-Json -Depth 12|ConvertFrom-Json
     $scoped.source_state_sha256=Get-SourceState $temp 'FDEC-005'
     $scoped|ConvertTo-Json -Depth 12|Set-Content "$temp/$task/evidence/fixture-unscoped.json" -Encoding UTF8
+    Write-ReadinessAcceptance $temp $task 'evidence/fixture-unscoped.json' fixture
     Reject { & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-005 -ReadinessFile evidence/fixture-unscoped.json } 'Missing governing rule'
     Remove-Item -LiteralPath "$temp/Tasks/items/AGENTS.md"
     $gate='Tasks/items/quality/FDEC-006-targeted-integration-gate'
@@ -72,6 +75,7 @@ try {
     $ready.dependency_revisions=@($records.Values | ForEach-Object { $_.state_paths } | ForEach-Object { Bound $_.Substring($temp.Length+1).Replace('\','/') })
     $ready.source_state_sha256=Get-SourceState $temp 'FDEC-006'
     $ready | ConvertTo-Json -Depth 12 | Set-Content "$temp/$gate/evidence/fixture-gate.json" -Encoding UTF8
+    Write-ReadinessAcceptance $temp $gate 'evidence/fixture-gate.json' fixture
     Reject { & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-006 -ReadinessFile evidence/fixture-gate.json } 'Dependency not Done'
     # No immutable input changes are necessary to demonstrate competing Epic state.
     $event=@'

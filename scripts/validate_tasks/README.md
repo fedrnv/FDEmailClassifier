@@ -1,5 +1,18 @@
 # First closure and reopening
 
+FDEC-078 requires the latest task-local `readiness-accepted` event to bind
+`readiness_file: evidence/<unique>.json` and canonical `readiness_sha256`.
+Use `Write-ReadinessAcceptance <root> <task-relative-directory> <readiness-file>`
+from readiness-events.ps1 only after the executor actually accepts that exact
+brief under standing authority. The helper records a decision; it does not conduct
+semantic review or bypass source/dependency/criterion checks. Record this event
+before calling admission, including direct closure. A newer decision supersedes
+older briefs; identical bytes at another filename are still another decision.
+Missing/malformed bindings, changed evidence and tied newest timestamps reject.
+Older prose-only events remain immutable history but cannot authorize new dispatch.
+This is repository acceptance provenance, not cryptographic authentication of the
+human/agent actor; the authorized append-only writer boundary remains unchanged.
+
 FDEC-077 readiness includes `source_state_algorithm: fdec-source-state/v1` and
 `source_state_sha256` from `Get-SourceState <root> <task-id>` in source-state.ps1.
 It binds the actual index plus tracked and nonignored new file paths/content,

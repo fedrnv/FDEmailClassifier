@@ -1,6 +1,7 @@
 $ErrorActionPreference='Stop'
 $root=(Resolve-Path "$PSScriptRoot/../..").Path
 . "$PSScriptRoot/source-state.ps1"
+. "$PSScriptRoot/readiness-events.ps1"
 $records=& "$PSScriptRoot/repository.ps1" -Root $root -AsObject
 if ($records['FDEC-073'].parent -ne 'FDEC-EPIC-S001' -or $records['FDEC-073'].status -ne 'Done' -or $records['FDEC-075'].parent -ne 'FDEC-EPIC-D009' -or $records['FDEC-075'].status -ne 'Planned' -or $records['FDEC-063'].dependencies -notcontains 'FDEC-075' -or $records['FDEC-063'].dependencies -contains 'FDEC-073') { throw 'Identity projection differs from accepted migration' }
 $temp=Join-Path ([IO.Path]::GetTempPath()) ('fdec-identity-'+[guid]::NewGuid())
@@ -55,7 +56,9 @@ Planned -> Blocked.
     $unbound.migration_revisions=@()
     $unbound | ConvertTo-Json -Depth 12 | Set-Content "$temp/$target/evidence/fixture-unbound.json" -Encoding UTF8
     foreach ($action in 'claim','dispatch','resume','execute','close') {
+        Write-ReadinessAcceptance $temp $target 'evidence/fixture-ready.json' fixture
         & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-072 -Action $action -ReadinessFile evidence/fixture-ready.json
+        Write-ReadinessAcceptance $temp $target 'evidence/fixture-unbound.json' fixture
         Reject { & "$PSScriptRoot/admission.ps1" -Root $temp -TaskId FDEC-072 -Action $action -ReadinessFile evidence/fixture-unbound.json } 'Unbound identity migration'
     }
     $manifest="$temp/Tasks/migrations/FDEC-074.json"
