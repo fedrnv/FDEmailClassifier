@@ -144,6 +144,13 @@ class OrchestrationTests(unittest.TestCase):
                 self.assertEqual(train.run(SimpleNamespace(**resumed_args, output_dir=resumed))["status"], "completed")
                 self.assertEqual((whole / "step-000000004/state.pt").read_bytes(), (resumed / "step-000000004/state.pt").read_bytes())
                 self.assertGreater(authority.call_count, 10)
+                publish_failure = directory / "publish-failure"
+                with patch.object(train.os, "replace", side_effect=OSError("technical write failure")):
+                    with self.assertRaises(config.TrainerError):
+                        train.run(SimpleNamespace(**partial_args, output_dir=publish_failure))
+                self.assertFalse((publish_failure / "result.json").exists())
+                self.assertFalse((publish_failure / ".result.part").exists())
+                self.assertTrue((publish_failure / "step-000000002/receipt.json").is_file())
                 previous = (partial / "step-000000002/state.pt").read_bytes()
                 def withdrawn(*args, **kwargs):
                     if NumericEngine.last and NumericEngine.last.updates >= 3:

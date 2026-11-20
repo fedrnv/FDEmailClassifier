@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import secrets
 import sys
@@ -73,14 +74,25 @@ def run(args):
         current_check()
         summary = dict(schema="fdec-private-training-result/v1", context_sha256=splits.digest(context), steps=step, complete=step == config["max_steps"], actual_email_training=True,
                        checkpoint=f"step-{step:09d}", public_artifact_release_approved=False)
-        with (output / "result.json").open("x", encoding="utf-8") as handle:
+        pending = output / ".result.part"
+        with pending.open("x", encoding="utf-8") as handle:
             handle.write(splits.canonical_json(summary) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        current_check()
+        if (output / "result.json").exists():
+            raise TrainerError("training_result_already_exists")
+        os.replace(pending, output / "result.json")
         return {"status": "completed" if summary["complete"] else "checkpointed", "steps": step}
     except Exception:
         # Keep valid, committed checkpoints for recovery after a later failure.
         # A run with no committed checkpoint is safe to remove by ownership.
         if owned and not committed:
             remove_owned(output, token)
+        elif owned and (output / ".owner").read_text(encoding="ascii") == token:
+            pending = reject_links(output / ".result.part")
+            if pending.is_file():
+                pending.unlink()
         raise TrainerError("training_run_incomplete") from None
 
 

@@ -115,7 +115,9 @@ authenticated and frozen before restricted `torch.load(weights_only=True)`;
 no unrestricted pickle load or extra globals are allowed. Size is bounded to
 512 MB. Existing checkpoints are never overwritten. Failure removes only the
 new owned incomplete checkpoint; earlier committed checkpoints remain recoverable.
-The run result is written only after the requested steps and final authority check.
+The run result is staged, flushed and atomically renamed only after the requested
+steps and final authority check. Failed final publication leaves no completed
+result and preserves the committed checkpoint for recovery.
 
 Current rights/consent/review are checked before use, optimizer mutation and
 checkpoint publication; source/split/label bytes are replayed again at checkpoints.
