@@ -1,0 +1,25 @@
+﻿{
+    "gate_candidate":  "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+    "result":  "PASS: reconciliation boundary only",
+    "actual_training":  false,
+    "latest_gate_done_and_verification_bindings_checked":  true,
+    "semantic_review_acceptance_claimed":  false,
+    "commands":  [
+                     "Existing interpreter -B check-review-v2.py before RESULT existed; expected explicit missing independent RESULT error",
+                     "Existing interpreter -B inline import and gate_closure() on current bound gate; actual latest Done/closure/verification/runner/request checks PASS"
+                 ],
+    "checker":  {
+                    "sha256":  "f74e2c5e14c68995ae457723057ee35d2b56d200ebf006c9b6dfd06a4388360a",
+                    "path":  "Tasks/items/quality/FDEC-014-independent-acceptance-review/evidence/check-review-v2.py"
+                },
+    "publication":  false,
+    "round":  "R002",
+    "missing_independent_result_rejected_before_submission":  true,
+    "gate_runner_hashes_checked":  true,
+    "task_id":  "FDEC-014",
+    "schema":  "fdec-local-verification/v1",
+    "source_sha":  "e85a594b5e0f39afbff63069049f0801f4c6b82f",
+    "original_gate_request_preserved":  true,
+    "gate_ledger":  "b1a99b5613b60146ead9e0fac122fd936ab2d48f",
+    "metadata_negative_cases":  20
+}

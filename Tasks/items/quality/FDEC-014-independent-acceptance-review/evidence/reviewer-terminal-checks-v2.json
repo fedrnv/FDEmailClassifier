@@ -1,0 +1,36 @@
+{
+  "schema": "fdec-reviewer-terminal-observations/v1",
+  "review_id": "R002",
+  "observer": "primary executor",
+  "checks": [
+    {
+      "task_id": "77ad9890-1ac4-4c80-88f2-b97cbe423bee",
+      "status": "completed",
+      "exit_code": 0,
+      "cursor": 2219,
+      "unseen_output": ""
+    },
+    {
+      "task_id": "ac338980-ac23-4a30-8dfd-64573ccbd34c",
+      "status": "completed",
+      "exit_code": 0,
+      "cursor": 1049,
+      "unseen_output": ""
+    },
+    {
+      "task_id": "201c9d67-7e66-4aea-82d1-4cde91239b5c",
+      "status": "completed",
+      "exit_code": 0,
+      "cursor": 1036,
+      "unseen_output": ""
+    },
+    {
+      "task_id": "9cfc5fdf-45a4-4524-83d8-f4f5eb798027",
+      "status": "completed",
+      "exit_code": 0,
+      "cursor": 264,
+      "unseen_output": ""
+    }
+  ],
+  "scope": "Terminal states independently observed after reviewer completion; stage counts and earlier output remain attributed to the reviewer's bound observations."
+}

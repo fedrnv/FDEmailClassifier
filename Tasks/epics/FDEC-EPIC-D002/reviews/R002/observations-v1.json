@@ -1,0 +1,88 @@
+{
+  "schema": "fdec-independent-review-observations/v1",
+  "review_id": "R002",
+  "candidate_sha": "94f9669920b1ff105f6d29f1e5e98064f10ca583",
+  "reviewer": "/root/review_d002_r002",
+  "commands": [
+    {
+      "cwd": "C:/GitHub/FDEmailClassifier",
+      "command": "& C:/GitHub/FDEmailClassifier/.venv/ingestion/Scripts/python.exe -B Tasks/epics/FDEC-EPIC-D002/reviews/R002/check-identities-v1.py",
+      "exit_code": 0,
+      "closure_and_preflight_bindings_verified": 205,
+      "ledger_additions": 12,
+      "outer_component_transcript_matches": true,
+      "inspected_gate_python_tests": 139,
+      "inspected_gate_rust_tests": 4
+    },
+    {
+      "cwd": "C:/GitHub/FDEmailClassifier",
+      "command": "& C:/GitHub/FDEmailClassifier/.venv/ingestion/Scripts/python.exe -B Tasks/epics/FDEC-EPIC-D002/reviews/R002/probe-boundaries-v1.py",
+      "exit_code": 0,
+      "fixture_pack_purpose_denials": 4,
+      "sinabis_legacy_guard": "rights_not_approved",
+      "single_source_split": "insufficient_independent_groups",
+      "grouping_pair_comparisons": 20825,
+      "grouping_inventories": 35,
+      "grouping_random_seed": 14002,
+      "grouping_agrees_with_independent_exhaustive_graph": true
+    },
+    {
+      "cwd": "C:/GitHub/FDEmailClassifier-review-D002-R002",
+      "command": "powershell -NoProfile -File scripts/validate_tasks/test-request-recovery.ps1",
+      "monitor_task_id": "77ad9890-1ac4-4c80-88f2-b97cbe423bee",
+      "exit_code": 0,
+      "negative_scenarios": 32,
+      "output_truncated": false,
+      "positive_cases": "Exact rejected request preserves bytes/all other fields/unique identity; ordinary valid unrecovered request remains valid"
+    },
+    {
+      "cwd": "C:/GitHub/FDEmailClassifier-review-D002-R002",
+      "command": "powershell -NoProfile -File docs/verification/test-d002-current-result.ps1",
+      "monitor_task_id": "ac338980-ac23-4a30-8dfd-64573ccbd34c",
+      "exit_code": 0,
+      "negative_scenarios": 26,
+      "output_truncated": false
+    },
+    {
+      "cwd": "C:/GitHub/FDEmailClassifier-review-D002-R002",
+      "command": "powershell -NoProfile -File docs/verification/verify-d002-outcome-v2.ps1 -TestNegatives",
+      "monitor_task_id": "201c9d67-7e66-4aea-82d1-4cde91239b5c",
+      "exit_code": 0,
+      "current_protected_files": 102,
+      "accepted_process_changes": 12,
+      "current_negative_checks": 23,
+      "historical_negative_checks": 14,
+      "historical_worktree_removed": true,
+      "output_truncated": false
+    },
+    {
+      "cwd": "C:/GitHub/FDEmailClassifier-review-D002-R002",
+      "command": "C:/GitHub/FDEmailClassifier/.venv/ingestion/Scripts/python.exe -B -m unittest discover -s tests/d002 -p test_pipeline.py -k current_revocation -v",
+      "monitor_task_id": "9cfc5fdf-45a4-4524-83d8-f4f5eb798027",
+      "exit_code": 0,
+      "tests": 1,
+      "seconds": 11.049,
+      "output_truncated": false
+    },
+    {
+      "cwd": "C:/GitHub/FDEmailClassifier-review-D002-R002",
+      "command": "powershell -NoProfile -File docs/verification/run-d002-current.ps1 -ExpectedSource 0000000000000000000000000000000000000000",
+      "exit_code": 1,
+      "expected_rejection": "D002 candidate identity mismatch",
+      "passing_gate_marker": false
+    }
+  ],
+  "cleanup": {
+    "candidate_git_status_porcelain_empty": true,
+    "candidate_retained": true,
+    "historical_replay_worktree_removed": true,
+    "only_new_reviewer_files_written": true
+  },
+  "limits": [
+    "Shared executor-provided runtime, filesystem and historical evidence",
+    "No wholesale rerun of unchanged gate suites",
+    "No private corpus or model read or download",
+    "No independently authenticated owner transcript or upstream generation accounts",
+    "No real corpus, quality, training, model or release admission"
+  ]
+}

@@ -1,0 +1,2 @@
+# Keep immutable Python proof-script identities stable on Windows checkouts.
+*.py text eol=lf
