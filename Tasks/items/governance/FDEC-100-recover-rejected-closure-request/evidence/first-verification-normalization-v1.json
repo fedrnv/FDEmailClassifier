@@ -1,0 +1,6 @@
+﻿{
+    "transcript":  "first-verification-output-v1.txt",
+    "normalization":  "Trailing whitespace and final blank lines removed before first source acceptance; complete stage content retained",
+    "raw_monitor_log_sha256":  "cf1f6e5fe08640099834b65be3692219ee3373e0a303f3048d7e7d6f77ee2f0d",
+    "failed_run_accepted":  false
+}

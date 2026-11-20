@@ -16,6 +16,7 @@ try{
     New-Item -ItemType Directory $temp|Out-Null
     Copy-Item "$root/Tasks" "$temp/Tasks" -Recurse
     Copy-Item "$root/AGENTS.md","$root/DEVELOPMENT.md" $temp
+    Reset-FixtureFoundationEpic $temp
     $task='Tasks/items/foundation/FDEC-005-architecture-and-backend-adr'
     $owned=[IO.Path]::GetFullPath("$temp/$task/events")
     if(!$owned.StartsWith([IO.Path]::GetFullPath($temp)+[IO.Path]::DirectorySeparatorChar)){throw 'Unsafe fixture reset'}
@@ -31,6 +32,7 @@ try{
     $ready.allowed_paths=@('Tasks')
     $ready.matrix=New-FixtureMatrix $temp $task 'test-readiness-events.ps1 decision scenarios'
     $ready.dependency_revisions=@((Bound "$task/TASK.md"))
+    $ready.migration_revisions=New-FixtureMigrationBindings $temp
     # Bind this copied fixture's current Epic events, not the historical template.
     $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File|ForEach-Object {Bound $_.FullName.Substring($temp.Length+1).Replace('\','/')})
     [IO.File]::WriteAllText("$temp/$task/evidence/proof.md",'Synthetic verification')

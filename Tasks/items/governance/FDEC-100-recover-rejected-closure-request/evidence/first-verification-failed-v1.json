@@ -1,0 +1,16 @@
+﻿{
+    "counted_as_full_acceptance":  false,
+    "stage":  "test-source-readiness.ps1",
+    "monitor_task_id":  "462f6519-8ede-4c68-a331-e1c42668ee0b",
+    "prior_passes":  [
+                         "test-request-recovery.ps1:32 negatives",
+                         "check-adoption.ps1",
+                         "test-validation.ps1"
+                     ],
+    "reason":  "Inherited admission fixture removed a member Done event while retaining historical closed Epic state. Isolate its declared foundation stage and refresh current migration bindings without weakening production validation.",
+    "full_log":  "first-verification-output-v1.txt",
+    "schema":  "fdec-local-verification/v1",
+    "exit_code":  1,
+    "result":  "FAIL",
+    "source_sha":  "6cab0e941f63b00457715f55a1109415a113fbc5"
+}
