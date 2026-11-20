@@ -1,0 +1,213 @@
+﻿{
+    "semantic_review":  "accepted",
+    "dependency_revisions":  [
+                                 {
+                                     "sha256":  "42579da787536f7803fedd089cdd48ff4116fbe9ab96301fc3ee90a3c2e2eac9",
+                                     "path":  "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/TASK.md"
+                                 },
+                                 {
+                                     "sha256":  "9d0bc9b73f9f36097124246a0af40d93786c13b408717683c44da4573eb76fd4",
+                                     "path":  "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T132009690Z-codex-readiness-accepted-902c1e98.md"
+                                 },
+                                 {
+                                     "sha256":  "0005e2b1368adaaf8e28959c62cc12d56afd09797ce6686f469c266e0048a50a",
+                                     "path":  "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T132025158Z-codex-readiness-accepted-40863001.md"
+                                 },
+                                 {
+                                     "sha256":  "545e56f3cfc8a732763368a7eb17cd811d56e2341f51f590672fb63c4a88b3aa",
+                                     "path":  "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T132028124Z-codex-work-started-79d9db5f.md"
+                                 },
+                                 {
+                                     "sha256":  "975e57d4ccc57828a5c63b1ace8109956264e3c8a544a6e5cfd57655abaf293f",
+                                     "path":  "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T133149812Z-codex-readiness-accepted-970d412c.md"
+                                 },
+                                 {
+                                     "sha256":  "3be0350cf2b3fff3d26b1adb78823c0149a369ff543ca8768e81b7387560c758",
+                                     "path":  "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/events/20261120T133152959Z-codex-status-changed-7c5686d5.md"
+                                 }
+                             ],
+    "matrix":  [
+                   {
+                       "id":  "AC-01",
+                       "environment":  "Windows PowerShell 5.1, guarded disposable Git fixtures",
+                       "level":  "Focused local lifecycle acceptance",
+                       "scenario":  "Staged implementation with restored working bytes is rejected by production Epic closure validator",
+                       "command":  "powershell -NoProfile -File scripts/validate_tasks/test-epic-closure.ps1; powershell -NoProfile -File scripts/validate_tasks/test-reopened-requests.ps1",
+                       "expected":  "Index independently inspected; invalid current source rejects without mutation; valid historical proof and first request preserved",
+                       "criterion_sha256":  "440f2fb218fb3a75eadcdf72b307e78c4f707c386569393e44f57f4ca44503e5"
+                   },
+                   {
+                       "id":  "AC-02",
+                       "environment":  "Windows PowerShell 5.1, guarded disposable Git fixtures",
+                       "level":  "Focused local lifecycle acceptance",
+                       "scenario":  "Clean/staged append-only completion accepted; historical requests preserved; current reclosure and Git failures fail safely",
+                       "command":  "powershell -NoProfile -File scripts/validate_tasks/test-epic-closure.ps1; powershell -NoProfile -File scripts/validate_tasks/test-reopened-requests.ps1",
+                       "expected":  "Index independently inspected; invalid current source rejects without mutation; valid historical proof and first request preserved",
+                       "criterion_sha256":  "25a40ee592605c494ff524897fa6424f71a5b793c1281b24177b6502f94e9c43"
+                   }
+               ],
+    "epic_state_evidence":  [
+                                {
+                                    "sha256":  "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+                                },
+                                {
+                                    "sha256":  "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+                                },
+                                {
+                                    "sha256":  "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+                                },
+                                {
+                                    "sha256":  "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+                                },
+                                {
+                                    "sha256":  "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+                                },
+                                {
+                                    "sha256":  "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+                                },
+                                {
+                                    "sha256":  "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+                                },
+                                {
+                                    "sha256":  "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "1c7b7892b576268bb453b3a1e96d734c13ce9f7502be88d2b2b433d15c5cfa22",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D003/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "4aaba119f41c17dd4f1b123030fe4a81a90d02582033c755fda1bd948a1a6d51",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D004/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "31cb20c86ad524686f447642ae8a28e02cdd19ea6e28aeac2f9c67afbf5fd957",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D005/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "fa4fdbec6ba6f972e39dbbfaf4e0cea1380456ad65cf1cedac5f4a108c353836",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D006/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "2c2adaa26a5e9f2e04e75c77db8e37c3206cfb22103379b3e2945af92b4d18ac",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D007/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "11190dd28bd4e21be8ed6c08ac6b2f0da6e8680fecc59441886bd9560a74beb8",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D008/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "36b30c100d29d15a6a043372e4c30bb09736185b689a54a7136f98d29802c9d6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "bc4b4732f70845d2bafb2e5a3b7a7372d2cf895b90f08cafd9fce68ae3c125a3",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T113500Z-project-planning-membership-073.md"
+                                },
+                                {
+                                    "sha256":  "62a2c73f54633e98f167cade6b0c3851bbf7d7c516f2fa0198ad57b9f1b50398",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D009/events/20261120T114908034Z-codex-membership-replaced-81c55913.md"
+                                },
+                                {
+                                    "sha256":  "71a557c0bafb0c7ec7a58c04c5448858ce77f3e7a34d1ee45d84cc0827b249fb",
+                                    "path":  "Tasks/epics/FDEC-EPIC-D010/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "84f4aaccbbfe7a24df8fa82d72643eeed5a9cd9e588662cdc48bc62f705ecd35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/EPIC.md"
+                                },
+                                {
+                                    "sha256":  "eab686188a77ef7fbe6cb100d29a83aab34ff419d62d446d328f6e31d6e0d3f6",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T105835Z-codex-membership-added-d3a33ce1.md"
+                                },
+                                {
+                                    "sha256":  "5298206a9a687ddc5337b60437e7cf040f86196b393bc7c0969039adea5e2c35",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T114907650Z-codex-membership-added-f57a3567.md"
+                                },
+                                {
+                                    "sha256":  "82d1353d8b88c9153581e45357c128d7d50f1bf769e4dcc6f292e9d3cae96dcc",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T120758097Z-codex-membership-added-97e3d59b.md"
+                                },
+                                {
+                                    "sha256":  "7bb74097561c1330923631301de0455b8cb5a1709604ec5677070878722d7871",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S001/events/20261120T131945683Z-codex-membership-added-237ab6bf.md"
+                                },
+                                {
+                                    "sha256":  "b04d21796230a59aeca36e6d1970aefbfacf1325102d24268dcc51986ffd3f3b",
+                                    "path":  "Tasks/epics/FDEC-EPIC-S002/EPIC.md"
+                                }
+                            ],
+    "task_sha256":  "528a10a733c9fe261cc59ce6ca2d28e9a9e987da8e426aabf3d8c5c2a027331d",
+    "atomicity":  {
+                      "boundary_reason":  "One independently verifiable Epic source-boundary finding",
+                      "outcomes":  [
+                                       "Reject index-only implementation changes at current Epic closure"
+                                   ],
+                      "packets":  [
+                                      "Reproduce, repair and verify R003-01 with historical compatibility"
+                                  ],
+                      "independent_acceptance":  false
+                  },
+    "rule_sources":  [
+                         {
+                             "sha256":  "43d73ff4c10734dcf7e7710ea7982783d622c29cdf6b2897975a432b5ba8034c",
+                             "path":  "AGENTS.md"
+                         },
+                         {
+                             "sha256":  "7de6ccfcacd00f54dbdcd071701ad87ef66c20407d4cb16b73c336526c17e2b8",
+                             "path":  "DEVELOPMENT.md"
+                         },
+                         {
+                             "sha256":  "cf5e70942475a43772dee0472b0ce6d3c3189c71f3981484fa59d8c53d48582d",
+                             "path":  "Tasks/AGENTS.md"
+                         },
+                         {
+                             "sha256":  "3bb61cd71eccd8cd0b57c60771757b69712b8de2a4782694917e7111577f6b7f",
+                             "path":  "Tasks/policy/checkout-identities-076.json"
+                         }
+                     ],
+    "allowed_paths":  [
+                          "scripts/validate_tasks",
+                          "docs/verification"
+                      ],
+    "migration_revisions":  [
+                                {
+                                    "sha256":  "7a29d1aed1151af360bd478aeaa22b6ce846251b197d4a384894fff1e5b894f0",
+                                    "path":  "Tasks/migrations/FDEC-074.json"
+                                },
+                                {
+                                    "sha256":  "51f18360d853be9e0c3bee90d3f3b694af66f550d4d597276e7b106fe2d87cc9",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "cf631520b8491140e74613ff22a1d504acff888ad5db4b4cc64375027ab6c1d1",
+                                    "path":  "Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/TASK.md"
+                                },
+                                {
+                                    "sha256":  "49c749dc20f419959f65b0fcfe34f139494cc51e8051028de3723bcc4cc25646",
+                                    "path":  "Tasks/items/web/FDEC-075-red-e-branding-and-fdfiles-website-style/TASK.md"
+                                },
+                                {
+                                    "sha256":  "d83d4820c058aa95d0f317ff49657cd52976da2ab82ae300f2b4725df4e7802d",
+                                    "path":  "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/events/20261120T114908434Z-codex-superseded-a396e5df.md"
+                                }
+                            ],
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "source_sha":  "9fcfdb7abde2195c60f1d7a525ebd55c9bb984ca",
+    "source_state_algorithm":  "fdec-source-state/v1",
+    "source_state_sha256":  "e4826e48f4a0269ac7340ec0f895023cb880bcecbff00faeb179beea24c3e56e",
+    "verification":  [
+
+                     ]
+}

@@ -1,0 +1,31 @@
+﻿{
+    "policy_sha256":  "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "checks":  [
+                   {
+                       "source_sha":  "a65f26c5dee5ecc23c0c2e7c07eec6cf2e9a25c5",
+                       "exit_code":  0,
+                       "command":  "powershell -NoProfile -File Tasks/epics/FDEC-EPIC-D001/reviews/R003/reproduce-staged-closure.ps1",
+                       "meaning":  "Reproduced incorrect acceptance on pinned pre-fix source, whose module matched interrupted primary baseline",
+                       "monitor_task_id":  "2c15fd98-473e-4067-8cbd-d2f39739c9b4"
+                   },
+                   {
+                       "source_sha":  "9fcfdb7abde2195c60f1d7a525ebd55c9bb984ca",
+                       "exit_code":  0,
+                       "command":  "powershell -NoProfile -File scripts/validate_tasks/test-reopened-requests.ps1",
+                       "meaning":  "Existing item lifecycle and full expanded Epic suite, including index-only first closure and reclosure rejection",
+                       "monitor_task_id":  "c4bb937c-9652-41c4-8f47-e8a9c2215abf"
+                   }
+               ],
+    "candidate_tree":  "7645351edd75aaadc0b3f158b041a38c47169638",
+    "task_id":  "FDEC-082",
+    "continuation":  "Repeat FDEC-006, then fresh independent FDEC-007 review; no source publication or version allocation",
+    "environment":  {
+                        "powershell":  "5.1.26100.33296",
+                        "git":  "2.45.1.windows.1",
+                        "os":  "Windows x86_64"
+                    },
+    "candidate_sha":  "9fcfdb7abde2195c60f1d7a525ebd55c9bb984ca",
+    "schema":  "fdec-local-verification/v1",
+    "cleanup":  "Monitors terminal; guarded owned fixtures removed; unrelated .idea and reviewer worktrees retained",
+    "result":  "PASS"
+}

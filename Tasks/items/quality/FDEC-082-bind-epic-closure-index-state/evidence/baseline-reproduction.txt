@@ -1,0 +1,20 @@
+warning: in the working copy of 'Tasks/policy/adoption-5.6.json', CRLF will be replaced by LF the next time Git touches it
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+warning: in the working copy of 'Tasks/policy/adoption-5.6.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/foundation/FDEC-901-functional/evidence/closure.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-902-gate/evidence/closure.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-902-gate/evidence/result.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-903-review/evidence/closure.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/items/quality/FDEC-903-review/evidence/reconciliation.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-901.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-902.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-903.json', CRLF will be replaced by LF the next time Git touches it
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+PASS: valid development Epic first closure and request admitted without allocation
+INDEX DIFF:
+ implementation.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+HEAD TO WORKTREE DIFF:
+PRODUCTION REPOSITORY VALIDATION WITH UNREVIEWED INDEX:
+PASS: 6 records, immutable history, graph, requests and hosted publication boundary
+REPRODUCED: new Epic closure accepted while staged implementation differs from tested candidate.

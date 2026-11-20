@@ -1,0 +1,12 @@
+﻿{
+    "type":  "correction_closed",
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "04d88f06-36d6-4407-937f-2ca125a6d360",
+    "epic_id":  "FDEC-EPIC-D001",
+    "work_item_id":  "FDEC-082",
+    "summary":  "Reject index-only implementation at current Epic closure",
+    "verification":  [
+                         "Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/evidence/verification.md",
+                         "Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/evidence/result.json"
+                     ]
+}
