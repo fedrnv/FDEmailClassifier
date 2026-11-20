@@ -31,6 +31,8 @@ try{
     $ready.allowed_paths=@('Tasks')
     $ready.matrix=New-FixtureMatrix $temp $task 'test-readiness-events.ps1 decision scenarios'
     $ready.dependency_revisions=@((Bound "$task/TASK.md"))
+    # Bind this copied fixture's current Epic events, not the historical template.
+    $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File|ForEach-Object {Bound $_.FullName.Substring($temp.Length+1).Replace('\','/')})
     [IO.File]::WriteAllText("$temp/$task/evidence/proof.md",'Synthetic verification')
     $ready.verification=@((Bound "$task/evidence/proof.md"))
     $ready.source_state_sha256=Get-SourceState $temp 'FDEC-005'

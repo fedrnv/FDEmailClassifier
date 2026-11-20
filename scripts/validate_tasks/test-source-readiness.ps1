@@ -31,6 +31,8 @@ try{
     $ready.allowed_paths=@('Tasks','docs/architecture')
     $ready.matrix=New-FixtureMatrix $temp $task 'test-source-readiness.ps1 source mutation scenarios'
     $ready.dependency_revisions=@((Bound "$task/TASK.md"))
+    # Bind this copied fixture's current Epic events, not the historical template.
+    $ready.epic_state_evidence=@(Get-ChildItem "$temp/Tasks/epics" -Recurse -File|ForEach-Object {Bound $_.FullName.Substring($temp.Length+1).Replace('\','/')})
     $ready|Add-Member source_state_algorithm 'fdec-source-state/v1' -Force
     [IO.File]::WriteAllText("$temp/$task/evidence/source-proof.md",'Synthetic focused proof')
     $ready|Add-Member verification @((Bound "$task/evidence/source-proof.md")) -Force
