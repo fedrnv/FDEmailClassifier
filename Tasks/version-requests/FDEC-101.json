@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "fdtasks-version-request/v1",
+    "request_id":  "342d86a5-e81b-4e36-bc3d-1818dffd0567",
+    "type":  "correction_closed",
+    "epic_id":  "FDEC-EPIC-S001",
+    "work_item_id":  "FDEC-101",
+    "summary":  "Reconcile MLX preparation dependencies through explicit adopted history while preserving original CUDA acceptance and D003 gate obligations",
+    "verification":  [
+                         "Tasks/items/governance/FDEC-101-reconcile-mlx-dependency/evidence/verification-v1.md",
+                         "Tasks/items/governance/FDEC-101-reconcile-mlx-dependency/evidence/result-v1.json",
+                         "Tasks/items/governance/FDEC-101-reconcile-mlx-dependency/evidence/test-output-v1.txt"
+                     ]
+}

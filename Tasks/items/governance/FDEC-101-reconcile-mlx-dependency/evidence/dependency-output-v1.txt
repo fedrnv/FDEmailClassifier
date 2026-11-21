@@ -1,0 +1,31 @@
+Captured monitor text from two waits, concatenated in order; not a byte-exact process stream export.
+PASS positive: exact graph; original task/GPU/gate criteria preserved
+PASS positive: original and amended historical snapshots bind only artifacts effective at cutoff
+PASS boundary: all five admission actions reject unverified governing Correction
+PASS boundary: omitted dependency contract rejects fresh readiness
+PASS negative: stale prior
+PASS negative: non-array prior
+PASS negative: unknown field
+PASS negative: duplicate new dependency
+PASS negative: missing governing dependency
+PASS negative: self dependency
+PASS negative: non-ancestor source
+PASS negative: stale target identity
+PASS negative: changed source specification despite new hash
+PASS negative: wrong governing specification
+PASS negative: wrong target
+PASS negative: unsafe adoption path
+PASS negative: missing adoption
+PASS negative: changed adoption
+PASS negative: terminal target
+PASS negative: inactive governing Correction
+PASS negative: unsupported contract
+PASS negative: missing dependency target
+PASS negative: cycle through D003 gate
+PASS negative: orphan amendment
+PASS negative: duplicate JSON key
+PASS negative: duplicate amendment event
+PASS negative: ambiguous event binding
+PASS negative: duplicate adoption
+PASS negative: bare Done without verified closure
+PASS: 25 negative amendment cases, exact graph, five shared admission denials, contract binding and final ordinary repository validation

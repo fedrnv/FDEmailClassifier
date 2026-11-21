@@ -1,0 +1,47 @@
+﻿{
+    "schema":  "fdec-dependency-amendment-observation/v1",
+    "source_sha":  "c693cf61625ba970610d46da7d7233303fcdbaf4",
+    "source_state_sha256":  "0f575672228333789442134546e8da13359c9e2769ba09b869923edec40546a8",
+    "previous_fdec087_dependencies":  [
+                                          "FDEC-016"
+                                      ],
+    "effective_fdec087_dependencies":  [
+                                           "FDEC-019",
+                                           "FDEC-101"
+                                       ],
+    "fdec016_status":  "Blocked",
+    "fdec020_dependencies":  [
+                                 "FDEC-015",
+                                 "FDEC-016",
+                                 "FDEC-017",
+                                 "FDEC-018",
+                                 "FDEC-019",
+                                 "FDEC-087"
+                             ],
+    "amendment":  {
+                      "sha256":  "aa16d4965b0a72b0ae6a84a8add38864de85db281635b51b1dceb4cb16dad79d",
+                      "path":  "Tasks/dependency-amendments/FDEC-087-D001.json"
+                  },
+    "contract":  {
+                     "sha256":  "ce8b1d92ed7d0ab68427c55f9388c118c5776cc477a2e5e27e59066f51c56ca0",
+                     "path":  "Tasks/policy/dependency-amendment-1.0.md"
+                 },
+    "unchanged_original_specs":  [
+                                     {
+                                         "sha256":  "ef5a8045cde6b16fb179b748b2138bbdb6c13649e5dc059ba406ffe01ffe1b06",
+                                         "path":  "Tasks/items/ai/FDEC-087-apple-silicon-mlx-training-handoff/TASK.md"
+                                     },
+                                     {
+                                         "sha256":  "f0f6f5d4d04d2b4ce3998f81d1c821bdb5995e7cfd660745f9a34666258cc40e",
+                                         "path":  "Tasks/items/ai/FDEC-016-lora-qlora-trainer/TASK.md"
+                                     },
+                                     {
+                                         "sha256":  "f538139180a611bd23acb18a0015c3f7a04d354affd48aafe1541304de95e9ce",
+                                         "path":  "Tasks/items/quality/FDEC-020-targeted-integration-gate/TASK.md"
+                                     }
+                                 ],
+    "actual_email_training":  false,
+    "device_switch":  false,
+    "public_weight_clearance":  false,
+    "external_spend_eur":  0
+}

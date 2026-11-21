@@ -1,0 +1,42 @@
+{
+  "schema": "fdec-process-components/v1",
+  "source_sha": "c693cf61625ba970610d46da7d7233303fcdbaf4",
+  "components": [
+    {
+      "command": "powershell -NoProfile -File scripts/validate_tasks/test-dependency-amendments.ps1",
+      "monitor_id": "9daa2a7e-5555-4288-90e4-b836451367fe",
+      "exit_code": 0,
+      "output": "dependency-output-v1.txt"
+    },
+    {
+      "command": "powershell -NoProfile -File scripts/validate_tasks/test-plan-sync.ps1",
+      "monitor_id": "5ee5762b-e15d-4332-af16-8846af487269",
+      "exit_code": 0,
+      "output": "plan-sync-output-v1.txt"
+    },
+    {
+      "command": "powershell -NoProfile -File scripts/validate_tasks/test-epic-closure.ps1",
+      "monitor_id": "6ee0d9ec-6da7-439d-8b74-bd5645415315",
+      "exit_code": 0,
+      "output": "epic-closure-output-v1.txt"
+    },
+    {
+      "command": "powershell -NoProfile -File scripts/validate_tasks/test-readiness-events.ps1",
+      "monitor_id": "71c9deec-3c97-42d3-9702-6f462a599058",
+      "exit_code": 0,
+      "output": "readiness-output-v1.txt"
+    },
+    {
+      "command": "powershell -NoProfile -File scripts/validate_tasks/test-acceptance-matrix.ps1",
+      "monitor_id": "eedf3521-eacc-457b-8c1e-338566b5410e",
+      "exit_code": 0,
+      "output": "matrix-output-v1.txt"
+    },
+    {
+      "command": "powershell -NoProfile -File scripts/validate_tasks/test-source-readiness.ps1",
+      "monitor_id": "0be1c6a9-fd97-43dc-ae14-1c05ba72c104",
+      "exit_code": 0,
+      "output": "source-output-v1.txt"
+    }
+  ]
+}

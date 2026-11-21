@@ -1,0 +1,54 @@
+PASS: retained and replayed tasks, source namespace, Mac gate/current/historical projection and optional-Epic scheduling
+warning: in the working copy of 'AGENTS.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'DEVELOPMENT.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-001.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-002.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-003.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-004.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-005.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-006.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-007.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-008.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-009.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-010.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-011.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-012.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-013.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-014.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-017.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-018.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-019.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-072.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-073.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-074.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-076.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-077.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-078.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-079.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-080.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-081.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-082.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-083.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-099.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'Tasks/version-requests/FDEC-100.json', CRLF will be replaced by LF the next time Git touches it
+PASS: reject missing original planning history
+PASS: reject stale planning-source binding
+PASS: reject rebound replay with altered criteria
+PASS: reject rebound replacement specification
+PASS: reject executed source disguised as planned migration
+PASS: reject partial namespace that could resolve to local completed tasks
+PASS: reject unbound foreign task substitution
+PASS: reject repeated original planning event
+PASS: reject retirement before owner planning history
+PASS: reject membership relink without identity authority
+PASS: immutable baseline and claim admission inputs
+PASS: reject claim with an unbound planning-history input
+PASS: immutable baseline and dispatch admission inputs
+PASS: reject dispatch with an unbound planning-history input
+PASS: immutable baseline and resume admission inputs
+PASS: reject resume with an unbound planning-history input
+PASS: immutable baseline and execute admission inputs
+PASS: reject execute with an unbound planning-history input
+PASS: immutable baseline and close admission inputs
+PASS: reject close with an unbound planning-history input
+PASS: planning migrations and complete admission input bindings; no raw training data used
