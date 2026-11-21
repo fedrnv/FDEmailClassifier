@@ -1,5 +1,10 @@
 # Explicit adopted prior->new dependency sets; no accepted-spec mutation.
 # Loaded after the shared strict JSON/identity helpers and envelope functions.
+function Dependency-Field([string]$Front,[string]$Name) {
+    $values=[regex]::Matches($Front,"(?m)^$([regex]::Escape($Name)): ([^\r\n]+)")
+    if($values.Count -ne 1){throw 'Missing or ambiguous dependency event field'}
+    return $values[0].Groups[1].Value.Trim().Trim('"')
+}
 function Dependency-NoLinks([string]$Root,[string]$Path) {
     $rootFull=[IO.Path]::GetFullPath($Root).TrimEnd('\','/')
     $current=[IO.Path]::GetFullPath($Path)
@@ -24,9 +29,9 @@ function Dependency-Ids($Ids) {
     return @($Ids|Sort-Object -CaseSensitive)
 }
 function Resolve-DependencyAmendment([string]$Root,$Target,$Event,$Used) {
-    $relative=Field $Event.front 'dependency_file'
+    $relative=Dependency-Field $Event.front 'dependency_file'
     if($relative -cnotmatch '^Tasks/dependency-amendments/(FDEC-[0-9]{3})-D[0-9]{3}\.json$' -or $matches[1] -cne $Target.id -or $Used.ContainsKey($relative)){throw 'Invalid or duplicate dependency amendment reference'}
-    $hash=Field $Event.front 'dependency_sha256'
+    $hash=Dependency-Field $Event.front 'dependency_sha256'
     $path=Dependency-Bound $Root ([pscustomobject]@{path=$relative;sha256=$hash})
     $change=Read-RequestJson $path
     Request-ExactKeys $change @('schema','target_id','correction_id','source_sha','target_spec','governing_spec','contract','adoption_event','previous_dependencies','new_dependencies','reason')
@@ -48,16 +53,28 @@ function Resolve-DependencyAmendment([string]$Root,$Target,$Event,$Used) {
     if($change.adoption_event -isnot [string] -or $change.adoption_event -cnotmatch '^Tasks/epics/FDEC-EPIC-S001/events/[A-Za-z0-9_-]+\.md$'){throw 'Invalid dependency adoption path'}
     Dependency-NoLinks $Root (Join-Path $Root $change.adoption_event)
     $adoption=Envelope (Join-Path $Root $change.adoption_event)
-    if((Field $adoption.front 'task_id') -cne 'FDEC-EPIC-S001' -or (Field $adoption.front 'event_type') -cne 'scope-amended' -or (Field $adoption.front 'correction_id') -cne $change.correction_id -or (Field $adoption.front 'dependency_file') -cne $relative -or (Field $adoption.front 'dependency_sha256') -cne $hash -or (Field $adoption.front 'dependency_contract') -cne $change.contract.path -or (Field $adoption.front 'dependency_contract_sha256') -cne $change.contract.sha256){throw 'Missing or changed explicit dependency adoption'}
+    if((Dependency-Field $adoption.front 'task_id') -cne 'FDEC-EPIC-S001' -or (Dependency-Field $adoption.front 'event_type') -cne 'scope-amended' -or (Dependency-Field $adoption.front 'correction_id') -cne $change.correction_id -or (Dependency-Field $adoption.front 'dependency_file') -cne $relative -or (Dependency-Field $adoption.front 'dependency_sha256') -cne $hash -or (Dependency-Field $adoption.front 'dependency_contract') -cne $change.contract.path -or (Dependency-Field $adoption.front 'dependency_contract_sha256') -cne $change.contract.sha256){throw 'Missing or changed explicit dependency adoption'}
     $Target.dependencies=@($next)
     $Target.dependency_rule_paths=@($Target.dependency_rule_paths)+@($change.contract.path)
     $bindings=@($path,(Join-Path $Root $change.contract.path),(Join-Path $Root $change.adoption_event),$governing)
     $Target.state_paths+=$bindings
     if(!$Target.ContainsKey('dependency_amendment_nodes')){$Target.dependency_amendment_nodes=@{}}
     $Target.dependency_amendment_nodes[$Event.path]=@{dependencies=@($next);bindings=$bindings}
-    $Used[$relative]=[pscustomobject]@{correction_id=$change.correction_id;governing_path=$governing}
+    $Used[$relative]=[pscustomobject]@{correction_id=$change.correction_id;governing_path=$governing;adoption_path=(Join-Path $Root $change.adoption_event)}
 }
 function Assert-DependencyAmendments([string]$Root,$Records,$Used) {
+    $adoptions=@(foreach($path in $Records['FDEC-EPIC-S001'].state_paths){
+        if($path -eq $Records['FDEC-EPIC-S001'].path){continue}
+        $event=Envelope $path
+        if((Field $event.front 'event_type') -eq 'scope-amended' -and $event.front -match '(?m)^dependency_file: '){
+            [pscustomobject]@{path=$path;reference=(Dependency-Field $event.front 'dependency_file')}
+        }
+    })
+    foreach($adoption in $adoptions){if(!$Used.ContainsKey($adoption.reference)){throw 'Orphan dependency adoption'}}
+    foreach($reference in $Used.Keys){
+        $matching=@($adoptions|Where-Object reference -CEQ $reference)
+        if($matching.Count -ne 1 -or $matching[0].path -cne $Used[$reference].adoption_path){throw 'Missing or duplicate dependency adoption'}
+    }
     $directory=Join-Path $Root 'Tasks/dependency-amendments'
     if(Test-Path -LiteralPath $directory){
         foreach($file in Get-ChildItem -LiteralPath $directory -File){
@@ -68,5 +85,8 @@ function Assert-DependencyAmendments([string]$Root,$Records,$Used) {
     foreach($entry in $Used.Values){
         $governing=$Records[$entry.correction_id]
         if(!$governing -or $governing.path -cne $entry.governing_path -or $governing.parent -cne 'FDEC-EPIC-S001' -or $governing.status -notin 'InProgress','Done' -or $Records['FDEC-EPIC-S001'].status -cne 'Active'){throw 'Inactive dependency amendment governance'}
+        # The ordinary request resolver below must validate the actual closure;
+        # a bare Done label without a first request cannot release the target.
+        if($governing.status -eq 'Done' -and (!$governing.closure_history.Count -or !(Test-Path -LiteralPath (Join-Path $Root "Tasks/version-requests/$($governing.id).json")))){throw 'Unverified dependency amendment Correction'}
     }
 }
