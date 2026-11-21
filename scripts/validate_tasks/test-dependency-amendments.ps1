@@ -70,11 +70,14 @@ try {
         if((Bound $path).sha256 -ne (Get-IdentityHash (Join-Path $root $path))){throw 'Original task criteria changed'}
     }
     Write-Output 'PASS positive: exact graph; original task/GPU/gate criteria preserved'
-    $amended=$records['FDEC-087']
-    $eventObject=Envelope $script:event
-    $before=[DateTimeOffset]::Parse((Field $eventObject.front 'created_at')).AddTicks(-1)
-    $old=Epic-Snapshot $amended $before
-    $current=Epic-Snapshot $amended ([DateTimeOffset]::MaxValue)
+    $snapshots=& {
+        param($directory,$eventPath)
+        $state=. "$PSScriptRoot/repository.ps1" -Root $directory -AsObject
+        $eventObject=Envelope $eventPath
+        $before=[DateTimeOffset]::Parse((Field $eventObject.front 'created_at')).AddTicks(-1)
+        @{old=(Epic-Snapshot $state['FDEC-087'] $before);current=(Epic-Snapshot $state['FDEC-087'] ([DateTimeOffset]::MaxValue))}
+    } $fixture $script:event
+    $old=$snapshots.old;$current=$snapshots.current
     if(($old.dependencies -join ',') -cne 'FDEC-016' -or ($current.dependencies -join ',') -cne 'FDEC-019,FDEC-101' -or $old.paths -contains (Join-Path $fixture $changePath) -or $current.paths -notcontains (Join-Path $fixture $changePath)){throw 'Historical dependency/artifact cutoff incorrect'}
     Write-Output 'PASS positive: original and amended historical snapshots bind only artifacts effective at cutoff'
     $ready=Get-Content "$root/$governing/evidence/readiness-v1.json" -Raw|ConvertFrom-Json
