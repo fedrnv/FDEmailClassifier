@@ -100,6 +100,8 @@ def main(argv=None):
     parser = Parser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True, parser_class=Parser)
     commands.add_parser("preflight")
+    cpu_check = commands.add_parser("cpu-check")
+    cpu_check.add_argument("--opt-in", action="store_true")
     check = commands.add_parser("gpu-check")
     check.add_argument("--opt-in", action="store_true")
     check.add_argument("--backend", choices=("lora", "qlora", "both"), default="both")
@@ -115,6 +117,9 @@ def main(argv=None):
         if args.command == "preflight":
             result = dict(schema="fdec-trainer-availability/v1", actual_training=False, current_training_review_present=(ROOT / REVIEW_ANCHOR).is_file(),
                           requires=["reviewed-non-openai-training-data-labels-prompt", "current-rights-and-consent", "verified-train-partition", "verified-stock-snapshot", "compatible-single-bfloat16-CUDA-device"], availability_is_admission=False)
+        elif args.command == "cpu-check":
+            from gpu_check import run_cpu
+            result = run_cpu(opt_in=args.opt_in)
         elif args.command == "gpu-check":
             from gpu_check import run as gpu_check
             result = gpu_check(opt_in=args.opt_in, backend=args.backend)

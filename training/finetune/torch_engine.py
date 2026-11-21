@@ -19,7 +19,10 @@ import split_data as splits
 TARGET_MODULES = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
 
 
-def deterministic_runtime(config):
+def deterministic_runtime(config, *, technical_cpu=False):
+    # The actual trainer never opts into this numerical-fixture-only path.
+    if type(technical_cpu) is not bool or technical_cpu and config["backend"] != "lora":
+        raise TrainerError("invalid_technical_cpu_mode")
     # Must be set before creating a CUDA context. Never silently override an
     # incompatible already configured process.
     if os.environ.get("CUBLAS_WORKSPACE_CONFIG", ":4096:8") != ":4096:8":
@@ -33,13 +36,13 @@ def deterministic_runtime(config):
         raise TrainerError("incompatible_training_runtime")
     import torch
     import numpy as np
-    if not torch.cuda.is_available() or torch.cuda.device_count() != 1 or not torch.cuda.is_bf16_supported():
+    if not technical_cpu and (not torch.cuda.is_available() or torch.cuda.device_count() != 1 or not torch.cuda.is_bf16_supported()):
         raise TrainerError("single_bfloat16_cuda_device_required")
     torch.set_num_threads(1)
     random.seed(config["seed"])
     np.random.seed(config["seed"])
     torch.manual_seed(config["seed"])
-    torch.cuda.manual_seed_all(config["seed"])
+    if not technical_cpu: torch.cuda.manual_seed_all(config["seed"])
     torch.use_deterministic_algorithms(True, warn_only=False)
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
@@ -115,8 +118,9 @@ class TorchEngine:
                     raise ValueError()
                 for input_ids, labels in batches:
                     current_check()
-                    data = self.torch.tensor([input_ids], dtype=self.torch.long, device="cuda:0")
-                    targets = self.torch.tensor([labels], dtype=self.torch.long, device="cuda:0")
+                    device = next(iter(self.parameters.values())).device
+                    data = self.torch.tensor([input_ids], dtype=self.torch.long, device=device)
+                    targets = self.torch.tensor([labels], dtype=self.torch.long, device=device)
                     loss = self.model(input_ids=data, attention_mask=self.torch.ones_like(data), labels=targets, use_cache=False).loss
                     if not self.torch.isfinite(loss).item():
                         raise ValueError()
@@ -127,13 +131,13 @@ class TorchEngine:
                 current_check()
                 self.optimizer.step()
                 self.optimizer.zero_grad(set_to_none=True)
-                self.torch.cuda.synchronize()
+                if device.type == "cuda": self.torch.cuda.synchronize(device)
             except Exception:
                 raise TrainerError("training_step_rejected") from None
 
     def state(self):
         return dict(schema="fdec-torch-peft-state/v1", adapter={name: value.detach().cpu().clone() for name, value in self.parameters.items()},
-                    parameter_order=list(self.parameters), optimizer=self.optimizer.state_dict(), rng_cpu=self.torch.get_rng_state(), rng_cuda=self.torch.cuda.get_rng_state_all())
+                    parameter_order=list(self.parameters), optimizer=self.optimizer.state_dict(), rng_cpu=self.torch.get_rng_state(), rng_cuda=self.torch.cuda.get_rng_state_all() if next(iter(self.parameters.values())).device.type == "cuda" else [])
 
     def restore(self, state):
         try:
@@ -143,13 +147,16 @@ class TorchEngine:
                 value = state["adapter"][name]
                 if value.shape != parameter.shape or value.dtype != parameter.dtype or not self.torch.isfinite(value).all().item():
                     raise ValueError()
+            cuda = next(iter(self.parameters.values())).device.type == "cuda"
+            if not cuda and state["rng_cuda"] != []:
+                raise ValueError()
             with self.torch.no_grad():
                 for name, parameter in self.parameters.items():
                     parameter.copy_(state["adapter"][name].to(parameter.device))
             self.optimizer.load_state_dict(state["optimizer"])
             self.optimizer.zero_grad(set_to_none=True)
             self.torch.set_rng_state(state["rng_cpu"])
-            self.torch.cuda.set_rng_state_all(state["rng_cuda"])
+            if cuda: self.torch.cuda.set_rng_state_all(state["rng_cuda"])
         except Exception:
             raise TrainerError("incompatible_training_state") from None
 

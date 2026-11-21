@@ -11,6 +11,7 @@ import tempfile
 from trainer_config import ROOT, TrainerError, read as read_config
 from torch_engine import TorchEngine, TARGET_MODULES, deterministic_runtime, quiet_runtime
 import checkpoints
+from normalize_email import IngestionError
 
 
 def run(*, opt_in=False, backend="both"):
@@ -23,19 +24,25 @@ def run(*, opt_in=False, backend="both"):
     return dict(schema="fdec-numeric-gpu-check/v1", result="PASS", checks=checks, actual_email_training=False, stock_model_used=False, fixture_emails_used=False)
 
 
-def check_backend(backend):
+def run_cpu(*, opt_in=False):
+    if opt_in is not True: raise TrainerError("explicit_opt_in_required")
+    return dict(schema="fdec-numeric-cpu-check/v1", result="PASS", checks={"lora":check_backend("lora",technical_cpu=True)},
+                supported_gpu_acceptance=False,actual_email_training=False,stock_model_used=False,fixture_emails_used=False)
+
+
+def check_backend(backend, *, technical_cpu=False):
     with quiet_runtime():
         config = read_config(ROOT / "training/config/peft-trainer-v1.json").copy()
         config.update(backend=backend, max_steps=4, gradient_accumulation=1, rank=2, alpha=4, max_sequence_tokens=128, checkpoint_interval=2)
-        torch = deterministic_runtime(config)
+        torch = deterministic_runtime(config,technical_cpu=technical_cpu)
         from transformers import Qwen3Config, Qwen3ForCausalLM, AutoModelForCausalLM, BitsAndBytesConfig
         from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
         def fresh():
-            deterministic_runtime(config)
+            deterministic_runtime(config,technical_cpu=technical_cpu)
             engine = TorchEngine.__new__(TorchEngine)
             engine.config, engine.torch = config, torch
             if backend == "lora":
-                model = tiny_model().to(device="cuda:0", dtype=torch.bfloat16)
+                model = tiny_model().to(device="cpu" if technical_cpu else "cuda:0", dtype=torch.float32 if technical_cpu else torch.bfloat16)
             else:
                 model = AutoModelForCausalLM.from_pretrained(str(base_path), local_files_only=True, trust_remote_code=False, use_safetensors=True, attn_implementation="eager", dtype=torch.bfloat16, device_map={"": "cuda:0"}, quantization_config=BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True, bnb_4bit_compute_dtype=torch.bfloat16))
                 model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=False)
@@ -56,13 +63,19 @@ def check_backend(backend):
             numerical = torch.randint(3, 128, (32,), generator=generator).tolist()
             batch = [(numerical, numerical)]
             whole = fresh()
+            initial = {name:value.detach().cpu().clone() for name,value in whole.parameters.items()}
+            frozen = {name:value.detach().cpu().clone() for name,value in whole.model.named_parameters() if not value.requires_grad}
             for _ in range(4):
                 whole.update(batch, lambda: None)
             expected = whole.state()
+            if not any(not torch.equal(initial[name],value) for name,value in expected["adapter"].items()):
+                raise TrainerError("numeric_fixture_adapter_not_updated")
+            if any(not torch.equal(value.detach().cpu(),frozen[name]) for name,value in whole.model.named_parameters() if not value.requires_grad):
+                raise TrainerError("numeric_fixture_frozen_base_changed")
             interrupted = fresh()
             for _ in range(2):
                 interrupted.update(batch, lambda: None)
-            context, key = dict(kind="technical-random-numeric-gpu-check", config=config), secrets.token_bytes(32)
+            context, key = dict(kind="technical-random-numeric-cpu-check" if technical_cpu else "technical-random-numeric-gpu-check", config=config), secrets.token_bytes(32)
             checkpoints.save(path / "checkpoint", state=interrupted.state(), context=context, step=2, key=key, writer=interrupted.write, current_check=lambda: None)
             resumed = fresh()
             step, state = checkpoints.load(path / "checkpoint", context=context, key=key, reader=resumed.read, current_check=lambda: None)
@@ -81,4 +94,21 @@ def check_backend(backend):
                 return left == right
             if not same(expected, resumed.state()):
                 raise TrainerError("gpu_resume_is_not_exact")
-        return dict(backend=backend, steps=4, checkpoint_resume_exact=True)
+            checkpoint=path/"checkpoint"
+            original={name:(checkpoint/name).read_bytes() for name in ("state.pt","metadata.json","receipt.json")}
+            try:checkpoints.save(checkpoint,state=resumed.state(),context=context,step=4,key=key,writer=resumed.write,current_check=lambda:None)
+            except (TrainerError,IngestionError):pass
+            else:raise TrainerError("existing_numeric_checkpoint_overwritten")
+            if any((checkpoint/name).read_bytes()!=content for name,content in original.items()):raise TrainerError("existing_numeric_checkpoint_changed")
+            # Authenticated native torch serialization is corrupted only after
+            # successful replay and preservation checks. Decoder must not run.
+            (checkpoint/"state.pt").write_bytes(original["state.pt"]+b"corrupt-numerical-fixture")
+            decoded=[]
+            def forbidden_reader(content):
+                decoded.append(True)
+                return resumed.read(content)
+            try:checkpoints.load(checkpoint,context=context,key=key,reader=forbidden_reader,current_check=lambda:None)
+            except TrainerError:pass
+            else:raise TrainerError("tampered_numeric_checkpoint_loaded")
+            if decoded:raise TrainerError("tampered_numeric_checkpoint_decoded")
+        return dict(backend=backend, device="cpu" if technical_cpu else "cuda:0", steps=4, checkpoint_resume_exact=True,adapter_updated=True,frozen_base_unchanged=True,optimizer_and_rng_exact=True,existing_checkpoint_preserved=True,tamper_rejected_before_decoder=True)

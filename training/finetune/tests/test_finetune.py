@@ -28,6 +28,21 @@ from baseline_metrics import DIMENSIONS
 
 
 class ConfigTests(unittest.TestCase):
+    def test_technical_cpu_path_cannot_disable_actual_training_gpu_requirement(self):
+        value=config.read(ROOT/"training/config/peft-trainer-v1.json")
+        with self.assertRaises(config.TrainerError):gpu_check.run_cpu(opt_in=False)
+        with self.assertRaises(config.TrainerError):torch_engine.deterministic_runtime(dict(value,backend="qlora"),technical_cpu=True)
+        profile=json.loads((ROOT/"training/config/peft-runtime-v1.json").read_text())
+        unavailable=SimpleNamespace(cuda=SimpleNamespace(is_available=lambda:False))
+        with patch.object(torch_engine.importlib.metadata,"version",side_effect=lambda name:profile["packages"][name]),patch.dict(sys.modules,{"torch":unavailable,"numpy":SimpleNamespace()}),patch.dict(torch_engine.os.environ,{"CUBLAS_WORKSPACE_CONFIG":":4096:8"}):
+            with self.assertRaisesRegex(config.TrainerError,"single_bfloat16_cuda_device_required"):
+                torch_engine.deterministic_runtime(value)
+        command=[sys.executable,str(ROOT/"training/finetune/train.py")]
+        missing=subprocess.run(command+["cpu-check"],capture_output=True,text=True)
+        self.assertEqual((missing.returncode,missing.stderr),(2,"trainer_execution_rejected\n"))
+        unsupported=subprocess.run(command+["train","--technical-cpu"],capture_output=True,text=True)
+        self.assertEqual((unsupported.returncode,unsupported.stderr),(2,"trainer_arguments_invalid\n"))
+
     def test_bounded_config_and_no_implicit_backend_fallback(self):
         value = config.read(ROOT / "training/config/peft-trainer-v1.json")
         self.assertEqual(config.validate(value), value)

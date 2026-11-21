@@ -3,7 +3,9 @@
 This implements the local trainer contract. It has not passed the required
 supported-GPU acceptance run. The current workstation exposes only Microsoft
 Basic Display Adapter; a compatible CUDA runtime/device is not confirmed. Actual
-PyTorch/PEFT/QLoRA integration and numerical reproducibility remain unverified.
+CUDA/QLoRA integration and GPU numerical reproducibility remain unverified.
+The installed, audited export-only runtime additionally supports the complete
+numerical CPU LoRA check below; it is not an actual-training CPU fallback.
 Software checks, protocol doubles and signed counterfactual dataset policies are
 not evidence of actual email training or GPU acceptance. FDEC-016 stays incomplete
 until the accepted GPU checkpoint/resume criterion actually passes.
@@ -17,7 +19,37 @@ These commands do not install a transformer runtime or train a model. The tests
 exercise the real existing rights, ingestion replay and grouped-split verifiers
 on isolated software fixtures. No actual language model consumes their generated
 email content or labels. Numerical checkpoint/orchestration doubles do not call
-PyTorch; the actual checkpoint codec and engine need the separate GPU check.
+PyTorch; the actual checkpoint codec and engine have a separate numerical CPU
+check and the original mandatory supported-GPU acceptance check.
+
+## Additional numerical CPU checkpoint check
+
+```powershell
+.venv/export/Scripts/python.exe training/finetune/train.py cpu-check --opt-in
+```
+
+Use the exact locally audited runtime prepared by
+`python training/export/bootstrap.py --opt-in --model-check`. No additional
+package installation or pretrained tensor download occurs in the check.
+It initializes a tiny random Qwen3, creates a real PEFT LoRA adapter and performs
+four gradient updates on seeded random numeric tokens. Real engine update,
+AdamW, adapter/optimizer/RNG state, authenticated checkpoint serialization and
+restricted PyTorch load are exercised. Uninterrupted state must match a
+two-step interruption plus restored two-step continuation exactly. The adapter
+must actually change and every frozen base tensor must stay unchanged.
+Existing checkpoint overwrite must fail without changing its bytes, and native
+state corruption must reject before invoking the decoder. Only scalar booleans,
+counts and static diagnostics are printed; temporary numerical weights/state
+are removed through guarded owned temporary directories. No email, classification
+gold, stock weights or actual commercial training is involved.
+
+The result explicitly reports `supported_gpu_acceptance: false`. This command
+permits only numerical LoRA; it cannot enable QLoRA on CPU. The actual `train`
+command has no CPU/technical override and still requires its original compatible
+single bfloat16 CUDA device plus all current private data/rights checks. The
+production engine derives tensor placement from its loaded parameters and only
+captures/restores CUDA RNG for CUDA models. Actual model initialization remains
+CUDA-only. CPU fixture results never close the original supported-GPU criterion.
 
 ## Actual training admission
 
