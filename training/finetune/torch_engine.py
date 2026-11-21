@@ -10,13 +10,12 @@ import re
 import subprocess
 import sys
 
-from trainer_config import ROOT, TrainerError
+from trainer_config import ROOT, TrainerError, TARGET_MODULES
 sys.path.append(str(ROOT / "training/baseline"))
 sys.path.append(str(ROOT / "training/splits"))
 from local_model import verify_snapshot, quiet_runtime
 import split_data as splits
 
-TARGET_MODULES = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
 
 
 def deterministic_runtime(config, *, technical_cpu=False):

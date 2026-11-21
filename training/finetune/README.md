@@ -1,5 +1,11 @@
 # Deterministic private PyTorch/PEFT trainer (FDEC-016)
 
+FDEC-087 adds the explicitly selected `--engine mlx` Apple path and private
+owner-gated handoff. See [the Mac runbook](../../docs/training/MACBOOK_M4_HANDOFF.md)
+for setup, numeric smoke, actual-input admission, resume and verified return.
+Stage A software tests are `test-mlx-handoff.ps1`. Real Apple execution and the
+actual training round trip remain unverified; PyTorch stays the default backend.
+
 This implements the local trainer contract. It has not passed the required
 supported-GPU acceptance run. The current workstation exposes only Microsoft
 Basic Display Adapter; a compatible CUDA runtime/device is not confirmed. Actual

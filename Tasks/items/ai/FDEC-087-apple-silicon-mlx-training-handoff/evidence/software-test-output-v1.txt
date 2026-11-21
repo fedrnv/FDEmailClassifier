@@ -1,0 +1,46 @@
+powershell -NoProfile -File training/finetune/test-mlx-handoff.ps1
+test_checkpoint_wrong_authority_or_context_never_reaches_decoder (test_handoff.Fixtures.test_checkpoint_wrong_authority_or_context_never_reaches_decoder) ... ok
+test_cli_and_bootstrap_reject_without_owner_and_do_not_import_torch (test_handoff.Fixtures.test_cli_and_bootstrap_reject_without_owner_and_do_not_import_torch) ... ok
+test_native_mlx_cannot_silently_accept_qlora (test_handoff.Fixtures.test_native_mlx_cannot_silently_accept_qlora) ... ok
+test_owner_wrong_handoff_future_timestamp_and_wrong_scope_reject (test_handoff.Fixtures.test_owner_wrong_handoff_future_timestamp_and_wrong_scope_reject) ... ok
+test_peft_transpose_scale_layout_and_missing_targets (test_handoff.Fixtures.test_peft_transpose_scale_layout_and_missing_targets) ... ok
+test_portable_source_hidden_flags_new_source_and_committed_drift_reject (test_handoff.Fixtures.test_portable_source_hidden_flags_new_source_and_committed_drift_reject) ... ok
+test_portable_source_reads_actual_worktree_index_and_ignores_git_env (test_handoff.Fixtures.test_portable_source_reads_actual_worktree_index_and_ignores_git_env) ... ok
+test_prepare_retains_exact_git_bundle_and_requires_external_owner (test_handoff.Fixtures.test_prepare_retains_exact_git_bundle_and_requires_external_owner) ... ok
+test_repo_owner_approval_and_missing_actual_data_cannot_authorize (test_handoff.Fixtures.test_repo_owner_approval_and_missing_actual_data_cannot_authorize) ... ok
+test_return_bad_mac_and_native_to_peft_mismatch_never_complete (test_handoff.Fixtures.test_return_bad_mac_and_native_to_peft_mismatch_never_complete) ... ok
+test_return_corruption_foreign_extra_and_owner_change_fail_closed (test_handoff.Fixtures.test_return_corruption_foreign_extra_and_owner_change_fail_closed) ... ok
+test_safetensors_tree_roundtrip_hmac_native_checkpoint_and_no_pickle (test_handoff.Fixtures.test_safetensors_tree_roundtrip_hmac_native_checkpoint_and_no_pickle) ... ok
+test_scope_change_owner_revocation_and_source_bundle_mutation_reject (test_handoff.Fixtures.test_scope_change_owner_revocation_and_source_bundle_mutation_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 44.342s
+
+OK
+MLX_HANDOFF_SOFTWARE=PASS; ACTUAL_APPLE_EXECUTION=NOT_RUN; OWNER_TRANSITION=NOT_CONFIRMED; ACTUAL_TRAINING_RETURN=NOT_COMPLETE
+
+powershell -NoProfile -File training/finetune/test-finetune.ps1
+test_authority_change_and_write_failure_rollback_preserve_existing_checkpoint (test_finetune.CheckpointTests.test_authority_change_and_write_failure_rollback_preserve_existing_checkpoint) ... ok
+test_hash_rebinding_signature_context_and_extras_reject_before_decoder (test_finetune.CheckpointTests.test_hash_rebinding_signature_context_and_extras_reject_before_decoder) ... ok
+test_numerical_state_resume_matches_uninterrupted_software_oracle (test_finetune.CheckpointTests.test_numerical_state_resume_matches_uninterrupted_software_oracle) ... ok
+test_bounded_config_and_no_implicit_backend_fallback (test_finetune.ConfigTests.test_bounded_config_and_no_implicit_backend_fallback) ... ok
+test_cli_diagnostics_and_preflight_do_not_echo_input_or_train (test_finetune.ConfigTests.test_cli_diagnostics_and_preflight_do_not_echo_input_or_train) ... ok
+test_reconstructed_cursor_has_complete_epochs (test_finetune.ConfigTests.test_reconstructed_cursor_has_complete_epochs) ... ok
+test_runtime_profile_binds_observed_candidates_without_claiming_execution (test_finetune.ConfigTests.test_runtime_profile_binds_observed_candidates_without_claiming_execution) ... ok
+test_teacher_forcing_masks_the_independent_prompt_and_user_input (test_finetune.ConfigTests.test_teacher_forcing_masks_the_independent_prompt_and_user_input) ... ok
+test_technical_cpu_path_cannot_disable_actual_training_gpu_requirement (test_finetune.ConfigTests.test_technical_cpu_path_cannot_disable_actual_training_gpu_requirement) ... ok
+test_private_run_resume_and_committed_checkpoint_recovery (test_finetune.OrchestrationTests.test_private_run_resume_and_committed_checkpoint_recovery) ... ok
+test_full_train_only_roundtrip (test_finetune.TrainingAdmissionTests.test_full_train_only_roundtrip) ... ok
+test_partial_heuristic_and_held_out_labels_reject (test_finetune.TrainingAdmissionTests.test_partial_heuristic_and_held_out_labels_reject) ... ok
+test_review_bindings_and_independent_prompt_required (test_finetune.TrainingAdmissionTests.test_review_bindings_and_independent_prompt_required) ... ok
+test_z_revocation_is_checked_on_reuse (test_finetune.TrainingAdmissionTests.test_z_revocation_is_checked_on_reuse) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 54.916s
+
+OK
+{"actual_training": false, "availability_is_admission": false, "current_training_review_present": false, "requires": ["reviewed-non-openai-training-data-labels-prompt", "current-rights-and-consent", "verified-train-partition", "verified-stock-snapshot", "compatible-single-bfloat16-CUDA-device"], "schema": "fdec-trainer-availability/v1"}
+SOFTWARE_CHECKS=PASS; SUPPORTED_GPU_ACCEPTANCE=NOT_RUN
+
+.venv/export/Scripts/python.exe training/finetune/train.py cpu-check --opt-in
+{"actual_email_training": false, "checks": {"lora": {"adapter_updated": true, "backend": "lora", "checkpoint_resume_exact": true, "device": "cpu", "existing_checkpoint_preserved": true, "frozen_base_unchanged": true, "optimizer_and_rng_exact": true, "steps": 4, "tamper_rejected_before_decoder": true}}, "fixture_emails_used": false, "result": "PASS", "schema": "fdec-numeric-cpu-check/v1", "stock_model_used": false, "supported_gpu_acceptance": false}

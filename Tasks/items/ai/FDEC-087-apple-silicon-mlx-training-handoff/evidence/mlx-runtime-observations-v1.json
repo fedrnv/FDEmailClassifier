@@ -1,0 +1,170 @@
+{
+  "schema": "fdec-mlx-runtime-observation/v1",
+  "packages": [
+    {
+      "name": "mlx",
+      "version": "0.32.4",
+      "metadata_url": "https://pypi.org/pypi/mlx/0.32.4/json",
+      "metadata_sha256": "f5fbeefe2e733090787125edcca0d74394cc979572979efaf71622a5eb0e2c04",
+      "license": "MIT",
+      "requires": [
+        "mlx-metal==0.32.4; platform_system == \"Darwin\"",
+        "ml_dtypes; extra == \"dev\"",
+        "numpy>=2; extra == \"dev\"",
+        "pre-commit; extra == \"dev\"",
+        "torch>=2.9; extra == \"dev\"",
+        "typing_extensions; extra == \"dev\"",
+        "mlx-cuda-12==0.32.4; platform_system == \"Linux\" and extra == \"cuda\"",
+        "mlx-cuda-12==0.32.4; platform_system == \"Linux\" and extra == \"cuda12\"",
+        "mlx-cuda-13==0.32.4; platform_system == \"Linux\" and extra == \"cuda13\"",
+        "mlx-cpu==0.32.4; platform_system == \"Linux\" and extra == \"cpu\""
+      ],
+      "wheels": [
+        {
+          "filename": "mlx-0.32.4-cp314-cp314-macosx_15_0_arm64.whl",
+          "url": "https://files.pythonhosted.org/packages/12/c6/1e15326918233e1ee74f55bcc5577f6cce1c4257e5a1bbadcdb30b589dca/mlx-0.32.4-cp314-cp314-macosx_15_0_arm64.whl",
+          "sha256": "83adc889ae89057fd9f292ca1a9ee56da43f181fccc7ae48a060d7aadc179eaa",
+          "size": 668899
+        }
+      ]
+    },
+    {
+      "name": "mlx-metal",
+      "version": "0.32.4",
+      "metadata_url": "https://pypi.org/pypi/mlx-metal/0.32.4/json",
+      "metadata_sha256": "babbc06802563df8c4625f0243de944ca0ef014ddfcc13f3499f2d31da18d427",
+      "license": "MIT",
+      "requires": null,
+      "wheels": [
+        {
+          "filename": "mlx_metal-0.32.4-py3-none-macosx_15_0_arm64.whl",
+          "url": "https://files.pythonhosted.org/packages/54/8c/9754dd6c4db485037f59cc8be6495738e14cdeb8bf19d5bddb5e96da890f/mlx_metal-0.32.4-py3-none-macosx_15_0_arm64.whl",
+          "sha256": "9f0a3cc26d89724434d9684932fc6f3e4e83669d2a895d858ed2c8a55eb84e8b",
+          "size": 44942974
+        }
+      ]
+    },
+    {
+      "name": "mlx-lm",
+      "version": "0.32.2",
+      "metadata_url": "https://pypi.org/pypi/mlx-lm/0.32.2/json",
+      "metadata_sha256": "b52e5beda9f576e71f79b5ea456030b6e1f7faee67bc74e4e84cb1c8f5db577f",
+      "license": "MIT",
+      "requires": [
+        "mlx>=0.32.2; platform_system == \"Darwin\"",
+        "numpy",
+        "transformers>=5.7.0",
+        "sentencepiece",
+        "protobuf",
+        "pyyaml",
+        "jinja2",
+        "datasets; extra == \"test\"",
+        "lm-eval; extra == \"test\"",
+        "Pillow; extra == \"test\"",
+        "datasets; extra == \"train\"",
+        "tqdm; extra == \"train\"",
+        "lm-eval; extra == \"evaluate\"",
+        "tqdm; extra == \"evaluate\"",
+        "Pillow; extra == \"vision\"",
+        "mlx[cuda13]>=0.32.2; extra == \"cuda13\"",
+        "mlx[cuda12]>=0.32.2; extra == \"cuda12\"",
+        "mlx[cpu]>=0.32.2; extra == \"cpu\""
+      ],
+      "wheels": [
+        {
+          "filename": "mlx_lm-0.32.2-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/d1/4f/000eefdeb41388782b47e7f39904cf2d9e7e49a60df5e172097c358dba8e/mlx_lm-0.32.2-py3-none-any.whl",
+          "sha256": "5c0991248cfff5872503d74f466d2532dd8cb7fb3670cb9be7a06d7305dadc04",
+          "size": 546040
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "project": "mlx",
+      "version": "0.32.4",
+      "source_revision": "36969c094354086e15d2a327a9c50feb20b9cf11",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/36969c094354086e15d2a327a9c50feb20b9cf11/LICENSE",
+      "sha256": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01",
+      "size": 1066
+    },
+    {
+      "project": "mlx",
+      "version": "0.32.4",
+      "source_revision": "36969c094354086e15d2a327a9c50feb20b9cf11",
+      "path": "python/mlx/optimizers/optimizers.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/36969c094354086e15d2a327a9c50feb20b9cf11/python/mlx/optimizers/optimizers.py",
+      "sha256": "a649eeb65133d1a21eec61ab83529badd0ec50938ee6476b1e59f7ee36def1f2",
+      "size": 36429
+    },
+    {
+      "project": "mlx",
+      "version": "0.32.4",
+      "source_revision": "36969c094354086e15d2a327a9c50feb20b9cf11",
+      "path": "python/mlx/utils.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/36969c094354086e15d2a327a9c50feb20b9cf11/python/mlx/utils.py",
+      "sha256": "e55d7c63e7b706a0d31728343760f3f98d90e44d34054be4cf076586fdbe1616",
+      "size": 12124
+    },
+    {
+      "project": "mlx",
+      "version": "0.32.4",
+      "source_revision": "36969c094354086e15d2a327a9c50feb20b9cf11",
+      "path": "python/src/random.cpp",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/36969c094354086e15d2a327a9c50feb20b9cf11/python/src/random.cpp",
+      "sha256": "2c220e71198d38a5d91f8532888c21e890c64b1d0262af21c8d91f39a28a7445",
+      "size": 21632
+    },
+    {
+      "project": "mlx-lm",
+      "version": "0.32.2",
+      "source_revision": "93e6d4a6447b3080861985947f0820e76fcb957d",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/LICENSE",
+      "sha256": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01",
+      "size": 1066
+    },
+    {
+      "project": "mlx-lm",
+      "version": "0.32.2",
+      "source_revision": "93e6d4a6447b3080861985947f0820e76fcb957d",
+      "path": "mlx_lm/tuner/utils.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/mlx_lm/tuner/utils.py",
+      "sha256": "f59f3c027176a3975fe60e7fbd9f3f38723c27c3f888cf9e591c103f93f68588",
+      "size": 6821
+    },
+    {
+      "project": "mlx-lm",
+      "version": "0.32.2",
+      "source_revision": "93e6d4a6447b3080861985947f0820e76fcb957d",
+      "path": "mlx_lm/tuner/lora.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/mlx_lm/tuner/lora.py",
+      "sha256": "4d3a8edab111d4ddba33398ba8700203db7b61621c39e9c348fdd50e57278b45",
+      "size": 8402
+    },
+    {
+      "project": "mlx-lm",
+      "version": "0.32.2",
+      "source_revision": "93e6d4a6447b3080861985947f0820e76fcb957d",
+      "path": "mlx_lm/models/qwen3.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/mlx_lm/models/qwen3.py",
+      "sha256": "7e29b7055d8e526a0ede6e2740a3038ad24d0cef6a1abb446c411d3fbd0efa2d",
+      "size": 7892
+    },
+    {
+      "project": "mlx-lm",
+      "version": "0.32.2",
+      "source_revision": "93e6d4a6447b3080861985947f0820e76fcb957d",
+      "path": "mlx_lm/utils.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/mlx_lm/utils.py",
+      "sha256": "2803ff8d2298b0854797d78b16387c394801d16c57bfb30cf42ac4efbdee2873",
+      "size": 42836
+    }
+  ],
+  "installed": false,
+  "actual_apple_execution": false,
+  "model_tensors_downloaded": false,
+  "redistribution_approved": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "fdec-mlx-api-supplement/v1",
+  "documents": [
+    {
+      "project": "mlx",
+      "source_revision": "36969c094354086e15d2a327a9c50feb20b9cf11",
+      "path": "mlx/random.cpp",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/36969c094354086e15d2a327a9c50feb20b9cf11/mlx/random.cpp",
+      "sha256": "1f82a71893294b6409e00c735ae519bd4dbcac5b990a8e4804f64305f91110c2",
+      "size": 16100
+    },
+    {
+      "project": "mlx",
+      "source_revision": "36969c094354086e15d2a327a9c50feb20b9cf11",
+      "path": "mlx/random.h",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/36969c094354086e15d2a327a9c50feb20b9cf11/mlx/random.h",
+      "sha256": "50c2c46491837ea152d16774cbdc9f3b4d191ee920b008febd45881c53bc5caa",
+      "size": 7662
+    }
+  ]
+}

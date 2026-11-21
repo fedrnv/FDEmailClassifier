@@ -1,0 +1,59 @@
+{
+  "schema": "fdec-mlx-stage-a-software-verification/v1",
+  "task_id": "FDEC-087",
+  "source_parent": "a8f98af800d07c12b33cba1315897f3877494c3b",
+  "candidate_identity": "Containing source commit and fresh readiness bind exact implementation; this is partial evidence, not closure.",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "environment": {
+    "os": "Windows",
+    "python": "3.14",
+    "mlx_installed": false,
+    "cuda_available": false,
+    "mac_wheels_cross_downloaded_only": true
+  },
+  "runs": [
+    {
+      "command": "powershell -NoProfile -File training/finetune/test-mlx-handoff.ps1",
+      "task_id": "65304ccc-a1a8-489d-a714-7bfafcdb8e97",
+      "exit_code": 0,
+      "output_truncated": false
+    },
+    {
+      "command": "powershell -NoProfile -File training/finetune/test-finetune.ps1",
+      "task_id": "a3a358a6-9808-40c3-94d7-2d59469de586",
+      "exit_code": 0,
+      "output_truncated": false
+    },
+    {
+      "command": ".venv/export/Scripts/python.exe training/finetune/train.py cpu-check --opt-in",
+      "task_id": "b52b2733-2afa-4aea-b819-786974fe2adc",
+      "exit_code": 0,
+      "output_truncated": false
+    }
+  ],
+  "passed_checks": {
+    "mlx_protocol_unit": 13,
+    "existing_trainer_unit": 14,
+    "actual_numeric_cpu_resume": true,
+    "compileall": true,
+    "diff_whitespace": true
+  },
+  "actual_apple_execution": false,
+  "actual_email_training": false,
+  "owner_transition_confirmed": false,
+  "actual_training_return_complete": false,
+  "task_criteria_complete": false,
+  "prior_changed_candidate_failures": [
+    {
+      "task_id": "88e6ff54-047c-4c23-ac1d-fc5f948dcfb2",
+      "result": "FAIL",
+      "reason": "New Windows marker retained explicit OWNER RIGHTS ACL; reset only owned new marker before continuing; verifier unchanged."
+    },
+    {
+      "task_id": "ed717177-5a55-44cb-ac17-2c8cfbdc8fe8",
+      "result": "FAIL",
+      "reason": "Missing owner file and approval-inside-Git diagnostics; bounded missing-path handling and reject inside-Git before ACL check."
+    }
+  ],
+  "cleanup": "Isolated numerical test directories cleaned with guarded ownership; protected future handoff will be retained; no actual owner record created."
+}

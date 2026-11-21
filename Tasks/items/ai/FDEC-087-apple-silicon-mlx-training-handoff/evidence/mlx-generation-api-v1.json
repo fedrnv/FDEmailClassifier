@@ -1,0 +1,8 @@
+{
+  "project": "mlx-lm",
+  "source_revision": "93e6d4a6447b3080861985947f0820e76fcb957d",
+  "path": "mlx_lm/generate.py",
+  "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/mlx_lm/generate.py",
+  "sha256": "9d46803799f99d6fc7c35fff2d4357c79b1a25ae98cc63efeaaebeb50a7b5f33",
+  "size": 78615
+}
