@@ -33,10 +33,17 @@ function Epic-Field([string]$Text,[string]$Key) {
 function Epic-Snapshot($Record,[DateTimeOffset]$Cutoff,[string]$Exclude='') {
     $snapshot=@{id=$Record.id;status=(Epic-Field $Record.front 'initial_status');members=@();dependencies=@(IdList (Epic-Field $Record.front 'initial_dependencies'));paths=@($Record.path);done=$null}
     if($Record.epic){$snapshot.members=@([regex]::Matches($Record.text,'(?m)^- (FDEC-[0-9]{3})\r?$')|ForEach-Object {$_.Groups[1].Value})}
-    $events=@($Record.state_paths|Where-Object {$_ -ne $Record.path -and $_ -ne $Exclude}|ForEach-Object {$e=Envelope $_;$e.date=[DateTimeOffset]::Parse((Epic-Field $e.front 'created_at'));if($e.date -le $Cutoff){$e}})
+    $eventDirectory=(Join-Path (Split-Path $Record.path) 'events')+[IO.Path]::DirectorySeparatorChar
+    $events=@($Record.state_paths|Where-Object {$_.StartsWith($eventDirectory,[StringComparison]::OrdinalIgnoreCase) -and $_ -ne $Exclude}|ForEach-Object {$e=Envelope $_;$e.date=[DateTimeOffset]::Parse((Epic-Field $e.front 'created_at'));if($e.date -le $Cutoff){$e}})
     foreach($event in $events|Sort-Object {$_['date'].UtcTicks},{if((Epic-Field $_['front'] 'event_type') -eq 'work-started'){0}else{1}},{$_['path']}){
         $snapshot.paths+=$event.path
         $kind=Epic-Field $event.front 'event_type'
+        if($kind -eq 'dependency-amended'){
+            $node=$Record.dependency_amendment_nodes[$event.path]
+            if(!$node){throw 'Missing validated historical dependency amendment'}
+            $snapshot.dependencies=@($node.dependencies)
+            $snapshot.paths+=@($node.bindings)
+        }
         if($kind -in 'status-changed','work-started'){
             $m=[regex]::Match($event.text,'\b(Planned|Active|InProgress|Done|Blocked|Cancelled) -> (Planned|Active|InProgress|Done|Blocked|Cancelled)\b')
             $snapshot.status=$m.Groups[2].Value
@@ -52,6 +59,7 @@ function Epic-Snapshot($Record,[DateTimeOffset]$Cutoff,[string]$Exclude='') {
             $snapshot[$key]=@($snapshot[$key]|ForEach-Object {if($_ -eq $old){$new}else{$_}})
         }
     }
+    $snapshot.paths=@($snapshot.paths|Select-Object -Unique)
     return $snapshot
 }
 function Epic-AssertBindings([string]$Root,$Bindings,$Paths) {

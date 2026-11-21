@@ -51,7 +51,10 @@ function Resolve-DependencyAmendment([string]$Root,$Target,$Event,$Used) {
     if((Field $adoption.front 'task_id') -cne 'FDEC-EPIC-S001' -or (Field $adoption.front 'event_type') -cne 'scope-amended' -or (Field $adoption.front 'correction_id') -cne $change.correction_id -or (Field $adoption.front 'dependency_file') -cne $relative -or (Field $adoption.front 'dependency_sha256') -cne $hash -or (Field $adoption.front 'dependency_contract') -cne $change.contract.path -or (Field $adoption.front 'dependency_contract_sha256') -cne $change.contract.sha256){throw 'Missing or changed explicit dependency adoption'}
     $Target.dependencies=@($next)
     $Target.dependency_rule_paths=@($Target.dependency_rule_paths)+@($change.contract.path)
-    $Target.state_paths+=@($path,(Join-Path $Root $change.contract.path),(Join-Path $Root $change.adoption_event),$governing)
+    $bindings=@($path,(Join-Path $Root $change.contract.path),(Join-Path $Root $change.adoption_event),$governing)
+    $Target.state_paths+=$bindings
+    if(!$Target.ContainsKey('dependency_amendment_nodes')){$Target.dependency_amendment_nodes=@{}}
+    $Target.dependency_amendment_nodes[$Event.path]=@{dependencies=@($next);bindings=$bindings}
     $Used[$relative]=[pscustomobject]@{correction_id=$change.correction_id;governing_path=$governing}
 }
 function Assert-DependencyAmendments([string]$Root,$Records,$Used) {

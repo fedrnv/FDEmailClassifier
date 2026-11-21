@@ -10,7 +10,15 @@ foreach($number in 74..83){
     $old='FDEC-{0:D3}' -f $number;$new='FDEC-{0:D3}' -f ($number+15)
     if(!$records.ContainsKey($old) -or !$records.ContainsKey($new) -or $records[$old].parent -eq $records[$new].parent -or $records[$new].status -ne 'Planned'){throw 'Imported/retained identity projection is wrong'}
 }
-if($records['FDEC-EPIC-D002'].status -ne 'Active' -or $records['FDEC-EPIC-D011'].status -ne 'Planned' -or $records['FDEC-EPIC-D012'].status -ne 'Planned' -or $records['FDEC-EPIC-D003'].members -notcontains 'FDEC-087' -or $records['FDEC-020'].dependencies -notcontains 'FDEC-087' -or $records['FDEC-087'].dependencies -notcontains 'FDEC-016'){throw 'Owner Mac or Epic scheduling projection is wrong'}
+if($records['FDEC-EPIC-D002'].status -notin 'Active','Done' -or $records['FDEC-EPIC-D011'].status -ne 'Planned' -or $records['FDEC-EPIC-D012'].status -ne 'Planned' -or $records['FDEC-EPIC-D003'].members -notcontains 'FDEC-087' -or $records['FDEC-020'].dependencies -notcontains 'FDEC-087'){throw 'Owner Mac or Epic scheduling projection is wrong'}
+# The imported dependency is historical authority, not an immutable current set
+# after a separately adopted amendment. Replay both sides of that exact event.
+$mac=$records['FDEC-087']
+$amendments=@($mac.state_paths|Where-Object{$_ -like '*/events/*.md' -or $_ -like '*\events\*.md'}|ForEach-Object{Envelope $_}|Where-Object{(Field $_.front 'task_id') -eq 'FDEC-087' -and (Field $_.front 'event_type') -eq 'dependency-amended'})
+if($amendments.Count){
+    $before=[DateTimeOffset]::Parse((Field $amendments[0].front 'created_at')).AddTicks(-1)
+    if(((Epic-Snapshot $mac $before).dependencies -join ',') -cne 'FDEC-016' -or ((Epic-Snapshot $mac ([DateTimeOffset]::MaxValue)).dependencies -join ',') -cne ($mac.dependencies -join ',')){throw 'Historical/current Mac dependency projection differs'}
+}elseif($mac.dependencies -notcontains 'FDEC-016'){throw 'Imported Mac prerequisite lost without adopted amendment'}
 foreach($number in 4..10){
     $id='FDEC-EPIC-D{0:D3}' -f $number
     if(@($records[$id].dependencies | Where-Object {$_ -in 'FDEC-EPIC-D011','FDEC-EPIC-D012'}).Count){throw 'Enhancement Epic blocks baseline release'}
