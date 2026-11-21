@@ -1,0 +1,12 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "51fa31a9-1260-44be-88d9-1114de063a80",
+  "type": "correction_closed",
+  "epic_id": "FDEC-EPIC-S001",
+  "work_item_id": "FDEC-102",
+  "summary": "Publish exact FDTasks 5.7 developer rules with exclusive published claims and immediate commit publication",
+  "verification": [
+    "Tasks/items/governance/FDEC-102-adopt-fdtasks-5-7/evidence/20261121-fdtasks57-verification.json",
+    "Tasks/items/governance/FDEC-102-adopt-fdtasks-5-7/evidence/20261121-closure.json"
+  ]
+}

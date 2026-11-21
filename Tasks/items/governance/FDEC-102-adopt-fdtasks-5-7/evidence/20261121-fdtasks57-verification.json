@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-11-21T21:11:35.965138+00:00",
+  "command": "python verify_rollout.py",
+  "exit_code": 0,
+  "policy_sha256": "b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8",
+  "source_git_blob_sha": "269124fdc48926c0c5fb1a53b0ffa47f78699aed",
+  "git_version": "git version 2.56.1",
+  "python_version": "3.12.14",
+  "checks": {
+    "same_task_race": "PASS: one published winner; stale push rejected",
+    "lost_claim": "PASS: preserved on old local branch; never replayed",
+    "unrelated_update": "PASS: refreshed and rebuilt a fresh independent claim",
+    "cleanup": "PASS: owned temporary bare repository and clones removed on context exit"
+  },
+  "repository_count": 11,
+  "limitations": [
+    "Documentation and manual Git publication only; no product suite, automatic scheduler, native claim enforcement, production or release acceptance is asserted."
+  ],
+  "repository": "fedrnv/FDEmailClassifier",
+  "task_id": "FDEC-102",
+  "baseline_commit": "bcf95fe6a7bde525f0a4ba44d99e62fc9b527cdd",
+  "published_claim_commit": "2c9ff8c3bf31abff7983b46143a1fa44e49fb023",
+  "candidate_rule_tree": "606356f68c11184263cf370f9a5b352d7e2d0afc",
+  "candidate_artifacts": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "aaa901406e3c6cffba39c1a4fff062372503bdad6b2202e5206d6a360719a46f"
+    },
+    {
+      "path": "DEVELOPMENT.md",
+      "sha256": "5b9fbf008408938c12bc44c6ebe6ecdb9c4ecb5ca13b5ee9b120796675301813"
+    },
+    {
+      "path": "Tasks/AGENTS.md",
+      "sha256": "3d6bfd005f51e33cd1defeb809e7fd05ee88f5a309a092478c7ee368eb33c16d"
+    },
+    {
+      "path": "Tasks/FDTasks_5_7_ADOPTION.md",
+      "sha256": "f0b9f301fbc54c52570dba8e9ae5022f3d0afcc3a3a8e96adc5a71191adaf36d"
+    },
+    {
+      "path": "Tasks/FORMAT.md",
+      "sha256": "62ff0fdd644060ed523748678544c72eb5edacf8c9a38833204678878494a6f2"
+    },
+    {
+      "path": "Tasks/LIFECYCLE_VERSION_HISTORY.md",
+      "sha256": "a2bacef25968577c972aa6a5d8287393fd1e2f8c4165c682402119869176e1d1"
+    },
+    {
+      "path": "Tasks/developer-policy.json",
+      "sha256": "9fadc835b2ce1d0ea30bc2ba9998bbede015472154660987abc9e57ed40d4b24"
+    },
+    {
+      "path": "Tasks/tasks_file_structure_v5_7.md",
+      "sha256": "b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8"
+    }
+  ],
+  "acceptance": {
+    "AC-01": "PASS",
+    "AC-02": "PASS",
+    "AC-03": "PASS",
+    "AC-04": "PASS"
+  },
+  "diff_review": "PASS: exact policy copy, current entry-point pointers and appended adoption/history; only new governance records plus the eight declared rule documents. Existing document bodies retained. No existing task/specification/event/evidence/policy, product source, validator, workflow or runtime manifest changed.",
+  "reviewer": "Codex task-owner diff inspection; no independent-review claim",
+  "native_lifecycle_version": "unchanged repository-local legacy baseline",
+  "version_allocation": "One first-closure request only; existing allocator remains sole version-state writer."
+}
