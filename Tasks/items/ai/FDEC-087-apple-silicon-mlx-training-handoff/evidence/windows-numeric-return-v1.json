@@ -1,0 +1,52 @@
+{
+  "schema": "fdec-windows-numeric-return-verification/v1",
+  "task_id": "FDEC-087",
+  "recorded_at": "2026-11-21T08:34:19.6139525Z",
+  "verification_source_head": "fc79be53dcf3e479362b8ad46bfbcb6a7b591634",
+  "pinned_source_sha": "6e6a9eef5cf1fb145db7246e1c83ac310fe2905e",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "handoff_sha256": "fd10c30d531a09aed3037df1aee5556c22457947dd0330ffc63a9ba4af6b2e76",
+  "archives": [
+    {"role": "numeric-return", "bytes": 24730, "sha256": "d26933eabe74f0c1f52348b5d8818c57174e1173684986401e2b64cca0e32486"},
+    {"role": "original-handoff-kit", "bytes": 1635565, "sha256": "485e38e3d14de466f13b686dfa68fd0d676ddfe3941f74676e242e5550266708"}
+  ],
+  "command": ".venv/export/Scripts/python.exe training/finetune/handoff_cli.py verify-return --handoff-dir $OriginalPrivateStore/handoff --received-dir $ReceivedNumericReturn",
+  "owner_authority": "Existing genuine external owner-transition.json on original Windows host; no returned key is used as the trust anchor",
+  "exit_code": 0,
+  "result": {
+    "actual_apple_execution": true,
+    "actual_email_training": false,
+    "native_checkpoint_decoded": true,
+    "public_weight_permission": false,
+    "received_artifacts_verified": true,
+    "remaining": ["independent-approved-training-data", "actual-MLX-training-evaluation", "verified-export-compatibility"],
+    "return_notice": null,
+    "training_return_complete": false
+  },
+  "original_kit_returned_byte_identical": true,
+  "signed_mac_report": {
+    "result": "PASS",
+    "checkpoint_resume_exact": true,
+    "optimizer_rng_exact": true,
+    "adapter_updated": true,
+    "frozen_base_unchanged": true,
+    "steps_per_path": 4,
+    "stock_weights_downloaded": false,
+    "actual_email_training": false,
+    "hardware_class": "Apple M4",
+    "memory_bytes": 34359738368,
+    "architecture": "arm64",
+    "os": "27.2.1",
+    "python": "3.14.10",
+    "runtime_profile_sha256": "6c05d09d4892296a49eab3cdc8f680a66d9d39c4644d8733243fb53fd77b93f1"
+  },
+  "artifacts": {
+    "checkpoint_metadata": {"sha256": "dec246d4c82831d75c88ba9c5d6c48e0b806bdd7dfa6e621e59fd3873752c7d1", "size": 1966},
+    "peft_adapter": {"sha256": "c451bc920f1b6554c9adaee6176bbfb98f85e070430f80f03e350055e288a481", "size": 5800},
+    "peft_config": {"sha256": "c1af196e05ff0914ddfd854ce5294c39b291b50b89c3cbe637019cfc5b9f1fa2", "size": 313}
+  },
+  "private_storage_alias": "LOCALAPPDATA/FDEmailClassifier/private-FDEC-087-return-v1; outside Git, Windows ACL verified",
+  "numeric_transfer_test_complete": true,
+  "task_complete": false,
+  "secrets_or_weights_published": false
+}
