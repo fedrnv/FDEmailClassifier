@@ -1,0 +1,27 @@
+﻿{
+    "schema":  "fdec-dependency-amendment/v1",
+    "target_id":  "FDEC-087",
+    "correction_id":  "FDEC-101",
+    "source_sha":  "6c25ef1c747270cdef44c0f5c1485add208eaf15",
+    "target_spec":  {
+                        "path":  "Tasks/items/ai/FDEC-087-apple-silicon-mlx-training-handoff/TASK.md",
+                        "sha256":  "ef5a8045cde6b16fb179b748b2138bbdb6c13649e5dc059ba406ffe01ffe1b06"
+                    },
+    "governing_spec":  {
+                           "path":  "Tasks/items/governance/FDEC-101-reconcile-mlx-dependency/TASK.md",
+                           "sha256":  "bd221d9c5b8b2423c26314e2b775178be662d837c9cfaad090a62b07b2fddc5a"
+                       },
+    "contract":  {
+                     "path":  "Tasks/policy/dependency-amendment-1.0.md",
+                     "sha256":  "ce8b1d92ed7d0ab68427c55f9388c118c5776cc477a2e5e27e59066f51c56ca0"
+                 },
+    "adoption_event":  "Tasks/epics/FDEC-EPIC-S001/events/20261121T001508290Z-codex-scope-amended-e4a222dd.md",
+    "previous_dependencies":  [
+                                  "FDEC-016"
+                              ],
+    "new_dependencies":  [
+                             "FDEC-019",
+                             "FDEC-101"
+                         ],
+    "reason":  "Resolve the MLX no-PyTorch/GPU prerequisite contradiction by following verified export and this verified process Correction. Preserve FDEC-016 original CUDA acceptance in D003 gate, all FDEC-087 criteria and explicit owner-confirmed device transition."
+}

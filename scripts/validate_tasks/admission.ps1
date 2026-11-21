@@ -37,6 +37,7 @@ if ($TaskId) {
     Assert-AcceptanceMatrix $Root $spec.DirectoryName $ready
     if (!$ready.allowed_paths) { throw 'Missing bounded path scope' }
     $requiredRules = @('AGENTS.md','DEVELOPMENT.md','Tasks/AGENTS.md')
+    $requiredRules+=@($records[$TaskId].dependency_rule_paths|Where-Object{$_})
     if (Test-Path "$Root/Tasks/policy/checkout-identities-076.json") { $requiredRules+='Tasks/policy/checkout-identities-076.json' }
     $rootAbsolute = [IO.Path]::GetFullPath($Root).TrimEnd('\','/')
     foreach ($scope in $ready.allowed_paths) {

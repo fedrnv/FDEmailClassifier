@@ -5,6 +5,7 @@ $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/epic-closure.ps1"
 . "$PSScriptRoot/identity-migrations.ps1"
 . "$PSScriptRoot/request-recovery.ps1"
+. "$PSScriptRoot/dependency-amendments.ps1"
 function Field($text, $key) {
     $match = [regex]::Match($text, "(?m)^$([regex]::Escape($key)): ([^\r\n]+)")
     if (!$match.Success) { throw "Missing field: $key" }
@@ -66,6 +67,7 @@ foreach ($resolution in $resolutions | Where-Object schema -EQ 'fdec-identity-re
     }
 }
 $records = @{}
+$dependencyAmendments=@{}
 foreach ($file in Get-ChildItem "$Root/Tasks/items","$Root/Tasks/epics" -Recurse -File | Where-Object Name -In 'TASK.md','EPIC.md') {
     $record = Envelope $file.FullName
     if ($retiredPaths.ContainsKey($file.FullName)) { continue }
@@ -111,8 +113,9 @@ foreach ($record in $records.Values) {
         if ((Field $event.front 'schema') -ne 'fdtasks-event/v3' -or (Field $event.front 'task_id') -ne $record.id) { throw 'Invalid event envelope' }
         $null=Field $event.front 'actor'; $null=Field $event.front 'base_revision'
         $kind=Field $event.front 'event_type'
-        if ($kind -notin 'status-changed','work-started','dependency-added','membership-added','readiness-accepted','scope-amended','membership-replaced','dependency-replaced') { throw "Unsupported event semantics: $kind" }
+        if ($kind -notin 'status-changed','work-started','dependency-added','membership-added','readiness-accepted','scope-amended','membership-replaced','dependency-replaced','dependency-amended') { throw "Unsupported event semantics: $kind" }
         $record.state_paths+= $event.path
+        if($kind -eq 'dependency-amended'){Resolve-DependencyAmendment $rootPath $record $event $dependencyAmendments}
         if ($kind -in 'status-changed','work-started') {
             $transitions=[regex]::Matches($event.text,'\b(Planned|Active|InProgress|Done|Blocked|Cancelled) -> (Planned|Active|InProgress|Done|Blocked|Cancelled)\b')
             if ($transitions.Count -ne 1) { throw 'Ambiguous status transition' }
@@ -137,6 +140,7 @@ foreach ($record in $records.Values) {
         }
     }
 }
+Assert-DependencyAmendments $rootPath $records $dependencyAmendments
 foreach ($resolution in $resolutions) {
     if (!$records.ContainsKey($resolution.correction_id) -or $records[$resolution.correction_id].parent -ne 'FDEC-EPIC-S001' -or (Field $records[$resolution.correction_id].front 'type') -ne 'Correction' -or !$records.ContainsKey($resolution.new_id)) { throw 'Missing governing identity Correction or replacement' }
 }

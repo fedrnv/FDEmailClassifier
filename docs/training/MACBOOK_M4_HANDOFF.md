@@ -2,6 +2,12 @@
 
 Status: approved workflow, **not an executed training run**. Owner's Apple M4 / 32 GB MacBook Air is the preferred temporary Qwen3-0.6B LoRA/MLX host.
 
+FDEC-101 records the append-only correction of the original FDEC-087 dependency:
+MLX preparation follows verified export FDEC-019 and the verified process
+Correction itself. CUDA/PyTorch acceptance FDEC-016 remains independently required
+by the D003 gate; a CPU or MLX smoke test cannot close it. This reconciliation
+does not authorize a Mac switch, actual email training or model publication.
+
 ## Development → MacBook
 
 1. Develop and validate training code on the normal development workstation as far as possible without the Mac.
