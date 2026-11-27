@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "c8d1392b-39f3-4db1-8923-99acc95c9193",
+  "type": "task_closed",
+  "epic_id": "FDEC-EPIC-D003",
+  "work_item_id": "FDEC-247",
+  "summary": "Replay the exact reviewed Sinabis source through guarded admission",
+  "verification": [
+    "Tasks/items/ai/FDEC-247-sinabis-reviewed-source-replay/evidence/verification-v1.md"
+  ]
+}
