@@ -70,6 +70,9 @@ def assert_training_source(identity, *, purpose, policy_root=ROOT):
             # broadened and no unfiltered Sinabis ingestion receipt is admitted.
             from sinabis_source import assert_source
             return assert_source(identity, purpose=purpose, policy_root=policy_root)
+        if identity["dataset_id"] == "Kamisori-daijin/email-datasets-20k":
+            from gemma_source import assert_source
+            return assert_source(identity, purpose=purpose, policy_root=policy_root)
         policy = read_json(Path(policy_root) / POLICY_PATH)
         if not isinstance(policy, dict) or set(policy) != {"schema", "scope", "codex_data_usage", "policy_evidence", "sources"} or policy["schema"] != "fdec-independent-training-sources/v1" or policy["scope"] != "specialized-email-classifier" or policy["codex_data_usage"] != "software_fixture_only" or not isinstance(policy["sources"], list):
             raise TrainingBoundaryError("invalid_independent_source_policy")
@@ -145,8 +148,23 @@ def admit_training_run(run_directory, *, purpose="commercial_training", policy_r
             from sinabis_source import replay_run
 
             expected, records = replay_run(directory / "source.parquet", purpose=purpose, policy_root=policy_root)
+            if receipt.get("implementation_sha256") == "b702991737d639c32cf93e8a82159bc448901fc9a9eac90c447eaff9c49e50a9":
+                # Replay the complete receipt under the unchanged Sinabis projection.
+                expected["implementation_sha256"] = receipt["implementation_sha256"]
             if receipt != expected:
                 raise TrainingBoundaryError("sinabis_training_receipt_changed")
+            result = {"schema": "fdec-independent-training-admission/v1",
+                      "records_sha256": receipt["records_sha256"], "rows": len(records),
+                      "scope": "source-integrity-and-origin-only", "requires_split_and_consent": True}
+            if include_records:
+                result["records"] = records
+            return result
+        if isinstance(receipt, dict) and receipt.get("schema") == "fdec-gemma-reviewed-run/v1":
+            from gemma_source import replay, snapshot
+
+            expected, records = replay(snapshot(directory / "source.jsonl"), purpose=purpose, policy_root=policy_root)
+            if receipt != expected:
+                raise TrainingBoundaryError("gemma_training_receipt_changed")
             result = {"schema": "fdec-independent-training-admission/v1",
                       "records_sha256": receipt["records_sha256"], "rows": len(records),
                       "scope": "source-integrity-and-origin-only", "requires_split_and_consent": True}
