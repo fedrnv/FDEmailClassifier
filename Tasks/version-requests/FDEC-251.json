@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "5bc26431-5ac7-41f3-9417-9ec8d8e05986",
+  "type": "task_closed",
+  "epic_id": "FDEC-EPIC-D003",
+  "work_item_id": "FDEC-251",
+  "summary": "Authenticate compact inventories through guarded model consumers",
+  "verification": [
+    "Tasks/items/ai/FDEC-251-compact-consumer-replay/evidence/verification-v1.md"
+  ]
+}
