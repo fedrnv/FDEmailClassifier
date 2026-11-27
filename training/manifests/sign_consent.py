@@ -17,7 +17,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         key = s.authority_key()
-        inventory, payload = s.read_json(args.inventory), s.read_json(args.payload)
+        inventory, payload = s.read_inventory(args.inventory), s.read_json(args.payload)
         s.validate_inventory(inventory)
         signed = s.envelope(payload, key)
         s.consent(inventory, signed, key, datetime.now(timezone.utc))

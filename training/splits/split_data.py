@@ -24,6 +24,7 @@ ROLES = ("train", "validation", "test")
 GEMMA_ID = "Kamisori-daijin/email-datasets-20k"
 SINABIS_SPLIT_IMPLEMENTATION_SHA256 = "5cdfe83de56e6a6939bc79044c3fed8a591c0d98ddc9a958dc326b9c4a992070"
 SINABIS_ID = "sinabis-group/sinabis-10k-synthetic-emails"
+GEMMA_SPLIT_IMPLEMENTATION_SHA256 = "5df67b7387491d31efe4ba15c4fcc2f47223c51c73ddc75d119d9fdbd0c541f6"
 LEGACY_IMPLEMENTATION_SHA256 = "502c5f219c3529614eb6f805675c6028010031fec5029636b84ec5c512945686"
 MAX_ROWS = 100_000
 MAX_FEATURES = 4096
@@ -42,7 +43,8 @@ def digest(value):
 def implementation_hash():
     paths = ("training/splits/split_data.py", "training/splits/split_cli.py", "training/scripts/normalize_email.py", "training/scripts/ingest_dataset.py", "training/datasets/get-inclusion.ps1", "training/datasets/assert-allowlist.ps1", "scripts/validate_tasks/identity.ps1")
     paths += ("training/augmentation/sinabis_source.py", "training/augmentation/training_boundary.py",
-              "training/augmentation/inspect_sinabis_metadata.py", "training/augmentation/gemma_source.py")
+              "training/augmentation/inspect_sinabis_metadata.py", "training/augmentation/gemma_source.py",
+              "training/splits/disk_inventory.py")
     return hashlib.sha256(b"".join((ROOT / path).read_bytes().replace(b"\r\n", b"\n") for path in paths)).hexdigest()
 
 
@@ -75,6 +77,31 @@ def read_json(path, limit=250_000_000):
         raise
     except Exception:
         raise SplitError("invalid_json_input") from None
+
+
+def read_inventory(path):
+    path = reject_links(path)
+    if path.is_dir():
+        from disk_inventory import open_inventory
+
+        return open_inventory(path)
+    return read_json(path)
+
+
+def inventory_rows(inventory):
+    from disk_inventory import DiskInventory
+
+    if isinstance(inventory, DiskInventory):
+        return inventory.rows()
+    return inventory["records"]
+
+
+def inventory_digest(inventory):
+    from disk_inventory import DiskInventory
+
+    if isinstance(inventory, DiskInventory):
+        return digest(inventory.manifest)
+    return digest(inventory)
 
 
 def features(subject, body):
@@ -131,8 +158,10 @@ def prepare_record(normalized, receipt, *, consent_id, thread_id=None, family_id
         raise SplitError("invalid_ingestion_record") from None
 
 
-def validate_record(record):
+def validate_record(record, *, metadata_only=False):
     required = {"record_id", "content_sha256", "source", "provenance", "thread_id", "family_ids", "shingles", "consent_id"}
+    if metadata_only:
+        required.remove("shingles")
     if not isinstance(record, dict) or set(record) != required or any(not is_hash(record[name]) for name in ("record_id", "content_sha256", "consent_id")):
         raise SplitError("invalid_inventory_record")
     source = record["source"]
@@ -153,13 +182,21 @@ def validate_record(record):
 
         if record["thread_id"] is None or record["family_ids"] != [digest(FAMILY)]:
             raise SplitError("changed_sinabis_lineage")
-    for field, minimum, maximum in (("family_ids", 0, 16), ("shingles", 1, MAX_FEATURES)):
+    lists = [("family_ids", 0, 16)]
+    if not metadata_only:
+        lists.append(("shingles", 1, MAX_FEATURES))
+    for field, minimum, maximum in lists:
         values = record[field]
         if not isinstance(values, list) or not minimum <= len(values) <= maximum or any(not is_hash(value) for value in values) or values != sorted(set(values)):
             raise SplitError("invalid_record_fingerprints")
 
 
 def validate_inventory(inventory):
+    from disk_inventory import DiskInventory
+
+    if isinstance(inventory, DiskInventory):
+        inventory.verify_fingerprint_file()
+        return
     if not isinstance(inventory, dict) or set(inventory) != {"schema", "normalization_version", "feature_policy", "records"} or inventory["schema"] != "fdec-split-inventory/v1" or inventory["normalization_version"] != NORMALIZATION_VERSION or inventory["feature_policy"] != FEATURE_POLICY or not isinstance(inventory["records"], list) or not 1 <= len(inventory["records"]) <= MAX_ROWS:
         raise SplitError("invalid_inventory")
     identifiers, total = set(), 0
@@ -202,14 +239,14 @@ def consent(inventory, signed, key, now):
     if not hmac.compare_digest(signed["hmac_sha256"], expected["hmac_sha256"]):
         raise SplitError("untrusted_consent_signature")
     payload = signed["payload"]
-    if not isinstance(payload, dict) or set(payload) != {"schema", "revision", "previous_snapshot_sha256", "inventory_sha256", "issued_at", "valid_until", "grants"} or payload["schema"] != "fdec-consent-ledger/v1" or type(payload["revision"]) is not int or payload["revision"] <= 0 or payload["inventory_sha256"] != digest(inventory) or not isinstance(payload["grants"], list) or len(payload["grants"]) > MAX_ROWS:
+    if not isinstance(payload, dict) or set(payload) != {"schema", "revision", "previous_snapshot_sha256", "inventory_sha256", "issued_at", "valid_until", "grants"} or payload["schema"] != "fdec-consent-ledger/v1" or type(payload["revision"]) is not int or payload["revision"] <= 0 or payload["inventory_sha256"] != inventory_digest(inventory) or not isinstance(payload["grants"], list) or len(payload["grants"]) > MAX_ROWS:
         raise SplitError("invalid_consent_ledger")
     if payload["previous_snapshot_sha256"] is not None and not is_hash(payload["previous_snapshot_sha256"]):
         raise SplitError("invalid_previous_consent_snapshot")
     start, end = utc(payload["issued_at"]), utc(payload["valid_until"])
     if now.tzinfo is None or not start <= now < end:
         raise SplitError("consent_ledger_not_current")
-    records = {row["record_id"]: row for row in inventory["records"]}
+    records = {row["record_id"]: row for row in inventory_rows(inventory)}
     grants, allowed = {}, set()
     for grant in payload["grants"]:
         if not isinstance(grant, dict) or set(grant) != {"record_id", "consent_id", "evidence_sha256", "status", "purposes", "expires_at"} or not is_hash(grant["record_id"]) or grant["record_id"] not in records or grant["record_id"] in grants or grant["consent_id"] != records[grant["record_id"]]["consent_id"] or not is_hash(grant["evidence_sha256"]) or grant["status"] not in ("granted", "revoked"):
@@ -284,7 +321,7 @@ def activate_consent(inventory, signed, *, key, policy_root=ROOT, now=None):
             lock.unlink()
 
 
-def components(records):
+def lineage_components(records):
     parent = list(range(len(records)))
     def find(index):
         while parent[index] != index:
@@ -304,6 +341,19 @@ def components(records):
                 union(index, seen[key])
             else:
                 seen[key] = index
+
+    return find, union
+
+
+def collect_components(records, find):
+    groups = defaultdict(list)
+    for index, row in enumerate(records):
+        groups[find(index)].append(row)
+    return sorted((sorted(group, key=lambda row: row["record_id"]) for group in groups.values()), key=lambda group: group[0]["record_id"])
+
+
+def components(records):
+    find, union = lineage_components(records)
     # Avoid quadratic self-comparisons within an already connected source.
     initial_roots = [find(index) for index in range(len(records))]
     if len(set(initial_roots)) == 1:
@@ -327,10 +377,7 @@ def components(records):
             previous = features_by_record[other]
             if len(values & previous) * 100 >= len(values | previous) * 80:
                 union(index, other)
-    groups = defaultdict(list)
-    for index, row in enumerate(records):
-        groups[find(index)].append(row)
-    return sorted((sorted(group, key=lambda row: row["record_id"]) for group in groups.values()), key=lambda group: group[0]["record_id"])
+    return collect_components(records, find)
 
 
 def assign(groups, seed, ratios):
@@ -363,7 +410,9 @@ def plan_manifest(inventory, signed, *, key, seed, ratios, policy_root=ROOT, now
         now = datetime.now(timezone.utc) if now is None else now
         allowed, grants = consent(inventory, signed, key, now)
         active_consent(policy_root, signed, key)
-        records = sorted(inventory["records"], key=lambda row: row["record_id"])
+        from disk_inventory import DiskInventory, packed_components
+
+        records = sorted(inventory_rows(inventory), key=lambda row: row["record_id"])
         source_grants = []
         for encoded in sorted({canonical_json(row["source"]) for row in records}):
             source = json.loads(encoded)
@@ -386,7 +435,8 @@ def plan_manifest(inventory, signed, *, key, seed, ratios, policy_root=ROOT, now
                     raise SplitError("source_artifact_changed")
                 source_grants.append({"source_sha256": digest(source), "purpose": purpose, "descriptor_sha256": digest(descriptor), "audit_sha256": audit_sha256})
         selected, excluded = [], []
-        for group in components(records):
+        groups = packed_components(inventory)[0] if isinstance(inventory, DiskInventory) else components(records)
+        for group in groups:
             if all(row["record_id"] in allowed for row in group):
                 selected.append(group)
             else:
@@ -397,7 +447,7 @@ def plan_manifest(inventory, signed, *, key, seed, ratios, policy_root=ROOT, now
         assignments, counts = assign(selected, seed, ratios)
         for assignment in assignments:
             assignment["consent_grant_sha256"] = digest(grants[assignment["record_id"]])
-        return {"schema": VERSION, "implementation_sha256": implementation_hash(), "feature_policy": dict(FEATURE_POLICY), "inventory_sha256": digest(inventory), "consent_snapshot_sha256": digest(signed), "consent_revision": signed["payload"]["revision"], "consent_valid_until": signed["payload"]["valid_until"], "source_grants": source_grants, "seed": seed, "ratios": dict(ratios), "counts": counts, "ratio_error_hundredths": {role: counts[role] * 100 - len(assignments) * ratios[role] for role in ROLES}, "assignments": assignments, "excluded_record_ids": sorted(excluded)}
+        return {"schema": VERSION, "implementation_sha256": implementation_hash(), "feature_policy": dict(FEATURE_POLICY), "inventory_sha256": inventory_digest(inventory), "consent_snapshot_sha256": digest(signed), "consent_revision": signed["payload"]["revision"], "consent_valid_until": signed["payload"]["valid_until"], "source_grants": source_grants, "seed": seed, "ratios": dict(ratios), "counts": counts, "ratio_error_hundredths": {role: counts[role] * 100 - len(assignments) * ratios[role] for role in ROLES}, "assignments": assignments, "excluded_record_ids": sorted(excluded)}
     except SplitError:
         raise
     except Exception:
@@ -462,11 +512,16 @@ def verify(output_dir, inventory, signed, *, key, policy_root=ROOT, now=None, in
             raise SplitError("changed_split_receipt")
         expected = plan_manifest(inventory, signed, key=key, seed=manifest["seed"], ratios=manifest["ratios"], policy_root=policy_root, now=now)
         old_implementation = manifest.get("implementation_sha256")
-        source_ids = {row["source"]["dataset_id"] for row in inventory["records"]}
-        if (GEMMA_ID not in source_ids and (
-            old_implementation == SINABIS_SPLIT_IMPLEMENTATION_SHA256
-            or old_implementation == LEGACY_IMPLEMENTATION_SHA256 and SINABIS_ID not in source_ids
-        )):
+        from disk_inventory import DiskInventory
+
+        source_ids = {row["source"]["dataset_id"] for row in inventory_rows(inventory)}
+        if not isinstance(inventory, DiskInventory) and (
+            old_implementation == GEMMA_SPLIT_IMPLEMENTATION_SHA256
+            or GEMMA_ID not in source_ids and (
+                old_implementation == SINABIS_SPLIT_IMPLEMENTATION_SHA256
+                or old_implementation == LEGACY_IMPLEMENTATION_SHA256 and SINABIS_ID not in source_ids
+            )
+        ):
             # Replay every other field against current rights, consent and grouping.
             expected["implementation_sha256"] = old_implementation
         if manifest != expected or receipt["rows"] != len(expected["assignments"]) or receipt["counts"] != expected["counts"]:

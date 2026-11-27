@@ -159,3 +159,34 @@ synthetic software fixtures, including actual source-guard integration,
 transitive leakage, consent replay/withdrawal, tampering and transactional recovery.
 All fixture artifacts are ignored and removed by bounded cleanup. This is
 software acceptance, not approval of a real training dataset.
+
+## Compact private inventory on macOS and POSIX
+
+The v2 directory stores the same provenance fields as v1 in a bounded metadata
+stream and keeps the full SHA-256 shingles packed separately. The manifest binds
+both streams, their counts, the feature policy and the normalization version.
+Use a private directory and a mode-0600 JSONL projection containing one
+validated v1 record object per line. Packing neither issues consent nor grants
+rights.
+
+```sh
+python training/splits/split_cli.py pack --opt-in \
+  --inventory "$PRIVATE_PROJECTED_JSONL" --output-dir "$PRIVATE_PACKED_INVENTORY"
+```
+
+Set the drafted consent ledger's `inventory_sha256` to the value returned by
+`pack`. For consent signing and split build/verify, pass the directory as
+`--inventory`. The expected current consent, source grant checks, quarantine,
+role assignment and split receipt remain the same. The inventory supports
+100,000 records, 30 million packed fingerprints, and a separate 30 million
+exact-comparison limit. Oversize, incomplete, altered or nonprivate inputs
+fail explicitly. A private snapshot verified against the fingerprint digest is
+used for grouping. Temporary storage needs space for that snapshot in addition
+to the stored inventory.
+
+A global prefix index restricts candidates by length and common fingerprints.
+The final check still uses exact 0.80 Jaccard, and lineage joins include every
+input cohort. The grouping index stores term counts and compact prefix postings
+in memory. Full shingles remain on disk, with a bounded cache of decoded rows.
+Packing v2 is supported on POSIX only. Training and evaluation entry points still
+use v1 until their source replay paths support the compact inventory.
