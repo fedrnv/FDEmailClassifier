@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "6af17dfc-9e35-477c-a343-4291193a8083",
+  "type": "task_closed",
+  "epic_id": "FDEC-EPIC-D003",
+  "work_item_id": "FDEC-249",
+  "summary": "Replay the exact audited Gemma source through guarded inputs",
+  "verification": [
+    "Tasks/items/ai/FDEC-249-gemma-guarded-source-replay/evidence/verification-v1.md"
+  ]
+}
