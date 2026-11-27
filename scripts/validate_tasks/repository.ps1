@@ -6,6 +6,7 @@ $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/identity-migrations.ps1"
 . "$PSScriptRoot/request-recovery.ps1"
 . "$PSScriptRoot/dependency-amendments.ps1"
+. "$PSScriptRoot/developer-adoption.ps1"
 function Field($text, $key) {
     $match = [regex]::Match($text, "(?m)^$([regex]::Escape($key)): ([^\r\n]+)")
     if (!$match.Success) { throw "Missing field: $key" }
@@ -66,10 +67,12 @@ foreach ($resolution in $resolutions | Where-Object schema -EQ 'fdec-identity-re
         if ($matches.Count -ne 1) { throw 'Unbound planning identity substitution' }
     }
 }
+$developerAdoption = Get-AcceptedDeveloperAdoption $rootPath
 $records = @{}
 $dependencyAmendments=@{}
 foreach ($file in Get-ChildItem "$Root/Tasks/items","$Root/Tasks/epics" -Recurse -File | Where-Object Name -In 'TASK.md','EPIC.md') {
     $record = Envelope $file.FullName
+    Convert-AcceptedDeveloperAdoption $record $developerAdoption
     if ($retiredPaths.ContainsKey($file.FullName)) { continue }
     $id = Field $record.front 'id'
     if ($records.ContainsKey($id)) { throw "Duplicate record: $id" }
@@ -107,6 +110,7 @@ foreach ($record in $records.Values) {
     $events=@()
     if (Test-Path $eventDir) { $events=@(Get-ChildItem $eventDir -Filter '*.md' | ForEach-Object { $e=Envelope $_.FullName; $e.date=[DateTimeOffset]::Parse((Field $e.front 'created_at')); $e }) }
     foreach ($event in $events | Sort-Object { $_['date'].UtcTicks }, { if ((Field $_['front'] 'event_type') -eq 'work-started') { 0 } else { 1 } }, { $_['path'] }) {
+        Convert-AcceptedDeveloperAdoption $event $developerAdoption
         $eventId=Field $event.front 'event_id'
         if ($eventIds.ContainsKey($eventId)) { throw 'Duplicate event identity' }
         $eventIds[$eventId]=$true
