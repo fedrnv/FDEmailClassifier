@@ -56,3 +56,26 @@ atomicity:
         }
     }
 }
+
+# FDEC-102 superseded three files also tracked by the historical 5.6 pin.
+# Recognize the exact previous/current pair without changing either policy pin.
+function Test-AcceptedDeveloperAdoptionRule([string]$Root, [string]$Path, [string]$Previous) {
+    $rules = @{
+        'AGENTS.md' = @(
+            '43d73ff4c10734dcf7e7710ea7982783d622c29cdf6b2897975a432b5ba8034c',
+            'aaa901406e3c6cffba39c1a4fff062372503bdad6b2202e5206d6a360719a46f'
+        )
+        'DEVELOPMENT.md' = @(
+            '7de6ccfcacd00f54dbdcd071701ad87ef66c20407d4cb16b73c336526c17e2b8',
+            '5b9fbf008408938c12bc44c6ebe6ecdb9c4ecb5ca13b5ee9b120796675301813'
+        )
+        'Tasks/AGENTS.md' = @(
+            'cf5e70942475a43772dee0472b0ce6d3c3189c71f3981484fa59d8c53d48582d',
+            '3d6bfd005f51e33cd1defeb809e7fd05ee88f5a309a092478c7ee368eb33c16d'
+        )
+    }
+    $pair = $rules[$Path]
+    if (!$pair -or $Previous -cne $pair[0]) { return $false }
+    $file = Join-Path $Root $Path
+    return (Test-Path -LiteralPath $file -PathType Leaf) -and (Get-IdentityHash $file) -ceq $pair[1]
+}

@@ -6,6 +6,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot/identity.ps1"
+. "$PSScriptRoot/developer-adoption.ps1"
 . "$PSScriptRoot/source-state.ps1"
 . "$PSScriptRoot/readiness-events.ps1"
 . "$PSScriptRoot/acceptance-matrix.ps1"
@@ -13,7 +14,8 @@ $ErrorActionPreference = 'Stop'
 $pin = Get-Content "$Root/Tasks/policy/adoption-5.6.json" -Raw | ConvertFrom-Json
 foreach ($entry in $pin.inventory) {
     $path = Join-Path $Root $entry.path
-    if (!(Test-IdentityBinding $Root $entry.path $entry.sha256)) {
+    if (!(Test-IdentityBinding $Root $entry.path $entry.sha256) -and
+        !(Test-AcceptedDeveloperAdoptionRule $Root $entry.path $entry.sha256)) {
         throw "Accepted baseline changed or missing: $($entry.path)"
     }
 }
