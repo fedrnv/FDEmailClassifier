@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 import random
 import secrets
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -294,12 +295,17 @@ class CheckpointTests(unittest.TestCase):
 
 class TrainingAdmissionTests(unittest.TestCase):
     @classmethod
+    def prepare_fixture(cls, fixture):
+        pass
+
+    @classmethod
     def setUpClass(cls):
         sys.path.insert(0, str(ROOT / "tests/d002"))
         import test_pipeline
         f = cls.fixture = test_pipeline.PipelineTests()
         cls.addClassCleanup(f.doCleanups)
         f.setUp()
+        cls.prepare_fixture(f)
         cls.directory, _ = f.build()
         cls.split = splits.verify(cls.directory, f.inventory, f.signed, key=f.key, policy_root=f.root, now=f.now, include_manifest=True)
         ids = sorted(row["record_id"] for row in cls.split["manifest"]["assignments"] if row["split"] == "train")
@@ -372,5 +378,86 @@ class TrainingAdmissionTests(unittest.TestCase):
             inputs.admit(**self.arguments)
 
 
-if __name__ == "__main__":
-    unittest.main()
+class SinabisTrainingAdmissionTests(TrainingAdmissionTests):
+    @classmethod
+    def prepare_fixture(cls, fixture):
+        import sinabis_source
+        from test_sinabis import row
+
+        for relative in sinabis_source.EVIDENCE | {sinabis_source.PROFILE}:
+            target = fixture.root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ROOT / relative, target)
+
+        source = fixture.base / "projection-fixture.parquet"
+        source.write_bytes(b"Software fixture bytes")
+        cls.source_bytes = source.read_bytes()
+        cls.patch_origin = patch.object(sinabis_source, "decode", return_value=[
+            row(100), row(101), row(102, case=15, size=2), row(
+                103, case=15, size=2, position=2, model="unsupported",
+            ),
+        ])
+        cls.patch_snapshot = patch.object(
+            sinabis_source, "source_snapshot", side_effect=cls.fixture_snapshot,
+        )
+        for mocked in (cls.patch_origin, cls.patch_snapshot):
+            mocked.start()
+            cls.addClassCleanup(mocked.stop)
+
+        cls.source_run = fixture.root / "training/data/sinabis-run"
+        sinabis_source.create_run(source, cls.source_run, purpose="commercial_training", policy_root=fixture.root)
+        receipt = splits.read_json(cls.source_run / "receipt.json")
+        _, records = sinabis_source.replay_run(
+            cls.source_run / "source.parquet", purpose="commercial_training", policy_root=fixture.root,
+        )
+        cls.projected = [
+            splits.prepare_record(record, receipt, consent_id=splits.digest(record["content_id"]))
+            for record in records
+        ]
+        fixture.runs.append(cls.source_run)
+        fixture.inventory["records"].extend(cls.projected)
+        fixture.signed = fixture.sign(revision=2, previous=splits.digest(fixture.signed))
+        splits.activate_consent(fixture.inventory, fixture.signed, key=fixture.key,
+                                policy_root=fixture.root, now=fixture.now)
+
+    @classmethod
+    def fixture_snapshot(cls, path):
+        from sinabis_source import SinabisError
+
+        data = Path(path).read_bytes()
+        if data != cls.source_bytes:
+            raise SinabisError("sinabis_source_checksum_mismatch")
+        return data
+
+    def test_projection_origin_group_and_train_admission(self):
+        snapshot = inputs.admit(**self.arguments)
+        self.assertEqual(len(self.projected), 2)
+        self.assertEqual(len({row["thread_id"] for row in self.projected}), 2)
+        ids = {row["record_id"] for row in self.projected}
+        roles = {row["split"] for row in snapshot.split["manifest"]["assignments"]
+                 if row["record_id"] in ids}
+        self.assertEqual(len(roles), 1)
+        with self.assertRaises(inputs.boundary.TrainingBoundaryError):
+            inputs.boundary.admit_training_run(self.source_run, purpose="evaluation", policy_root=self.fixture.root)
+
+    def test_receipt_and_raw_artifact_tampering_reject(self):
+        for name in ("receipt.json", "source.parquet"):
+            with self.subTest(name=name):
+                path = self.source_run / name
+                original = path.read_bytes()
+                try:
+                    path.write_bytes(original + b"x")
+                    with self.assertRaises(config.TrainerError):
+                        inputs.admit(**self.arguments)
+                finally:
+                    path.write_bytes(original)
+
+    def test_z_revocation_is_checked_on_reuse(self):
+        fixture = self.fixture
+        snapshot = inputs.admit(**self.arguments)
+        changed = fixture.sign(revoke=self.projected[0]["record_id"], revision=3,
+                               previous=splits.digest(fixture.signed))
+        splits.activate_consent(fixture.inventory, changed, key=fixture.key,
+                                policy_root=fixture.root, now=fixture.now)
+        with self.assertRaises(config.TrainerError):
+            inputs.recheck(snapshot, key=fixture.key, policy_root=fixture.root, now=fixture.now)

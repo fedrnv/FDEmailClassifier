@@ -24,6 +24,7 @@ LANGUAGES = tuple("en es ja zh ar de ko hi it fr pt nl pl id tr ru tl vi th he r
 TOPICS = tuple("work personal finance shopping travel social newsletters marketing education health legal other".split())
 DIMENSIONS = ("topics", "priority", "spam", "phishing", "malware", "action")
 FAMILY = "sinabis-oil-source-family/v1"
+RUN_SCHEMA = "fdec-sinabis-reviewed-run/v1"
 MAX_ROWS = 20_000
 MAX_FEATURES = 16_384
 MAX_TOTAL_FEATURES = 16_000_000
@@ -350,6 +351,66 @@ def prepare(path, *, purpose="commercial_training", opt_in=False, policy_root=RO
     return result
 
 
+def replay_run(source, *, purpose, policy_root=ROOT):
+    """Adapt verified projection rows to the consumer interface without labels."""
+    from normalize_email import VERSION
+
+    result = prepare(source, purpose=purpose, opt_in=True, policy_root=policy_root, include_records=True)
+    receipt = {
+        "schema": RUN_SCHEMA,
+        "input": result["source_admission"]["descriptor"],
+        "implementation_sha256": result["implementation_sha256"],
+        "records_sha256": result["summary"]["records_sha256"],
+    }
+    records = []
+    for row in result["projection"]["records"]:
+        content = hashlib.sha256(
+            (VERSION + "\0" + canonical_json([row["subject"], row["body"]])).encode("utf-8")
+        ).hexdigest()
+        records.append({
+            "schema": "fdec-sinabis-reviewed-row/v1",
+            "source": row["source"],
+            "content_id": content,
+            "subject": row["subject"],
+            "body": row["body"],
+            "annotations": [{"source_row": index} for index in row["source_rows"]],
+            "thread_id": row["component_id"],
+            "family_ids": [digest(FAMILY)],
+        })
+    return receipt, records
+
+
+def create_run(source, output_dir, *, purpose, policy_root=ROOT):
+    """Persist verified raw bytes and a replay receipt in a new private run."""
+    import os
+    import secrets
+
+    from ingest_dataset import private_output, remove_owned
+
+    data = source_snapshot(source)
+    output = private_output(output_dir, policy_root)
+    marker = secrets.token_hex(32)
+    output.mkdir(mode=0o700)
+    try:
+        (output / ".owner").write_text(marker, encoding="ascii")
+        raw = output / "source.parquet"
+        with raw.open("xb") as stream:
+            stream.write(data)
+            stream.flush()
+            os.fsync(stream.fileno())
+        receipt, records = replay_run(raw, purpose=purpose, policy_root=policy_root)
+        temporary = output / ".receipt.tmp"
+        with temporary.open("x", encoding="utf-8") as stream:
+            stream.write(canonical_json(receipt) + "\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        temporary.rename(output / "receipt.json")
+        return {"schema": RUN_SCHEMA, "rows": len(records), "records_sha256": receipt["records_sha256"]}
+    except Exception:
+        remove_owned(output, marker)
+        raise
+
+
 def main(argv=None):
     import argparse
     class PrivateParser(argparse.ArgumentParser):
@@ -358,9 +419,16 @@ def main(argv=None):
     parser = PrivateParser(description="Read-only Sinabis preparation report; no training or email output")
     parser.add_argument("--source", required=True)
     parser.add_argument("--opt-in", action="store_true")
+    parser.add_argument("--output-dir")
+    parser.add_argument("--purpose", choices=boundary.PURPOSES, default="commercial_training")
     try:
         args = parser.parse_args(argv)
-        report = prepare(args.source, opt_in=args.opt_in)
+        if args.output_dir:
+            if not args.opt_in:
+                raise SinabisError("sinabis_explicit_opt_in_required")
+            report = create_run(args.source, args.output_dir, purpose=args.purpose)
+        else:
+            report = prepare(args.source, purpose=args.purpose, opt_in=args.opt_in)
     except SinabisError as error:
         safe_codes = {"sinabis_comparison_limit", "sinabis_feature_limit", "sinabis_total_feature_limit", "sinabis_row_limit", "sinabis_source_checksum_mismatch", "invalid_sinabis_projection", "invalid_sinabis_parquet", "invalid_sinabis_arguments"}
         print(str(error) if str(error) in safe_codes else "sinabis_preparation_failed", file=sys.stderr)

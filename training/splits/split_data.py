@@ -14,12 +14,15 @@ import unicodedata
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "training/scripts"))
+sys.path.append(str(ROOT / "training/augmentation"))
 from ingest_dataset import inclusion, private_output, reject_links, remove_owned, strict_json
 from normalize_email import VERSION as NORMALIZATION_VERSION, canonical_json
 
 VERSION = "fdec-grouped-splits/v1"
 FEATURE_POLICY = {"algorithm": "unicode-alnum-5gram-jaccard80/v1", "unicode_version": unicodedata.unidata_version}
 ROLES = ("train", "validation", "test")
+SINABIS_ID = "sinabis-group/sinabis-10k-synthetic-emails"
+LEGACY_IMPLEMENTATION_SHA256 = "502c5f219c3529614eb6f805675c6028010031fec5029636b84ec5c512945686"
 MAX_ROWS = 100_000
 MAX_FEATURES = 4096
 MAX_TOTAL_FEATURES = 2_000_000
@@ -36,6 +39,8 @@ def digest(value):
 
 def implementation_hash():
     paths = ("training/splits/split_data.py", "training/splits/split_cli.py", "training/scripts/normalize_email.py", "training/scripts/ingest_dataset.py", "training/datasets/get-inclusion.ps1", "training/datasets/assert-allowlist.ps1", "scripts/validate_tasks/identity.ps1")
+    paths += ("training/augmentation/sinabis_source.py", "training/augmentation/training_boundary.py",
+              "training/augmentation/inspect_sinabis_metadata.py")
     return hashlib.sha256(b"".join((ROOT / path).read_bytes().replace(b"\r\n", b"\n") for path in paths)).hexdigest()
 
 
@@ -91,9 +96,22 @@ def features(subject, body):
 def prepare_record(normalized, receipt, *, consent_id, thread_id=None, family_ids=()):
     """Trusted preparer helper; caller first verifies the actual ingestion run."""
     try:
-        if normalized["schema"] != "fdec-normalized-email/v1" or receipt["schema"] != "fdec-ingestion-receipt/v1" or receipt["normalization_version"] != NORMALIZATION_VERSION:
-            raise SplitError("unsupported_ingestion_provenance")
         source = {name: receipt["input"][name] for name in ("dataset_id", "revision", "artifact", "sha256")}
+        if source["dataset_id"] == SINABIS_ID:
+            from sinabis_source import FAMILY, RUN_SCHEMA
+
+            if normalized["schema"] != "fdec-sinabis-reviewed-row/v1" or receipt["schema"] != RUN_SCHEMA:
+                raise SplitError("unsupported_ingestion_provenance")
+            expected_family = [digest(FAMILY)]
+            if normalized["family_ids"] != expected_family:
+                raise SplitError("changed_sinabis_lineage")
+            if thread_id is not None and thread_id != normalized["thread_id"]:
+                raise SplitError("changed_sinabis_lineage")
+            if family_ids and sorted(family_ids) != expected_family:
+                raise SplitError("changed_sinabis_lineage")
+            thread_id, family_ids = normalized["thread_id"], expected_family
+        elif normalized["schema"] != "fdec-normalized-email/v1" or receipt["schema"] != "fdec-ingestion-receipt/v1" or receipt["normalization_version"] != NORMALIZATION_VERSION:
+            raise SplitError("unsupported_ingestion_provenance")
         expected = hashlib.sha256((NORMALIZATION_VERSION + "\0" + canonical_json([normalized["subject"], normalized["body"]])).encode("utf-8")).hexdigest()
         if normalized["content_id"] != expected or normalized["source"] != source:
             raise SplitError("changed_normalized_record")
@@ -126,6 +144,11 @@ def validate_record(record):
         raise SplitError("changed_record_identity")
     if record["thread_id"] is not None and not is_hash(record["thread_id"]):
         raise SplitError("invalid_thread_identity")
+    if source["dataset_id"] == SINABIS_ID:
+        from sinabis_source import FAMILY
+
+        if record["thread_id"] is None or record["family_ids"] != [digest(FAMILY)]:
+            raise SplitError("changed_sinabis_lineage")
     for field, minimum, maximum in (("family_ids", 0, 16), ("shingles", 1, MAX_FEATURES)):
         values = record[field]
         if not isinstance(values, list) or not minimum <= len(values) <= maximum or any(not is_hash(value) for value in values) or values != sorted(set(values)):
@@ -341,10 +364,18 @@ def plan_manifest(inventory, signed, *, key, seed, ratios, policy_root=ROOT, now
         for encoded in sorted({canonical_json(row["source"]) for row in records}):
             source = json.loads(encoded)
             for purpose in ("commercial_training", "evaluation"):
-                descriptor = inclusion(source["dataset_id"], source["revision"], source["artifact"], purpose, "specialized-email-classifier", policy_root)
+                if source["dataset_id"] == SINABIS_ID:
+                    from sinabis_source import assert_source
+
+                    admitted = assert_source(source, purpose=purpose, policy_root=policy_root)
+                    descriptor = admitted["descriptor"]
+                    audit_sha256 = admitted["origin_policy_sha256"]
+                else:
+                    descriptor = inclusion(source["dataset_id"], source["revision"], source["artifact"], purpose, "specialized-email-classifier", policy_root)
+                    audit_sha256 = descriptor["audit_sha256"]
                 if descriptor["sha256"] != source["sha256"]:
                     raise SplitError("source_artifact_changed")
-                source_grants.append({"source_sha256": digest(source), "purpose": purpose, "descriptor_sha256": digest(descriptor), "audit_sha256": descriptor["audit_sha256"]})
+                source_grants.append({"source_sha256": digest(source), "purpose": purpose, "descriptor_sha256": digest(descriptor), "audit_sha256": audit_sha256})
         selected, excluded = [], []
         for group in components(records):
             if all(row["record_id"] in allowed for row in group):
@@ -421,6 +452,10 @@ def verify(output_dir, inventory, signed, *, key, policy_root=ROOT, now=None, in
         if set(receipt) != {"schema", "manifest_sha256", "manifest_file", "rows", "counts"} or receipt["schema"] != "fdec-split-receipt/v1" or receipt["manifest_file"] != "manifest.json" or receipt["manifest_sha256"] != hashlib.sha256(content).hexdigest():
             raise SplitError("changed_split_receipt")
         expected = plan_manifest(inventory, signed, key=key, seed=manifest["seed"], ratios=manifest["ratios"], policy_root=policy_root, now=now)
+        if (manifest.get("implementation_sha256") == LEGACY_IMPLEMENTATION_SHA256
+                and all(row["source"]["dataset_id"] != SINABIS_ID for row in inventory["records"])):
+            # Replay every other field against current rights, consent and grouping.
+            expected["implementation_sha256"] = LEGACY_IMPLEMENTATION_SHA256
         if manifest != expected or receipt["rows"] != len(expected["assignments"]) or receipt["counts"] != expected["counts"]:
             raise SplitError("split_provenance_or_contamination_changed")
         active_consent(policy_root, signed, key)

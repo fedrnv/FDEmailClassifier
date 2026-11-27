@@ -150,6 +150,20 @@ projection of the pinned 10K source. This is a separate CC BY profile; the legac
 MIT/Apache ingestion guard and its denials are unchanged. Sinabis 10M remains
 unadmitted. Both Codex packs remain technical fixtures.
 
+To prepare a private replay run from the exact audited Parquet file:
+
+```sh
+python training/augmentation/sinabis_source.py --opt-in --source "$PINNED_PARQUET" --output-dir "$PRIVATE_RUN"
+```
+
+The run contains the exact Parquet bytes and a receipt binding the projected
+record digest, implementation and audited purpose. Supply the run directory as
+a source run. Inventory preparation uses `training_boundary.admit_training_run`
+and `split_data.prepare_record`; the latter binds the projected component and
+Oil family, so callers cannot put separate cases in different partitions.
+The trainer and held-out evaluation replay the verified source rather than
+rereading operator-provided normalized text.
+
 Run `test-sinabis.ps1` for metadata/token software tests. An operator may also
 provide `-Source <private-pinned-parquet-path>` to inspect the actual source
 read-only; no download occurs and only aggregate preparation/provenance is printed.
@@ -163,9 +177,9 @@ review vocabulary plus the extensible 29-language schema. It supplies no
 per-message targets: all dimensions stay missing and supervision stays disabled.
 The 10K source has four observed languages. Preparation produces no actual
 train/test allocation or training-ready data: independent annotation, quality,
-current consent and the accepted split gate remain required. The existing split
-gate has not been broadened to this CC BY profile. The entire Oil family remains
-one source cohort; dividing its rows across train/test is rejected.
+current consent and the accepted split gate remain required. The split gate
+admits only this exact reviewed CC BY profile. The entire Oil family remains
+one source cohort.
 
 Commercial training, commercial inference and public weight-distribution
 compatibility are recorded separately. Dataset-side compatibility is conditional;

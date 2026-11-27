@@ -141,6 +141,18 @@ def admit_training_run(run_directory, *, purpose="commercial_training", policy_r
     try:
         directory = ingestion.reject_links(run_directory)
         receipt = read_json(directory / "receipt.json", 65536)
+        if isinstance(receipt, dict) and receipt.get("schema") == "fdec-sinabis-reviewed-run/v1":
+            from sinabis_source import replay_run
+
+            expected, records = replay_run(directory / "source.parquet", purpose=purpose, policy_root=policy_root)
+            if receipt != expected:
+                raise TrainingBoundaryError("sinabis_training_receipt_changed")
+            result = {"schema": "fdec-independent-training-admission/v1",
+                      "records_sha256": receipt["records_sha256"], "rows": len(records),
+                      "scope": "source-integrity-and-origin-only", "requires_split_and_consent": True}
+            if include_records:
+                result["records"] = records
+            return result
         required = {"schema", "normalization_version", "implementation_sha256", "python_version", "decoder", "input", "source_file", "records_file", "records_sha256", "input_rows", "unique_rows", "duplicates", "annotation_conflicts"}
         if not isinstance(receipt, dict) or receipt.get("schema") != "fdec-ingestion-receipt/v1":
             raise TrainingBoundaryError("technical_fixture_not_training_data")
