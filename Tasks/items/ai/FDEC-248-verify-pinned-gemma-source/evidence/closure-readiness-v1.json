@@ -1,0 +1,600 @@
+{
+  "semantic_review": "accepted",
+  "task_sha256": "eef2e65e4d556e700e9e48df6cabac98fd312ba950c8fe474de98b12c5319a47",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "source_sha": "809e0c8eb4b33e2ccb7ee9d2e38adf7c7979baac",
+  "source_state_algorithm": "fdec-source-state/v1",
+  "source_state_sha256": "9fc9b033182e14091933d573d6dbb8ae25839ad90c088d886649eaa4a28ec8ca",
+  "atomicity": {
+    "independent_acceptance": false,
+    "packets": [
+      "Reproduce the exact identity and screening results and record the source decision."
+    ],
+    "outcomes": [
+      "Verify the pinned Gemma-generated email artifact and publish the scoped source audit for guarded integration."
+    ],
+    "boundary_reason": "The source decision must be bound to the exact artifact and its reproduced screening evidence."
+  },
+  "allowed_paths": [
+    "Tasks/items/ai/FDEC-248-verify-pinned-gemma-source"
+  ],
+  "rule_sources": [
+    {
+      "sha256": "aaa901406e3c6cffba39c1a4fff062372503bdad6b2202e5206d6a360719a46f",
+      "path": "AGENTS.md"
+    },
+    {
+      "sha256": "5b9fbf008408938c12bc44c6ebe6ecdb9c4ecb5ca13b5ee9b120796675301813",
+      "path": "DEVELOPMENT.md"
+    },
+    {
+      "sha256": "3d6bfd005f51e33cd1defeb809e7fd05ee88f5a309a092478c7ee368eb33c16d",
+      "path": "Tasks/AGENTS.md"
+    },
+    {
+      "sha256": "3bb61cd71eccd8cd0b57c60771757b69712b8de2a4782694917e7111577f6b7f",
+      "path": "Tasks/policy/checkout-identities-076.json"
+    },
+    {
+      "sha256": "9fadc835b2ce1d0ea30bc2ba9998bbede015472154660987abc9e57ed40d4b24",
+      "path": "Tasks/developer-policy.json"
+    },
+    {
+      "sha256": "f0b9f301fbc54c52570dba8e9ae5022f3d0afcc3a3a8e96adc5a71191adaf36d",
+      "path": "Tasks/FDTasks_5_7_ADOPTION.md"
+    },
+    {
+      "sha256": "b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8",
+      "path": "Tasks/tasks_file_structure_v5_7.md"
+    }
+  ],
+  "dependency_revisions": [
+    {
+      "sha256": "1026531511336f15d7ab7dbe469c2fde0202e57f0fae76268ba3cf1374716e4b",
+      "path": "Tasks/items/ai/FDEC-247-sinabis-reviewed-source-replay/TASK.md"
+    },
+    {
+      "sha256": "19d2160edd84ff65d9b1029f2a588578edc08019bbe6d51c32e7e237298ae8cd",
+      "path": "Tasks/items/ai/FDEC-247-sinabis-reviewed-source-replay/events/20261127T210454659Z-codex-published-claim.md"
+    },
+    {
+      "sha256": "2bc682919c26611043c9bf4f1fe25248a1b197f137c2af1c11009c391efe0398",
+      "path": "Tasks/items/ai/FDEC-247-sinabis-reviewed-source-replay/events/20261127T210609605Z-codex-readiness-accepted-871c44bb.md"
+    },
+    {
+      "sha256": "7048298be15fe8a33077f646dcaf0a5b06f28d0ce37c21b5ca78acdf30a55452",
+      "path": "Tasks/items/ai/FDEC-247-sinabis-reviewed-source-replay/events/20261127T210836867Z-codex-readiness-accepted-2977e2c4.md"
+    },
+    {
+      "sha256": "1e58195e4333b10667f6fa53987300ce10aaac9a6942b6d9bba8cbcf710ba47d",
+      "path": "Tasks/items/ai/FDEC-247-sinabis-reviewed-source-replay/events/20261127T210856887Z-codex-done.md"
+    },
+    {
+      "sha256": "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+      "path": "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+    },
+    {
+      "sha256": "184ddb4dcccf4c3076b0d7c63347c1b4531c06f26efad3fa73c8e7c2ac825483",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T145114999Z-codex-status-changed-3a28b4ae.md"
+    },
+    {
+      "sha256": "348d73a57e50224c6bdb8423e253a2f97ea0bdc5cbeab00f8e736fe2ac735f5b",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T193152819Z-codex-membership-added-ce72934e.md"
+    },
+    {
+      "sha256": "63e295cde7c8c860a57abd9f262a95680e988ea12e5f4d5802a652d60f1bbfc5",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T193535109Z-codex-scope-amended-d5aed689.md"
+    },
+    {
+      "sha256": "966aeb587bbc9a66fb661ee08988a95c82fda8ae7801f51a322ff9f84eee0b12",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T202526019Z-codex-scope-amended-5c78c5bf.md"
+    },
+    {
+      "sha256": "ab6e1ba9c38a61be959283af2a90a77ab8d1a57812025d30b71808fea19dd397",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T211846047Z-codex-status-changed-d209ba9b.md"
+    }
+  ],
+  "epic_state_evidence": [
+    {
+      "sha256": "7a3a2184f62f155686fcb2f27b13f941903aef60a193ccddb791a922feb77d75",
+      "path": "Tasks/epics/FDEC-EPIC-D012/EPIC.md"
+    },
+    {
+      "sha256": "bc785e723ddab581d86854eb2909313f7101d9dc13b3285c46d9eadd575a87f5",
+      "path": "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424200972Z-codex-membership-replaced-9e1d5cf9.md"
+    },
+    {
+      "sha256": "4c54e537b933aac1a7ee133582b9b812c238b4d7d8ce1fb6c820a38b2c614ed6",
+      "path": "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424310424Z-codex-membership-replaced-12aa58fa.md"
+    },
+    {
+      "sha256": "d07ed20d5fe32c0f483d8017e5cac9bcb040b373c2ce2f53fe3faa3c192eb84f",
+      "path": "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424405809Z-codex-membership-replaced-c128f9e8.md"
+    },
+    {
+      "sha256": "31790d06fc71dcaa25155ce3d5d560d78b2fe11ca475b3a9fb55186e57b2070f",
+      "path": "Tasks/epics/FDEC-EPIC-D012/events/20261120T173424513368Z-codex-membership-replaced-80a11fb3.md"
+    },
+    {
+      "sha256": "4aaba119f41c17dd4f1b123030fe4a81a90d02582033c755fda1bd948a1a6d51",
+      "path": "Tasks/epics/FDEC-EPIC-D004/EPIC.md"
+    },
+    {
+      "sha256": "917eafc40e1aeb003c9a08799e78ba145012908ec67ea7f6387d8179d85ea4b6",
+      "path": "Tasks/epics/FDEC-EPIC-D011/EPIC.md"
+    },
+    {
+      "sha256": "5c78c4969c11451c3e8e9932d15225951a08cceee5de281f9b10e561a77a7ed1",
+      "path": "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423398663Z-codex-membership-replaced-98316da7.md"
+    },
+    {
+      "sha256": "8ea9b29765614b31e52e53c345cec8bbc7e4006fee75dadb2c156cd8c07f494f",
+      "path": "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423538254Z-codex-membership-replaced-9a3a8877.md"
+    },
+    {
+      "sha256": "a4f2d8b5aee1ec26f9d2e6a64265a33b6485ababdc33c0281810c357978f33bc",
+      "path": "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423641171Z-codex-membership-replaced-87fc5f82.md"
+    },
+    {
+      "sha256": "bb83a17d4e844bb319023d30e994c3bf9d7597578a16fab924338c0f5b20f490",
+      "path": "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423779563Z-codex-membership-replaced-aef1c708.md"
+    },
+    {
+      "sha256": "9e8a9fd47e67f0aaa9d1b4600ba01147a94859dddf7fc39cea10707ba839827c",
+      "path": "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423893225Z-codex-membership-replaced-81241c72.md"
+    },
+    {
+      "sha256": "402e13399e624d1870f14fc3903dcbb43187a9cb0530220f556366d775493911",
+      "path": "Tasks/epics/FDEC-EPIC-D011/events/20261120T173423999967Z-codex-membership-replaced-d3f3aeb6.md"
+    },
+    {
+      "sha256": "11190dd28bd4e21be8ed6c08ac6b2f0da6e8680fecc59441886bd9560a74beb8",
+      "path": "Tasks/epics/FDEC-EPIC-D008/EPIC.md"
+    },
+    {
+      "sha256": "36b30c100d29d15a6a043372e4c30bb09736185b689a54a7136f98d29802c9d6",
+      "path": "Tasks/epics/FDEC-EPIC-D009/EPIC.md"
+    },
+    {
+      "sha256": "bc4b4732f70845d2bafb2e5a3b7a7372d2cf895b90f08cafd9fce68ae3c125a3",
+      "path": "Tasks/epics/FDEC-EPIC-D009/events/20261120T113500Z-project-planning-membership-073.md"
+    },
+    {
+      "sha256": "62a2c73f54633e98f167cade6b0c3851bbf7d7c516f2fa0198ad57b9f1b50398",
+      "path": "Tasks/epics/FDEC-EPIC-D009/events/20261120T114908034Z-codex-membership-replaced-81c55913.md"
+    },
+    {
+      "sha256": "57a58fcbf249a892df4289871b504ea3b2e6418474f492e3f5921996e2e9c066",
+      "path": "Tasks/epics/FDEC-EPIC-D013/EPIC.md"
+    },
+    {
+      "sha256": "b04d21796230a59aeca36e6d1970aefbfacf1325102d24268dcc51986ffd3f3b",
+      "path": "Tasks/epics/FDEC-EPIC-S002/EPIC.md"
+    },
+    {
+      "sha256": "2c2adaa26a5e9f2e04e75c77db8e37c3206cfb22103379b3e2945af92b4d18ac",
+      "path": "Tasks/epics/FDEC-EPIC-D007/EPIC.md"
+    },
+    {
+      "sha256": "31cb20c86ad524686f447642ae8a28e02cdd19ea6e28aeac2f9c67afbf5fd957",
+      "path": "Tasks/epics/FDEC-EPIC-D005/EPIC.md"
+    },
+    {
+      "sha256": "1c7b7892b576268bb453b3a1e96d734c13ce9f7502be88d2b2b433d15c5cfa22",
+      "path": "Tasks/epics/FDEC-EPIC-D003/EPIC.md"
+    },
+    {
+      "sha256": "6cf9997d9f6db8dc6caa245bfd83e9ca31e4c1cb1c9b8fffa74f77e3490aaef1",
+      "path": "Tasks/epics/FDEC-EPIC-D003/events/20261120T173200Z-owner-membership-added-087.md"
+    },
+    {
+      "sha256": "d9035afd98279693d63b696b6d43c3e0cb709384845ecafb9f4700167d34c4bc",
+      "path": "Tasks/epics/FDEC-EPIC-D003/events/20261120T212705367Z-codex-status-changed-8a5a57bf.md"
+    },
+    {
+      "sha256": "f6bb2d813c305d0fd2f57933c81f01d74ca306b8c1caac23c42cc5ad925d5ed8",
+      "path": "Tasks/epics/FDEC-EPIC-D003/events/20261127T210418726Z-add-fdec-247.md"
+    },
+    {
+      "sha256": "e9aaf6c79045f3aca5156788c4c7b5aa9d664b112d1d45d1645f5c1c8b1d4d4b",
+      "path": "Tasks/epics/FDEC-EPIC-D003/events/20261127T211121782Z-add-fdec-248.md"
+    },
+    {
+      "sha256": "baae961552ee2000e6022022eb47c425d0453905d85eb04c38a41021b7a00a54",
+      "path": "Tasks/epics/FDEC-EPIC-D002/EPIC.md"
+    },
+    {
+      "sha256": "184ddb4dcccf4c3076b0d7c63347c1b4531c06f26efad3fa73c8e7c2ac825483",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T145114999Z-codex-status-changed-3a28b4ae.md"
+    },
+    {
+      "sha256": "348d73a57e50224c6bdb8423e253a2f97ea0bdc5cbeab00f8e736fe2ac735f5b",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T193152819Z-codex-membership-added-ce72934e.md"
+    },
+    {
+      "sha256": "63e295cde7c8c860a57abd9f262a95680e988ea12e5f4d5802a652d60f1bbfc5",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T193535109Z-codex-scope-amended-d5aed689.md"
+    },
+    {
+      "sha256": "966aeb587bbc9a66fb661ee08988a95c82fda8ae7801f51a322ff9f84eee0b12",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T202526019Z-codex-scope-amended-5c78c5bf.md"
+    },
+    {
+      "sha256": "ab6e1ba9c38a61be959283af2a90a77ab8d1a57812025d30b71808fea19dd397",
+      "path": "Tasks/epics/FDEC-EPIC-D002/events/20261120T211846047Z-codex-status-changed-d209ba9b.md"
+    },
+    {
+      "sha256": "fa4fdbec6ba6f972e39dbbfaf4e0cea1380456ad65cf1cedac5f4a108c353836",
+      "path": "Tasks/epics/FDEC-EPIC-D006/EPIC.md"
+    },
+    {
+      "sha256": "6c9a98534077eb89ae9c0e2e11c659ede51aad2dc8f7182c1fc8411fcb3c9c7f",
+      "path": "Tasks/epics/FDEC-EPIC-D001/EPIC.md"
+    },
+    {
+      "sha256": "2c745cd80684f2be18b90aaba90b76da9089ab3a252075bddc85a4bc7c070cef",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T110153723Z-codex-status-changed-1838d189.md"
+    },
+    {
+      "sha256": "725c253eed79821a32983c314b0226fe869132185b6886eed56e4e56354ef874",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T110500Z-project-planning-membership-added-072.md"
+    },
+    {
+      "sha256": "f6cd71749e8f33d38e2a34e3387d2d0172593f6d4b0c2c65f4f703fef352e211",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720395Z-codex-membership-added-c11b7a96.md"
+    },
+    {
+      "sha256": "0793515083f32758ae922d874df88cc62833e8d06bfebc31334106a748fa766b",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720408Z-codex-membership-added-ccaea5e4.md"
+    },
+    {
+      "sha256": "82595b938b8e6f436ccf4323923bbe11b7474aebce2c85013ce11c9e40f3ea7c",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720414Z-codex-membership-added-8c29e1ae.md"
+    },
+    {
+      "sha256": "4967bba7bd0db6123a776f41899365f05d77780fc6b4127aa32913a2832bb725",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T120720420Z-codex-membership-added-5a47baad.md"
+    },
+    {
+      "sha256": "b67bf371983aeaefae77d06d98674b9cdfaa6df123426cba98d03896391818e9",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T135521674Z-codex-membership-added-22505ea4.md"
+    },
+    {
+      "sha256": "dec705eaa3ff18891e29ef098ded64ca14721d081455941717d19283dbd2caa4",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T142108321Z-codex-membership-added-d87083b3.md"
+    },
+    {
+      "sha256": "184ae8bf6328b2edd86eedfaf00552b6203383db3a502c4933b52843ea96228c",
+      "path": "Tasks/epics/FDEC-EPIC-D001/events/20261120T144622540Z-codex-status-changed-bd990490.md"
+    },
+    {
+      "sha256": "84f4aaccbbfe7a24df8fa82d72643eeed5a9cd9e588662cdc48bc62f705ecd35",
+      "path": "Tasks/epics/FDEC-EPIC-S001/EPIC.md"
+    },
+    {
+      "sha256": "eab686188a77ef7fbe6cb100d29a83aab34ff419d62d446d328f6e31d6e0d3f6",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261120T105835Z-codex-membership-added-d3a33ce1.md"
+    },
+    {
+      "sha256": "5298206a9a687ddc5337b60437e7cf040f86196b393bc7c0969039adea5e2c35",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261120T114907650Z-codex-membership-added-f57a3567.md"
+    },
+    {
+      "sha256": "82d1353d8b88c9153581e45357c128d7d50f1bf769e4dcc6f292e9d3cae96dcc",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261120T120758097Z-codex-membership-added-97e3d59b.md"
+    },
+    {
+      "sha256": "7bb74097561c1330923631301de0455b8cb5a1709604ec5677070878722d7871",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261120T131945683Z-codex-membership-added-237ab6bf.md"
+    },
+    {
+      "sha256": "e42a093682016bf2dc4407e287d48cb4d8d927eaa3efb5410fa839bbfdab2024",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261120T172730217Z-codex-membership-added-cefec483.md"
+    },
+    {
+      "sha256": "72d715cc842aa21bd5fbac051d953b011a859666766dbfc7cedca6b17a211b36",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261120T194410200Z-codex-membership-added-bca41497.md"
+    },
+    {
+      "sha256": "07d0f8e7c34b4fa5c5c69cc95f1add7fae9ee3be55c88083a6b5bd3fc438be46",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261120T194918165Z-codex-scope-amended-25997029.md"
+    },
+    {
+      "sha256": "87fd3c6946c3cbd8294bc4a95c6ed8403edc77674cd443ac0976699c4587a3b1",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261121T001209491Z-codex-membership-added-a0c2830b.md"
+    },
+    {
+      "sha256": "e8a43cf5f52d8e45b7289ea231ffa748500c5261495878b32051417e14d06ae6",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261121T001508290Z-codex-scope-amended-e4a222dd.md"
+    },
+    {
+      "sha256": "a8aa1a12b48642ca2b4b21ef71ee1c55612e5bfd101a2320017133191a86641a",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261121-FDEC-102-member-added.md"
+    },
+    {
+      "sha256": "8f0fe054be478b1681fd85f28d0260ab1f1507f46f7c629d5d90041d9cfe3d92",
+      "path": "Tasks/epics/FDEC-EPIC-S001/events/20261127T205027000Z-add-fdec-238.md"
+    },
+    {
+      "sha256": "71a557c0bafb0c7ec7a58c04c5448858ce77f3e7a34d1ee45d84cc0827b249fb",
+      "path": "Tasks/epics/FDEC-EPIC-D010/EPIC.md"
+    },
+    {
+      "sha256": "1c73e6396fb1a3c2ce2d63c98d5f68434411d7c469d05af20a990922b9395f28",
+      "path": "Tasks/epics/FDEC-EPIC-D010/events/20261127T210144Z-owner-stable-1-0-before-retraining.md"
+    }
+  ],
+  "migration_revisions": [
+    {
+      "sha256": "d3ad36148c53582628331bda9c23e8b84394c19331776b90047c38744c7c1297",
+      "path": "Tasks/migrations/FDEC-074.json"
+    },
+    {
+      "sha256": "17034f7d38ef1c52ad6ca82b1ceeb76dd229f0236ec613ffbb31cc0684086188",
+      "path": "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/TASK.md"
+    },
+    {
+      "sha256": "574d2415d868e66e0086b23e3a80f9aec32150cc66b87319304e7d6b0bcf9768",
+      "path": "Tasks/items/governance/FDEC-073-bootstrap-fdtasks-adoption/TASK.md"
+    },
+    {
+      "sha256": "5bbe059cf583567bbd18affafb137c9a9a9fbce0730b07824e1cbdd9785ec48e",
+      "path": "Tasks/items/web/FDEC-075-red-e-branding-and-fdfiles-website-style/TASK.md"
+    },
+    {
+      "sha256": "0aabb217529345340e4d62c3edc949fe857c49078a2d2de52328e9e2046a452c",
+      "path": "Tasks/items/web/FDEC-073-red-e-branding-and-fdfiles-website-style/events/20261120T114908434Z-codex-superseded-a396e5df.md"
+    },
+    {
+      "sha256": "f41b9a2c0b3926ce80da235beb47e541ca05b4f8f8686ab93d38fc16b03033a8",
+      "path": "Tasks/migrations/FDEC-088-FDEC-074.json"
+    },
+    {
+      "sha256": "d2c2f8466d749e0842c55fc3ef0ed256f2abb7c04b0d217f85105362bf825cf6",
+      "path": "Tasks/items/ai/FDEC-074-audited-training-source-registry/TASK.md"
+    },
+    {
+      "sha256": "40697a05354685fa0056f1559164ecfbe24d6a6383cbf0a4bda1285ad0c65d51",
+      "path": "Tasks/items/governance/FDEC-074-resolve-task-identity-collision/TASK.md"
+    },
+    {
+      "sha256": "360372de6b4e34603afad9cace173f571a2e14a86d02b23086c2f0552c29c6ea",
+      "path": "Tasks/items/ai/FDEC-089-audited-training-source-registry/TASK.md"
+    },
+    {
+      "sha256": "79ef97aed1194bb13f488046ed3fc608548771d0e8fcb0f89d7c4d5c469a45d0",
+      "path": "Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T173423345933Z-codex-superseded-fbd93e40.md"
+    },
+    {
+      "sha256": "4d5bbdfe2555d47d83f81c0652ba69b005cc189266e09480cd6cf92fdb45716d",
+      "path": "Tasks/items/ai/FDEC-074-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md"
+    },
+    {
+      "sha256": "73cee53060e5d5ea91112e1e3ffbe65262eb9584619d674cecdfad67d5ba6e9a",
+      "path": "Tasks/items/ai/FDEC-089-audited-training-source-registry/events/20261120T171506Z-owner-policy-alignment-fdec-074.md"
+    },
+    {
+      "sha256": "2a029833806f47d061de095974ad8c56c1f1fbc60611ee34837e6dc6213ab945",
+      "path": "Tasks/migrations/FDEC-088-FDEC-075.json"
+    },
+    {
+      "sha256": "f0adc267133a016f39660f9b497c5dfbdefbc7f96ae929d98ac7627c5ae4c223",
+      "path": "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/TASK.md"
+    },
+    {
+      "sha256": "49a9f6bce9b52235ddfbb31329940c78841e9012c3bafb38a41ecb78fc25a735",
+      "path": "Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/TASK.md"
+    },
+    {
+      "sha256": "5422603215390d808adb16236cd0bc123d172b21d5be71d5eeeec779df720bed",
+      "path": "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173423490215Z-codex-superseded-c3663f52.md"
+    },
+    {
+      "sha256": "ed3d7c8d165545f2146afb1f06c6d096938d590e47aef4fe073e1dffae72a4c7",
+      "path": "Tasks/items/ai/FDEC-075-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md"
+    },
+    {
+      "sha256": "efb75704bfc66ce320cac2bedf490cbd215c957fc46ad64bd1249743f80ef589",
+      "path": "Tasks/items/ai/FDEC-090-train-on-allowed-open-datasets/events/20261120T173202Z-owner-mac-training-handoff.md"
+    },
+    {
+      "sha256": "ca0a13eff7b6f5d9312a72bd9f95f9db59a5b2621579ff57aefb77589afb936e",
+      "path": "Tasks/migrations/FDEC-088-FDEC-076.json"
+    },
+    {
+      "sha256": "1543603140441c06920505c0f7b33b707dbff12baf8aa1942273bfe3b1653a0b",
+      "path": "Tasks/items/ai/FDEC-076-graceful-training-source-fallback/TASK.md"
+    },
+    {
+      "sha256": "298bc21ebc8a573e773eaa3a596e5e65d358ec6b199c9d93a13bf6161023e833",
+      "path": "Tasks/items/quality/FDEC-076-checkout-stable-pinned-identities/TASK.md"
+    },
+    {
+      "sha256": "78603c6c0d06ed9d3878fc8a7aa589180c87a078bf1902595adf1d192b3998c2",
+      "path": "Tasks/items/ai/FDEC-091-graceful-training-source-fallback/TASK.md"
+    },
+    {
+      "sha256": "54d40d07ded9dd8a288280438ebc7427192d60e7a2a76b7fde1060751ac97f95",
+      "path": "Tasks/items/ai/FDEC-076-graceful-training-source-fallback/events/20261120T173423593979Z-codex-superseded-1938c2c7.md"
+    },
+    {
+      "sha256": "edeba397e7a2b124a2c0c01cafeaa6a0d3720a669d23c947f77de2775734e9cd",
+      "path": "Tasks/migrations/FDEC-088-FDEC-077.json"
+    },
+    {
+      "sha256": "06007f723834e9220e5b96c3cecc6d5f8bc2b2be3d7c32291beec8283795789e",
+      "path": "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/TASK.md"
+    },
+    {
+      "sha256": "3d4451d36cf95415297a9a9111f956babbf436c4065ce24dc0360cffed339d5d",
+      "path": "Tasks/items/quality/FDEC-077-bind-readiness-to-actual-source-state/TASK.md"
+    },
+    {
+      "sha256": "88fa1c3be35558adb44d7ab33e6e64f012c5e5d3939bee9a07f89a71a89a0be4",
+      "path": "Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/TASK.md"
+    },
+    {
+      "sha256": "a49b50716e2caf4865f4c4e3edb3c5c44ca28c17115bd361c7bb642153b54a87",
+      "path": "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T173423731886Z-codex-superseded-b966964e.md"
+    },
+    {
+      "sha256": "21e744a7520986f8513bee214ec3c3fd5a6488fd0855a36f3194e2d0fd9cd105",
+      "path": "Tasks/items/ai/FDEC-077-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md"
+    },
+    {
+      "sha256": "d339446ecc0e7e1568b071fa76e3ef4be18bd70fa9da12698f8d1bb916c26007",
+      "path": "Tasks/items/ai/FDEC-092-training-lineage-and-distribution-audit/events/20261120T171507Z-owner-policy-alignment-fdec-077.md"
+    },
+    {
+      "sha256": "03268d77908b5cc188d856632404b5eaebd47812fb54bd55173c0187599741ff",
+      "path": "Tasks/migrations/FDEC-088-FDEC-078.json"
+    },
+    {
+      "sha256": "491dfbec13be0ce3619d5b918f2d3a68784a802dc772531f231039a5382e4058",
+      "path": "Tasks/items/quality/FDEC-078-targeted-integration-gate/TASK.md"
+    },
+    {
+      "sha256": "27281e1871d6bb1eca01980998319f3e6782696173cb8ea4413eb12a1c701ded",
+      "path": "Tasks/items/quality/FDEC-078-bind-readiness-to-accepted-events/TASK.md"
+    },
+    {
+      "sha256": "e8123e4e623442beb1569f804099815b071729224064ce787feb9bada1b8d789",
+      "path": "Tasks/items/quality/FDEC-093-targeted-integration-gate/TASK.md"
+    },
+    {
+      "sha256": "e4f059fd87e98336c20e6e7b9c08989d8408bb6e3039951748b25e8a6d5c8211",
+      "path": "Tasks/items/quality/FDEC-078-targeted-integration-gate/events/20261120T173423839220Z-codex-superseded-c0110132.md"
+    },
+    {
+      "sha256": "46f645f470b626f584d01fc9a2b0d08c8a665988a051647009243b4c775fa75c",
+      "path": "Tasks/migrations/FDEC-088-FDEC-079.json"
+    },
+    {
+      "sha256": "2d81403f32ca179607b05aa6622fbd921be1f1af3dfa640e52949d3e2ed700fb",
+      "path": "Tasks/items/quality/FDEC-079-independent-acceptance-review/TASK.md"
+    },
+    {
+      "sha256": "18d47ad261c89aed403e0f8edeae03fded0b6df05206c0b9448b9afe71fe3452",
+      "path": "Tasks/items/quality/FDEC-079-require-complete-acceptance-matrix/TASK.md"
+    },
+    {
+      "sha256": "c484aacbc560b6cf4ceb0d6f2970c2978d789b2d651a6eb4a241e60d5db1712a",
+      "path": "Tasks/items/quality/FDEC-094-independent-acceptance-review/TASK.md"
+    },
+    {
+      "sha256": "1f0fdf83a516da7a836b9ad451dbec1a831721eb4f3b934682079d5c7dab40e5",
+      "path": "Tasks/items/quality/FDEC-079-independent-acceptance-review/events/20261120T173423952392Z-codex-superseded-e93e66db.md"
+    },
+    {
+      "sha256": "51070a44ebaa3e0638798daf23699fb294cc140f30231cb889f4c207ba6e25aa",
+      "path": "Tasks/migrations/FDEC-088-FDEC-080.json"
+    },
+    {
+      "sha256": "cc144cb633b908e774ca4d6761457adf2cd10e55a2c423403c7681972a5b1df3",
+      "path": "Tasks/items/quality/FDEC-080-independent-benchmark-data-specification/TASK.md"
+    },
+    {
+      "sha256": "79cc3fed34c038ea453afcf5be1bbabf266221591950c30262fa80140d60984b",
+      "path": "Tasks/items/governance/FDEC-080-preserve-first-closure-requests-on-reopen/TASK.md"
+    },
+    {
+      "sha256": "bc3e7b93e1c1c881399f684d3a8ff5286fad8adfc8078357d8e4ebd4398956dd",
+      "path": "Tasks/items/quality/FDEC-095-independent-benchmark-data-specification/TASK.md"
+    },
+    {
+      "sha256": "324aad3a788941d96e1f5c2277e35ac00d5a7122ea79433e0d9cab3974b9cb1f",
+      "path": "Tasks/items/quality/FDEC-080-independent-benchmark-data-specification/events/20261120T173424053725Z-codex-superseded-ee2a5904.md"
+    },
+    {
+      "sha256": "d79ed3b6b9431f02c33db3fcd8bcbb3fe3a66e09786b5b96e42e71a3319d915e",
+      "path": "Tasks/migrations/FDEC-088-FDEC-081.json"
+    },
+    {
+      "sha256": "bc4f6a7c76128960699aaeba9c65234d5c3ab006de905516036ebebdced7584a",
+      "path": "Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/TASK.md"
+    },
+    {
+      "sha256": "42579da787536f7803fedd089cdd48ff4116fbe9ab96301fc3ee90a3c2e2eac9",
+      "path": "Tasks/items/governance/FDEC-081-admit-verified-epic-closure-requests/TASK.md"
+    },
+    {
+      "sha256": "bc2d22bbd4e92822d42ea235c02f9f6039775cccd9205b079843965615bbe53c",
+      "path": "Tasks/items/quality/FDEC-096-open-benchmark-fixture-pack/TASK.md"
+    },
+    {
+      "sha256": "b1a19697e8683ff940bc0818ccf044410156aeb83f00cc2cee989c31c09ff5d4",
+      "path": "Tasks/items/quality/FDEC-081-open-benchmark-fixture-pack/events/20261120T173424258305Z-codex-superseded-1015c1d6.md"
+    },
+    {
+      "sha256": "88ee32b689069ddc0b1e7796f8f1d66d8a034d4f92c7fcdbf88f82e7b5f38a6c",
+      "path": "Tasks/migrations/FDEC-088-FDEC-082.json"
+    },
+    {
+      "sha256": "c15474bbb90e715e3bc1ce2648bcacd13905161fac6cdcaae9b15a9fc9d7091a",
+      "path": "Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/TASK.md"
+    },
+    {
+      "sha256": "528a10a733c9fe261cc59ce6ca2d28e9a9e987da8e426aabf3d8c5c2a027331d",
+      "path": "Tasks/items/quality/FDEC-082-bind-epic-closure-index-state/TASK.md"
+    },
+    {
+      "sha256": "5ce824ce6926b5359afb2a46593851d6a1a929e4005ae94fd38aca335041c1eb",
+      "path": "Tasks/items/quality/FDEC-097-private-real-email-benchmark-adapter/TASK.md"
+    },
+    {
+      "sha256": "5dd4aa521f0ab52b53f17f3c15fcdd49d7676b2a3750b186a2fd2505f9ae9f8b",
+      "path": "Tasks/items/quality/FDEC-082-private-real-email-benchmark-adapter/events/20261120T173424362672Z-codex-superseded-0596f4fa.md"
+    },
+    {
+      "sha256": "6cae8c9339848bd9966a10a39877db48163e55066e49d05247a4dbb531f757a6",
+      "path": "Tasks/migrations/FDEC-088-FDEC-083.json"
+    },
+    {
+      "sha256": "5c171d92f025e5b0a1dd9f58fe9839ec39a5d447ac7a56d75099a1bc046affb0",
+      "path": "Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/TASK.md"
+    },
+    {
+      "sha256": "4c342d5102c7e7a289df90083e58f4272c771ccc553bbb7dbc1721f18e1cd466",
+      "path": "Tasks/items/quality/FDEC-083-preserve-committed-source-paths/TASK.md"
+    },
+    {
+      "sha256": "3cfc0720756a594cba20e42fc71f670ec0a06fc4be89caec2e2f7e2a4d607701",
+      "path": "Tasks/items/quality/FDEC-098-reproducible-evaluation-runner/TASK.md"
+    },
+    {
+      "sha256": "bdf889c99058d097f96e78da61dd711b13ef9750bed58f45604ce2cc8166dd98",
+      "path": "Tasks/items/quality/FDEC-083-reproducible-evaluation-runner/events/20261120T173424464017Z-codex-superseded-7ab20d2e.md"
+    }
+  ],
+  "criteria_revisions": [],
+  "matrix": [
+    {
+      "environment": "Apple Silicon, CPython 3.14.10, PyArrow 26.0.1, pinned private source and isolated synthetic fixtures",
+      "expected": "Pinned Gemma artifact matches aggregate audit, wrong exact-size bytes fail before parsing and output contains only approved aggregates",
+      "command": "python Tasks/items/ai/FDEC-248-verify-pinned-gemma-source/evidence/inspect-v1.py --self-test and inspect-v1.py <pinned-private-artifact> --prior-run <private-triage-run> --prior-run <private-sinabis-run>",
+      "level": "Focused local admission, split and compatibility verification",
+      "criterion_sha256": "c740a8db31805d581a503af85e61131af92f414ddce1f5a92de00d016ea7ca65",
+      "scenario": "Exact pinned input and reproducible scoped source audit",
+      "id": "AC-01"
+    },
+    {
+      "environment": "Apple Silicon, CPython 3.14.10, PyArrow 26.0.1, pinned private source and isolated synthetic fixtures",
+      "expected": "Pinned Gemma artifact matches aggregate audit, wrong exact-size bytes fail before parsing and output contains only approved aggregates",
+      "command": "python Tasks/items/ai/FDEC-248-verify-pinned-gemma-source/evidence/inspect-v1.py --self-test and inspect-v1.py <pinned-private-artifact> --prior-run <private-triage-run> --prior-run <private-sinabis-run>",
+      "level": "Focused local admission, split and compatibility verification",
+      "criterion_sha256": "61ad4e8c7eb7fd9e153a7e4ac6d3eaae56b74cc6ed43ee45861bbb06ef25682f",
+      "scenario": "Changed exact-size artifact and public evidence boundary",
+      "id": "AC-02"
+    }
+  ],
+  "verification": [
+    {
+      "sha256": "9671cf0248ed356e84781cc07f7b18074d4ef2bf9aeeb06005a9e19ab4d88ae0",
+      "path": "Tasks/items/ai/FDEC-248-verify-pinned-gemma-source/evidence/verification-v1.md"
+    },
+    {
+      "sha256": "c94e31d7a8e211ef646fd24be00ccd6e890602871410bd57c1349d253d850dad",
+      "path": "Tasks/items/ai/FDEC-248-verify-pinned-gemma-source/evidence/aggregate-v1.json"
+    }
+  ]
+}

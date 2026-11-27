@@ -1,0 +1,12 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "afa71deb-fbc2-4db8-8eed-394b1ae6291e",
+  "type": "task_closed",
+  "epic_id": "FDEC-EPIC-D003",
+  "work_item_id": "FDEC-248",
+  "summary": "Verify exact Gemma-generated source identity and audit",
+  "verification": [
+    "Tasks/items/ai/FDEC-248-verify-pinned-gemma-source/evidence/verification-v1.md",
+    "Tasks/items/ai/FDEC-248-verify-pinned-gemma-source/evidence/aggregate-v1.json"
+  ]
+}
