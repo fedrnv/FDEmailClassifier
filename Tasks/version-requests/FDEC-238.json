@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "f64c87d1-216d-4cb1-b9a8-096fad95dfbd",
+  "type": "correction_closed",
+  "epic_id": "FDEC-EPIC-S001",
+  "work_item_id": "FDEC-238",
+  "summary": "Validate exact accepted developer-policy adoption records",
+  "verification": [
+    "Tasks/items/governance/FDEC-238-fdtasks-adoption-record-compatibility/evidence/verification-v1.md"
+  ]
+}
