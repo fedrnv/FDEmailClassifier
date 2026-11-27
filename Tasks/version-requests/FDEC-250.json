@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "f5577157-1d3e-4970-8968-3a6e4bdf878f",
+  "type": "task_closed",
+  "epic_id": "FDEC-EPIC-D003",
+  "work_item_id": "FDEC-250",
+  "summary": "Build and verify exact signed splits from compact private inventories",
+  "verification": [
+    "Tasks/items/ai/FDEC-250-compact-signed-inventory/evidence/verification-v1.md"
+  ]
+}
