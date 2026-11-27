@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "70ab3800-ec17-49c1-ac33-ab4c803ffca7",
+  "type": "task_closed",
+  "epic_id": "FDEC-EPIC-D003",
+  "work_item_id": "FDEC-015",
+  "summary": "Measure stock Qwen3 on the public source and exact reviewed holdout",
+  "verification": [
+    "Tasks/items/ai/FDEC-015-zero-shot-baseline/evidence/public-stock-verification-v1.md"
+  ]
+}
