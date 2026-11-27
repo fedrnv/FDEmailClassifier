@@ -31,14 +31,41 @@ def current_inputs(args,authorization):
     key=split_data.authority_key()
     training=training_inputs.admit(**input_arguments(args,training=True),key=key)
     gold=admit_test(**input_arguments(args,training=False),key=key)
-    expected=dict(inventory=split_data.digest(training.inventory),consent=split_data.digest(training.consent),split=split_data.digest(training.split['receipt']),annotations=training.annotations_sha256,prompt=training.prompt_sha256,review=training.review_sha256)
+    expected=dict(inventory=split_data.inventory_digest(training.inventory),consent=split_data.digest(training.consent),split=split_data.digest(training.split['receipt']),annotations=training.annotations_sha256,prompt=training.prompt_sha256,review=training.review_sha256)
     if expected!=authorization.manifest['input_manifest_hashes']:raise TrainerError('mlx_return_training_inputs_changed')
     return training,gold,key
 
 
+def source_provenance(inventory):
+    """Keep the resolved source notices with the private export."""
+    from collections import Counter
+
+    import split_data
+    import training_boundary
+
+    counts = Counter(split_data.canonical_json(row["source"]) for row in split_data.inventory_rows(inventory))
+    sources = []
+    for encoded, count in sorted(counts.items()):
+        identity = split_data.strict_json(encoded)
+        admission = training_boundary.assert_training_source(identity, purpose="commercial_training")
+        rights = admission["descriptor"]
+        if admission.get("schema") == "fdec-independent-source-admission/v2" and admission.get("requires_origin_projection") is True:
+            attribution = admission.get("attribution")
+            audit_sha256 = admission.get("origin_policy_sha256")
+        else:
+            attribution = rights.get("attribution")
+            audit_sha256 = rights.get("audit_sha256")
+        if not attribution or not split_data.is_hash(audit_sha256):
+            raise TrainerError("mlx_return_source_provenance_incomplete")
+        sources.append(dict(identity=identity, inventory_records=count, training_license=rights["license"],
+                            attribution=attribution, source_audit_sha256=audit_sha256,
+                            public_weight_rights="separate-review-required"))
+    return sources
+
+
 def check_evaluation(report,gold,metadata,context):
     import split_data
-    expected=dict(inventory_sha256=split_data.digest(gold.inventory),consent_sha256=split_data.digest(gold.consent),split_receipt_sha256=split_data.digest(gold.split['receipt']),annotations_sha256=gold.annotations_sha256,review_sha256=gold.review_sha256,context_sha256=handoff.digest(context),checkpoint_metadata=metadata)
+    expected=dict(inventory_sha256=split_data.inventory_digest(gold.inventory),consent_sha256=split_data.digest(gold.consent),split_receipt_sha256=split_data.digest(gold.split['receipt']),annotations_sha256=gold.annotations_sha256,review_sha256=gold.review_sha256,context_sha256=handoff.digest(context),checkpoint_metadata=metadata)
     if any(report.get(k)!=value for k,value in expected.items()):raise TrainerError('mlx_return_evaluation_not_current')
 
 
@@ -130,13 +157,7 @@ def verify_actual(directory,*,authorization,args):
                 converter_checkout(checkout)
                 export_context['model_runtime_load_verified']=True
                 write_json(output/'verification.json',verification)
-                import training_boundary
-                from collections import Counter
-                sources=[]
-                for encoded,count in sorted(Counter(split_data.canonical_json(row['source']) for row in training.inventory['records']).items()):
-                    identity=split_data.strict_json(encoded);rights=training_boundary.assert_training_source(identity,purpose='commercial_training')['descriptor']
-                    sources.append(dict(identity=identity,inventory_records=count,training_license=rights['license'],attribution=rights['attribution'],source_audit_sha256=rights['audit_sha256'],public_weight_rights='separate-review-required'))
-                write_json(output/'dataset-manifest.json',dict(schema='fdec-export-datasets/v1',**provenance(training),sources=sources,contains_email_or_personal_data=False,public_weight_rights='separate-review-required'))
+                write_json(output/'dataset-manifest.json',dict(schema='fdec-export-datasets/v1',**provenance(training),sources=source_provenance(training.inventory),contains_email_or_personal_data=False,public_weight_rights='separate-review-required'))
                 write_json(output/'evaluation.json',report)
                 (output/'README.md').write_text('# Private MLX-trained candidate\n\nBase: '+profile['model_id']+' at '+profile['revision']+'.\n\nNo public weight permission. See measured evaluation.json; no calibrated-probability or 119-language reliability claim.\n',encoding='utf-8')
                 write_json(output/'handoff-completion.json',dict(schema='fdec-post-mac-completion/v1',handoff_sha256=authorization.sha256,source=authorization.manifest['source'],checkpoint_metadata_sha256=export_context['checkpoint_metadata_sha256'],evaluation_sha256=handoff.file_identity(Path(directory)/'evaluation/report.json')['sha256'],private_artifacts_verified=True,model_runtime_verified=True,public_weight_permission=False,next_step='Resume original workstation; preserve unfinished D003 baseline/CUDA/gate/review obligations'))

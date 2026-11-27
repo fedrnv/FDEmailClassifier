@@ -60,7 +60,7 @@ def prepare(directory,*,purpose,config_path,inputs=None,root=ROOT):
         from training_inputs import admit
         import split_data
         snapshot=admit(**inputs,key=split_data.authority_key())
-        hashes=dict(inventory=digest(snapshot.inventory),consent=digest(snapshot.consent),split=digest(snapshot.split['receipt']),annotations=snapshot.annotations_sha256,prompt=snapshot.prompt_sha256,review=snapshot.review_sha256)
+        hashes=dict(inventory=split_data.inventory_digest(snapshot.inventory),consent=digest(snapshot.consent),split=digest(snapshot.split['receipt']),annotations=snapshot.annotations_sha256,prompt=snapshot.prompt_sha256,review=snapshot.review_sha256)
     else:hashes={}
     token=secrets.token_hex(32);key=secrets.token_bytes(32);owned=False
     output=private_output(directory,root)

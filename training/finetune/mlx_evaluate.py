@@ -32,7 +32,7 @@ def restore_actual(args):
     snapshot=training_inputs.admit(**arguments,key=key)
     config=read_config(args.config)
     authorization=handoff.Handoff(args.handoff_dir)
-    expected=dict(inventory=splits.digest(snapshot.inventory),consent=splits.digest(snapshot.consent),split=splits.digest(snapshot.split['receipt']),annotations=snapshot.annotations_sha256,prompt=snapshot.prompt_sha256,review=snapshot.review_sha256)
+    expected=dict(inventory=splits.inventory_digest(snapshot.inventory),consent=splits.digest(snapshot.consent),split=splits.digest(snapshot.split['receipt']),annotations=snapshot.annotations_sha256,prompt=snapshot.prompt_sha256,review=snapshot.review_sha256)
     if authorization.manifest['input_manifest_hashes']!=expected:raise TrainerError('mlx_handoff_training_inputs_changed')
     engine=MLXEngine(reject_links(args.model_dir),config,args.handoff_dir)
     context=train.run_context(config,engine,snapshot,'mlx')
@@ -69,7 +69,7 @@ def run(args):
         reference=np.array(logits,dtype=np.float32)
     if training_inputs.admit(**input_arguments(args,training=True),key=key)!=training or admit_test(**gold_args,key=key)!=gold:raise TrainerError('mlx_evaluation_inputs_changed')
     current();recheck_test(gold,key=key)
-    report=dict(schema='fdec-mlx-evaluation/v1',scope='admitted-trained-MLX-held-out-model',actual_model_executed=True,actual_apple_execution=True,handoff_sha256=engine.handoff.sha256,created_at=datetime.now(timezone.utc).isoformat(),model=engine.identity,checkpoint_metadata=handoff.file_identity(Path(args.checkpoint)/'metadata.json'),context_sha256=handoff.digest(context),prompt_sha256=PROMPT_SHA256,inventory_sha256=splits.digest(gold.inventory),consent_sha256=splits.digest(gold.consent),split_receipt_sha256=splits.digest(gold.split['receipt']),annotations_sha256=gold.annotations_sha256,review_sha256=gold.review_sha256,metrics=measure(gold.gold,predictions),public_artifact_release_approved=False)
+    report=dict(schema='fdec-mlx-evaluation/v1',scope='admitted-trained-MLX-held-out-model',actual_model_executed=True,actual_apple_execution=True,handoff_sha256=engine.handoff.sha256,created_at=datetime.now(timezone.utc).isoformat(),model=engine.identity,checkpoint_metadata=handoff.file_identity(Path(args.checkpoint)/'metadata.json'),context_sha256=handoff.digest(context),prompt_sha256=PROMPT_SHA256,inventory_sha256=splits.inventory_digest(gold.inventory),consent_sha256=splits.digest(gold.consent),split_receipt_sha256=splits.digest(gold.split['receipt']),annotations_sha256=gold.annotations_sha256,review_sha256=gold.review_sha256,metrics=measure(gold.gold,predictions),public_artifact_release_approved=False)
     owned=False;token=secrets.token_hex(32)
     try:
         output.parent.mkdir(parents=True,exist_ok=True);output.mkdir(mode=0o700);owned=True;(output/'.owner').write_text(token,encoding='ascii')

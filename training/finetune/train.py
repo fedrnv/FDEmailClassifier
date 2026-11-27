@@ -21,14 +21,14 @@ class Parser(argparse.ArgumentParser):
 
 
 def implementation_hash():
-    paths = sorted(Path(__file__).parent.glob("*.py")) + [ROOT / relative for relative in ("training/config/peft-runtime-v1.json", "training/baseline/local_model.py", "training/baseline/qwen-stock-v1.json", "training/eval/baseline_metrics.py", "training/augmentation/training_boundary.py", "training/splits/split_data.py", "training/scripts/ingest_dataset.py", "training/scripts/normalize_email.py", "training/labels/map_annotations.py", "training/datasets/get-inclusion.ps1", "training/datasets/assert-allowlist.ps1")]
+    paths = sorted(Path(__file__).parent.glob("*.py")) + [ROOT / relative for relative in ("training/config/peft-runtime-v1.json", "training/baseline/local_model.py", "training/baseline/qwen-stock-v1.json", "training/eval/baseline_metrics.py", "training/augmentation/training_boundary.py", "training/splits/split_data.py", "training/splits/disk_inventory.py", "training/splits/source_replay.py", "training/scripts/ingest_dataset.py", "training/scripts/normalize_email.py", "training/labels/map_annotations.py", "training/datasets/get-inclusion.ps1", "training/datasets/assert-allowlist.ps1")]
     paths+=sorted((ROOT/'training/config').glob('mlx-*'))
     return hashlib.sha256(b"".join(path.relative_to(ROOT).as_posix().encode() + b"\0" + path.read_bytes().replace(b"\r\n", b"\n") for path in paths)).hexdigest()
 
 
 def run_context(config,engine,snapshot,engine_kind):
     return dict(schema='fdec-mlx-run-context/v1' if engine_kind=='mlx' else 'fdec-peft-run-context/v1',config=config,model=engine.identity,implementation_sha256=implementation_hash(),
-                inventory_sha256=splits.digest(snapshot.inventory),consent_sha256=splits.digest(snapshot.consent),split_receipt_sha256=splits.digest(snapshot.split['receipt']),annotations_sha256=snapshot.annotations_sha256,prompt_sha256=snapshot.prompt_sha256,review_sha256=snapshot.review_sha256)
+                inventory_sha256=splits.inventory_digest(snapshot.inventory),consent_sha256=splits.digest(snapshot.consent),split_receipt_sha256=splits.digest(snapshot.split['receipt']),annotations_sha256=snapshot.annotations_sha256,prompt_sha256=snapshot.prompt_sha256,review_sha256=snapshot.review_sha256)
 
 
 def run(args):
@@ -49,7 +49,7 @@ def run(args):
         if not getattr(args,'handoff_dir',None):raise TrainerError('mlx_handoff_required')
         from mlx_handoff import Handoff
         permitted=Handoff(args.handoff_dir)
-        expected=dict(inventory=splits.digest(snapshot.inventory),consent=splits.digest(snapshot.consent),split=splits.digest(snapshot.split['receipt']),annotations=snapshot.annotations_sha256,prompt=snapshot.prompt_sha256,review=snapshot.review_sha256)
+        expected=dict(inventory=splits.inventory_digest(snapshot.inventory),consent=splits.digest(snapshot.consent),split=splits.digest(snapshot.split['receipt']),annotations=snapshot.annotations_sha256,prompt=snapshot.prompt_sha256,review=snapshot.review_sha256)
         if permitted.manifest['input_manifest_hashes']!=expected:raise TrainerError('mlx_handoff_training_inputs_changed')
         from mlx_engine import MLXEngine
         engine=MLXEngine(reject_links(args.model_dir),config,args.handoff_dir)

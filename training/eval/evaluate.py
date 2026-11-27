@@ -18,7 +18,7 @@ from ingest_dataset import private_output, reject_links
 
 
 def implementation_hash():
-    paths = sorted(Path(__file__).parent.glob("*.py")) + [ROOT / relative for relative in ("training/baseline/admission.py", "training/baseline/baseline.py", "training/baseline/local_model.py", "training/baseline/prompt.py", "training/baseline/qwen-stock-v1.json", "training/labels/map_annotations.py", "training/augmentation/training_boundary.py", "training/splits/split_data.py")]
+    paths = sorted(Path(__file__).parent.glob("*.py")) + [ROOT / relative for relative in ("training/baseline/admission.py", "training/baseline/baseline.py", "training/baseline/local_model.py", "training/baseline/prompt.py", "training/baseline/qwen-stock-v1.json", "training/labels/map_annotations.py", "training/augmentation/training_boundary.py", "training/splits/split_data.py", "training/splits/disk_inventory.py", "training/splits/source_replay.py")]
     return hashlib.sha256(b"".join(path.relative_to(ROOT).as_posix().encode() + b"\0" + path.read_bytes().replace(b"\r\n", b"\n") for path in paths)).hexdigest()
 
 
@@ -49,7 +49,7 @@ def run(args):
     recheck(snapshot, key=key)
     report = dict(schema="fdec-multilabel-report/v1", scope="admitted-stock-model-held-out-evaluation", actual_model_executed=True,
                   created_at=datetime.now(timezone.utc).isoformat(), model=model.identity, prompt_sha256=PROMPT_SHA256,
-                  inventory_sha256=splits.digest(snapshot.inventory), consent_sha256=splits.digest(snapshot.consent), split_receipt_sha256=splits.digest(snapshot.split["receipt"]),
+                  inventory_sha256=splits.inventory_digest(snapshot.inventory), consent_sha256=splits.digest(snapshot.consent), split_receipt_sha256=splits.digest(snapshot.split["receipt"]),
                   annotations_sha256=snapshot.annotations_sha256, review_sha256=snapshot.review_sha256, implementation_sha256=implementation_hash(),
                   metrics=measure(snapshot.gold, predictions), public_artifact_release_approved=False)
     publish(output, report, lambda: recheck(snapshot, key=key))

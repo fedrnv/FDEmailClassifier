@@ -16,7 +16,8 @@ FIXTURE_SHA256 = "523535d05151555b6342209b490a09d540e57b6dda056588ba193623de52f1
 
 
 def implementation_hash():
-    paths = sorted(Path(__file__).parent.glob("*.py")) + [ROOT / "crates/core/src/schema/calibration.rs"]
+    paths = sorted(Path(__file__).parent.glob("*.py")) + [ROOT / "crates/core/src/schema/calibration.rs",
+                                                               ROOT / "training/splits/disk_inventory.py", ROOT / "training/splits/source_replay.py"]
     return hashlib.sha256(b"".join(path.name.encode() + b"\0" + path.read_bytes().replace(b"\r\n", b"\n") for path in paths)).hexdigest()
 
 

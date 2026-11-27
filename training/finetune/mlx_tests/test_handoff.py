@@ -101,7 +101,9 @@ class Fixtures(unittest.TestCase):
             with self.assertRaisesRegex(TrainerError,'explicit_owner_transition_missing'):mlx_engine.runtime(state,'numeric-smoke')
             hardware.assert_not_called()
         self.approve_fixture(state);state.authorize('numeric-smoke')
-        with self.assertRaisesRegex(TrainerError,'apple_silicon_host_required'):mlx_engine.runtime(state,'numeric-smoke')
+        with patch.object(mlx_engine.platform, 'machine', return_value='x86_64'):
+            with self.assertRaisesRegex(TrainerError, 'apple_silicon_host_required'):
+                mlx_engine.runtime(state, 'numeric-smoke')
         self.assertFalse(any(name=='mlx.core' for name in sys.modules))
 
     def test_scope_change_owner_revocation_and_source_bundle_mutation_reject(self):

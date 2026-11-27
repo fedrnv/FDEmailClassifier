@@ -145,7 +145,7 @@ def run(args):
             export_context["model_runtime_load_verified"] = True
             export_context["runtime_executable_sha256"] = build_record["executable_sha256"]
             write_json(output / "verification.json", checks)
-            counts = Counter(splits.canonical_json(row["source"]) for row in snapshot.inventory["records"])
+            counts = Counter(splits.canonical_json(row["source"]) for row in splits.inventory_rows(snapshot.inventory))
             sources=[]
             for encoded,count in sorted(counts.items()):
                 identity=splits.strict_json(encoded)

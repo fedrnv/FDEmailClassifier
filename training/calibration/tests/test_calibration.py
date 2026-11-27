@@ -5,6 +5,7 @@ from fractions import Fraction
 import hashlib
 import hmac
 import json
+import os
 from pathlib import Path
 import random
 import subprocess
@@ -123,32 +124,65 @@ class NumericalTests(unittest.TestCase):
 
 class CurrentAuthorityTests(unittest.TestCase):
     def test_actual_source_replay_signed_scores_and_revocation(self):
+        self.check_source_replay(compact=False)
+
+    @unittest.skipUnless(os.name == "posix", "Compact inventories require private POSIX storage")
+    def test_compact_source_replay_signed_scores_and_revocation(self):
+        self.check_source_replay(compact=True)
+
+    def check_source_replay(self, *, compact):
         sys.path.insert(0, str(ROOT / "tests/d002"))
         import test_pipeline
         f = test_pipeline.PipelineTests()
         self.addCleanup(f.doCleanups)
         f.setUp()
-        directory, manifest = f.build()
-        split = splits.verify(directory, f.inventory, f.signed, key=f.key, policy_root=f.root, now=f.now, include_manifest=True)
+        def supersede(previous, *, revoke=None):
+            payload = deepcopy(previous["payload"])
+            payload.update(inventory_sha256=splits.inventory_digest(inventory),
+                           revision=payload["revision"] + 1,
+                           previous_snapshot_sha256=splits.digest(previous))
+            for grant in payload["grants"]:
+                if grant["record_id"] == revoke:
+                    grant["status"] = "revoked"
+            signed = splits.envelope(payload, f.key)
+            splits.activate_consent(inventory, signed, key=f.key, policy_root=f.root, now=f.now)
+            return signed
+
+        if compact:
+            from disk_inventory import pack
+
+            inventory_path = f.root / "training/data/packed"
+            pack(f.inventory["records"], output_dir=inventory_path, opt_in=True, policy_root=f.root)
+            inventory = splits.read_inventory(inventory_path)
+            signed = supersede(f.signed)
+        else:
+            inventory_path = f.root / "training/data/inventory.json"
+            f.write("training/data/inventory.json", f.inventory)
+            inventory, signed = f.inventory, f.signed
+        directory = f.root / "training/outputs/split"
+        splits.build(inventory, signed, output_dir=directory, key=f.key, seed=19, opt_in=True,
+                     policy_root=f.root, now=f.now)
+        split = splits.verify(directory, inventory, signed, key=f.key, policy_root=f.root, now=f.now,
+                              include_manifest=True)
+        manifest = split["manifest"]
         rows = [dict(record_id=row["record_id"], group_id=row["group_id"], role=row["split"], language="en", label="topic:work", score=.5, gold=1) for row in manifest["assignments"] if row["split"] != "train"]
         bundle = dict(schema="fdec-calibration-observations/v1", score_kind=calibration.SCORE_KIND, model=dict(id="counterfactual-numeric-producer", revision="a"*40, sha256="b"*64), rows=rows)
-        f.write("training/data/inventory.json", f.inventory)
-        f.write("training/data/signed.json", f.signed)
+        f.write("training/data/signed.json", signed)
         f.write("training/data/scores.json", bundle)
-        payload = dict(schema="fdec-calibration-score-review/v1", inventory_sha256=splits.digest(f.inventory), consent_sha256=splits.digest(f.signed), split_receipt_sha256=splits.digest(split["receipt"]), observations_sha256=hashlib.sha256((f.root / "training/data/scores.json").read_bytes()).hexdigest(), score_kind=calibration.SCORE_KIND, origin="independently-reviewed-non-openai", evidence_sha256=splits.digest("counterfactual review only"), issued_at=test_pipeline.stamp(f.now-timedelta(minutes=1)), valid_until=test_pipeline.stamp(f.now+timedelta(minutes=20)))
+        payload = dict(schema="fdec-calibration-score-review/v1", inventory_sha256=splits.inventory_digest(inventory), consent_sha256=splits.digest(signed), split_receipt_sha256=splits.digest(split["receipt"]), observations_sha256=hashlib.sha256((f.root / "training/data/scores.json").read_bytes()).hexdigest(), score_kind=calibration.SCORE_KIND, origin="independently-reviewed-non-openai", evidence_sha256=splits.digest("counterfactual review only"), issued_at=test_pipeline.stamp(f.now-timedelta(minutes=1)), valid_until=test_pipeline.stamp(f.now+timedelta(minutes=20)))
         review = dict(schema="fdec-signed-calibration-review/v1", payload=payload, hmac_sha256=hmac.new(f.key, admission.DOMAIN+splits.canonical_json(payload).encode(), hashlib.sha256).hexdigest())
         f.write(admission.ANCHOR, review)
-        arguments = dict(inventory_path=f.root / "training/data/inventory.json", consent_path=f.root / "training/data/signed.json", split_dir=directory, observations_path=f.root / "training/data/scores.json", source_runs=f.runs, key=f.key, policy_root=f.root, now=f.now)
-        admitted, _ = admission.admit(**arguments)
+        arguments = dict(inventory_path=inventory_path, consent_path=f.root / "training/data/signed.json", split_dir=directory, observations_path=f.root / "training/data/scores.json", source_runs=f.runs, key=f.key, policy_root=f.root, now=f.now)
+        admitted, bindings = admission.admit(**arguments)
         self.assertEqual(admitted, bundle)
+        self.assertEqual(bindings["inventory_sha256"], splits.inventory_digest(inventory))
         before = arguments["observations_path"].read_bytes()
         changed = deepcopy(bundle)
         changed["rows"][0]["score"] = 999
         f.write("training/data/scores.json", changed)
         with self.assertRaises(calibration.CalibrationError): admission.admit(**arguments)
         arguments["observations_path"].write_bytes(before)
-        revoked = f.sign(revoke=rows[0]["record_id"], revision=2, previous=splits.digest(f.signed))
-        splits.activate_consent(f.inventory, revoked, key=f.key, policy_root=f.root, now=f.now)
+        supersede(signed, revoke=rows[0]["record_id"])
         with self.assertRaises(calibration.CalibrationError): admission.admit(**arguments)
         for pack in admission.boundary.FIXTURE_PACKS:
             with self.assertRaises(admission.boundary.TrainingBoundaryError):

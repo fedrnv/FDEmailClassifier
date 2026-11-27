@@ -15,7 +15,7 @@ def inputs(args, key):
 
 
 def provenance(snapshot):
-    return dict(inventory_sha256=splits.digest(snapshot.inventory), consent_sha256=splits.digest(snapshot.consent), split_receipt_sha256=splits.digest(snapshot.split["receipt"]),
+    return dict(inventory_sha256=splits.inventory_digest(snapshot.inventory), consent_sha256=splits.digest(snapshot.consent), split_receipt_sha256=splits.digest(snapshot.split["receipt"]),
                 annotations_sha256=snapshot.annotations_sha256, prompt_sha256=snapshot.prompt_sha256, review_sha256=snapshot.review_sha256)
 
 

@@ -53,7 +53,7 @@ def run(args):
     metrics = score(snapshot.gold, predictions)
     report = {"schema": "fdec-stock-baseline-report/v1", "actual_stock_model_executed": True,
               "created_at": datetime.now(timezone.utc).isoformat(), "model": model.identity,
-              "prompt_sha256": PROMPT_SHA256, "inventory_sha256": splits.digest(snapshot.inventory),
+              "prompt_sha256": PROMPT_SHA256, "inventory_sha256": splits.inventory_digest(snapshot.inventory),
               "consent_sha256": splits.digest(snapshot.consent), "split_receipt_sha256": splits.digest(snapshot.split["receipt"]),
               "annotations_sha256": snapshot.annotations_sha256, "review_sha256": snapshot.review_sha256,
               "implementation_sha256": implementation_hash(), "metrics": metrics,
@@ -63,7 +63,8 @@ def run(args):
 
 
 def implementation_hash():
-    paths = sorted(Path(__file__).parent.glob("*.py")) + [Path(__file__).with_name("qwen-stock-v1.json"), ROOT / "training/eval/baseline_metrics.py"]
+    paths = sorted(Path(__file__).parent.glob("*.py")) + [Path(__file__).with_name("qwen-stock-v1.json"), ROOT / "training/eval/baseline_metrics.py",
+                                                               ROOT / "training/splits/disk_inventory.py", ROOT / "training/splits/source_replay.py"]
     return hashlib.sha256(b"".join(path.name.encode() + b"\0" + path.read_bytes().replace(b"\r\n", b"\n") for path in paths)).hexdigest()
 
 

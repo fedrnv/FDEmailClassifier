@@ -188,5 +188,6 @@ A global prefix index restricts candidates by length and common fingerprints.
 The final check still uses exact 0.80 Jaccard, and lineage joins include every
 input cohort. The grouping index stores term counts and compact prefix postings
 in memory. Full shingles remain on disk, with a bounded cache of decoded rows.
-Packing v2 is supported on POSIX only. Training and evaluation entry points still
-use v1 until their source replay paths support the compact inventory.
+Packing v2 is supported on POSIX only. Training, evaluation and calibration
+accept this same directory and verify each source replay against its packed
+fingerprints before using the selected role.

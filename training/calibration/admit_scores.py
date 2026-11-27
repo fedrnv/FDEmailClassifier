@@ -9,6 +9,7 @@ from calibrate import ROOT, CalibrationError, validate, SCORE_KIND
 for area in ("training/splits", "training/augmentation"):
     sys.path.insert(0, str(ROOT / area))
 import split_data as splits
+from source_replay import record_matcher
 import training_boundary as boundary
 from ingest_dataset import strict_json
 
@@ -20,32 +21,34 @@ def admit(*, inventory_path, consent_path, split_dir, observations_path, source_
     try:
         fixed_now = now
         now = datetime.now(timezone.utc) if now is None else now
-        inventory, signed = splits.read_json(inventory_path), splits.read_json(consent_path)
+        inventory, signed = splits.read_inventory(inventory_path), splits.read_json(consent_path)
         split = splits.verify(split_dir, inventory, signed, key=key, policy_root=policy_root, now=now, include_manifest=True)
-        records = {row["record_id"]: row for row in inventory["records"]}
+        records = {row["record_id"]: row for row in splits.inventory_rows(inventory)}
         expected = {row["provenance"]["ingestion_receipt_sha256"] for row in records.values()}
         seen, replayed_ids = set(), set()
         if not isinstance(source_runs, list) or not 1 <= len(source_runs) <= len(records):
             raise ValueError()
-        for directory in source_runs:
-            receipt = splits.read_json(Path(directory) / "receipt.json", 65536)
-            receipt_id = splits.digest(receipt)
-            if receipt_id not in expected or receipt_id in seen:
-                raise ValueError()
-            replayed = boundary.admit_training_run(directory, purpose=receipt["input"]["purpose"], policy_root=policy_root, include_records=True)
-            if receipt != splits.read_json(Path(directory) / "receipt.json", 65536):
-                raise ValueError()
-            identity = {name: receipt["input"][name] for name in ("dataset_id", "revision", "artifact", "sha256")}
-            for purpose in ("commercial_training", "evaluation"):
-                boundary.assert_training_source(identity, purpose=purpose, policy_root=policy_root)
-            seen.add(receipt_id)
-            for normalized in replayed["records"]:
-                rid = splits.digest([identity, normalized["content_id"], sorted(item["source_row"] for item in normalized["annotations"])])
-                if rid in records:
-                    record = records[rid]
-                    if splits.prepare_record(normalized, receipt, consent_id=record["consent_id"], thread_id=record["thread_id"], family_ids=record["family_ids"]) != record or rid in replayed_ids:
-                        raise ValueError()
-                    replayed_ids.add(rid)
+        with record_matcher(inventory) as matches:
+            for directory in source_runs:
+                receipt = splits.read_json(Path(directory) / "receipt.json", 65536)
+                receipt_id = splits.digest(receipt)
+                if receipt_id not in expected or receipt_id in seen:
+                    raise ValueError()
+                replayed = boundary.admit_training_run(directory, purpose=receipt["input"]["purpose"], policy_root=policy_root, include_records=True)
+                if receipt != splits.read_json(Path(directory) / "receipt.json", 65536):
+                    raise ValueError()
+                identity = {name: receipt["input"][name] for name in ("dataset_id", "revision", "artifact", "sha256")}
+                for purpose in ("commercial_training", "evaluation"):
+                    boundary.assert_training_source(identity, purpose=purpose, policy_root=policy_root)
+                seen.add(receipt_id)
+                for normalized in replayed["records"]:
+                    rid = splits.digest([identity, normalized["content_id"], sorted(item["source_row"] for item in normalized["annotations"])])
+                    if rid in records:
+                        record = records[rid]
+                        prepared = splits.prepare_record(normalized, receipt, consent_id=record["consent_id"], thread_id=record["thread_id"], family_ids=record["family_ids"])
+                        if not matches(prepared, record) or rid in replayed_ids:
+                            raise ValueError()
+                        replayed_ids.add(rid)
         if seen != expected or replayed_ids != set(records):
             raise ValueError()
         raw = splits.read_bytes(observations_path, 50_000_000)
@@ -68,7 +71,7 @@ def admit(*, inventory_path, consent_path, split_dir, observations_path, source_
         fields = {"schema", "inventory_sha256", "consent_sha256", "split_receipt_sha256", "observations_sha256", "score_kind", "origin", "evidence_sha256", "issued_at", "valid_until"}
         if not isinstance(payload, dict) or set(payload) != fields or payload["schema"] != "fdec-calibration-score-review/v1" or payload["origin"] != "independently-reviewed-non-openai" or payload["score_kind"] != SCORE_KIND or not splits.is_hash(payload["evidence_sha256"]) or not splits.utc(payload["issued_at"]) <= now < splits.utc(payload["valid_until"]):
             raise ValueError()
-        bindings = dict(inventory_sha256=splits.digest(inventory), consent_sha256=splits.digest(signed), split_receipt_sha256=splits.digest(split["receipt"]), observations_sha256=hashlib.sha256(raw).hexdigest())
+        bindings = dict(inventory_sha256=splits.inventory_digest(inventory), consent_sha256=splits.digest(signed), split_receipt_sha256=splits.digest(split["receipt"]), observations_sha256=hashlib.sha256(raw).hexdigest())
         if any(payload[name] != value for name, value in bindings.items()):
             raise ValueError()
         end_now = datetime.now(timezone.utc) if fixed_now is None else fixed_now
